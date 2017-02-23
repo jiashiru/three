@@ -1,0 +1,1 @@
+@extends('common.layout')@section('title', '首页')@section('content')    <div class="row J_mainContent" id="content-main">        <iframe id="J_iframe" width="100%" height="100%" src="{{url('indexV1')}}?v=4.0" frameborder="0" data-id="{{url('indexV1')}}" seamless></iframe>    </div>@stop

@@ -1,0 +1,1 @@
+<?phpnamespace App\Http\Controllers;class IndexController extends Controller{    public function common()    {        return view('common.layout');    }}
