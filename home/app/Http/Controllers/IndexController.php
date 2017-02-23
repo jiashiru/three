@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -12,5 +13,12 @@ class IndexController extends Controller
     public function index()
     {
         return view("index/index");
+    }
+
+    public function sel()
+    {
+        $users = DB::table("user")->get();
+        print_r($users);
+//        echo 1;
     }
 }

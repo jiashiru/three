@@ -35,32 +35,33 @@ Route::any("login",function(){ return view("login"); });//登陆
 Route::any("zhuce",function(){ return view("zhuce"); });//注册
 
 //主页
-Route::any("index_index","IndexController@index");//主页
-Route::any("index_classify",function(){ return view("index/classify"); });//分类
+Route::any("index/index","IndexController@index");//主页
+Route::any("index/classify",function(){ return view("index/classify"); });//分类
+Route::any("index/sel","IndexController@sel");//分类
 
 
 //我的一元云够
-Route::any("user_index",function(){ return view("user/index"); });
-Route::any("user_record",function(){ return view("user/record"); });//我的记录
+Route::any("user/index",function(){ return view("user/index"); });
+Route::any("user/record",function(){ return view("user/record"); });//我的记录
 
 
 
 //账号设置
-Route::any("set_index",function(){ return view("set/index"); });
+Route::any("set/index",function(){ return view("set/index"); });
 
 //商品详情
-Route::any("shop_index",function(){ return view("shop/index"); });
+Route::any("shop/index",function(){ return view("shop/index"); });
 
 
 
 //buy
-Route::any("buycar_index",function(){ return view("buycar/index"); });//购物车
-Route::any("buycar_account",function(){ return view("buycar/account"); });//结算1
+Route::any("buycar/index",function(){ return view("buycar/index"); });//购物车
+Route::any("buycar/account",function(){ return view("buycar/account"); });//结算1
 
 
 
 
-Route::any("success_buy_success",function(){ return view("buycar/buy_success"); });
+Route::any("success/buy_success",function(){ return view("buycar/buy_success"); });
 
 
 
