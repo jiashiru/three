@@ -1,0 +1,1 @@
+<?phpnamespace App\Http\Controllers;use App\Http\Requests\Request;class AdminController extends CommonController{    public function adminList()    {        $name = '张三';        return view('admin.adminList', ['name' => $name]);    }    public function adminAdd()    {        return view('admin.adminAdd');    }}
