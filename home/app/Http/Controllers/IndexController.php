@@ -10,15 +10,22 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class IndexController extends Controller
 {
+    //主页
     public function index()
     {
         return view("index/index");
     }
 
-    public function sel()
+
+    //分类
+    public function classify()
     {
-        $users = DB::table("user")->get();
-        print_r($users);
-//        echo 1;
+        return view("index/classify");
+    }
+
+    //商品详情
+    public function shop()
+    {
+        return view("index/shop");
     }
 }

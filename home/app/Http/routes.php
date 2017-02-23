@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +35,10 @@ Route::any("login",function(){ return view("login"); });//登陆
 Route::any("zhuce",function(){ return view("zhuce"); });//注册
 
 //主页
-Route::any("index/index","IndexController@index");//主页
-Route::any("index/classify",function(){ return view("index/classify"); });//分类
-Route::any("index/sel","IndexController@sel");//分类
+Route::any("/","IndexController@index");//主页
+Route::any("indexClassify","IndexController@classify");//分类
+Route::any("indexShop","IndexController@shop");//商品详情
+
 
 
 //我的一元云够
