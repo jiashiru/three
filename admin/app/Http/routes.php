@@ -29,16 +29,33 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
-
-//通用
-Route::any("login",function(){ return view("login"); });//登陆
-Route::any("zhuce",function(){ return view("zhuce"); });//注册
-
 //主页
-Route::any("index_index",function(){ return view("index"); });//主页
-Route::any("index_v1",function(){ return view("index_v1"); });//主页
+Route::get('404',function(){ return view("errors.404"); });
+Route::get('500',function(){ return view("errors.500"); });
+Route::get('503',function(){ return view("errors.503"); });
+
+Route::any("/",function(){ return view("index/index"); });
+Route::any("indexV1",function(){ return view("index/index_v1"); });
+
+//login
+Route::any('loginLogin',['uses' => 'LoginController@login']);
+Route::any('loginGetCapath',['uses' => 'LoginController@getCapath']);
+//message
+Route::any('showMsg',['uses' => 'CommonController@showMsg']);
+
+//RBAC
+Route::any('adminShow',['uses' => 'AdminController@show']);
+// Route::any('adminAdd',['uses' => 'AdminController@add']);
+
+//RBAC
+Route::any('adminAdd',['uses' => 'AdminController@adminAdd']);
+Route::any('adminList',['uses' => 'AdminController@adminList']);
 
 
+
+Route::group(['middleware' => ['web']], function () {
+    Route::any('adminAdd',['uses' => 'AdminController@add']);
+});
 
 
 
