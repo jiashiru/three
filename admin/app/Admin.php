@@ -1,0 +1,1 @@
+<?phpnamespace App;use Illuminate\Database\Eloquent\Model;class Admin extends Model{    protected $table = 'admin';    public $primaryKey = 'admin_id';    public $timestamps = false;    public function roles()    {        return $this->belongsToMany('App\Role', 'admin_role');    }}
