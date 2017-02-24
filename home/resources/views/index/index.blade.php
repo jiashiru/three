@@ -573,7 +573,40 @@
         </div>
         <div class="g-single-sun">
             <div class="singleL fl" id="divPostRec">
-                <div class="u-loading"><em></em></div>
+
+                    <dl>
+                        <dt>
+                            <a title="Pouch你家东西真好用" target="_blank" href="http://post.1yyg.com/detail-369206.html">
+                                <img src="http://img.1yyg.net/UserPost/RecHome/20170223171359086.jpg">
+                            </a>
+                        </dt>
+                        <dd class="u-user">
+                            <p class="u-head">
+                                <a title="无法再云了" target="_blank" href="http://u.1yyg.com/1011960362">
+                                    <img width="40" height="40" src="http://img.1yyg.net/UserFace/20170224080145701.jpg" alt="Pouch你家东西真好用">
+                                    <i class="transparent-png"></i>
+                                </a>
+                            </p>
+                            <p class="u-info">
+<span>
+<a title="无法再云了" target="_blank" href="http://u.1yyg.com/1011960362">无法再云了</a>
+<em>昨天 17:18</em>
+</span>
+                                <cite>
+                                    <a title="Pouch你家东西真好用" target="_blank" href="http://post.1yyg.com/detail-369206.html">Pouch你家东西真好用</a>
+                                </cite>
+                            </p>
+                        </dd>
+                        <dd class="m-summary">
+                            <cite>
+                                <a target="_blank" href="http://post.1yyg.com/detail-369206.html">首先，感谢云购公司让我得到了这么高品质的东西！等了好久终于等到今天，从中奖到收到商品，整整十三天的时间，其…</a>
+                            </cite>
+                            <b>
+                                <s></s>
+                            </b>
+                        </dd>
+                    </dl>
+
             </div>
             <div class="singleR fl">
                 <ul id="ul_PostList">
