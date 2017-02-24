@@ -13,7 +13,22 @@ class IndexController extends Controller
     //主页
     public function index()
     {
-        return view("index/index");
+        //查询商品的分类表
+        $goods_type = DB::table("goods_type")->get();
+        //查询分类表下面的类型
+        $goods_category = DB::table("goods_category")->get();
+        foreach($goods_type as $k=>$v){
+            foreach($goods_category as $key=>$val){
+                if($v['type_id'] == $val['parent_id']){
+                    $goods_type[$k]['category'][] = $goods_category[$key];
+                }
+            }
+        }
+//        print_r($goods_category);
+        return view("index/index",[
+            'goods_type'=>$goods_type,
+
+        ]);
     }
 
 
