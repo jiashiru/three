@@ -1,3 +1,4 @@
+
 <!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -6,51 +7,215 @@
     <title>1元云购 - 惊喜无限!</title>
     <meta name="keywords" content="1元云购,一元云购,1元夺宝,一元夺宝,1元云购官网,一元云购官网,云购网,云购" />
     <meta name="description" content="1元云购是一种全新的购物方式，是时尚、潮流的风向标，能满足个性、年轻消费者的购物需求，由深圳市一元云购网络科技有限公司注入巨资打造的新型购物网。" />
-    <link rel="stylesheet" type="text/css" href="style/css/header.css?v=170215" />
-    <link href="style/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="http://skin.1yyg.net/css/header.css?v=170215" />
     <!--[if IE 6]>
-    <script type="text/javascript" src="style/js/iepng.js"></script>
+    <script type="text/javascript" src="http://skin.1yyg.net/js/iepng.js"></script>
     <script type="text/javascript">
         EvPNG.fix('.search a.seaIcon i,.m-menu-all h3 em,.nav-cart-btn i.f-cart-icon,a.u-cart s,.u-mui-tab a.u-menus s,.u-mui-tab li.f-cart a.u-menus i,.u-mui-tab li.f-both-top a.u-menus,.u-mui-tab li.f-both-bottom a.u-menus,.i-ctrl a s,.g-list li cite,.f-list-sorts li.m-value s,.nav-main li.f-nav-thanks span,.u-float-list a i,.cartEmpty i,.transparent-png');
     </script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="style/css/index.css?date=170119" />
-    <script type="text/javascript" src="style/JS/JQuery1.12.js"></script>
-    <script type="text/javascript" id="pageJS" data="style/JS/Index.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://skin.1yyg.net/css/index.css?date=170119" />
+    <script type="text/javascript" src="http://skin.1yyg.net/JS/JQuery1.12.js"></script>
+    <script type="text/javascript" id="pageJS" data="http://skin.1yyg.net/JS/Index.js"></script>
 </head>
 <body id="loadingPicBlock" class="home" rf="1">
 <!--div class="newyear clrfix"></div-->
 <div class="wrapper">
     <!--头部-->
     <!--顶部-->
-    @include("public.head")
-    <!--头部-->
-    @include("public.header")
+    <div class="g-toolbar clrfix">
+        <div class="w1190">
+            <ul class="fl">
+                <li id="liIndex" class="f-home" style="display:none;">
+                    <div class="u-menu-hd">
+                        <a href="http://www.1yyg.com/" title="1元云购首页" class="orange">1元云购首页</a>
+                    </div>
+                </li>
+                <li class="f-gap" style="display:none;"><s></s></li>
+                <li id="liCollect">
+                    <div class="u-menu-hd">
+                        <a id="btnTFavorite" href="javascript:;" title="收藏">收藏</a>
+                    </div>
+                </li>
+                <li class="f-gap" style="display: none;"><s></s></li>
+                <li class="f-gap" style="display: none;"><s></s></li>
+                <li id="liCCTV" style="display: none;">
+                    <a href="http://www.1yyg.com/url.html?t=8" target="_blank" class="cctv-icon" title="央视网">
+                        <img src="http://skin.1yyg.net/images/cctv-icon.jpg" alt="央视网" width="80" height="35" class="cctv-icon-img">
+                        <span class="cctv-icon-txt">广告合作伙伴</span>
+                    </a>
+                </li>
+            </ul>
+            <ul id="ulTopRight" class="fr">
+                <li id="liMember" class="u-arr-1yyg" style="display: none;">
+                    <div class="u-menu-hd">
+                        <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
+                        <div class="f-top-arrow"><cite>◆</cite><b>◆</b></div>
+                    </div>
+                    <div class="u-select">
+                        <span><a href="http://member.1yyg.com/UserBuyList.do" title="云购记录">云购记录</a></span>
+                        <span><a href="http://member.1yyg.com/OrderList.do" title="获得的商品">获得的商品</a></span>
+                        <span><a href="http://member.1yyg.com/MemberModify.do" title="个人设置">个人设置</a></span>
+                    </div>
+                </li>
+                <li class="f-gap" style="display: none;"><s></s></li>
+                <li id="liHome" style="display: none;">
+                    <div class="u-menu-hd">
+                        <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
+                    </div>
+                </li>
+                <li class="f-gap" style="display: none;"><s></s></li>
+                <li id="liTopUMsg" class="u-arr-news" style="display: none;">
+                    <div class="u-menu-hd">
+                        <a href="http://member.1yyg.com/userMessage.do" title="消息">消息</a>
+                        <h3 style="display: none;"></h3>
+                        <div class="f-top-arrow"><cite>◆</cite><b>◆</b></div>
+                    </div>
+                    <div class="u-select">
+                        <span><a href="http://member.1yyg.com/UserMessage.do" title="系统消息">系统消息</a></span>
+                        <span><a href="http://member.1yyg.com/FriendsApply.do" title="好友请求">好友请求</a></span>
+                        <span><a href="http://member.1yyg.com/ReplyCommentsMsg.do" title="好友请求">评论回复</a></span>
+                        <span><a href="http://member.1yyg.com/UserPrivMsg.do" title="私信" class="f-msg">私信</a></span>
+                    </div>
+                </li>
+                <li class="f-gap" style="display: none;"><s></s></li>
+                <li id="liMobile" class="u-arr">
+                    <div class="u-menu-hd">
+                        <a target="_blank" href="http://info.1yyg.com/app/mobile.html" title="手机云购">手机云购</a>
+                        <i></i>
+                    </div>
+                    <div class="u-select">
+                        <p>下载1元云购App</p>
+                        <a target="_blank" href="http://info.1yyg.com/app/mobile.html">
+                            <img src="http://skin.1yyg.net/images/app-qrcode.jpg" alt="点击1元云购App">
+                        </a>
+                        <i class="white-sub"><i></i></i>
+                    </div>
+                </li>
+                <li class="f-gap"><s></s></li>
+                <li>
+                    <div class="u-menu-hd">
+                        <a href="http://member.1yyg.com/UserRecharge.do" title="充值">充值</a>
+                    </div>
+                </li>
+                <li class="f-gap"><s></s></li>
+                <li>
+                    <div class="u-menu-hd">
+                        <a href="http://help.1yyg.com/" title="帮助">帮助</a>
+                    </div>
+                </li>
+                <li class="f-gap"><s></s></li>
+                <li>
+                    <div class="u-menu-hd">
+                        <a href="http://help.1yyg.com/htm-contactus.html" title="投诉">投诉</a>
+                    </div>
+                </li>
+                <li class="f-gap"><s></s></li>
+                <li class="f-zxkf">
+                    <div class="u-menu-hd">
+                        <a id="btnTopQQ" href="javascript:;" title="在线客服" class="u-service-off u-service"><i></i>在线客服</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div><!--头部-->
+    <div class="g-header">
+        <div class="w1190">
+            <div id="topLogoAd" class="logo_1yyg fl">
+                <a href="http://www.1yyg.com/" class="logo transparent-png"></a>
+            </div>
+            <div class="search_cart_wrap fr">
+                <div class="number">
+                    <a href="http://www.1yyg.com/HistoryBuyRecords.html" target="_blank">
+                        <ul id="ulHTotalBuy">
+                            <li class="nobor gray6">累计参与</li>
+                            <li class="num"><cite><em>0</em></cite><i></i></li>
+                            <li class="nobor">,</li>
+                            <li class="num"><cite><em>0</em></cite><i></i></li>
+                            <li class="num"><cite><em>0</em></cite><i></i></li>
+                            <li class="num"><cite><em>0</em></cite><i></i></li>
+                            <li class="nobor">,</li>
+                            <li class="num"><cite><em>0</em></cite><i></i></li>
+                            <li class="num"><cite><em>0</em></cite><i></i></li>
+                            <li class="num"><cite><em>0</em></cite><i></i></li>
+                            <li class="nobor">,</li>
+                            <li class="num"><cite><em>0</em></cite><i></i></li>
+                            <li class="num"><cite><em>0</em></cite><i></i></li>
+                            <li class="num"><cite><em>0</em></cite><i></i></li>
+                            <li class="nobor gray6 u-secondary">人次<b><s></s></b></li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="search">
+                    <div class="form">
+                        <input id="txtHSearch" type="text" value="输入“汽车”试试"/>
+                     <span>
+                         <a href="http://www.1yyg.com/search/?q=%E6%B1%BD%E8%BD%A6" target="_blank" title="汽车">汽车</a>
+                         <a href="http://www.1yyg.com/search/?q=%E8%8B%B9%E6%9E%9C" target="_blank" title="苹果">苹果</a>
+                         <a href="http://www.1yyg.com/search/?q=%E5%B0%8F%E7%B1%B3" target="_blank" title="小米">小米</a>
+                     </span>
+                    </div>
+                    <a id="btnHSearch" href="javascript:;" class="seaIcon"><i></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--导航-->
-    @include("public.nav")
+    <div class="g-nav">
+        <div class="w1190">
+            <div id="divGoodsSort" class="g-view-con m-menu fl">
+                <div class="m-menu-all">
+                    <h3><a href="http://www.1yyg.com/list/m1.html">全部商品分类</a><em class="icons-sort"></em></h3>
+                </div>
+                <div id="divSortList" class="m-all-sort">
+                    <!--menustart--><ul class='m-all-menu'><li><div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n100.html' target='_blank' class='lvl1 none'>手机数码<b class='icons-sort'></b></a></span></p><p class='lvl2'><span class='lvl2'><a href='http://www.1yyg.com/list/n101.html' target='_blank' class='lvl2 none'>手机<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n102.html' target='_blank' class='lvl2 none'>数码<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n103.html' target='_blank' class='lvl2 none'>影音<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n104.html' target='_blank' class='lvl2 none'>耳机<b class='icons-sort'></b></a></span></p></div></div></li><li><div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n105.html' target='_blank' class='lvl1 none'>电脑办公<b class='icons-sort'></b></a></span></p><p class='lvl2'><span class='lvl2'><a href='http://www.1yyg.com/list/n106.html' target='_blank' class='lvl2 none'>平板电脑<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n107.html' target='_blank' class='lvl2 none'>笔记本<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n108.html' target='_blank' class='lvl2 none'>配件<b class='icons-sort'></b></a></span></p></div></div></li><li><div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n109.html' target='_blank' class='lvl1 none'>家用电器<b class='icons-sort'></b></a></span></p><p class='lvl2'><span class='lvl2'><a href='http://www.1yyg.com/list/n110.html' target='_blank' class='lvl2 none'>大家电<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n111.html' target='_blank' class='lvl2 none'>空调<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n112.html' target='_blank' class='lvl2 none'>电视<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n113.html' target='_blank' class='lvl2 none'>厨房<b class='icons-sort'></b></a></span></p></div></div></li><li><div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n114.html' target='_blank' class='lvl1 none'>钟表首饰<b class='icons-sort'></b></a></span></p><p class='lvl2'><span class='lvl2'><a href='http://www.1yyg.com/list/n115.html' target='_blank' class='lvl2 none'>珠宝<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n116.html' target='_blank' class='lvl2 none'>实物黄金<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n117.html' target='_blank' class='lvl2 none'>金银条<b class='icons-sort'></b></a></span></p></div></div></li><li><div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n118.html' target='_blank' class='lvl1 none'>食品饮料<b class='icons-sort'></b></a></span></p><p class='lvl2'><span class='lvl2'><a href='http://www.1yyg.com/list/n119.html' target='_blank' class='lvl2 none'>美食<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n120.html' target='_blank' class='lvl2 none'>粮油<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n121.html' target='_blank' class='lvl2 none'>饮料<b class='icons-sort'></b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n122.html' target='_blank' class='lvl2 none'>酒类<b class='icons-sort'></b></a></span></p></div></div></li><li><div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n123.html' target='_blank' class='lvl1 none'>化妆个护<b class='icons-sort'></b></a></span><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n124.html' target='_blank' class='lvl1 none'>运动户外<b class='icons-sort'></b></a></span></p><p class='lvl2'></p></div></div></li><li><div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n125.html' target='_blank' class='lvl1 none'>家居家纺<b class='icons-sort'></b></a></span><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n126.html' target='_blank' class='lvl1 none'>礼品箱包<b class='icons-sort'></b></a></span></p><p class='lvl2'></p></div></div></li><li><div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n127.html' target='_blank' class='lvl1 none'>母婴<b class='icons-sort'></b></a></span></p><p class='lvl2'></p></div></div></li><li><div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n128.html' target='_blank' class='lvl1 none'>汽车<b class='icons-sort'></b></a></span><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n129.html' target='_blank' class='lvl1 none'>房子<b class='icons-sort'></b></a></span></p><p class='lvl2'></p></div></div></li><li><div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i><a href='http://www.1yyg.com/list/n130.html' target='_blank' class='lvl1 none'>其他商品<b class='icons-sort'></b></a></span></p><p class='lvl2'></p></div></div></li></ul><!--menuend-->
+                </div>
+            </div>
+            <div class="nav-main fl">
+                <ul>
+                    <li class="f-nav-home"><a href="http://www.1yyg.com/">首页</a></li>
+                    <li class="f-nav-lottery"><a href="http://www.1yyg.com/lottery/m1.html">最新揭晓</a></li>
+                    <li class="f-nav-limit"><span class="nav-new transparent-png"></span><a href="http://www.1yyg.com/limitBuy/m1.html">限购专区</a></li>
+                    <li class="f-nav-share"><a href="http://post.1yyg.com/">晒单分享</a></li>
+                    <li class="f-nav-group"><a href="http://group.1yyg.com/">云购圈</a></li>
+                    <li class="f-nav-guide"><a href="http://help.1yyg.com/info/newbie/index.html">新手指南</a></li>
+                </ul>
+            </div>
+            <div id="divHCart" class="nav-cart fr">
+                <div class="nav-cart-btn">
+                    <a href="http://cart.1yyg.com/CartList.do" target="_blank"><i class="f-cart-icon"></i>购物车<span id="spHCart"></span></a>
+                </div>
+                <div class="nav-cart-con">
+                    <div class="m-loading-2014"><em></em></div>
+                    <div class="nav-car-cartEmpty"><i></i>您的购物车为空 !</div>
+                    <div class="nav-cart-select"></div>
+                    <div class="nav-cart-pay"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--内容-->
     <div class="g-content clrfix">
         <div class="w1190">
             <div class="home-banner fl">
-                {{--轮播图，一大堆--}}
                 <div id="div_slide" class="slide-scroll">
                     <div id="div_guide" class="m-guide-con" style="display: none;">
                         <div class="m-guideBg"></div>
                         <div class="m-guide">
                             <ul id="ul_guide">
                                 <li class="f-step1"><a href="javascript:;" title="30秒了解"></a>
-                                    <img src="style/images/step_01.gif?v=141113" /></li>
+                                    <img src="http://skin.1yyg.net/images/step_01.gif?v=141113" /></li>
                                 <li class="f-step2"><a href="javascript:;" title="下一步"></a>
-                                    <img src="style/images/step_02.gif?v=141113" /></li>
+                                    <img src="http://skin.1yyg.net/images/step_02.gif?v=141113" /></li>
                                 <li class="f-step3"><a href="javascript:;" title="下一步"></a>
-                                    <img src="style/images/step_03.gif?v=141113" /></li>
+                                    <img src="http://skin.1yyg.net/images/step_03.gif?v=141113" /></li>
                                 <li class="f-step4"><a href="javascript:;" title="下一步"></a>
-                                    <img src="style/images/step_04.gif?v=141113" /></li>
+                                    <img src="http://skin.1yyg.net/images/step_04.gif?v=141113" /></li>
                                 <li class="f-step5"><a href="javascript:;" title="下一步"></a>
-                                    <img src="style/images/step_05.gif?v=141113" /></li>
+                                    <img src="http://skin.1yyg.net/images/step_05.gif?v=141113" /></li>
                                 <li class="f-step6"><a href="http://help.1yyg.com/info/newbie/index.html" target="_blank" title="继续了解详情"></a>
-                                    <img src="style/images/step_06.gif?v=141113" /></li>
+                                    <img src="http://skin.1yyg.net/images/step_06.gif?v=141113" /></li>
                             </ul>
                             <a id="guide_close" href="javascript:;" class="m-guide-close" title="关闭"></a>
                         </div>
@@ -59,55 +224,21 @@
                             <a id="guide_next" href="javascript:;" class="u-guide-next"><s></s></a>
                         </div>
                     </div>
-                    {{--轮播图--}}
-                    <div style="width:700px;height:50px;padding-left: 5px;" align="center">
-
-                        <ul id="flexiselDemo1">
-
-                            <li>
-                                <a href="####"><img src="style/images/g1.jpg" alt="" width="5" height="100%" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="####"><img src="style/images/g2.jpg" alt="" width="5" height="100%" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="####"><img src="style/images/g3.jpg" alt="" width="5" height="100%" />
-                                </a>
-                            </li>
-
-                        </ul>
+                    <div class="pic-wrapper">
+                        <div class="slide-scroll-con">
+                            <ul id="slideImg">
+                                <li class="m-loading-2014"><b></b></li>
+                            </ul>
+                        </div>
                     </div>
-
+                    <div class="i-ctrl">
+                        <a id="ctrl_prev" href="javascript:;" class="ctrl-prev" style="display: none;"><s></s></a>
+                        <a id="ctrl_next" href="javascript:;" class="ctrl-next" style="display: none;"><s></s></a>
+                    </div>
+                    <div class="handle-box">
+                        <ul id="handle_box"></ul>
+                    </div>
                 </div>
-                <script type="text/javascript">
-                    $(window).load(function() {
-                        $("#flexiselDemo1").flexisel({
-                            visibleItems: 1,
-                            animationSpeed: 500,
-                            autoPlay: true,
-                            autoPlaySpeed: 3000,
-                            pauseOnHover:true,
-                            enableResponsiveBreakpoints: true,
-                            responsiveBreakpoints: {
-                                portrait: {
-                                    changePoint:480,
-                                    visibleItems: 1
-                                },
-                                landscape: {
-                                    changePoint:640,
-                                    visibleItems: 2
-                                },
-                                tablet: {
-                                    changePoint:768,
-                                    visibleItems: 3
-                                }
-                            }
-                        });
-                    });
-                </script>
-                <script type="text/javascript"  src="style/js/jquery.flexisel.js"></script>
 
                 <!--广告位下方推荐-->
                 <div class="slide-comd">
@@ -116,14 +247,13 @@
                     <div class="commodity">
                         <ul>
                             <li class="comm-info fl">
-                                <span><a href="http://www.1yyg.com/products/22592.html" target="_blank" title="苹果（Apple）iMac MK462CH/A 27英寸一体电脑">苹果（Apple）iMac MK462CH/A 27英寸一体电脑</a></span>
-                                <p class="gray">已参与<em class="orange">858</em>人次</p>
+                                <span><a href="http://www.1yyg.com/products/23784.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）">苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）</a></span>
+                                <p class="gray">已参与<em class="orange">1121</em>人次</p>
                             </li>
-                            <li class="comm-pic fr">
-                                <a href="http://www.1yyg.com/products/22592.html" target="_blank" title="苹果（Apple）iMac MK462CH/A 27英寸一体电脑" rel="nofollow">
+                            <li class="comm-pic fr"><a href="http://www.1yyg.com/products/23784.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）" rel="nofollow">
                                     <cite>
-                                        <img alt="苹果（Apple）iMac MK462CH/A 27英寸一体电脑" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160511140647469.jpg" border="0" width="100" height="100">
-                                    </cite>
+                                        <img alt="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）" src="http://img.1yyg.net/GoodsPic/pic-200-200/20170122144823912.jpg" border="0" width="100" height="100"></cite>
+
                                 </a>
                             </li>
                         </ul>
@@ -132,12 +262,12 @@
                     <div class="commodity">
                         <ul>
                             <li class="comm-info fl">
-                                <span><a href="http://www.1yyg.com/products/23499.html" target="_blank" title="苹果（Apple）iPhone 6s 32G版 4G手机">苹果（Apple）iPhone 6s 32G版 4G手机</a></span>
-                                <p class="gray">已参与<em class="orange">15</em>人次</p>
+                                <span><a href="http://www.1yyg.com/products/22592.html" target="_blank" title="苹果（Apple）iMac MK462CH/A 27英寸一体电脑">苹果（Apple）iMac MK462CH/A 27英寸一体电脑</a></span>
+                                <p class="gray">已参与<em class="orange">4244</em>人次</p>
                             </li>
-                            <li class="comm-pic fr"><a href="http://www.1yyg.com/products/23499.html" target="_blank" title="苹果（Apple）iPhone 6s 32G版 4G手机" rel="nofollow">
+                            <li class="comm-pic fr"><a href="http://www.1yyg.com/products/22592.html" target="_blank" title="苹果（Apple）iMac MK462CH/A 27英寸一体电脑" rel="nofollow">
                                     <cite>
-                                        <img alt="苹果（Apple）iPhone 6s 32G版 4G手机" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160926172337982.jpg" border="0" width="100" height="100"></cite>
+                                        <img alt="苹果（Apple）iMac MK462CH/A 27英寸一体电脑" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160511140647469.jpg" border="0" width="100" height="100"></cite>
 
                                 </a>
                             </li>
@@ -149,7 +279,7 @@
             <div class="home-event fr">
                 <div class="what-1yyg">
                     <a id="what_1yyg" href="javascript:void(0);" title="什么是1元云购？30秒了解">
-                        <img src="style/images/index-come.gif" alt="" /></a>
+                        <img src="http://skin.1yyg.net/images/index-come.gif" alt="" /></a>
                 </div>
                 <div class="honesty">
                     <ul>
@@ -186,7 +316,7 @@
                 <a href="http://www.1yyg.com/map.html" target="_blank" title="看看附近都有谁获得了商品？"><em></em>看看附近都有谁获得了商品？</a>
             </div>
             <div class="fr z-total">
-                <a href="/lottery/m1.html" target="_blank">共揭晓商品&nbsp;<em id="em_lotcount" class="orange">9137279</em>&nbsp;个&nbsp;<i class="f-tran">>></i></a>
+                <a href="/lottery/m1.html" target="_blank">共揭晓商品&nbsp;<em id="em_lotcount" class="orange">9115758</em>&nbsp;个&nbsp;<i class="f-tran">>></i></a>
             </div>
         </div>
         <div class="g-list clrfix">
@@ -195,85 +325,85 @@
 
                 <li >
                     <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10159769.html" target="_blank" title="加多宝 凉茶 310mlx12罐 整箱装" rel="nofollow">
-                                <img alt="加多宝 凉茶 310mlx12罐 整箱装" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160418162459140.jpg" /></a></dt>
+                        <dt><a href="http://www.1yyg.com/lottery/10190214.html" target="_blank" title="美的（Midea）FS4088IH 4L 电磁加热电饭锅" rel="nofollow">
+                                <img alt="美的（Midea）FS4088IH 4L 电磁加热电饭锅" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160928151608127.jpg" /></a></dt>
                         <dd class="f-gx">
                             <div class="f-gx-user">
                                 <span>恭喜</span>
-                                <span class="blue"><a href="http://u.1yyg.com/1015197922" target="_blank" title="恭喜-本云获得者" class="blue">恭喜-本云获得者</a></span>
+                                <span class="blue"><a href="http://u.1yyg.com/1015654969" target="_blank" title="云购我愿为你宣传" class="blue">云购我愿为你宣传</a></span>
                                 <span>获得</span>
                             </div>
                         </dd>
-                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10159769.html" target="_blank" title="(第80018云)加多宝 凉茶 310mlx12罐 整箱装">(第80018云)加多宝 凉茶 310mlx12罐 整箱装</a></dd>
-                        <dd class="gray">广东省深圳市</dd>
+                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10190214.html" target="_blank" title="(第1344云)美的（Midea）FS4088IH 4L 电磁加热电饭锅">(第1344云)美的（Midea）FS4088IH 4L 电磁加热电饭锅</a></dd>
+                        <dd class="gray">江苏省南京市</dd>
                     </dl>
                     <cite></cite>
                 </li>
 
                 <li >
                     <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10597250.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 128G版 4G手机" rel="nofollow">
-                                <img alt="苹果（Apple）iPhone 7 Plus 128G版 4G手机" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160908092215288.jpg" /></a></dt>
+                        <dt><a href="http://www.1yyg.com/lottery/10573534.html" target="_blank" title="珍膳 泰国茉莉香米 5kg 泰国进口" rel="nofollow">
+                                <img alt="珍膳 泰国茉莉香米 5kg 泰国进口" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160108151625236.jpg" /></a></dt>
                         <dd class="f-gx">
                             <div class="f-gx-user">
                                 <span>恭喜</span>
-                                <span class="blue"><a href="http://u.1yyg.com/1016474878" target="_blank" title="座看云起水中中中" class="blue">座看云起水中中中</a></span>
+                                <span class="blue"><a href="http://u.1yyg.com/1013052340" target="_blank" title="恭喜金兴中大奖" class="blue">恭喜金兴中大奖</a></span>
                                 <span>获得</span>
                             </div>
                         </dd>
-                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10597250.html" target="_blank" title="(第131348云)苹果（Apple）iPhone 7 Plus 128G版 4G手机">(第131348云)苹果（Apple）iPhone 7 Plus 128G版 4G手机</a></dd>
-                        <dd class="gray">福建省南平市</dd>
+                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10573534.html" target="_blank" title="(第39917云)珍膳 泰国茉莉香米 5kg 泰国进口">(第39917云)珍膳 泰国茉莉香米 5kg 泰国进口</a></dd>
+                        <dd class="gray">广东省揭阳市</dd>
                     </dl>
                     <cite></cite>
                 </li>
 
                 <li >
                     <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10582257.html" target="_blank" title="金龙鱼 优质东北大米 5kg" rel="nofollow">
-                                <img alt="金龙鱼 优质东北大米 5kg" src="http://img.1yyg.net/GoodsPic/pic-200-200/20150708112557251.jpg" /></a></dt>
+                        <dt><a href="http://www.1yyg.com/lottery/10573853.html" target="_blank" title="中国黄金 金元宝 Au9999 100g" rel="nofollow">
+                                <img alt="中国黄金 金元宝 Au9999 100g" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160526155549842.jpg" /></a></dt>
                         <dd class="f-gx">
                             <div class="f-gx-user">
                                 <span>恭喜</span>
-                                <span class="blue"><a href="http://u.1yyg.com/1008292755" target="_blank" title="为老婆赢宝马" class="blue">为老婆赢宝马</a></span>
+                                <span class="blue"><a href="http://u.1yyg.com/1016333634" target="_blank" title="绝望边缘求云狗给生路" class="blue">绝望边缘求云狗给生路</a></span>
                                 <span>获得</span>
                             </div>
                         </dd>
-                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10582257.html" target="_blank" title="(第268690云)金龙鱼 优质东北大米 5kg">(第268690云)金龙鱼 优质东北大米 5kg</a></dd>
-                        <dd class="gray">广东省汕头市</dd>
+                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10573853.html" target="_blank" title="(第5264云)中国黄金 金元宝 Au9999 100g">(第5264云)中国黄金 金元宝 Au9999 100g</a></dd>
+                        <dd class="gray">福建省莆田市</dd>
                     </dl>
                     <cite></cite>
                 </li>
 
                 <li >
                     <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10232478.html" target="_blank" title="湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" rel="nofollow">
-                                <img alt="湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160518173845632.jpg" /></a></dt>
+                        <dt><a href="http://www.1yyg.com/lottery/10571393.html" target="_blank" title="中国黄金 薄片财富金条 Au9999 2g" rel="nofollow">
+                                <img alt="中国黄金 薄片财富金条 Au9999 2g" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160718164454605.jpg" /></a></dt>
                         <dd class="f-gx">
                             <div class="f-gx-user">
                                 <span>恭喜</span>
-                                <span class="blue"><a href="http://u.1yyg.com/1009753741" target="_blank" title="希望在购" class="blue">希望在购</a></span>
+                                <span class="blue"><a href="http://u.1yyg.com/1015487240" target="_blank" title="离开才是聪明的" class="blue">离开才是聪明的</a></span>
                                 <span>获得</span>
                             </div>
                         </dd>
-                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10232478.html" target="_blank" title="(第19171云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口">(第19171云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口</a></dd>
-                        <dd class="gray">广东省广州市</dd>
+                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10571393.html" target="_blank" title="(第43989云)中国黄金 薄片财富金条 Au9999 2g">(第43989云)中国黄金 薄片财富金条 Au9999 2g</a></dd>
+                        <dd class="gray">山东省临沂市</dd>
                     </dl>
                     <cite></cite>
                 </li>
 
                 <li class="col5">
                     <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10594574.html" target="_blank" title="苹果（Apple）iPhone 6s 32G版 4G手机" rel="nofollow">
-                                <img alt="苹果（Apple）iPhone 6s 32G版 4G手机" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160926172337982.jpg" /></a></dt>
+                        <dt><a href="http://www.1yyg.com/lottery/10581930.html" target="_blank" title="平安银行 平安金福金条 Au9999 2g" rel="nofollow">
+                                <img alt="平安银行 平安金福金条 Au9999 2g" src="http://img.1yyg.net/GoodsPic/pic-200-200/20170116152350070.jpg" /></a></dt>
                         <dd class="f-gx">
                             <div class="f-gx-user">
                                 <span>恭喜</span>
-                                <span class="blue"><a href="http://u.1yyg.com/1012193428" target="_blank" title="这期不中再也不买Y" class="blue">这期不中再也不买Y</a></span>
+                                <span class="blue"><a href="http://u.1yyg.com/1010202979" target="_blank" title="就让我回本吧" class="blue">就让我回本吧</a></span>
                                 <span>获得</span>
                             </div>
                         </dd>
-                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10594574.html" target="_blank" title="(第196885云)苹果（Apple）iPhone 6s 32G版 4G手机">(第196885云)苹果（Apple）iPhone 6s 32G版 4G手机</a></dd>
-                        <dd class="gray">中国</dd>
+                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10581930.html" target="_blank" title="(第323986云)平安银行 平安金福金条 Au9999 2g">(第323986云)平安银行 平安金福金条 Au9999 2g</a></dd>
+                        <dd class="gray">广东省广州市</dd>
                     </dl>
                     <cite></cite>
                 </li>
@@ -290,434 +420,137 @@
         </div>
         <div class="g-hot clrfix">
             <div class="g-hotL fl" id="divHotGoodsList">
-<<<<<<< HEAD
-
-
-                <div class="g-hotL-list" goodsid="23458">
-                    <div class="g-hotL-con">
-                        <ul>
-                            <li class="g-hot-pic">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">
-                                    <img src="http://img.1yyg.net/goodspic/pic-200-200/20160908092215288.jpg" alt="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" name="goodsImg">
-                                </a>
-                            </li>
-                            <li class="g-hot-name">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">(第132284云)&nbsp;苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
-                            </li>
-                            <li class="gray">价值：￥7188.00</li>
-                            <li class="g-progress">
-                                <dl class="m-progress">
-                                    <dt title="已完成1%">
-                                        <b style="width:1%;"></b>
-                                    </dt>
-                                    <dd>
-                                        <span class="orange fl">
-                                            <em>12</em>已参与
-                                        </span>
-                                        <span class="gray6 fl">
-                                            <em>7188</em>总需人次
-                                        </span>
-                                        <span class="blue fr">
-                                            <em>7176</em>剩余
-                                        </span>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <a id="btnHotYgOnePay0" title="立即1元云购" class="u-imm" href="javascript:;">立即1元云购</a>
-                                <a class="u-cart" codeid="10607190" title="加入到购物车" href="javascript:;">
-                                    <s></s>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div codeid="10607190" style="top:169px;" class="u_buyCount"></div>
-                </div>
-                <div class="g-hotL-list" goodsid="23458">
-=======
                 <div goodsid="23458" class="g-hotL-list g-hotL-hover"><div class="g-hotL-con"><ul><li class="g-hot-pic"><a href="products/23458.html" target="_blank" title="(第132817云)苹果（Apple）iPhone 7 Plus 128G版 4G手机"><img name="goodsImg" alt="(第132817云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" src="http://img.1yyg.net/goodspic/pic-200-200/20160908092215288.jpg"></a></li><li class="g-hot-name"><a href="products/23458.html" target="_blank" title="(第132817云)苹果（Apple）iPhone 7 Plus 128G版 4G手机">(第132817云)&nbsp;苹果（Apple）iPhone 7 Plus 128G版 4G手机</a></li><li class="gray">价值：￥7188.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成76.92%"><b style="width:76.92%;"></b></dt><dd><span class="orange fl"><em>5529</em>已参与</span><span class="gray6 fl"><em>7188</em>总需人次</span><span class="blue fr"><em>1659</em>剩余</span></dd></dl></li><li><a href="javascript:;" class="u-imm" title="立即1元云购" id="btnHotYgOnePay0">立即1元云购</a><a href="javascript:;" title="加入到购物车" codeid="10611410" class="u-cart"><s></s></a></li></ul></div><div class="u_buyCount" style="top:169px;" codeid="10611410"></div></div>
                 <div class="g-hotL-list">
->>>>>>> c9c8897517759dded84a4e2770c10a4cdb3abd6a
                     <div class="g-hotL-con">
-                        <ul>
-                            <li class="g-hot-pic">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">
-                                    <img src="http://img.1yyg.net/goodspic/pic-200-200/20160908092215288.jpg" alt="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" name="goodsImg">
-                                </a>
-                            </li>
-                            <li class="g-hot-name">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">(第132284云)&nbsp;苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
-                            </li>
-                            <li class="gray">价值：￥7188.00</li>
-                            <li class="g-progress">
-                                <dl class="m-progress">
-                                    <dt title="已完成1%">
-                                        <b style="width:1%;"></b>
-                                    </dt>
-                                    <dd>
-                                        <span class="orange fl">
-                                            <em>12</em>已参与
-                                        </span>
-                                        <span class="gray6 fl">
-                                            <em>7188</em>总需人次
-                                        </span>
-                                        <span class="blue fr">
-                                            <em>7176</em>剩余
-                                        </span>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <a id="btnHotYgOnePay0" title="立即1元云购" class="u-imm" href="javascript:;">立即1元云购</a>
-                                <a class="u-cart" codeid="10607190" title="加入到购物车" href="javascript:;">
-                                    <s></s>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="u-loading"><em></em></div>
                     </div>
-                    <div codeid="10607190" style="top:169px;" class="u_buyCount"></div>
                 </div>
-                <div class="g-hotL-list" goodsid="23458">
+                <div class="g-hotL-list">
                     <div class="g-hotL-con">
-                        <ul>
-                            <li class="g-hot-pic">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">
-                                    <img src="http://img.1yyg.net/goodspic/pic-200-200/20160908092215288.jpg" alt="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" name="goodsImg">
-                                </a>
-                            </li>
-                            <li class="g-hot-name">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">(第132284云)&nbsp;苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
-                            </li>
-                            <li class="gray">价值：￥7188.00</li>
-                            <li class="g-progress">
-                                <dl class="m-progress">
-                                    <dt title="已完成1%">
-                                        <b style="width:1%;"></b>
-                                    </dt>
-                                    <dd>
-                                        <span class="orange fl">
-                                            <em>12</em>已参与
-                                        </span>
-                                        <span class="gray6 fl">
-                                            <em>7188</em>总需人次
-                                        </span>
-                                        <span class="blue fr">
-                                            <em>7176</em>剩余
-                                        </span>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <a id="btnHotYgOnePay0" title="立即1元云购" class="u-imm" href="javascript:;">立即1元云购</a>
-                                <a class="u-cart" codeid="10607190" title="加入到购物车" href="javascript:;">
-                                    <s></s>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="u-loading"><em></em></div>
                     </div>
-                    <div codeid="10607190" style="top:169px;" class="u_buyCount"></div>
                 </div>
-                <div class="g-hotL-list" goodsid="23458">
+                <div class="g-hotL-list">
                     <div class="g-hotL-con">
-                        <ul>
-                            <li class="g-hot-pic">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">
-                                    <img src="http://img.1yyg.net/goodspic/pic-200-200/20160908092215288.jpg" alt="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" name="goodsImg">
-                                </a>
-                            </li>
-                            <li class="g-hot-name">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">(第132284云)&nbsp;苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
-                            </li>
-                            <li class="gray">价值：￥7188.00</li>
-                            <li class="g-progress">
-                                <dl class="m-progress">
-                                    <dt title="已完成1%">
-                                        <b style="width:1%;"></b>
-                                    </dt>
-                                    <dd>
-                                        <span class="orange fl">
-                                            <em>12</em>已参与
-                                        </span>
-                                        <span class="gray6 fl">
-                                            <em>7188</em>总需人次
-                                        </span>
-                                        <span class="blue fr">
-                                            <em>7176</em>剩余
-                                        </span>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <a id="btnHotYgOnePay0" title="立即1元云购" class="u-imm" href="javascript:;">立即1元云购</a>
-                                <a class="u-cart" codeid="10607190" title="加入到购物车" href="javascript:;">
-                                    <s></s>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="u-loading"><em></em></div>
                     </div>
-                    <div codeid="10607190" style="top:169px;" class="u_buyCount"></div>
                 </div>
-                <div class="g-hotL-list" goodsid="23458">
+                <div class="g-hotL-list">
                     <div class="g-hotL-con">
-                        <ul>
-                            <li class="g-hot-pic">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">
-                                    <img src="http://img.1yyg.net/goodspic/pic-200-200/20160908092215288.jpg" alt="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" name="goodsImg">
-                                </a>
-                            </li>
-                            <li class="g-hot-name">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">(第132284云)&nbsp;苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
-                            </li>
-                            <li class="gray">价值：￥7188.00</li>
-                            <li class="g-progress">
-                                <dl class="m-progress">
-                                    <dt title="已完成1%">
-                                        <b style="width:1%;"></b>
-                                    </dt>
-                                    <dd>
-                                        <span class="orange fl">
-                                            <em>12</em>已参与
-                                        </span>
-                                        <span class="gray6 fl">
-                                            <em>7188</em>总需人次
-                                        </span>
-                                        <span class="blue fr">
-                                            <em>7176</em>剩余
-                                        </span>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <a id="btnHotYgOnePay0" title="立即1元云购" class="u-imm" href="javascript:;">立即1元云购</a>
-                                <a class="u-cart" codeid="10607190" title="加入到购物车" href="javascript:;">
-                                    <s></s>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="u-loading"><em></em></div>
                     </div>
-                    <div codeid="10607190" style="top:169px;" class="u_buyCount"></div>
                 </div>
-                <div class="g-hotL-list" goodsid="23458">
+                <div class="g-hotL-list">
                     <div class="g-hotL-con">
-                        <ul>
-                            <li class="g-hot-pic">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">
-                                    <img src="http://img.1yyg.net/goodspic/pic-200-200/20160908092215288.jpg" alt="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" name="goodsImg">
-                                </a>
-                            </li>
-                            <li class="g-hot-name">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">(第132284云)&nbsp;苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
-                            </li>
-                            <li class="gray">价值：￥7188.00</li>
-                            <li class="g-progress">
-                                <dl class="m-progress">
-                                    <dt title="已完成1%">
-                                        <b style="width:1%;"></b>
-                                    </dt>
-                                    <dd>
-                                        <span class="orange fl">
-                                            <em>12</em>已参与
-                                        </span>
-                                        <span class="gray6 fl">
-                                            <em>7188</em>总需人次
-                                        </span>
-                                        <span class="blue fr">
-                                            <em>7176</em>剩余
-                                        </span>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <a id="btnHotYgOnePay0" title="立即1元云购" class="u-imm" href="javascript:;">立即1元云购</a>
-                                <a class="u-cart" codeid="10607190" title="加入到购物车" href="javascript:;">
-                                    <s></s>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="u-loading"><em></em></div>
                     </div>
-                    <div codeid="10607190" style="top:169px;" class="u_buyCount"></div>
                 </div>
-                <div class="g-hotL-list g-hotL-hover" goodsid="23458">
+                <div class="g-hotL-list">
                     <div class="g-hotL-con">
-                        <ul>
-                            <li class="g-hot-pic">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">
-                                    <img src="http://img.1yyg.net/goodspic/pic-200-200/20160908092215288.jpg" alt="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" name="goodsImg">
-                                </a>
-                            </li>
-                            <li class="g-hot-name">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">(第132284云)&nbsp;苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
-                            </li>
-                            <li class="gray">价值：￥7188.00</li>
-                            <li class="g-progress">
-                                <dl class="m-progress">
-                                    <dt title="已完成1%">
-                                        <b style="width:1%;"></b>
-                                    </dt>
-                                    <dd>
-                                        <span class="orange fl">
-                                            <em>12</em>已参与
-                                        </span>
-                                        <span class="gray6 fl">
-                                            <em>7188</em>总需人次
-                                        </span>
-                                        <span class="blue fr">
-                                            <em>7176</em>剩余
-                                        </span>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <a id="btnHotYgOnePay0" title="立即1元云购" class="u-imm" href="javascript:;">立即1元云购</a>
-                                <a class="u-cart" codeid="10607190" title="加入到购物车" href="javascript:;">
-                                    <s></s>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="u-loading"><em></em></div>
                     </div>
-                    <div codeid="10607190" style="top:169px;" class="u_buyCount"></div>
                 </div>
-                <div class="g-hotL-list g-hotL-hover" goodsid="23458">
+                <div class="g-hotL-list">
                     <div class="g-hotL-con">
-                        <ul>
-                            <li class="g-hot-pic">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">
-                                    <img src="http://img.1yyg.net/goodspic/pic-200-200/20160908092215288.jpg" alt="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" name="goodsImg">
-                                </a>
-                            </li>
-                            <li class="g-hot-name">
-                                <a title="(第132284云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" target="_blank" href="products/23458.html">(第132284云)&nbsp;苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
-                            </li>
-                            <li class="gray">价值：￥7188.00</li>
-                            <li class="g-progress">
-                                <dl class="m-progress">
-                                    <dt title="已完成1%">
-                                        <b style="width:1%;"></b>
-                                    </dt>
-                                    <dd>
-                                        <span class="orange fl">
-                                            <em>12</em>已参与
-                                        </span>
-                                        <span class="gray6 fl">
-                                            <em>7188</em>总需人次
-                                        </span>
-                                        <span class="blue fr">
-                                            <em>7176</em>剩余
-                                        </span>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <a id="btnHotYgOnePay0" title="立即1元云购" class="u-imm" href="javascript:;">立即1元云购</a>
-                                <a class="u-cart" codeid="10607190" title="加入到购物车" href="javascript:;">
-                                    <s></s>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="u-loading"><em></em></div>
                     </div>
-                    <div codeid="10607190" style="top:169px;" class="u_buyCount"></div>
                 </div>
-
-
-
             </div>
-
-
-            {{--正在云够--}}
             <div class="g-hotR fr">
                 <div class="u-are">正在云购</div>
                 <div class="g-zzyging">
-                    <input name="hidBuyID" type="hidden" id="hidBuyID" value="923284212" />
+                    <input name="hidBuyID" type="hidden" id="hidBuyID" value="922111802" />
                     <ul id="UserBuyNewList">
 
 
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1014327156" target="_blank" rel="nofollow" title="将军来领取大奖了">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20170218211739482.jpg" /><i class="transparent-png"></i></a></span>
+                                        <span class="fl"><a href="http://u.1yyg.com/1015923714" target="_blank" rel="nofollow" title="一入YG深似海嗨">
+                                                <img alt="" src="http://img.1yyg.net/UserFace/20170221085241644.jpg" /><i class="transparent-png"></i></a></span>
                             <p>
-                                <a href="http://u.1yyg.com/1014327156" target="_blank" title="将军来领取大奖了" class="blue">将军来领取大奖了</a><br />
-                                <a href="http://www.1yyg.com/product/10598403.html" target="_blank" title="平安银行 平安金福金条 Au9999 2g" class="u-ongoing">平安银行 平安金福金条 Au9999 2g</a>
+                                <a href="http://u.1yyg.com/1015923714" target="_blank" title="一入YG深似海嗨" class="blue">一入YG深似海嗨</a><br />
+                                <a href="http://www.1yyg.com/product/10508669.html" target="_blank" title="三星（Samsung）Galaxy S7 edge（SM-G9350）64GB 全网通 4G手机" class="u-ongoing">三星（Samsung）Galaxy S7 edge（SM-G9350）64GB 全网通 4G手机</a>
                             </p>
                         </li>
 
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1001693040" target="_blank" rel="nofollow" title="最后一搏凯迪拉克">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160629000326622.jpg" /><i class="transparent-png"></i></a></span>
+                                        <span class="fl"><a href="http://u.1yyg.com/1016456873" target="_blank" rel="nofollow" title="YG来个安慰奖">
+                                                <img alt="" src="http://img.1yyg.net/UserFace/20161209214159751.jpg" /><i class="transparent-png"></i></a></span>
                             <p>
-                                <a href="http://u.1yyg.com/1001693040" target="_blank" title="最后一搏凯迪拉克" class="blue">最后一搏凯迪拉克</a><br />
-                                <a href="http://www.1yyg.com/product/10333404.html" target="_blank" title="凯迪拉克 ATS-L 2016款 28T 技术型轿车" class="u-ongoing">凯迪拉克 ATS-L 2016款 28T 技术型轿车</a>
+                                <a href="http://u.1yyg.com/1016456873" target="_blank" title="YG来个安慰奖" class="blue">YG来个安慰奖</a><br />
+                                <a href="http://www.1yyg.com/product/10531987.html" target="_blank" title="爱玛（AIMA）酷派系列 雪豹电动车" class="u-ongoing">爱玛（AIMA）酷派系列 雪豹电动车</a>
                             </p>
                         </li>
 
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1001693040" target="_blank" rel="nofollow" title="最后一搏凯迪拉克">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160629000326622.jpg" /><i class="transparent-png"></i></a></span>
+                                        <span class="fl"><a href="http://u.1yyg.com/1016456873" target="_blank" rel="nofollow" title="YG来个安慰奖">
+                                                <img alt="" src="http://img.1yyg.net/UserFace/20161209214159751.jpg" /><i class="transparent-png"></i></a></span>
                             <p>
-                                <a href="http://u.1yyg.com/1001693040" target="_blank" title="最后一搏凯迪拉克" class="blue">最后一搏凯迪拉克</a><br />
-                                <a href="http://www.1yyg.com/product/9443418.html" target="_blank" title="平安银行 平安金元宝 Au9999 200g" class="u-ongoing">平安银行 平安金元宝 Au9999 200g</a>
+                                <a href="http://u.1yyg.com/1016456873" target="_blank" title="YG来个安慰奖" class="blue">YG来个安慰奖</a><br />
+                                <a href="http://www.1yyg.com/product/10195063.html" target="_blank" title="悠骑（JQ）新悠美款 12寸锂电折叠电动车自行车" class="u-ongoing">悠骑（JQ）新悠美款 12寸锂电折叠电动车自行车</a>
                             </p>
                         </li>
 
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
+                                        <span class="fl"><a href="http://u.1yyg.com/1015359864" target="_blank" rel="nofollow" title="无fuck说">
+                                                <img alt="" src="http://img.1yyg.net/UserFace/20170112210607426.jpg" /><i class="transparent-png"></i></a></span>
                             <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10581839.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 128G版 4G手机" class="u-ongoing">苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
+                                <a href="http://u.1yyg.com/1015359864" target="_blank" title="无fuck说" class="blue">无fuck说</a><br />
+                                <a href="http://www.1yyg.com/product/10575715.html" target="_blank" title="苹果（Apple）iPhone 6s 32G版 4G手机" class="u-ongoing">苹果（Apple）iPhone 6s 32G版 4G手机</a>
                             </p>
                         </li>
 
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
+                                        <span class="fl"><a href="http://u.1yyg.com/1012982640" target="_blank" rel="nofollow" title="云总打个电话来吧">
+                                                <img alt="" src="http://img.1yyg.net/UserFace/20170221001245474.jpg" /><i class="transparent-png"></i></a></span>
                             <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10566619.html" target="_blank" title="伊利 原味优酸乳 250mlx24盒 整箱装" class="u-ongoing">伊利 原味优酸乳 250mlx24盒 整箱装</a>
+                                <a href="http://u.1yyg.com/1012982640" target="_blank" title="云总打个电话来吧" class="blue">云总打个电话来吧</a><br />
+                                <a href="http://www.1yyg.com/product/10579898.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 128G版 4G手机" class="u-ongoing">苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
                             </p>
                         </li>
 
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
+                                        <span class="fl"><a href="http://u.1yyg.com/1012982640" target="_blank" rel="nofollow" title="云总打个电话来吧">
+                                                <img alt="" src="http://img.1yyg.net/UserFace/20170221001245474.jpg" /><i class="transparent-png"></i></a></span>
                             <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10499493.html" target="_blank" title="创维（Skyworth）G7 55英寸 4K超高清智能网络液晶平板电视" class="u-ongoing">创维（Skyworth）G7 55英寸 4K超高清智能网络液晶平板电视</a>
+                                <a href="http://u.1yyg.com/1012982640" target="_blank" title="云总打个电话来吧" class="blue">云总打个电话来吧</a><br />
+                                <a href="http://www.1yyg.com/product/10572541.html" target="_blank" title="苹果（Apple）iPhone 7 32G版 4G手机" class="u-ongoing">苹果（Apple）iPhone 7 32G版 4G手机</a>
                             </p>
                         </li>
 
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
+                                        <span class="fl"><a href="http://u.1yyg.com/1012982640" target="_blank" rel="nofollow" title="云总打个电话来吧">
+                                                <img alt="" src="http://img.1yyg.net/UserFace/20170221001245474.jpg" /><i class="transparent-png"></i></a></span>
                             <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10488720.html" target="_blank" title="华为（HUAWEI）P9 Plus 64GB 全网通 4G手机" class="u-ongoing">华为（HUAWEI）P9 Plus 64GB 全网通 4G手机</a>
+                                <a href="http://u.1yyg.com/1012982640" target="_blank" title="云总打个电话来吧" class="blue">云总打个电话来吧</a><br />
+                                <a href="http://www.1yyg.com/product/10331835.html" target="_blank" title="2016款 进口宝马（BMW）5系 528i 中东版 四门轿车" class="u-ongoing">2016款 进口宝马（BMW）5系 528i 中东版 四门轿车</a>
                             </p>
                         </li>
 
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
+                                        <span class="fl"><a href="http://u.1yyg.com/1015751241" target="_blank" rel="nofollow" title="学习雷锋专门填坑">
+                                                <img alt="" src="http://img.1yyg.net/UserFace/20170221000528587.jpg" /><i class="transparent-png"></i></a></span>
                             <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10311816.html" target="_blank" title="新大洲 本田（HONDA）电喷摩托车 CBF190R" class="u-ongoing">新大洲 本田（HONDA）电喷摩托车 CBF190R</a>
+                                <a href="http://u.1yyg.com/1015751241" target="_blank" title="学习雷锋专门填坑" class="blue">学习雷锋专门填坑</a><br />
+                                <a href="http://www.1yyg.com/product/10572131.html" target="_blank" title="苹果（Apple）iPhone 7 256G版 4G手机" class="u-ongoing">苹果（Apple）iPhone 7 256G版 4G手机</a>
                             </p>
                         </li>
 
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
+                                        <span class="fl"><a href="http://u.1yyg.com/1010631738" target="_blank" rel="nofollow" title="年后的惊喜">
+                                                <img alt="" src="http://img.1yyg.net/UserFace/20161111213724306.jpg" /><i class="transparent-png"></i></a></span>
                             <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10303747.html" target="_blank" title="斯柯达 明锐 2017款 1.6L 自动创行版轿车" class="u-ongoing">斯柯达 明锐 2017款 1.6L 自动创行版轿车</a>
+                                <a href="http://u.1yyg.com/1010631738" target="_blank" title="年后的惊喜" class="blue">年后的惊喜</a><br />
+                                <a href="http://www.1yyg.com/product/10457431.html" target="_blank" title="良品铺子 甜辣鸭脖 190g/袋x3袋" class="u-ongoing">良品铺子 甜辣鸭脖 190g/袋x3袋</a>
                             </p>
                         </li>
 
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
+                                        <span class="fl"><a href="http://u.1yyg.com/1011109198" target="_blank" rel="nofollow" title="MB坑还没填够吗">
+                                                <img alt="" src="http://img.1yyg.net/UserFace/20170205163446683.jpg" /><i class="transparent-png"></i></a></span>
                             <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10182093.html" target="_blank" title="康佳（KONKA）LED40M3000A 40英寸 高清智能网络LED液晶电视（标配底座）" class="u-ongoing">康佳（KONKA）LED40M3000A 40英寸 高清智能网络LED液晶电视（标配底座）</a>
+                                <a href="http://u.1yyg.com/1011109198" target="_blank" title="MB坑还没填够吗" class="blue">MB坑还没填够吗</a><br />
+                                <a href="http://www.1yyg.com/product/10581940.html" target="_blank" title="平安银行 平安金福金条 Au9999 2g" class="u-ongoing">平安银行 平安金福金条 Au9999 2g</a>
                             </p>
                         </li>
 
@@ -741,108 +574,42 @@
             </div>
         </div>
         <div class="announced-soon clrfix" id="divSoonGoodsList">
-<<<<<<< HEAD
-            <div idx="1" goodsid="23172" class="soon-list-con">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20160518173845632.jpg" alt="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" name="goodsImg"></a></li><li class="soon-list-name"><a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html">(第<em>19190</em>云)&nbsp;湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口</a></li><li class="gray">价值：￥79.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成96.20%"><b style="width:96.20%;"></b></dt><dd><span class="orange fl"><em>76</em>已参与</span><span class="gray6 fl"><em>79</em>总需人次</span><span class="blue fr"><em>3</em>剩余</span></dd></dl></li><li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a><a class="u-cart" surplus="3" codeid="10563443" title="加入到购物车" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div codeid="10563443" style="top:200px;" class="u_buyCount"></div>
-            </div>
-            <div idx="1" goodsid="23172" class="soon-list-con">
-=======
             <div class="soon-list-con soon-list-hover" goodsid="23738" idx="1"><div class="soon-list"><ul><li class="g-soon-pic"><a href="products/23738.html" target="_blank" title="(第259云)西门子（Siemens）XQG70-WM10N0600W 7公斤 变频滚筒洗衣机 白色"><img name="goodsImg" alt="(第259云)西门子（Siemens）XQG70-WM10N0600W 7公斤 变频滚筒洗衣机 白色" src="http://img.1yyg.net/goodspic/pic-200-200/20170103101316954.jpg"></a></li><li class="soon-list-name"><a href="products/23738.html" target="_blank" title="(第259云)西门子（Siemens）XQG70-WM10N0600W 7公斤 变频滚筒洗衣机 白色">(第<em>259</em>云)&nbsp;西门子（Siemens）XQG70-WM10N0600W 7公斤 变频滚筒洗衣机 白色</a></li><li class="gray">价值：￥3220.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成97.21%"><b style="width:97.21%;"></b></dt><dd><span class="orange fl"><em>3130</em>已参与</span><span class="gray6 fl"><em>3220</em>总需人次</span><span class="blue fr"><em>90</em>剩余</span></dd></dl></li><li><a href="javascript:;" title="立即1元云购" class="u-now" id="btnLimitYgOnePay0">立即1元云购</a><a href="javascript:;" title="加入到购物车" codeid="10546305" surplus="90" class="u-cart"><s></s></a></li></ul><div class="f-callout"><span class="F_goods_xg transparent-png">限购</span></div></div><div class="u_buyCount" style="top:200px;" codeid="10546305"></div></div>
             <div class="soon-list-con">
->>>>>>> c9c8897517759dded84a4e2770c10a4cdb3abd6a
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20160518173845632.jpg" alt="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" name="goodsImg"></a></li><li class="soon-list-name"><a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html">(第<em>19190</em>云)&nbsp;湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口</a></li><li class="gray">价值：￥79.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成96.20%"><b style="width:96.20%;"></b></dt><dd><span class="orange fl"><em>76</em>已参与</span><span class="gray6 fl"><em>79</em>总需人次</span><span class="blue fr"><em>3</em>剩余</span></dd></dl></li><li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a><a class="u-cart" surplus="3" codeid="10563443" title="加入到购物车" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10563443" style="top:200px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" goodsid="23172" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20160518173845632.jpg" alt="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" name="goodsImg"></a></li><li class="soon-list-name"><a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html">(第<em>19190</em>云)&nbsp;湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口</a></li><li class="gray">价值：￥79.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成96.20%"><b style="width:96.20%;"></b></dt><dd><span class="orange fl"><em>76</em>已参与</span><span class="gray6 fl"><em>79</em>总需人次</span><span class="blue fr"><em>3</em>剩余</span></dd></dl></li><li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a><a class="u-cart" surplus="3" codeid="10563443" title="加入到购物车" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10563443" style="top:200px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" goodsid="23172" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20160518173845632.jpg" alt="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" name="goodsImg"></a></li><li class="soon-list-name"><a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html">(第<em>19190</em>云)&nbsp;湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口</a></li><li class="gray">价值：￥79.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成96.20%"><b style="width:96.20%;"></b></dt><dd><span class="orange fl"><em>76</em>已参与</span><span class="gray6 fl"><em>79</em>总需人次</span><span class="blue fr"><em>3</em>剩余</span></dd></dl></li><li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a><a class="u-cart" surplus="3" codeid="10563443" title="加入到购物车" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10563443" style="top:200px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" goodsid="23172" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20160518173845632.jpg" alt="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" name="goodsImg"></a></li><li class="soon-list-name"><a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html">(第<em>19190</em>云)&nbsp;湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口</a></li><li class="gray">价值：￥79.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成96.20%"><b style="width:96.20%;"></b></dt><dd><span class="orange fl"><em>76</em>已参与</span><span class="gray6 fl"><em>79</em>总需人次</span><span class="blue fr"><em>3</em>剩余</span></dd></dl></li><li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a><a class="u-cart" surplus="3" codeid="10563443" title="加入到购物车" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10563443" style="top:200px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" goodsid="23172" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20160518173845632.jpg" alt="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" name="goodsImg"></a></li><li class="soon-list-name"><a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html">(第<em>19190</em>云)&nbsp;湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口</a></li><li class="gray">价值：￥79.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成96.20%"><b style="width:96.20%;"></b></dt><dd><span class="orange fl"><em>76</em>已参与</span><span class="gray6 fl"><em>79</em>总需人次</span><span class="blue fr"><em>3</em>剩余</span></dd></dl></li><li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a><a class="u-cart" surplus="3" codeid="10563443" title="加入到购物车" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10563443" style="top:200px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" goodsid="23172" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20160518173845632.jpg" alt="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" name="goodsImg"></a></li><li class="soon-list-name"><a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html">(第<em>19190</em>云)&nbsp;湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口</a></li><li class="gray">价值：￥79.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成96.20%"><b style="width:96.20%;"></b></dt><dd><span class="orange fl"><em>76</em>已参与</span><span class="gray6 fl"><em>79</em>总需人次</span><span class="blue fr"><em>3</em>剩余</span></dd></dl></li><li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a><a class="u-cart" surplus="3" codeid="10563443" title="加入到购物车" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10563443" style="top:200px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" goodsid="23172" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20160518173845632.jpg" alt="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" name="goodsImg"></a></li><li class="soon-list-name"><a title="(第19190云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" target="_blank" href="products/23172.html">(第<em>19190</em>云)&nbsp;湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口</a></li><li class="gray">价值：￥79.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成96.20%"><b style="width:96.20%;"></b></dt><dd><span class="orange fl"><em>76</em>已参与</span><span class="gray6 fl"><em>79</em>总需人次</span><span class="blue fr"><em>3</em>剩余</span></dd></dl></li><li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a><a class="u-cart" surplus="3" codeid="10563443" title="加入到购物车" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10563443" style="top:200px;" class="u_buyCount"></div>
             </div>
-
         </div>
         <div class="check-out"><a href="http://www.1yyg.com/list/m1.html" target="_blank" title="查看所有商品">查看所有商品</a></div>
 
@@ -854,96 +621,42 @@
             </div>
         </div>
         <div class="announced-soon clrfix announced-soon-new" id="divNewGoodsList">
-<<<<<<< HEAD
-            <div idx="1" class="soon-list-con">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20170209174640895.jpg" alt="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本"></a></li><li class="soon-list-name"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html">(第16云)&nbsp;戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本</a></li><li class="gray">
-                            价值：￥8199.00
-                        </li>
-                    </ul>
-                </div>
-                <div codeid="10568778" style="top:210px;" class="u_buyCount"></div>
-            </div>
-            <div idx="1" class="soon-list-con">
-=======
             <div class="soon-list-con" idx="1"><div class="soon-list"><ul><li class="g-soon-pic"><a href="products/23778.html" target="_blank" title="(第18云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本"><img alt="(第18云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" src="http://img.1yyg.net/goodspic/pic-200-200/20170209174640895.jpg"></a></li><li class="soon-list-name"><a href="products/23778.html" target="_blank" title="(第18云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本">(第18云)&nbsp;戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本</a></li><li class="gray">价值：￥8199.00</li></ul></div><div class="u_buyCount" style="top:210px;" codeid="10568780"></div></div>
             <div class="soon-list-con">
->>>>>>> c9c8897517759dded84a4e2770c10a4cdb3abd6a
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20170209174640895.jpg" alt="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本"></a></li><li class="soon-list-name"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html">(第16云)&nbsp;戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本</a></li><li class="gray">
-                            价值：￥8199.00
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10568778" style="top:210px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20170209174640895.jpg" alt="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本"></a></li><li class="soon-list-name"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html">(第16云)&nbsp;戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本</a></li><li class="gray">
-                            价值：￥8199.00
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10568778" style="top:210px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20170209174640895.jpg" alt="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本"></a></li><li class="soon-list-name"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html">(第16云)&nbsp;戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本</a></li><li class="gray">
-                            价值：￥8199.00
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10568778" style="top:210px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20170209174640895.jpg" alt="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本"></a></li><li class="soon-list-name"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html">(第16云)&nbsp;戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本</a></li><li class="gray">
-                            价值：￥8199.00
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10568778" style="top:210px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20170209174640895.jpg" alt="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本"></a></li><li class="soon-list-name"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html">(第16云)&nbsp;戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本</a></li><li class="gray">
-                            价值：￥8199.00
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10568778" style="top:210px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20170209174640895.jpg" alt="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本"></a></li><li class="soon-list-name"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html">(第16云)&nbsp;戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本</a></li><li class="gray">
-                            价值：￥8199.00
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10568778" style="top:210px;" class="u_buyCount"></div>
             </div>
-            <div idx="1" class="soon-list-con">
+            <div class="soon-list-con">
                 <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html"><img src="http://img.1yyg.net/goodspic/pic-200-200/20170209174640895.jpg" alt="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本"></a></li><li class="soon-list-name"><a title="(第16云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" target="_blank" href="products/23778.html">(第16云)&nbsp;戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本</a></li><li class="gray">
-                            价值：￥8199.00
-                        </li>
-                    </ul>
+                    <div class="u-loading"><em></em></div>
                 </div>
-                <div codeid="10568778" style="top:210px;" class="u_buyCount"></div>
             </div>
-
-
-
-
-
         </div>
 
         <!--晒单分享-->
@@ -955,93 +668,28 @@
         </div>
         <div class="g-single-sun">
             <div class="singleL fl" id="divPostRec">
-
-                    <dl>
-                        <dt>
-                            <a title="Pouch你家东西真好用" target="_blank" href="http://post.1yyg.com/detail-369206.html">
-                                <img src="http://img.1yyg.net/UserPost/RecHome/20170223171359086.jpg">
-                            </a>
-                        </dt>
-                        <dd class="u-user">
-                            <p class="u-head">
-                                <a title="无法再云了" target="_blank" href="http://u.1yyg.com/1011960362">
-                                    <img width="40" height="40" src="http://img.1yyg.net/UserFace/20170224080145701.jpg" alt="Pouch你家东西真好用">
-                                    <i class="transparent-png"></i>
-                                </a>
-                            </p>
-                            <p class="u-info">
-                            <span>
-                                <a title="无法再云了" target="_blank" href="http://u.1yyg.com/1011960362">无法再云了</a>
-                                <em>昨天 17:18</em>
-                            </span>
-                                <cite>
-                                    <a title="Pouch你家东西真好用" target="_blank" href="http://post.1yyg.com/detail-369206.html">Pouch你家东西真好用</a>
-                                </cite>
-                            </p>
-                        </dd>
-                        <dd class="m-summary">
-                            <cite>
-                                <a target="_blank" href="http://post.1yyg.com/detail-369206.html">首先，感谢云购公司让我得到了这么高品质的东西！等了好久终于等到今天，从中奖到收到商品，整整十三天的时间，其…</a>
-                            </cite>
-                            <b>
-                                <s></s>
-                            </b>
-                        </dd>
-                    </dl>
-
+                <div class="u-loading"><em></em></div>
             </div>
             <div class="singleR fl">
                 <ul id="ul_PostList">
-
                     <li>
-                        <a title="喜中婴儿BB煲" target="_blank" href="http://post.1yyg.com/detail-369108.html">
-                            <cite>
-                                <img src="http://img.1yyg.net/UserPost/RecHome/small/20170223153636712.jpg" alt="喜中婴儿BB煲">
-                            </cite>
-                            <p title="喜中婴儿BB煲">喜中婴儿BB煲</p>
-                        </a>
+                        <div class="u-loading"><em></em></div>
                     </li>
                     <li>
-                        <a title="喜中婴儿BB煲" target="_blank" href="http://post.1yyg.com/detail-369108.html">
-                            <cite>
-                                <img src="http://img.1yyg.net/UserPost/RecHome/small/20170223153636712.jpg" alt="喜中婴儿BB煲">
-                            </cite>
-                            <p title="喜中婴儿BB煲">喜中婴儿BB煲</p>
-                        </a>
+                        <div class="u-loading"><em></em></div>
                     </li>
                     <li>
-                        <a title="喜中婴儿BB煲" target="_blank" href="http://post.1yyg.com/detail-369108.html">
-                            <cite>
-                                <img src="http://img.1yyg.net/UserPost/RecHome/small/20170223153636712.jpg" alt="喜中婴儿BB煲">
-                            </cite>
-                            <p title="喜中婴儿BB煲">喜中婴儿BB煲</p>
-                        </a>
+                        <div class="u-loading"><em></em></div>
                     </li>
                     <li>
-                        <a title="喜中婴儿BB煲" target="_blank" href="http://post.1yyg.com/detail-369108.html">
-                            <cite>
-                                <img src="http://img.1yyg.net/UserPost/RecHome/small/20170223153636712.jpg" alt="喜中婴儿BB煲">
-                            </cite>
-                            <p title="喜中婴儿BB煲">喜中婴儿BB煲</p>
-                        </a>
+                        <div class="u-loading"><em></em></div>
                     </li>
                     <li>
-                        <a title="喜中婴儿BB煲" target="_blank" href="http://post.1yyg.com/detail-369108.html">
-                            <cite>
-                                <img src="http://img.1yyg.net/UserPost/RecHome/small/20170223153636712.jpg" alt="喜中婴儿BB煲">
-                            </cite>
-                            <p title="喜中婴儿BB煲">喜中婴儿BB煲</p>
-                        </a>
+                        <div class="u-loading"><em></em></div>
                     </li>
                     <li>
-                        <a title="喜中婴儿BB煲" target="_blank" href="http://post.1yyg.com/detail-369108.html">
-                            <cite>
-                                <img src="http://img.1yyg.net/UserPost/RecHome/small/20170223153636712.jpg" alt="喜中婴儿BB煲">
-                            </cite>
-                            <p title="喜中婴儿BB煲">喜中婴儿BB煲</p>
-                        </a>
+                        <div class="u-loading"><em></em></div>
                     </li>
-
                 </ul>
             </div>
         </div> -->
@@ -1100,7 +748,7 @@
                 <div class="m-ser u-ser2">
                     <ul>
                         <li><a href="javascript:;">
-                                <img src="style/images/1yyg-wx.png?v=20141105" /></a></li>
+                                <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105" /></a></li>
                         <li>
                             <dl>
                                 <dt><a target="_blank" href="http://info.1yyg.com/app/microchannel.html"><i class="u-icons"></i>关注官方微信</a></dt>
@@ -1244,7 +892,7 @@
                             </div>
                             <div class="u-activate">
                                 <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                    <img src="style/images/andriod.jpg?v=20141105">
+                                    <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105">
                                 </a>
                             </div>
                         </li>
@@ -1257,7 +905,7 @@
                             </div>
                             <div class="u-activate">
                                 <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                    <img src="style/images/1yyg-wx.png?v=20141105"/>
+                                    <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
                                     关注官方微信
                                 </a>
                             </div>
@@ -1394,7 +1042,7 @@
                     <div class="activateCon">
                         <div class="u-activate">
                             <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                <img src="style/images/andriod.jpg?v=20141105"/>
+                                <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
                                 下载客户端
                             </a>
                         </div>
@@ -1410,7 +1058,7 @@
                     <div class="activateCon">
                         <div class="u-activate">
                             <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                <img src="style/images/1yyg-wx.png?v=20141105"/>
+                                <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
                                 关注官方微信
                             </a>
                         </div>
@@ -1442,7 +1090,7 @@
 <script language="javascript" type="text/javascript">
     var Base = { head: document.getElementsByTagName("head")[0] || document.documentElement, Myload: function (B, A) { this.done = false; B.onload = B.onreadystatechange = function () { if (!this.done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) { this.done = true; A(); B.onload = B.onreadystatechange = null; if (this.head && B.parentNode) { this.head.removeChild(B) } } } }, getScript: function (A, C) { var B = function () { }; if (C != undefined) { B = C } var D = document.createElement("script"); D.setAttribute("language", "javascript"); D.setAttribute("type", "text/javascript"); D.setAttribute("src", A); this.head.appendChild(D); this.Myload(D, B) }, getStyle: function (A, CB) { var B = function () { }; if (CB != undefined) { B = CB } var C = document.createElement("link"); C.setAttribute("type", "text/css"); C.setAttribute("rel", "stylesheet"); C.setAttribute("href", A); this.head.appendChild(C); this.Myload(C, B) } }
     function GetVerNum() { var D = new Date(); return D.getFullYear().toString().substring(2, 4) + '.' + (D.getMonth() + 1) + '.' + D.getDate() + '.' + D.getHours() + '.' + (D.getMinutes() < 10 ? '0' : D.getMinutes().toString().substring(0, 1)) }
-    Base.getScript('style/JS/Bottom.js?v=' + GetVerNum());
+    Base.getScript('http://skin.1yyg.net/JS/Bottom.js?v=' + GetVerNum());
 </script>
 <div style="display: none;">
     <script type="text/javascript" language="JavaScript" src="http://s22.cnzz.com/stat.php?id=3362429&web_id=3362429"  async="async"></script>
