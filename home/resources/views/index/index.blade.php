@@ -420,11 +420,7 @@
         </div>
         <div class="g-hot clrfix">
             <div class="g-hotL fl" id="divHotGoodsList">
-                <div class="g-hotL-list">
-                    <div class="g-hotL-con">
-                        <div class="u-loading"><em></em></div>
-                    </div>
-                </div>
+                <div goodsid="23458" class="g-hotL-list g-hotL-hover"><div class="g-hotL-con"><ul><li class="g-hot-pic"><a href="products/23458.html" target="_blank" title="(第132817云)苹果（Apple）iPhone 7 Plus 128G版 4G手机"><img name="goodsImg" alt="(第132817云)苹果（Apple）iPhone 7 Plus 128G版 4G手机" src="http://img.1yyg.net/goodspic/pic-200-200/20160908092215288.jpg"></a></li><li class="g-hot-name"><a href="products/23458.html" target="_blank" title="(第132817云)苹果（Apple）iPhone 7 Plus 128G版 4G手机">(第132817云)&nbsp;苹果（Apple）iPhone 7 Plus 128G版 4G手机</a></li><li class="gray">价值：￥7188.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成76.92%"><b style="width:76.92%;"></b></dt><dd><span class="orange fl"><em>5529</em>已参与</span><span class="gray6 fl"><em>7188</em>总需人次</span><span class="blue fr"><em>1659</em>剩余</span></dd></dl></li><li><a href="javascript:;" class="u-imm" title="立即1元云购" id="btnHotYgOnePay0">立即1元云购</a><a href="javascript:;" title="加入到购物车" codeid="10611410" class="u-cart"><s></s></a></li></ul></div><div class="u_buyCount" style="top:169px;" codeid="10611410"></div></div>
                 <div class="g-hotL-list">
                     <div class="g-hotL-con">
                         <div class="u-loading"><em></em></div>
@@ -578,11 +574,7 @@
             </div>
         </div>
         <div class="announced-soon clrfix" id="divSoonGoodsList">
-            <div class="soon-list-con">
-                <div class="soon-list">
-                    <div class="u-loading"><em></em></div>
-                </div>
-            </div>
+            <div class="soon-list-con soon-list-hover" goodsid="23738" idx="1"><div class="soon-list"><ul><li class="g-soon-pic"><a href="products/23738.html" target="_blank" title="(第259云)西门子（Siemens）XQG70-WM10N0600W 7公斤 变频滚筒洗衣机 白色"><img name="goodsImg" alt="(第259云)西门子（Siemens）XQG70-WM10N0600W 7公斤 变频滚筒洗衣机 白色" src="http://img.1yyg.net/goodspic/pic-200-200/20170103101316954.jpg"></a></li><li class="soon-list-name"><a href="products/23738.html" target="_blank" title="(第259云)西门子（Siemens）XQG70-WM10N0600W 7公斤 变频滚筒洗衣机 白色">(第<em>259</em>云)&nbsp;西门子（Siemens）XQG70-WM10N0600W 7公斤 变频滚筒洗衣机 白色</a></li><li class="gray">价值：￥3220.00</li><li class="g-progress"><dl class="m-progress"><dt title="已完成97.21%"><b style="width:97.21%;"></b></dt><dd><span class="orange fl"><em>3130</em>已参与</span><span class="gray6 fl"><em>3220</em>总需人次</span><span class="blue fr"><em>90</em>剩余</span></dd></dl></li><li><a href="javascript:;" title="立即1元云购" class="u-now" id="btnLimitYgOnePay0">立即1元云购</a><a href="javascript:;" title="加入到购物车" codeid="10546305" surplus="90" class="u-cart"><s></s></a></li></ul><div class="f-callout"><span class="F_goods_xg transparent-png">限购</span></div></div><div class="u_buyCount" style="top:200px;" codeid="10546305"></div></div>
             <div class="soon-list-con">
                 <div class="soon-list">
                     <div class="u-loading"><em></em></div>
@@ -629,11 +621,7 @@
             </div>
         </div>
         <div class="announced-soon clrfix announced-soon-new" id="divNewGoodsList">
-            <div class="soon-list-con">
-                <div class="soon-list">
-                    <div class="u-loading"><em></em></div>
-                </div>
-            </div>
+            <div class="soon-list-con" idx="1"><div class="soon-list"><ul><li class="g-soon-pic"><a href="products/23778.html" target="_blank" title="(第18云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本"><img alt="(第18云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本" src="http://img.1yyg.net/goodspic/pic-200-200/20170209174640895.jpg"></a></li><li class="soon-list-name"><a href="products/23778.html" target="_blank" title="(第18云)戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本">(第18云)&nbsp;戴尔（DELL）灵越系列 游匣Master Ins15-7567-R1745 15.6英寸游戏笔记本</a></li><li class="gray">价值：￥8199.00</li></ul></div><div class="u_buyCount" style="top:210px;" codeid="10568780"></div></div>
             <div class="soon-list-con">
                 <div class="soon-list">
                     <div class="u-loading"><em></em></div>
@@ -672,7 +660,7 @@
         </div>
 
         <!--晒单分享-->
-        <div class="g-title">
+        <!-- <div class="g-title">
             <h3 class="fl"><i></i>晒单分享</h3>
             <div class="m-other fr">
                 <a href="http://post.1yyg.com/" target="_blank" title="更多" class="u-more">更多</a>
@@ -704,7 +692,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <!--底部-->
