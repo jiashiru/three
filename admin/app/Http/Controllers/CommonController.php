@@ -1,0 +1,1 @@
+<?phpnamespace App\Http\Controllers;use App\Node;class CommonController extends Controller{    public function __construct()    {    }}

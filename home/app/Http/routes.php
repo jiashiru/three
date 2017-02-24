@@ -35,16 +35,13 @@ Route::any("login",function(){ return view("login"); });//登陆
 Route::any("zhuce",function(){ return view("zhuce"); });//注册
 
 //主页
-<<<<<<< HEAD
+
 Route::any("/","IndexController@index");//主页
 Route::any("indexClassify","IndexController@classify");//分类
 Route::any("indexShop","IndexController@shop");//商品详情
 
-=======
-Route::any("indexIndex","IndexController@index");//主页
-Route::any("indexClassify",function(){ return view("index/classify"); });//分类
-Route::any("indexSel","IndexController@sel");//分类
->>>>>>> c9c8897517759dded84a4e2770c10a4cdb3abd6a
+
+
 
 
 //我的一元云够

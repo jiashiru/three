@@ -24,7 +24,7 @@ class IndexController extends Controller
                 }
             }
         }
-//        print_r($goods_category);
+//        print_r($goods_type);
         return view("index/index",[
             'goods_type'=>$goods_type,
 
