@@ -38,12 +38,6 @@ Route::post("checkName","RegisterController@checkName");  //注册验证用户�
 Route::post("registerDo","RegisterController@registerDo");  //注册
 
 //主页
-<<<<<<< HEAD
-Route::get("indexIndex","IndexController@index");//主页
-Route::any("index/classify",function(){ return view("index/classify"); });//分类
-Route::any("index/sel","IndexController@sel");//分类
-=======
-
 
 Route::any("/","IndexController@index");//主页
 Route::any("indexClassify","IndexController@classify");//分类
@@ -53,7 +47,6 @@ Route::any("indexHot","IndexController@hot");//查询最热产品
 
 
 
->>>>>>> 4be34aa824cc57cf206ebffefdb70924ef83861a
 
 
 //我的一元云够

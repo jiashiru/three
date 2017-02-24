@@ -214,7 +214,7 @@
                 $.post("registerDo",{name:name,pwd:pwd}, function (res) {
                     if(res==1){
                         //注册成功,跳转
-                        location.href="indexIndex";
+                        location.href="/";
 
                     }else{
                         //注册失败，提示，刷新页面
