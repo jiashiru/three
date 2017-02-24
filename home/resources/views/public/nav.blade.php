@@ -22,18 +22,15 @@
                                         </span>
                                     </p>
                                     <p class='lvl2'>
-                                        <span class='lvl2'>
-                                            <a href='http://www.1yyg.com/list/n101.html' target='_blank' class='lvl2 none'>手机<b class='icons-sort'></b></a>
-                                        </span>
-                                        <span class='lvl2'>
-                                            <a href='http://www.1yyg.com/list/n102.html' target='_blank' class='lvl2 none'>数码<b class='icons-sort'></b></a>
-                                        </span>
-                                        <span class='lvl2'>
-                                            <a href='http://www.1yyg.com/list/n103.html' target='_blank' class='lvl2 none'>影音<b class='icons-sort'></b></a>
-                                        </span>
-                                        <span class='lvl2'>
-                                            <a href='http://www.1yyg.com/list/n104.html' target='_blank' class='lvl2 none'>耳机<b class='icons-sort'></b></a>
-                                        </span>
+                                        <?php foreach($v['category'] as $key=>$val){?>
+
+                                            <span class='lvl2'>
+                                                <a href='http://www.1yyg.com/list/n101.html' cate_id="<?php echo $val['cate_id'] ?>" target='_blank' class='lvl2 none'>
+                                                    <?php echo $val['cate_name'] ?><b class='icons-sort'></b>
+                                                </a>
+                                            </span>
+                                        <?php } ?>
+
                                     </p>
                                 </div>
                             </div>

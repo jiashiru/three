@@ -64,20 +64,10 @@
 
                         <ul id="flexiselDemo1">
 
-                            <li>
-                                <a href="####"><img src="style/images/g1.jpg" alt="" width="5" height="100%" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="####"><img src="style/images/g2.jpg" alt="" width="5" height="100%" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="####"><img src="style/images/g3.jpg" alt="" width="5" height="100%" />
-                                </a>
-                            </li>
 
                         </ul>
+                        <div class="nbs-flexisel-nav-left" style="top: 111px;"></div>
+                        <div class="nbs-flexisel-nav-right" style="top: 111px;"></div>
                     </div>
 
                 </div>
@@ -108,6 +98,8 @@
                     });
                 </script>
                 <script type="text/javascript"  src="style/js/jquery.flexisel.js"></script>
+
+
 
                 <!--广告位下方推荐-->
                 <div class="slide-comd">
@@ -932,10 +924,69 @@
             </div>
 
 
-
-
-
         </div>
+
+        <script>
+
+            $(function() {
+                $.ajax({
+                    type: "POST",
+                    url: "indexCarousel",
+                    data: {},
+                    dataType: "json",
+                    success: function(msg){
+                        car(msg);
+                    }
+                });
+                function car(msg){
+                    var str = "";
+                    $.each(msg,function(k,v){
+                        str += '<li>';
+                        str += '<a href="">';
+                        str += '<img src="'+v.carousel_path+'" alt="'+v.carousel_name+'" width="5" height="100%" />';
+                        str += '</a>';
+                        str += '</li>';
+                    })
+                    $("#flexiselDemo1").html(str);
+
+                }
+                var hot = 1;//热门推荐
+                var immediately = 1;//即将揭晓
+                var new_shop = 1;//新品上架
+
+                $(window).scroll(function() {
+                    var scrollHeight = $(document).scrollTop();
+                    if (hot < 2 & scrollHeight > 400 & scrollHeight < 500 ) {
+                        hot = hot+1;
+                        all_fun('is_hot');
+
+                    }
+                    if (immediately < 2 & scrollHeight > 1000 & scrollHeight < 1100 ) {
+                        immediately = immediately+1;
+//                        all_fun("");
+                    }
+                    if (new_shop < 2 & scrollHeight > 1900 & scrollHeight < 2000 ) {
+                        new_shop = new_shop+1;
+                        all_fun("is_new");
+                    }
+
+
+                });
+            })
+        </script>
+        <script>
+            function all_fun(field)
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "indexHot",
+                    data: {field:field},
+                    success: function(msg){
+                        alert( "Data Saved: " + msg );
+                    }
+                });
+            }
+        </script>
 
         <!--晒单分享-->
         <!-- <div class="g-title">
