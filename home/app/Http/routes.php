@@ -31,11 +31,14 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 //通用
-Route::any("login",function(){ return view("login"); });//登陆
-Route::any("zhuce",function(){ return view("zhuce"); });//注册
+Route::any("login",function(){ return view("login"); });//登陆页面
+Route::any("register",function(){ return view("register"); });//注册页面
+
+Route::post("checkName","RegisterController@checkName");  //注册验证用户名唯一
+Route::post("registerDo","RegisterController@registerDo");  //注册
 
 //主页
-Route::any("index/index","IndexController@index");//主页
+Route::get("indexIndex","IndexController@index");//主页
 Route::any("index/classify",function(){ return view("index/classify"); });//分类
 Route::any("index/sel","IndexController@sel");//分类
 

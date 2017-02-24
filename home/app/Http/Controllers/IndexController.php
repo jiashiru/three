@@ -10,8 +10,13 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class IndexController extends Controller
 {
+    public function __construct()
+    {
+        session_start();
+    }
     public function index()
     {
+//        print_r($_SESSION['u_id']);
         return view("index/index");
     }
 
