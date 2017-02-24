@@ -43,7 +43,14 @@ Route::any('loginGetCapath',['uses' => 'LoginController@getCapath']);
 //message
 Route::any('showMsg',['uses' => 'CommonController@showMsg']);
 
+//RBAC
+Route::any('adminShow',['uses' => 'AdminController@show']);
+// Route::any('adminAdd',['uses' => 'AdminController@add']);
 
+
+Route::group(['middleware' => ['web']], function () {
+    Route::any('adminAdd',['uses' => 'AdminController@add']);
+});
 
 
 
