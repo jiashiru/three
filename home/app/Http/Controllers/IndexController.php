@@ -17,7 +17,6 @@ class IndexController extends Controller
         //查询商品的 分类表 与 类型表 并且处理数组
         $goods_type = $this->type_and_category();
 
-
         return view("index/index",[
             'goods_type'=>$goods_type,//分类表 与 类型表
 
@@ -73,6 +72,22 @@ class IndexController extends Controller
     //商品详情
     public function shop()
     {
-        return view("index/shop");
+        $goods_id = Input::get("goods_id");//接受商品的ID
+        //查询本商品的信息
+        $goods = DB::table("goods")->where(['goods_id'=>$goods_id])->first();
+//        print_r($goods);
+
+        return view("index/shop",[
+            'goods'=>$goods,
+
+        ]);
+    }
+    //查询单个商品的 商品图片
+    public function goods_photo()
+    {
+        $goods_id = Input::get("goods_id");
+        $goods_gallery = DB::table("goods_gallery")->where(['goods_id'=>$goods_id,'img_type'=>0])->get();
+
+        echo json_encode($goods_gallery);
     }
 }

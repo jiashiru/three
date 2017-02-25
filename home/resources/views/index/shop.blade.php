@@ -18,7 +18,7 @@
     <script id="pageJS" language="javascript" type="text/javascript" data="style/JS/GoodsDetail.js"></script>
 </head>
 
-<body id="loadingPicBlock" rf="2">
+<body id="loadingPicBlock" rf="2" goods_id="<?php echo $goods['goods_id'] ?>">
 
 <!--顶部-->
 @include("public.head")
@@ -56,41 +56,66 @@
         <div id="divMainInfo" class="ng-main clearfix">
             <!--图片展示-->
             <div class="ng-goods-img">
-                <div id="middlePicRemark" class="middlePicRemark"></div>
+
                 <img id="imgGoodsPic" alt="" src="" style="display: none;" />
-                <div id="middlePicBox" class="ng-middle-box">
-                    <img class="z-middle-loading" src="style/images/loding.gif" alt="加载中..." />
+                <div id="middle" class="ng-middle-box">
+                    <img class="z-middle-loading" style="width:343px;height:343px; "
+                         src="" alt="加载中..." />
                 </div>
                 <div class="ng-goods-piclist">
                     <div class="ng-goods-btn prev ng-box-bg" style="display: none;"></div>
                     <div class="ng-list-wrapper">
                         <ul id="mycarousel" class="ng-list-inner clearfix" style="width: 999px;">
 
-                            <li>
-                                <img width="40" height="40" src="style/images/loding.gif" src2="style/images/20160511140647469.jpg" alt="" name="20160511140647469.jpg" /></li>
+                            {{--<li>--}}
+                                {{--<img width="40" height="40"  src="style/images/20160511140647469.jpg" alt="" name="20160511140647469.jpg" />--}}
+                            {{--</li>--}}
 
-                            <li>
-                                <img width="40" height="40" src="style/images/loding.gif" src2="style/images/20151026092740751.jpg" alt="" name="20151026092740751.jpg" /></li>
+                            {{--<li>--}}
+                                {{--<img width="40" height="40"  src="style/images/20151026092740751.jpg" alt="" name="20151026092740751.jpg" />--}}
+                            {{--</li>--}}
 
-                            <li>
-                                <img width="40" height="40" src="style/images/loding.gif" src2="style/images/20151026092656810.jpg" alt="" name="20151026092656810.jpg" /></li>
 
-                            <li>
-                                <img width="40" height="40" src="style/images/loding.gif" src2="style/images/20151026092707927.jpg" alt="" name="20151026092707927.jpg" /></li>
-
-                            <li>
-                                <img width="40" height="40" src="style/images/loding.gif" src2="style/images/20151026092717376.jpg" alt="" name="20151026092717376.jpg" /></li>
-
-                            <li>
-                                <img width="40" height="40" src="style/images/loding.gif" src2="style/images/20151026092731320.jpg" alt="" name="20151026092731320.jpg" /></li>
-
-                            <li>
-                                <img width="40" height="40" src="style/images/loding.gif" src2="style/images/20151026092724942.jpg" alt="" name="20151026092724942.jpg" /></li>
 
                         </ul>
                     </div>
                     <div class="ng-goods-btn next ng-box-bg" style="display: none;"></div>
                 </div>
+                <script>
+                    $(function(){
+                        var goods_id = $("#loadingPicBlock").attr("goods_id");
+                        $.ajax({
+                            type: "POST",
+                            url: "indexGoods_photo",
+                            data: {goods_id:goods_id},
+                            dataType: "json",
+                            success: function(msg){
+                                img(msg);
+                            }
+                        });
+                        function img(msg)
+                        {
+                            var str = "";
+                            $.each(msg,function(k,v){
+                                str += '<li class="small">';
+                                str += '<img width="40" height="40"  src="'+ v.img_path_tiny+'" alt="" name="20160511140647469.jpg" />';
+                                str += '</li>';
+                            });
+
+                            $("#mycarousel").html(str);
+
+
+                        }
+                    });
+                </script>
+                <script>
+                    $(document).on("mouseover",".small",function(){
+                        var img = $(this).children().attr('src');
+//                        alert("big/"+img)
+                        var middle_src = "big/"+img;
+                        $("#middle").children().attr('src',middle_src);
+                    });
+                </script>
                 <div class="ng-share-out">
                     <a id="a_sc" href="javascript:;" class="sc"><i class="t-icon sc-icon ng-box-bg"></i>关注</a>
                     <div class="fx">
@@ -117,29 +142,36 @@
 
             <div class="ng-goods-detail">
 
-                <h2 class="o-title"><span class="num">
-                                (第1666云)</span>
-                    苹果（Apple）iMac MK462CH/A 27英寸一体电脑<span class="o-info">配备Retina 5K 显示屏的iMac，画质如此夺目，足以让画面之外的世界都顿显失色！</span>
+                <h2 class="o-title">
+                    <span class="num">
+                                (第1666云)
+                    </span>
+                    <?php echo $goods['goods_name'] ?>
+                    <span class="o-info"><?php echo $goods['goods_desc'] ?></span>
                 </h2>
-                <p class="text-left price o-p">价值：￥
-                    12788.00
+                <p class="text-left price o-p">
+                    价值：￥<?php echo $goods['goods_price'] ?>
                 </p>
                 <div class="line-time">
-                    <div class="line-wrapper u-progress" title="完成8.92%"><span class="pgbar" style="width:45px;display:"><span class="pging"></span></span></div>
+                    <div class="line-wrapper u-progress" title="完成50%">
+                        <span class="pgbar" style="width:45px;">
+                            <span class="pging"></span>
+                        </span>
+                    </div>
                     <div class="text-wrapper clearfix">
                         <div class="now-has">
                                             <span>
-                                            1141</span>
+                                            10</span>
                             <p>已参与</p>
                         </div>
                         <div class="total-has">
                                             <span id="CodeQuantity">
-                                            12788</span>
+                                            <?php echo $goods['goods_price'] ?></span>
                             <p>总需人次</p>
                         </div>
                         <div class="overplus-has">
                                             <span id="CodeLift">
-                                            11647</span>
+                                            15226</span>
                             <p>剩余</p>
                         </div>
                     </div>

@@ -40,6 +40,9 @@ Route::any("zhuce",function(){ return view("zhuce"); });//注册
 Route::any("/","IndexController@index");//主页
 Route::any("indexClassify","IndexController@classify");//分类
 Route::any("indexShop","IndexController@shop");//商品详情
+Route::any("indexGoods_photo","IndexController@goods_photo");//商品详情
+
+
 Route::any("indexCarousel","IndexController@carousel");//轮播图
 Route::any("indexHot","IndexController@hot");//查询最热产品
 
