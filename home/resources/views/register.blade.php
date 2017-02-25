@@ -31,7 +31,7 @@
         <a href="http://www.1yyg.com" class="transparent-png fl">
             <img src="style/images/logo.png" alt="" />
         </a>
-        <span class="fr">已有账号？<a id="hylinkLoginPage" class="blue" href="login.html?forward=http%3a%2f%2fwww.1yyg.com%2f">立即登录</a></span>
+        <span class="fr">已有账号？<a id="hylinkLoginPage" class="blue" href="login">立即登录</a></span>
     </div>
 
     <div class="g-contentCon clrfix">
@@ -91,7 +91,7 @@
     <!--版权-->
     <div class="g-copyrightCon clrfix">
         <div class="g-links">
-            <a target="_blank" href="http://www.1yyg.com/" title="首页">首页</a><s></s>
+            <a target="_blank" href="/" title="首页">首页</a><s></s>
             <a target="_blank" href="http://help.1yyg.com/htm-about.html" title="关于云购">关于云购</a><s></s>
             <a target="_blank" href="http://help.1yyg.com/htm-privacy.html" title="隐私声明">隐私声明</a><s></s>
             <a target="_blank" href="http://help.1yyg.com/info/htm-business.html">合作专区</a><s></s>

@@ -31,7 +31,9 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 //通用
-Route::any("login",function(){ return view("login"); });//登陆页面
+Route::get("login",function(){ return view("login"); });//登陆页面
+Route::post("loginDo","LoginController@loginDo");  //登录
+
 Route::any("register",function(){ return view("register"); });//注册页面
 
 Route::post("checkName","RegisterController@checkName");  //注册验证用户名唯一
