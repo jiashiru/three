@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +11,9 @@ class Role extends Model
 
     public $timestamps = false;
 
-
+    public function nodes()
+    {
+        return $this->belongsToMany('App\Model\Node', 'role_node', 'role_id', 'node_id');
+    }
 
 }
