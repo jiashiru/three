@@ -51,6 +51,11 @@ Route::any('roleDelete',['uses' => 'RoleController@delete']);
 Route::any('nodeShow',['uses' => 'NodeController@show']);
 Route::any('nodeDelete',['uses' => 'NodeController@delete']);
 
+//RBAC
+Route::any('adminAdd',['uses' => 'AdminController@adminAdd']);
+Route::any('adminList',['uses' => 'AdminController@adminList']);
+
+
 
 Route::group(['middleware' => ['web']], function () {
     Route::any('adminAdd',['uses' => 'AdminController@add']);
