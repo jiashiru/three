@@ -45,7 +45,11 @@ Route::any('showMsg',['uses' => 'CommonController@showMsg']);
 
 //RBAC
 Route::any('adminShow',['uses' => 'AdminController@show']);
-// Route::any('adminAdd',['uses' => 'AdminController@add']);
+Route::any('adminDelete',['uses' => 'AdminController@delete']);
+Route::any('roleShow',['uses' => 'RoleController@show']);
+Route::any('roleDelete',['uses' => 'RoleController@delete']);
+Route::any('nodeShow',['uses' => 'NodeController@show']);
+Route::any('nodeDelete',['uses' => 'NodeController@delete']);
 
 //RBAC
 Route::any('adminAdd',['uses' => 'AdminController@adminAdd']);
@@ -55,9 +59,14 @@ Route::any('adminList',['uses' => 'AdminController@adminList']);
 
 Route::group(['middleware' => ['web']], function () {
     Route::any('adminAdd',['uses' => 'AdminController@add']);
+    Route::any('adminEdit',['uses' => 'AdminController@edit']);
+    Route::any('roleAdd',['uses' => 'RoleController@add']);
+    Route::any('roleEdit',['uses' => 'RoleController@edit']);
+    Route::any('nodeAdd',['uses' => 'NodeController@add']);
+    Route::any('nodeEdit',['uses' => 'NodeController@edit']);
 });
 
-
+Route::any('getNode',['uses' => 'CommonController@getNode']);
 
 
 

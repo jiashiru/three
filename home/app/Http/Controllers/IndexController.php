@@ -11,6 +11,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class IndexController extends Controller
 {
+
+    public function __construct()
+    {
+        session_start();
+    }
+
     //主页
     public function index()
     {
@@ -67,6 +73,7 @@ class IndexController extends Controller
     public function classify()
     {
         return view("index/classify");
+
     }
 
     //商品详情
