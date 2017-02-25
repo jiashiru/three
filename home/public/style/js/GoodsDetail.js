@@ -1,0 +1,1 @@
+Base.getScript("http://skin.1yyg.net/JS/GoodsDetailFun.js?date=170206");
