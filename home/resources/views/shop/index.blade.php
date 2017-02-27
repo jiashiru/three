@@ -116,7 +116,8 @@
             </li>
         </ul>
     </div>
-</div><!--头部-->
+</div>
+<!--头部-->
 <div class="g-header">
     <div class="w1190">
         <div id="topLogoAd" class="logo_1yyg fl">
@@ -193,6 +194,7 @@
         </div>
     </div>
 </div>
+
 <input name="hidGoodsID" type="hidden" id="hidGoodsID" value="23784" />
 <input name="hidCodeID" type="hidden" id="hidCodeID" value="10333230" />
 <input name="hidTitle" type="hidden" id="hidTitle" value="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）&lt;span class=&quot;o-info&quot;>苹果礼包，一份令您惊喜的礼物！（手机颜色随机发）&lt;/span>" />

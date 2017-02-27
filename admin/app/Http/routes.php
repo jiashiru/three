@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -66,7 +56,45 @@ Route::group(['middleware' => ['web']], function () {
     Route::any('nodeEdit',['uses' => 'NodeController@edit']);
 });
 
+
+//商品品牌
+Route::any('brandAdd',['uses' => 'BrandController@add']);
+Route::any('brandShow',['uses' => 'BrandController@show']);
+Route::any('brandEdit',['uses' => 'BrandController@edit']);
+Route::any('brandDelete',['uses' => 'BrandController@delete']);
+
+
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('navAdd', 'NavController@add');
+    Route::post('navDoAdd','NavController@doAdd');
+    Route::get('navShow','NavController@show');
+    Route::get('navDel','NavController@del');
+});
+
 Route::any('getNode',['uses' => 'CommonController@getNode']);
 
+
+//商品类型
+Route::any('categoryAdd',['uses' => 'CategoryController@add']);
+Route::any('categoryShow',['uses' => 'CategoryController@show']);
+Route::any('categoryEdit',['uses' => 'CategoryController@edit']);
+Route::any('categoryDelete',['uses' => 'CategoryController@delete']);
+
+//商品分类
+Route::any('typeAdd',['uses' => 'TypeController@add']);
+Route::any('typeShow',['uses' => 'TypeController@show']);
+Route::any('typeEdit',['uses' => 'TypeController@edit']);
+Route::any('typeDelete',['uses' => 'TypeController@delete']);
+
+//商品添加
+Route::any('goodsAdd',['uses' => 'GoodsController@add']);
+Route::any('goodsShow',['uses' => 'GoodsController@show']);
+Route::any('goodsEdit',['uses' => 'GoodsController@edit']);
+Route::any('goodsDelete',['uses' => 'GoodsController@delete']);
+
+Route::any('goodsDetail',['uses' => 'GoodsController@detail']);
+Route::any('goodsAlter',['uses' => 'GoodsController@alter']);
+Route::any('goodsSearch',['uses' => 'GoodsController@search']);
 
 

@@ -8,7 +8,7 @@ class CommonController extends Controller
     public function __construct()
     {
         //判断是否拥有权限
-        $this->authorities();
+//        $this->authorities();
 
     }
 

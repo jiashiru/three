@@ -5,17 +5,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>编辑个人资料_1元云购</title>
-    <link rel="stylesheet" type="text/css" href="http://skin.1yyg.net/css/header.css?v=170215" />
+    <link rel="stylesheet" type="text/css" href="style/css/set/header.css?v=170215" />
     <!--[if IE 6]>
-    <script type="text/javascript" src="http://skin.1yyg.net/js/iepng.js"></script>
+    <script type="text/javascript" src="style/js/set/iepng.js"></script>
     <script type="text/javascript">
         EvPNG.fix('.search a.seaIcon i,.m-menu-all h3 em,.nav-cart-btn i.f-cart-icon,a.u-cart s,.u-mui-tab a.u-menus s,.u-mui-tab li.f-cart a.u-menus i,.u-mui-tab li.f-both-top a.u-menus,.u-mui-tab li.f-both-bottom a.u-menus,.i-ctrl a s,.g-list li cite,.f-list-sorts li.m-value s,.nav-main li.f-nav-thanks span,.u-float-list a i,.cartEmpty i,.transparent-png');
     </script>
     <![endif]-->
-    <link href="http://skin.1yyg.net/Member/css/base.css?date=20150716" rel="stylesheet" type="text/css" />
-    <link href="http://skin.1yyg.net/member/css/member_x.css?v=150728" rel="stylesheet" type="text/css" />
-    <script language="javascript" type="text/javascript" src="http://skin.1yyg.net/JS/JQuery1.12.js"></script>
-    <script id="pageJS" language="javascript" type="text/javascript" data="http://skin.1yyg.net/Member/JS/Modify.js"></script>
+    <link href="style/css/set/base.css?date=20150716" rel="stylesheet" type="text/css" />
+    <link href="style/css/set/member_x.css?v=150728" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="style/js/JQuery1.12.js"></script>
+    <script id="pageJS" language="javascript" type="text/javascript" data="style/js/set/Modify.js"></script>
 </head>
 <body>
 <input name="hidOldName" type="hidden" id="hidOldName" value="USER.1016650713" />
@@ -37,7 +37,7 @@
             <ul class="fl">
                 <li id="liIndex" class="f-home" style="display:none;">
                     <div class="u-menu-hd">
-                        <a href="http://www.1yyg.com/" title="1元云购首页" class="orange">1元云购首页</a>
+                        <a href="/" title="1元云购首页" class="orange">1元云购首页</a>
                     </div>
                 </li>
                 <li class="f-gap" style="display:none;"><s></s></li>
@@ -50,7 +50,7 @@
                 <li class="f-gap" style="display: none;"><s></s></li>
                 <li id="liCCTV" style="display: none;">
                     <a href="http://www.1yyg.com/url.html?t=8" target="_blank" class="cctv-icon" title="央视网">
-                        <img src="http://skin.1yyg.net/images/cctv-icon.jpg" alt="央视网" width="80" height="35" class="cctv-icon-img">
+                        <img src="style/images/set/cctv-icon.jpg" alt="央视网" width="80" height="35" class="cctv-icon-img">
                         <span class="cctv-icon-txt">广告合作伙伴</span>
                     </a>
                 </li>
@@ -58,45 +58,45 @@
             <ul id="ulTopRight" class="fr">
                 <li id="liMember" class="u-arr-1yyg" style="display: none;">
                     <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
+                        <a href="" title="我的1元云购">我的1元云购</a>
                         <div class="f-top-arrow"><cite>◆</cite><b>◆</b></div>
                     </div>
                     <div class="u-select">
-                        <span><a href="http://member.1yyg.com/UserBuyList.do" title="云购记录">云购记录</a></span>
-                        <span><a href="http://member.1yyg.com/OrderList.do" title="获得的商品">获得的商品</a></span>
-                        <span><a href="http://member.1yyg.com/MemberModify.do" title="个人设置">个人设置</a></span>
+                        <span><a href="" title="云购记录">云购记录</a></span>
+                        <span><a href="" title="获得的商品">获得的商品</a></span>
+                        <span><a href="" title="个人设置">个人设置</a></span>
                     </div>
                 </li>
                 <li class="f-gap" style="display: none;"><s></s></li>
                 <li id="liHome" style="display: none;">
                     <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
+                        <a href="/" title="我的1元云购">我的1元云购</a>
                     </div>
                 </li>
                 <li class="f-gap" style="display: none;"><s></s></li>
                 <li id="liTopUMsg" class="u-arr-news" style="display: none;">
                     <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/userMessage.do" title="消息">消息</a>
+                        <a href="" title="消息">消息</a>
                         <h3 style="display: none;"></h3>
                         <div class="f-top-arrow"><cite>◆</cite><b>◆</b></div>
                     </div>
                     <div class="u-select">
-                        <span><a href="http://member.1yyg.com/UserMessage.do" title="系统消息">系统消息</a></span>
-                        <span><a href="http://member.1yyg.com/FriendsApply.do" title="好友请求">好友请求</a></span>
-                        <span><a href="http://member.1yyg.com/ReplyCommentsMsg.do" title="好友请求">评论回复</a></span>
-                        <span><a href="http://member.1yyg.com/UserPrivMsg.do" title="私信" class="f-msg">私信</a></span>
+                        <span><a href="" title="系统消息">系统消息</a></span>
+                        <span><a href="" title="好友请求">好友请求</a></span>
+                        <span><a href="" title="好友请求">评论回复</a></span>
+                        <span><a href="" title="私信" class="f-msg">私信</a></span>
                     </div>
                 </li>
                 <li class="f-gap" style="display: none;"><s></s></li>
                 <li id="liMobile" class="u-arr">
                     <div class="u-menu-hd">
-                        <a target="_blank" href="http://info.1yyg.com/app/mobile.html" title="手机云购">手机云购</a>
+                        <a target="_blank" href="" title="手机云购">手机云购</a>
                         <i></i>
                     </div>
                     <div class="u-select">
                         <p>下载1元云购App</p>
                         <a target="_blank" href="http://info.1yyg.com/app/mobile.html">
-                            <img src="http://skin.1yyg.net/images/app-qrcode.jpg" alt="点击1元云购App">
+                            <img src="style/images/set/app-qrcode.jpg" alt="点击1元云购App">
                         </a>
                         <i class="white-sub"><i></i></i>
                     </div>
@@ -104,7 +104,7 @@
                 <li class="f-gap"><s></s></li>
                 <li>
                     <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/UserRecharge.do" title="充值">充值</a>
+                        <a href="" title="充值">充值</a>
                     </div>
                 </li>
                 <li class="f-gap"><s></s></li>
@@ -189,8 +189,10 @@
     <script>
         var _MemberUpdateCartNum = function () { };
         function GetJPData(domain, action, para, callfun) {
+
             $.getJSON(domain + "/JPData?action=" + action + (para != "" ? "&" : "") + para + "&fun=?", callfun);
         }
+
         $(document).ready(function () {
             var _MemberRTool = $("#divMemberRTool");
             var _DivObj = _MemberRTool.children("div.m-narrow-list");
@@ -265,7 +267,7 @@
                     _DivObj.attr("style", "height:232px;");
                     _BackTopObj.hide();
                 }
-            }
+            };
             $(window).scroll(function () {
                 scrollFun();
             });
@@ -303,7 +305,8 @@
                             <a href="/UserPhoto.do?forward=%2fMemberModify.do" class="h-pic"><img src="http://img.1yyg.net/UserFace/160/00000000000000000.jpg" width="120" height="120" /></a><a href="/UserPhoto.do?forward=%2fMemberModify.do" class="h-txt">修改头像</a>
                         </div>
                         <div class="pic-wrap">
-                            <a href="/security/index.do"><span class="p-icon"><i class="tel"></i></span><p class="gray9">已绑定</p><p class="gray6">15373****63</p></a>
+                            <a href="/security/index.do"><span class="p-icon"><i class="tel"></i></span><p class="gray9">已绑定</p>
+                                <p class="gray6">15373****63</p></a>
                         </div>
                         <div class="pic-wrap">
                             <a href="/UserAuth-50.do?forward=%2fMemberModify.do"><span class="p-icon"><i class="mail"></i></span><p class="gray9">未绑定</p></a>
@@ -349,91 +352,57 @@
                             </li>
                             <li>
                                 <span class="label">生　　日：</span>
-                                <div class="shi-address-box date-address-box birthday">
-                                    <ul>
-                                        <li class="select-list">
-                                            <div class="fl clrfix">
-                                                    <span id="sltYear" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">年<s class="u-personal"></s>
-                                                        </a>
-                                                        <div class="select-state">
-                                                        </div>
-                                                    </span>
-                                                    <span id="sltMonth" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">月<s class="u-personal"></s>
-                                                        </a>
-                                                        <div class="select-state">
-                                                        </div>
-                                                    </span>
-                                                    <span id="sltDay" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">日<s class="u-personal"></s>
-                                                        </a>
-                                                        <div class="select-state">
-                                                        </div>
-                                                    </span>
-                                            </div>
-                                            <span id="span_tip" class="orange">生日当月享双倍福分(保存后,一年后才能再次编辑)</span>
-                                        </li>
-                                    </ul>
+
+                                <div id="main" >
+                                    <div class="demo" >
+
+                                        {{--<p>--}}
+                                            {{--<select id="sel_year"></select>年--}}
+                                            {{--<select id="sel_month"></select>月--}}
+                                            {{--<select id="sel_day"></select>日--}}
+                                        {{--</p>--}}
+                                        <p>
+                                            <select class="sel_year" rel="2000"></select>年
+                                            <select class="sel_month" rel="2"></select>月
+                                            <select class="sel_day" rel="14"></select>日
+                                        </p>
+
+
+                                    </div>
+
                                 </div>
+
+                                <script type="text/javascript" src="style/js/birthday.js"></script>
+                                <script>
+                                    $(function () {
+                                        $.ms_DatePicker({
+                                            YearSelector: ".sel_year",
+                                            MonthSelector: ".sel_month",
+                                            DaySelector: ".sel_day"
+                                        });
+                                        $.ms_DatePicker();
+                                    });
+                                </script>
+
+
                             </li>
-                            <li>
-                                <span class="label">星　　座：</span>
-                                <div class="shi-address-box oth-address-box">
-                                    <ul>
-                                        <li class="select-list">
-                                            <div class="fl clrfix">
-                                                    <span id="sltCons" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                        <div class="select-state">
-                                                        </div>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+
                             <li>
                                 <span class="label">所<em class="blank2">在</em>地：</span>
-                                <div class="shi-address-box oth-address-box now-add">
-                                    <ul>
-                                        <li class="select-list">
-                                            <div class="fl clrfix" id="div_live">
-                                                    <span id="selLiveA" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                    </span>
-                                                    <span id="selLiveB" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                <div class="control-group fl clrfix" >
+                                    <div class="controls">
+                                        <select name="location_p" id=""></select>
+                                        <select name="location_c" id=""></select>
+                                        <select name="location_a" id=""></select>
+                                        <script src="style/js/region_select.js"></script>
+                                        <script type="text/javascript">
+                                            new PCAS('location_p', 'location_c', 'location_a', '北京市', '', '');
+                                        </script>
+                                    </div>
                                 </div>
                                 <span class="orange"></span>
                             </li>
-                            <li>
-                                <span class="label">家　　乡：</span>
-                                <div class="shi-address-box oth-address-box old-add">
-                                    <ul>
-                                        <li class="select-list">
-                                            <div class="fl clrfix" id="div_home">
-                                                    <span id="selHomeA" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                    </span>
-                                                    <span id="selHomeB" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <span class="orange"></span>
-                            </li>
+
                             <li>
                                 <span class="label">QQ&nbsp;号码：</span>
                                 <input name="txtQQ" type="text" id="txtQQ" class="inp-long" value="您的QQ号码" />

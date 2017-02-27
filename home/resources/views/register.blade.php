@@ -210,19 +210,33 @@
                 flag = 0;
                 $("#apwd").html("<font color='red'>请输入确认密码</font>");
             }else{
-                //ajax添加
-                $.post("registerDo",{name:name,pwd:pwd}, function (res) {
-                    if(res==1){
-                        //注册成功,跳转
-                        location.href="/";
-
+                //ajax验证手机号唯一
+                $.post('checkName',{name:name}, function (res) {
+                    if(res==0){
+                        flag = 0;
+                        $("#name").html("<font color='red'>用户名已经存在</font>");
                     }else{
-                        //注册失败，提示，刷新页面
-                        alert('注册失败');
-                        history.go(0);
+                        flag = 1;
+                        $("#name").html("<font color='green'>ok</font>");
 
                     }
                 });
+                if(flag==1){
+                    //ajax添加
+                    $.post("registerDo",{name:name,pwd:pwd}, function (res) {
+                        if(res==1){
+                            //注册成功,跳转
+                            location.href="/";
+
+                        }else{
+                            //注册失败，提示，刷新页面
+                            alert('注册失败');
+                            history.go(0);
+
+                        }
+                    });
+                }
+
             }
         });
 
