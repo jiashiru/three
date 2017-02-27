@@ -66,7 +66,32 @@ Route::group(['middleware' => ['web']], function () {
     Route::any('nodeEdit',['uses' => 'NodeController@edit']);
 });
 
-Route::any('getNode',['uses' => 'CommonController@getNode']);
+//商品品牌
+Route::any('brandAdd',['uses' => 'BrandController@add']);
+Route::any('brandShow',['uses' => 'BrandController@show']);
+Route::any('brandEdit',['uses' => 'BrandController@edit']);
+Route::any('brandDelete',['uses' => 'BrandController@delete']);
 
+//商品类型
+Route::any('categoryAdd',['uses' => 'CategoryController@add']);
+Route::any('categoryShow',['uses' => 'CategoryController@show']);
+Route::any('categoryEdit',['uses' => 'CategoryController@edit']);
+Route::any('categoryDelete',['uses' => 'CategoryController@delete']);
+
+//商品分类
+Route::any('typeAdd',['uses' => 'TypeController@add']);
+Route::any('typeShow',['uses' => 'TypeController@show']);
+Route::any('typeEdit',['uses' => 'TypeController@edit']);
+Route::any('typeDelete',['uses' => 'TypeController@delete']);
+
+//商品添加
+Route::any('goodsAdd',['uses' => 'GoodsController@add']);
+Route::any('goodsShow',['uses' => 'GoodsController@show']);
+Route::any('goodsEdit',['uses' => 'GoodsController@edit']);
+Route::any('goodsDelete',['uses' => 'GoodsController@delete']);
+
+Route::any('goodsDetail',['uses' => 'GoodsController@detail']);
+Route::any('goodsAlter',['uses' => 'GoodsController@alter']);
+Route::any('goodsSearch',['uses' => 'GoodsController@search']);
 
 
