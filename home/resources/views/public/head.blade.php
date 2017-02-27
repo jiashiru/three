@@ -22,6 +22,8 @@
             </li>
         </ul>
         <ul id="ulTopRight" class="fr">
+            <li class="u-menu-hd"><div class="u-menu-hd"><a href="login">登录</a></div></li>
+            <li class="u-menu-hd"><div class="u-menu-hd"><a href="register">注册</a></div></li>
             <li id="liMember" class="u-arr-1yyg" style="display: none;">
                 <div class="u-menu-hd">
                     <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
@@ -56,7 +58,7 @@
             <li class="f-gap" style="display: none;"><s></s></li>
             <li id="liMobile" class="u-arr">
                 <div class="u-menu-hd">
-                    <a target="_blank" href="http://info.1yyg.com/app/mobile.html" title="手机云购">手机云购</a>
+                        <a target="_blank" href="http://info.1yyg.com/app/mobile.html" title="手机云购">手机云购</a>
                     <i></i>
                 </div>
                 <div class="u-select">

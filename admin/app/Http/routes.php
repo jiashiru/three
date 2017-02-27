@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -66,11 +56,24 @@ Route::group(['middleware' => ['web']], function () {
     Route::any('nodeEdit',['uses' => 'NodeController@edit']);
 });
 
+
 //商品品牌
 Route::any('brandAdd',['uses' => 'BrandController@add']);
 Route::any('brandShow',['uses' => 'BrandController@show']);
 Route::any('brandEdit',['uses' => 'BrandController@edit']);
 Route::any('brandDelete',['uses' => 'BrandController@delete']);
+
+
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('navAdd', 'NavController@add');
+    Route::post('navDoAdd','NavController@doAdd');
+    Route::get('navShow','NavController@show');
+    Route::get('navDel','NavController@del');
+});
+
+Route::any('getNode',['uses' => 'CommonController@getNode']);
+
 
 //商品类型
 Route::any('categoryAdd',['uses' => 'CategoryController@add']);
