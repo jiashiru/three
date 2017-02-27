@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -66,7 +56,18 @@ Route::group(['middleware' => ['web']], function () {
     Route::any('nodeEdit',['uses' => 'NodeController@edit']);
 });
 
+<<<<<<< HEAD
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('navAdd', 'NavController@add');
+    Route::post('navDoAdd','NavController@doAdd');
+    Route::get('navShow','NavController@show');
+    Route::get('navDel','NavController@del');
+});
+
+=======
 Route::any('getNode',['uses' => 'CommonController@getNode']);
+>>>>>>> master
 
 
 
