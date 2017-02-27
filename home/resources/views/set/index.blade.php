@@ -352,91 +352,57 @@
                             </li>
                             <li>
                                 <span class="label">生　　日：</span>
-                                <div class="shi-address-box date-address-box birthday">
-                                    <ul>
-                                        <li class="select-list">
-                                            <div class="fl clrfix">
-                                                    <span id="sltYear" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">年<s class="u-personal"></s>
-                                                        </a>
-                                                        <div class="select-state">
-                                                        </div>
-                                                    </span>
-                                                    <span id="sltMonth" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">月<s class="u-personal"></s>
-                                                        </a>
-                                                        <div class="select-state">
-                                                        </div>
-                                                    </span>
-                                                    <span id="sltDay" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">日<s class="u-personal"></s>
-                                                        </a>
-                                                        <div class="select-state">
-                                                        </div>
-                                                    </span>
-                                            </div>
-                                            <span id="span_tip" class="orange">生日当月享双倍福分(保存后,一年后才能再次编辑)</span>
-                                        </li>
-                                    </ul>
+
+                                <div id="main" >
+                                    <div class="demo" >
+
+                                        {{--<p>--}}
+                                            {{--<select id="sel_year"></select>年--}}
+                                            {{--<select id="sel_month"></select>月--}}
+                                            {{--<select id="sel_day"></select>日--}}
+                                        {{--</p>--}}
+                                        <p>
+                                            <select class="sel_year" rel="2000"></select>年
+                                            <select class="sel_month" rel="2"></select>月
+                                            <select class="sel_day" rel="14"></select>日
+                                        </p>
+
+
+                                    </div>
+
                                 </div>
+
+                                <script type="text/javascript" src="style/js/birthday.js"></script>
+                                <script>
+                                    $(function () {
+                                        $.ms_DatePicker({
+                                            YearSelector: ".sel_year",
+                                            MonthSelector: ".sel_month",
+                                            DaySelector: ".sel_day"
+                                        });
+                                        $.ms_DatePicker();
+                                    });
+                                </script>
+
+
                             </li>
-                            <li>
-                                <span class="label">星　　座：</span>
-                                <div class="shi-address-box oth-address-box">
-                                    <ul>
-                                        <li class="select-list">
-                                            <div class="fl clrfix">
-                                                    <span id="sltCons" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                        <div class="select-state">
-                                                        </div>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+
                             <li>
                                 <span class="label">所<em class="blank2">在</em>地：</span>
-                                <div class="shi-address-box oth-address-box now-add">
-                                    <ul>
-                                        <li class="select-list">
-                                            <div class="fl clrfix" id="div_live">
-                                                    <span id="selLiveA" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                    </span>
-                                                    <span id="selLiveB" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                <div class="control-group fl clrfix" >
+                                    <div class="controls">
+                                        <select name="location_p" id=""></select>
+                                        <select name="location_c" id=""></select>
+                                        <select name="location_a" id=""></select>
+                                        <script src="style/js/region_select.js"></script>
+                                        <script type="text/javascript">
+                                            new PCAS('location_p', 'location_c', 'location_a', '北京市', '', '');
+                                        </script>
+                                    </div>
                                 </div>
                                 <span class="orange"></span>
                             </li>
-                            <li>
-                                <span class="label">家　　乡：</span>
-                                <div class="shi-address-box oth-address-box old-add">
-                                    <ul>
-                                        <li class="select-list">
-                                            <div class="fl clrfix" id="div_home">
-                                                    <span id="selHomeA" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                    </span>
-                                                    <span id="selHomeB" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                    </span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <span class="orange"></span>
-                            </li>
+
                             <li>
                                 <span class="label">QQ&nbsp;号码：</span>
                                 <input name="txtQQ" type="text" id="txtQQ" class="inp-long" value="您的QQ号码" />

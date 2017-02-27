@@ -44,6 +44,10 @@ Route::post("registerDo","RegisterController@registerDo");  //注册
 Route::any("/","IndexController@index");//主页
 Route::any("indexClassify","IndexController@classify");//分类
 Route::any("indexShop","IndexController@shop");//商品详情
+Route::any("indexGoods_photo","IndexController@goods_photo");//商品详情
+Route::any("indexTime","IndexController@server_time");//获取当前服务器时间，用户主页下面
+
+
 Route::any("indexCarousel","IndexController@carousel");//轮播图
 Route::any("indexHot","IndexController@hot");//查询最热产品
 
@@ -67,7 +71,7 @@ Route::any("shopIndex",function(){ return view("shop/index"); });
 
 
 //buy
-Route::any("buycarIndex",function(){ return view("buycar/index"); });//购物车
+Route::any("buycarIndex","BuycarController@index");//购物车
 Route::any("buycarAccount",function(){ return view("buycar/account"); });//结算1
 
 
