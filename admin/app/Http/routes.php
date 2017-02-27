@@ -56,7 +56,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::any('nodeEdit',['uses' => 'NodeController@edit']);
 });
 
-<<<<<<< HEAD
+
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('navAdd', 'NavController@add');
@@ -65,9 +65,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('navDel','NavController@del');
 });
 
-=======
 Route::any('getNode',['uses' => 'CommonController@getNode']);
->>>>>>> master
 
 
 
