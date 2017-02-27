@@ -48,11 +48,14 @@ class RegisterController extends Controller
 
         //密码加密，先md5，后加three，再md5
         $new_pwd = md5(md5($pwd).'three');
+        //生成一个随机且唯一的字符串，作为昵称
+        $uname = 'USER.'.uniqid();
 
         //判断是手机还是邮箱
         if(strpos($name,"@")){
             //找到为邮箱
            $result = DB::table('user')->insertGetId([
+               'uname'=>$uname,
                'email' => $name,
                'password' => $new_pwd,
                'create_time'=>time()
@@ -71,6 +74,7 @@ class RegisterController extends Controller
             //没找到，为手机号
 
             $result = DB::table('user')->insertGetId([
+                'uname'=>$uname,
                 'tel' => $name,
                 'password' => $new_pwd,
                 'create_time'=>time()

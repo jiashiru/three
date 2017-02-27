@@ -1,0 +1,1 @@
+var isDebug=false;var v=isDebug?new Date().getTime():"17010501";Base.getScript("http://skin.1yyg.net/JS/BottomFun.js?date="+v,function(){Base.getScript("http://skin.1yyg.net/JS/cnzzCount.js?date="+v)});
