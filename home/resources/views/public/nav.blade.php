@@ -7,9 +7,7 @@
             <div id="divSortList" class="m-all-sort">
                 <!--menustart-->
                 <ul class='m-all-menu'>
-
                     <?php foreach($goods_type as $k=>$v){ ?>
-
                         <li>
                             <div class='z-fg-line'>
                                 <div class='z-margin-right'>
@@ -23,9 +21,9 @@
                                     </p>
                                     <p class='lvl2'>
                                         <?php foreach($v['category'] as $key=>$val){?>
-
+                                                
                                             <span class='lvl2'>
-                                                <a href='http://www.1yyg.com/list/n101.html' cate_id="<?php echo $val['cate_id'] ?>" target='_blank' class='lvl2 none'>
+                                                <a href="" cate_id="<?php echo $val['cate_id'] ?>" target='_blank' class='lvl2 none'>
                                                     <?php echo $val['cate_name'] ?><b class='icons-sort'></b>
                                                 </a>
                                             </span>
@@ -38,17 +36,6 @@
 
 
                     <?php } ?>
-
-                    <li>
-                        <div class='z-fg-line'><div class='z-margin-right'><p class='lvl1'><span class='lvl1'><i>/</i>
-                                        <a href='http://www.1yyg.com/list/n105.html' target='_blank' class='lvl1 none'>电脑办公
-                                            <b class='icons-sort'></b></a></span></p><p class='lvl2'><span class='lvl2'><a href='http://www.
-                                            1yyg.com/list/n106.html' target='_blank' class='lvl2 none'>平板电脑<b class='icons-sort'>
-
-                                            </b></a></span><span class='lvl2'><a href='http://www.1yyg.com/list/n107.html' target='_blank' cl
-                                                                                 ass='lvl2 none'>笔记本<b class='icons-sort'></b></a></span>
-                                    <span class='lvl2'><a href='http://www.1yyg.com/list/n108.html' target='_blank' class='lvl2 none'>
-                                            配件<b class='icons-sort'></b></a></span></p></div></div></li>
 
                 </ul>
                 <!--menuend-->
