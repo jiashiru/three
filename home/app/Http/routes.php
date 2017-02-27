@@ -70,7 +70,8 @@ Route::any("shopIndex",function(){ return view("shop/index"); });
 
 
 //buy
-Route::any("buycarIndex","BuycarController@index");//购物车
+Route::any("buycarIndex","BuycarController@index");
+//购物车
 Route::any("buycarAccount",function(){ return view("buycar/account"); });//结算1
 
 
