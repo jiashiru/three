@@ -1157,17 +1157,54 @@
                         <li>
                             <dl>
                                 <dt>服务器时间</dt>
-                                <dd id="pServerTime">
-                                    <span>00</span>
+                                <dd id="">
+                                    <span id="h"><?php echo $time['h'] ?></span>
                                     <em>:</em>
-                                    <span>00</span>
+                                    <span id="i"><?php echo $time['i'] ?></span>
                                     <em>:</em>
-                                    <span>00</span>
+                                    <span id="s"><?php echo $time['s'] ?></span>
                                 </dd>
                             </dl>
                         </li>
                     </ul>
                 </div>
+
+                <script>
+                    setInterval(function() {
+                        var h = $("#h").html();
+                        var i = $("#i").html();
+                        var s = $("#s").html();
+                        if(s<59)
+                        {
+                            s=s*1+1;
+                        }
+                        else
+                        {
+                            if(i<59)
+                            {
+                                i=i*1+1;
+                            }
+                            else
+                            {
+                                if(h<23)
+                                {
+                                    h=h*1+1;
+                                }
+                                else
+                                {
+                                    h="00";
+                                }
+                                i="00";
+                            }
+                            s="00";
+                        }
+                        $("#h").html(h);
+                        $("#i").html(i);
+                        $("#s").html(s);
+                    }, 1000);
+
+                </script>
+
                 <div class="m-ser u-ser4">
                     <ul>
                         <li><s class="u-icons"></s></li>

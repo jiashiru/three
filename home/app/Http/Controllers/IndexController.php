@@ -22,9 +22,12 @@ class IndexController extends Controller
     {
         //查询商品的 分类表 与 类型表 并且处理数组
         $goods_type = $this->type_and_category();
+        //获取当前服务器时间，用户主页下面
+        $time = $this->server_time();
 
         return view("index/index",[
             'goods_type'=>$goods_type,//分类表 与 类型表
+            'time'=>$time,//分类表 与 类型表
 
 
         ]);
@@ -96,5 +99,13 @@ class IndexController extends Controller
         $goods_gallery = DB::table("goods_gallery")->where(['goods_id'=>$goods_id,'img_type'=>0])->get();
 
         echo json_encode($goods_gallery);
+    }
+    //获取当前服务器时间，用户主页下面
+    public function server_time()
+    {
+        $data['h'] = date("H",time());
+        $data['i'] = date("i",time());
+        $data['s'] = date("s",time());
+        return $data;
     }
 }
