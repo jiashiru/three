@@ -24,18 +24,8 @@ class GoodsController extends CommonController
     public function search(Request $request)
     {
         $data = $request->input();
-        if (isset($data['flog'])) {
-            $name = $data['name'];
-            $flog = $data['flog'];
-            $goods = Goods::find($data['id']);
-            $goods->$data['name'] = $data['val'];
 
-            if ($goods->save()) {
-                echo 1;exit;
-            } else {
-                echo 0;exit;
-            }
-        }
+        //搜索条件
         $keys = [];
         $values = [];
         if ($data['type_id']) {
@@ -133,23 +123,24 @@ class GoodsController extends CommonController
     public function alter(Request $request)
     {
         $data = $request->all();
-        if (isset($data['folg'])) {
+//        dd($data);
+        if(isset($data['val'])) {
             $goods = Goods::find($data['id']);
             $goods->$data['name'] = $data['val'];
+
+            if ($goods->save()) {
+                echo 1;exit;
+            } else {
+                echo 0;exit;
+            }
+        } else {
+            $goods = Goods::find($data['id']);
+            $goods->$data['name'] = $data['flog'];
             if ($goods->save()) {
                 echo 1;exit;
             } else {
                 echo 0;exit;
             }
         }
-        $goods = Goods::find($data['id']);
-        $goods->$data['name'] = $data['val'];
-
-        if ($goods->save()) {
-            echo 1;exit;
-        } else {
-            echo 0;exit;
-        }
-
     }
 }
