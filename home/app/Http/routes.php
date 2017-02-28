@@ -55,6 +55,7 @@ Route::any("indexHot","IndexController@hot");//查询最热产品
 
 
 
+
 //我的一元云够
 Route::any("userIndex",function(){ return view("user/index"); });
 Route::any("userRecord",function(){ return view("user/record"); });//我的记录
@@ -62,7 +63,7 @@ Route::any("userRecord",function(){ return view("user/record"); });//我的记�
 
 
 //账号设置
-Route::any("setIndex",function(){ return view("set/index"); });
+Route::get("setMsg","SetController@setMsg");//个人资料
 
 //商品详情
 Route::any("shopIndex",function(){ return view("shop/index"); });
@@ -70,7 +71,10 @@ Route::any("shopIndex",function(){ return view("shop/index"); });
 
 
 //buy
+
 Route::any("buycarIndex","BuycarController@index");//购物车
+
+
 Route::any("buycarAccount",function(){ return view("buycar/account"); });//结算1
 
 

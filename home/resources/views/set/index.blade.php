@@ -5,17 +5,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>编辑个人资料_1元云购</title>
-    <link rel="stylesheet" type="text/css" href="http://skin.1yyg.net/css/header.css?v=170215" />
+    <link rel="stylesheet" type="text/css" href="style/css/set/header.css?v=170215" />
     <!--[if IE 6]>
-    <script type="text/javascript" src="http://skin.1yyg.net/js/iepng.js"></script>
+    <script type="text/javascript" src="style/js/set/iepng.js"></script>
     <script type="text/javascript">
         EvPNG.fix('.search a.seaIcon i,.m-menu-all h3 em,.nav-cart-btn i.f-cart-icon,a.u-cart s,.u-mui-tab a.u-menus s,.u-mui-tab li.f-cart a.u-menus i,.u-mui-tab li.f-both-top a.u-menus,.u-mui-tab li.f-both-bottom a.u-menus,.i-ctrl a s,.g-list li cite,.f-list-sorts li.m-value s,.nav-main li.f-nav-thanks span,.u-float-list a i,.cartEmpty i,.transparent-png');
     </script>
     <![endif]-->
-    <link href="http://skin.1yyg.net/Member/css/base.css?date=20150716" rel="stylesheet" type="text/css" />
-    <link href="http://skin.1yyg.net/member/css/member_x.css?v=150728" rel="stylesheet" type="text/css" />
-    <script language="javascript" type="text/javascript" src="http://skin.1yyg.net/JS/JQuery1.12.js"></script>
-    <script id="pageJS" language="javascript" type="text/javascript" data="http://skin.1yyg.net/Member/JS/Modify.js"></script>
+    <link href="style/css/set/base.css?date=20150716" rel="stylesheet" type="text/css" />
+    <link href="style/css/set/member_x.css?v=150728" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="style/js/JQuery1.12.js"></script>
+    <script id="pageJS" language="javascript" type="text/javascript" data="style/js/set/Modify.js"></script>
 </head>
 <body>
 <input name="hidOldName" type="hidden" id="hidOldName" value="USER.1016650713" />
@@ -37,7 +37,7 @@
             <ul class="fl">
                 <li id="liIndex" class="f-home" style="display:none;">
                     <div class="u-menu-hd">
-                        <a href="http://www.1yyg.com/" title="1元云购首页" class="orange">1元云购首页</a>
+                        <a href="/" title="1元云购首页" class="orange">1元云购首页</a>
                     </div>
                 </li>
                 <li class="f-gap" style="display:none;"><s></s></li>
@@ -50,7 +50,7 @@
                 <li class="f-gap" style="display: none;"><s></s></li>
                 <li id="liCCTV" style="display: none;">
                     <a href="http://www.1yyg.com/url.html?t=8" target="_blank" class="cctv-icon" title="央视网">
-                        <img src="http://skin.1yyg.net/images/cctv-icon.jpg" alt="央视网" width="80" height="35" class="cctv-icon-img">
+                        <img src="style/images/set/cctv-icon.jpg" alt="央视网" width="80" height="35" class="cctv-icon-img">
                         <span class="cctv-icon-txt">广告合作伙伴</span>
                     </a>
                 </li>
@@ -58,45 +58,45 @@
             <ul id="ulTopRight" class="fr">
                 <li id="liMember" class="u-arr-1yyg" style="display: none;">
                     <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
+                        <a href="" title="我的1元云购">我的1元云购</a>
                         <div class="f-top-arrow"><cite>◆</cite><b>◆</b></div>
                     </div>
                     <div class="u-select">
-                        <span><a href="http://member.1yyg.com/UserBuyList.do" title="云购记录">云购记录</a></span>
-                        <span><a href="http://member.1yyg.com/OrderList.do" title="获得的商品">获得的商品</a></span>
-                        <span><a href="http://member.1yyg.com/MemberModify.do" title="个人设置">个人设置</a></span>
+                        <span><a href="" title="云购记录">云购记录</a></span>
+                        <span><a href="" title="获得的商品">获得的商品</a></span>
+                        <span><a href="" title="个人设置">个人设置</a></span>
                     </div>
                 </li>
                 <li class="f-gap" style="display: none;"><s></s></li>
                 <li id="liHome" style="display: none;">
                     <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
+                        <a href="/" title="我的1元云购">我的1元云购</a>
                     </div>
                 </li>
                 <li class="f-gap" style="display: none;"><s></s></li>
                 <li id="liTopUMsg" class="u-arr-news" style="display: none;">
                     <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/userMessage.do" title="消息">消息</a>
+                        <a href="" title="消息">消息</a>
                         <h3 style="display: none;"></h3>
                         <div class="f-top-arrow"><cite>◆</cite><b>◆</b></div>
                     </div>
                     <div class="u-select">
-                        <span><a href="http://member.1yyg.com/UserMessage.do" title="系统消息">系统消息</a></span>
-                        <span><a href="http://member.1yyg.com/FriendsApply.do" title="好友请求">好友请求</a></span>
-                        <span><a href="http://member.1yyg.com/ReplyCommentsMsg.do" title="好友请求">评论回复</a></span>
-                        <span><a href="http://member.1yyg.com/UserPrivMsg.do" title="私信" class="f-msg">私信</a></span>
+                        <span><a href="" title="系统消息">系统消息</a></span>
+                        <span><a href="" title="好友请求">好友请求</a></span>
+                        <span><a href="" title="好友请求">评论回复</a></span>
+                        <span><a href="" title="私信" class="f-msg">私信</a></span>
                     </div>
                 </li>
                 <li class="f-gap" style="display: none;"><s></s></li>
                 <li id="liMobile" class="u-arr">
                     <div class="u-menu-hd">
-                        <a target="_blank" href="http://info.1yyg.com/app/mobile.html" title="手机云购">手机云购</a>
+                        <a target="_blank" href="" title="手机云购">手机云购</a>
                         <i></i>
                     </div>
                     <div class="u-select">
                         <p>下载1元云购App</p>
                         <a target="_blank" href="http://info.1yyg.com/app/mobile.html">
-                            <img src="http://skin.1yyg.net/images/app-qrcode.jpg" alt="点击1元云购App">
+                            <img src="style/images/set/app-qrcode.jpg" alt="点击1元云购App">
                         </a>
                         <i class="white-sub"><i></i></i>
                     </div>
@@ -104,7 +104,7 @@
                 <li class="f-gap"><s></s></li>
                 <li>
                     <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/UserRecharge.do" title="充值">充值</a>
+                        <a href="" title="充值">充值</a>
                     </div>
                 </li>
                 <li class="f-gap"><s></s></li>
@@ -189,8 +189,10 @@
     <script>
         var _MemberUpdateCartNum = function () { };
         function GetJPData(domain, action, para, callfun) {
+
             $.getJSON(domain + "/JPData?action=" + action + (para != "" ? "&" : "") + para + "&fun=?", callfun);
         }
+
         $(document).ready(function () {
             var _MemberRTool = $("#divMemberRTool");
             var _DivObj = _MemberRTool.children("div.m-narrow-list");
@@ -265,7 +267,7 @@
                     _DivObj.attr("style", "height:232px;");
                     _BackTopObj.hide();
                 }
-            }
+            };
             $(window).scroll(function () {
                 scrollFun();
             });
@@ -303,7 +305,8 @@
                             <a href="/UserPhoto.do?forward=%2fMemberModify.do" class="h-pic"><img src="http://img.1yyg.net/UserFace/160/00000000000000000.jpg" width="120" height="120" /></a><a href="/UserPhoto.do?forward=%2fMemberModify.do" class="h-txt">修改头像</a>
                         </div>
                         <div class="pic-wrap">
-                            <a href="/security/index.do"><span class="p-icon"><i class="tel"></i></span><p class="gray9">已绑定</p><p class="gray6">15373****63</p></a>
+                            <a href="/security/index.do"><span class="p-icon"><i class="tel"></i></span><p class="gray9">已绑定</p>
+                                <p class="gray6">15373****63</p></a>
                         </div>
                         <div class="pic-wrap">
                             <a href="/UserAuth-50.do?forward=%2fMemberModify.do"><span class="p-icon"><i class="mail"></i></span><p class="gray9">未绑定</p></a>

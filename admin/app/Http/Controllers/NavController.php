@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Validation\Validator;
-use App\Nav;
+use App\Model\Nav;
 
 
 class NavController extends Controller
