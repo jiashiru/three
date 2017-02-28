@@ -85,9 +85,16 @@ Route::get('typeDelete',['uses' => 'TypeController@delete']);
 Route::any('goodsAdd',['uses' => 'GoodsController@add']);
 Route::any('goodsShow',['uses' => 'GoodsController@show']);
 Route::any('goodsEdit',['uses' => 'GoodsController@edit']);
+
 Route::get('goodsDelete',['uses' => 'GoodsController@delete']);
+
 
 Route::any('goodsAlter',['uses' => 'GoodsController@alter']);
 Route::any('goodsSearch',['uses' => 'GoodsController@search']);
+
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('goodsAjax', 'GoodsController@ajax');
+});
 
 
