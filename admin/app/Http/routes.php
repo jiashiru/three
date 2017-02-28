@@ -28,26 +28,32 @@ Route::any("/",function(){ return view("index/index"); });
 Route::any("indexV1",function(){ return view("index/index_v1"); });
 
 //login
-Route::any('loginLogin',['uses' => 'LoginController@login']);
-Route::any('loginGetCapath',['uses' => 'LoginController@getCapath']);
+Route::group(['middleware' => ['web']], function () {
+    Route::any('loginLogin', ['uses' => 'LoginController@login']);
+    Route::get('loginGetCapath', ['uses' => 'LoginController@getCapath']);
+});
+//register
+Route::group(['middleware' => ['web']], function () {
+    Route::any('registerRegister', ['uses' => 'RegisterController@register']);
+});
 //message
 Route::any('showMsg',['uses' => 'CommonController@showMsg']);
 
 //RBAC
-Route::post('adminShow',['uses' => 'AdminController@show']);
-Route::get('adminDelete',['uses' => 'AdminController@delete']);
-Route::post('roleShow',['uses' => 'RoleController@show']);
-Route::get('roleDelete',['uses' => 'RoleController@delete']);
-Route::post('nodeShow',['uses' => 'NodeController@show']);
-Route::get('nodeDelete',['uses' => 'NodeController@delete']);
+Route::any('adminShow',['uses' => 'AdminController@show']);
+Route::any('adminDelete',['uses' => 'AdminController@delete']);
+Route::any('roleShow',['uses' => 'RoleController@show']);
+Route::any('roleDelete',['uses' => 'RoleController@delete']);
+Route::any('nodeShow',['uses' => 'NodeController@show']);
+Route::any('nodeDelete',['uses' => 'NodeController@delete']);
 
 Route::group(['middleware' => ['web']], function () {
-    Route::post('adminAdd',['uses' => 'AdminController@add']);
-    Route::post('adminEdit',['uses' => 'AdminController@edit']);
-    Route::post('roleAdd',['uses' => 'RoleController@add']);
-    Route::post('roleEdit',['uses' => 'RoleController@edit']);
-    Route::post('nodeAdd',['uses' => 'NodeController@add']);
-    Route::post('nodeEdit',['uses' => 'NodeController@edit']);
+    Route::any('adminAdd',['uses' => 'AdminController@add']);
+    Route::any('adminEdit',['uses' => 'AdminController@edit']);
+    Route::any('roleAdd',['uses' => 'RoleController@add']);
+    Route::any('roleEdit',['uses' => 'RoleController@edit']);
+    Route::any('nodeAdd',['uses' => 'NodeController@add']);
+    Route::any('nodeEdit',['uses' => 'NodeController@edit']);
 });
 
 
@@ -58,7 +64,7 @@ Route::any('brandEdit',['uses' => 'BrandController@edit']);
 Route::get('brandDelete',['uses' => 'BrandController@delete']);
 
 
-
+//导航
 Route::group(['middleware' => ['web']], function () {
     Route::get('navAdd', 'NavController@add');
     Route::post('navDoAdd','NavController@doAdd');
