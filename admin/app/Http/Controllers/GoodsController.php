@@ -2,9 +2,10 @@
 namespace App\Http\Controllers;
 
 
-use DB;
+
 use App\Model\Goods;
 use App\Model\Type;
+use App\Model\Admin;
 use App\Model\Brand;
 use Illuminate\Http\Request;
 
