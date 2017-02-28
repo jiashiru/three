@@ -63,6 +63,8 @@ Route::any("userRecord",function(){ return view("user/record"); });//我的记�
 
 
 //账号设置
+Route::any("setIndex","SetController@index");
+Route::any("setMyself","SetController@myself");//个人主页
 Route::get("setMsg","SetController@setMsg");//个人资料
 
 //商品详情
@@ -73,6 +75,9 @@ Route::any("shopIndex",function(){ return view("shop/index"); });
 //buy
 
 Route::any("buycarIndex","BuycarController@index");//购物车
+Route::any("buycarCart_num","BuycarController@cart_num");//在购物车 增加和减少的时候用
+
+Route::any("buycaraccount","BuycarController@account");//结算1
 
 
 Route::any("buycarAccount",function(){ return view("buycar/account"); });//结算1
