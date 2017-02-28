@@ -64,7 +64,7 @@ Route::any('brandEdit',['uses' => 'BrandController@edit']);
 Route::get('brandDelete',['uses' => 'BrandController@delete']);
 
 
-
+//导航
 Route::group(['middleware' => ['web']], function () {
     Route::get('navAdd', 'NavController@add');
     Route::post('navDoAdd','NavController@doAdd');
