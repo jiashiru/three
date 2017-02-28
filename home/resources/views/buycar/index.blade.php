@@ -55,41 +55,47 @@
 
                 {{--商品--}}
                 <input type="hidden" value="3" id="shop_num">
-                <div id="div_normallist" class="g-list-con clrfix">
-                    <ul type="0">
-                        <li class="f-cart-comm m-pay-fail">
-                            <cite>
-                                <a class="z-check" href="javascript:;">
-                                    <input type="checkbox"  value="1" class="che" >
-                                </a>
-                            </cite>
-                            <cite class="u-cart-pic">
-                                <a href="http://www.1yyg.com/product/8629245.html" target="_blank">
-                                    <img src="http://img.1yyg.net/GoodsPic/pic-70-70/20160511140647469.jpg">
-                                </a>
-                            </cite>
-                            <cite class="u-cart-name">
+                <?php foreach($cart_goods as $k=>$v){ ?>
+
+                    <div id="div_normallist" class="g-list-con clrfix"  >
+                        <ul type="0" cart_id="{{$v['cart_id']}}" goods_id="{{$v['goods_id']}}" >
+                            <li class="f-cart-comm m-pay-fail">
+                                <cite>
+                                    <a class="z-check" href="javascript:;">
+                                        <input type="checkbox"  value="{{$v['cart_id']}}" class="che" >
+                                    </a>
+                                </cite>
+                                <cite class="u-cart-pic">
+                                    <a href="http://www.1yyg.com/product/8629245.html" target="_blank">
+                                        <img src="{{$v['goods_picture']}}">
+                                    </a>
+                                </cite>
+                                <cite class="u-cart-name">
+                                    <span>
+                                    <a href="http://www.1yyg.com/product/8629245.html" target="_blank">
+                                        (第{{$v['times']}}云){{$v['goods_name']}}{{$v['goods_desc']}}
+                                    </a>
+                                    </span>
+                                    价值：￥{{$v['goods_price']}}.00
+                                </cite>
+                            </li>
+                            <li class="f-cart-price" id="over">{{$v['number']}}</li>
+                            <li class="f-cart-plusLess" style="margin-left: 50px; margin-right: -50px;">
+                                <input type="button" value="-" style="width: 30px;" class="jian" >
                                 <span>
-                                <a href="http://www.1yyg.com/product/8629245.html" target="_blank">(第1669云)苹果（Apple）iMac MK462CH/A 27英寸一体电脑</a>
+                                    <input type="text" mylimitsales="0" limitbuy="0" surplus="8739" id="num"
+                                           codeid="8629245" value="{{$v['code_number']}}" oldnum="1" maxlength="6" state="1"  name="num">
+                                    <input type="button" value="+" style="width: 30px;" class="jia" >
                                 </span>
-                                价值：￥12788.00
-                            </cite>
-                        </li>
-                        <li class="f-cart-price" id="over">8739</li>
-                        <li class="f-cart-plusLess" style="margin-left: 50px; margin-right: -50px;">
-                            <input type="button" value="-" style="width: 30px;" class="jian" >
-                            <span>
-                            <input type="text" mylimitsales="0" limitbuy="0" surplus="8739" id="num"
-                                   codeid="8629245" value="1" oldnum="1" maxlength="6" state="1"  name="num">
-                            <input type="button" value="+" style="width: 30px;" class="jia" >
-                            </span>
-                        </li>
-                        <li class="f-cart-subtotal orange">￥<span class="price">1</span>.00</li>
-                        <li class="f-cart-operate fr">
-                            <input type="button" value="删除" style="margin-top: -20px;" goods_id="1" class="del" >
-                        </li>
-                    </ul>
-                </div>
+                            </li>
+                            <li class="f-cart-subtotal orange">￥<span class="price">{{$v['code_number']}}</span>.00</li>
+                            <li class="f-cart-operate fr">
+                                <input type="button" value="删除" style="margin-top: -20px;" goods_id="{{$v['cart_id']}}" class="del" >
+                            </li>
+                        </ul>
+                    </div>
+
+                <?php } ?>
                 <div id="div_normallist" class="g-list-con clrfix">
                     <ul type="0">
                         <li class="f-cart-comm m-pay-fail">
@@ -105,7 +111,9 @@
                             </cite>
                             <cite class="u-cart-name">
                                 <span>
-                                <a href="http://www.1yyg.com/product/8629245.html" target="_blank">(第1669云)苹果（Apple）iMac MK462CH/A 27英寸一体电脑</a>
+                                <a href="http://www.1yyg.com/product/8629245.html" target="_blank">
+                                    这条不算，这是测试数据
+                                </a>
                                 </span>
                                 价值：￥12788.00
                             </cite>
@@ -125,41 +133,6 @@
                         </li>
                     </ul>
                 </div>
-                <div id="div_normallist" class="g-list-con clrfix">
-                    <ul type="0">
-                        <li class="f-cart-comm m-pay-fail">
-                            <cite>
-                                <a class="z-check" href="javascript:;" >
-                                    <input type="checkbox"  value="3" class="che" >
-                                </a>
-                            </cite>
-                            <cite class="u-cart-pic">
-                                <a href="http://www.1yyg.com/product/8629245.html" target="_blank">
-                                    <img src="http://img.1yyg.net/GoodsPic/pic-70-70/20160511140647469.jpg">
-                                </a>
-                            </cite>
-                            <cite class="u-cart-name">
-                                <span>
-                                <a href="http://www.1yyg.com/product/8629245.html" target="_blank">(第1669云)苹果（Apple）iMac MK462CH/A 27英寸一体电脑</a>
-                                </span>
-                                价值：￥12788.00
-                            </cite>
-                        </li>
-                        <li class="f-cart-price" id="over">87393</li>
-                        <li class="f-cart-plusLess" style="margin-left: 50px; margin-right: -50px;">
-                            <input type="button" value="-" style="width: 30px;" class="jian" >
-                            <span>
-                                <input type="text" mylimitsales="0" limitbuy="0" surplus="8739" class="num"
-                                       codeid="8629245" value="2" oldnum="1" maxlength="6" state="1"  name="num">
-                                <input type="button" value="+" style="width: 30px;" class="jia" >
-                            </span>
-                        </li>
-                        <li class="f-cart-subtotal orange">￥<span class="price">2</span>.00</li>
-                        <li class="f-cart-operate fr">
-                            <input type="button" value="删除" style="margin-top: -20px;" goods_id="3" class="del" >
-                        </li>
-                    </ul>
-                </div>
 
                 <script>
                     //删除
@@ -169,27 +142,68 @@
                             var goods_id = $(this).attr("goods_id");
                             alert("删除了goods_id是"+goods_id+"的商品，这里应该是ajax删除");
                             $(this).parent().parent().parent().remove();
+                            price();
                         }
                     });
                     //数量减
                     $(".jian").click(function(){
+                        var the = $(this);
                         var num = $(this).next().children().first().val();
                         if(num>1){
-                            var new_num = num-1;
-                            $(this).next().children().first().val(new_num);
-                            $(this).parent().next().children().html(new_num);//小计
+                            var new_num = num-1;//购物车要更改的数量
+                            var cart_id = the.parent().parent().attr("cart_id");//购物车的ID
+                            $.ajax({
+                                type: "POST",
+                                url: "buycarCart_num",
+                                data: {new_num:new_num,cart_id:cart_id},
+                                success: function(msg){
+                                    if(msg){
+                                        the.next().children().first().val(new_num);
+                                        the.parent().next().children().html(new_num);//小计
+                                        price_jian();
+                                    }
+                                }
+                            });
+
                         }
                     });
                     //数量加
                     $(".jia").click(function(){
-                        var num = $(this).prev().val();
-                        var over = $(this).parent().parent().prev().html();//剩余人数
+                        var the = $(this);
+                        var num = $(this).prev().val()*1;
+                        var over = $(this).parent().parent().prev().html()*1;//剩余人数
                         if(num<over){
-                            var new_num = num*1+1;
-                            $(this).prev().val(new_num);//人次
-                            $(this).parent().parent().next().children().html(new_num);//小计
+                            var new_num = num*1+1;//购物车要更改的数量
+                            var cart_id = the.parent().parent().parent().attr("cart_id");//购物车的ID
+                            $.ajax({
+                                type: "POST",
+                                url: "buycarCart_num",
+                                data: {new_num:new_num,cart_id:cart_id},
+                                success: function(msg){
+                                    if(msg){
+                                        the.prev().val(new_num);//人次
+                                        the.parent().parent().next().children().html(new_num);//小计
+                                        price_jia();
+                                    }
+                                }
+                            });
                         }
                     });
+                    function price_jia()
+                    {
+                        var price = $("#price_all").html();
+                        var new_price = price*1 + 1;
+                        $("#price_all").html(new_price);
+                    }
+
+                    function price_jian()
+                    {
+                        var price = $("#price_all").html();
+                        var new_price = price*1 - 1;
+                        $("#price_all").html(new_price);
+                    }
+
+
 
                 </script>
 
@@ -243,15 +257,18 @@
                     <div id="divCalCart" class="z-accounts fr">
                         <cite>
                             共
-                            <i class="orange" id="orange_num">1</i>
+                            <i class="orange" id="orange_num">0</i>
                             件商品
                         </cite>
                         <cite>
                             金额总计：
-                            <em class="orange">￥<span id="price_all">1</span>.00</em>
+                            <em class="orange">￥<span id="price_all">0</span>.00</em>
                         </cite>
                         <cite class="a-n-btn">
-                            <a id="btnGoPay" title="去结算" href="javascript:;">结算</a>
+                            <form method="post" action="buycaraccount" id="buycar">
+                                <input type="hidden" id="buy" value="" num="0" name="id_all">
+                                <a id="btnGoPay" title="去结算" href="javascript:;">结算</a>
+                            </form>
                         </cite>
                     </div>
                 </div>
@@ -261,17 +278,37 @@
                 </div>
             </div>
             <script>
-//                页面加载
-                $(function(){
-                    var shop_num = $("#shop_num").val();//商品的数量
-                    var price_all = 0;
-                    $(".price").each(function(i){
-                        var priceOne = $(this).html();
-                        price_all += parseInt(priceOne);
+                //点击复选框的时候
+                $(".che").click(function(){
+                    var a = "";
+                    var k =0;
+                    var price = 0;
+                    $("input:checked").each(function(i){
+                        a += ","+$(this).val();
+                        k = k*1 + 1;
+                        price = price*1 + $(this).parent().parent().parent().next().next().next().children().html()*1;
                     });
-                    $("#price_all").html(price_all);//商品的价钱
-                    $("#orange_num").html(shop_num);//商品的数量
+                    a = a.substr(1)
+                    $("#buy").val(a);
+                    $("#buy").attr("num",k);
+                    $("#orange_num").html(k);//商品的数量
+                    $("#price_all").html(price);//选择的商品的总价钱
                 });
+
+
+
+                //这个方法是用来显示 商品个个数 以及 金额总计
+//                function price(){
+//                    var shop_num = $("#shop_num").val();//商品的数量
+//                    var price_all = 0;
+//                    $(".price").each(function(i){
+//                        var priceOne = $(this).html();
+//                        price_all += parseInt(priceOne);
+//                    });
+//                    $("#price_all").html(price_all);//商品的价钱
+//                    $("#orange_num").html(shop_num);//商品的数量
+//                }
+
                 //全选
                 $("#btnSelAll").click(function(){
                     $(":checkbox").attr("checked",true);
@@ -288,7 +325,10 @@
                 });
                 //结算
                 $("#btnGoPay").click(function(){
-                    alert(1)
+                    var id = $("#buy").val();
+                    if(id != ""){
+                        $("#buycar").submit();
+                    }
                 });
             </script>
 
