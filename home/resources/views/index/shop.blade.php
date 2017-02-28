@@ -60,7 +60,7 @@
                 <img id="imgGoodsPic" alt="" src="" style="display: none;" />
                 <div id="middle" class="ng-middle-box">
                     <img class="z-middle-loading" style="width:343px;height:343px; "
-                         src="" alt="加载中..." />
+                         src="{{$goods['goods_picture']}}" alt="加载中..." />
                 </div>
                 <div class="ng-goods-piclist">
                     <div class="ng-goods-btn prev ng-box-bg" style="display: none;"></div>
@@ -137,9 +137,7 @@
                     </div>
                 </div>
             </div>
-
             <!--正在进行中-->
-
             <div class="ng-goods-detail">
 
                 <h2 class="o-title">
@@ -246,9 +244,7 @@
                 </div>
             </div>
 
-
             <!--揭晓倒计时-->
-
 
             <!--右侧：云购记录-->
             <div class="ng-goods-buy">
@@ -402,182 +398,7 @@
     <div id="div_desc" class="ng-product-content">
         <div class="product-con">
             <div style="width:800px; margin:0px auto; padding-top:10px;">
-                <div style="width:800px; margin:10px auto; padding:0px; font-family:'微软雅黑'; color:#333; border-bottom:1px solid #C1C1C1;">
-                    <p style="font-size:65px; line-height:70px; padding:0px 0px 0px 0px; margin:0px; text-align:center; letter-spacing:5px;">
-                        iMac</p>
-                    <p style="font-size:26px; line-height:30px; padding:20px 0px 0px 0px; margin:0px; text-align:center;">
-                        Retina 的大作，一款又一款。</p>
-                    <p style="font-size:14px; line-height:28px; padding:15px 10px 20px 10px; margin:0px; text-align:center;">
-                        自始至终，iMac 背后的设计理念都未曾动摇，那就是打造超凡的台式电脑体验：为出众的显示屏搭配高性能处理器、图形处理器以及存储方案，并将它们融于浑然一体的纤薄机身之中。 Retina 显示屏就是一个清晰的例证。颗颗像素精心雕琢，方成精妙杰作。全新 21.5 英寸配备 Retina 4K 显示屏的 iMac，延续了我们对于精益求精的不懈追求。与开创性的 27 英寸 5K 机型一样，它的画质如此夺目，足以让画面之外的世界都顿显失色。这一次，我们又迈出了漂亮的一大步，让 iMac 从此给你更加引人入胜的体验。</p>
-                    <p style="padding:0px; margin:0px; text-align:center;">
-                        <img src2="http://goodsimg.1yyg.com/GoodsInfo/20151022141936169.jpg" /></p>
-                    <p style="font-size:16px; line-height:28px; padding:20px 10px 0px 130px; margin:0px;">
-                        21.5 英寸显示屏<span style="padding-left:300px;">27 英寸显示屏</span></p>
-                    <p style="font-size:14px; line-height:28px; padding:18px 40px 20px 40px; margin:0px; text-align:center; color:#666;">
-                        *此款iMac型号的技术规格如下：3.2GHz 四核 Intel Core i5 处理器，Turbo Boost 高达 3.6GHz，8GB (2 个 4GB) 内存，可选配高达 32GB，1TB 硬盘，AMD Radeon R9 M380 图形处理器，配备 2GB 显存，Retina 5K 5120 x 2880 P3 显示屏。</p>
-                </div>
-                <div style="width:800px; margin:10px auto; padding:0px; font-family:'微软雅黑'; height:942px; background:url(http://goodsimg.1yyg.com/GoodsInfo/20151022141945856.jpg) no-repeat center; color:#333; border-bottom:1px solid #C1C1C1;">
-                    <p style="font-size:20px; line-height:30px; padding:170px 0px 0px 5px; margin:0px;">
-                        Retina 显示屏</p>
-                    <p style="font-size:34px; line-height:50px; padding:10px 0px 0px 5px; margin:0px; letter-spacing:2px;">
-                        绚丽屏幕之上，<br />
-                        更显执着理念。</p>
-                    <p style="font-size:15px; line-height:30px; padding:20px 470px 0px 5px; margin:0px;">
-                        精准、明亮、清晰。独具一格的 Retina，可以满足你对显示屏画质的严苛要求。它的像素密度如此之高，已超过人眼所能分辨的范围；文字显示如此清晰锐利，让你有种在纸面上阅读邮件和文档的感觉；而更为宽广的全新色域，使 Retina 显示屏可表现颜色的数量提升了 25%，因此， 你浏览的照片和视频，都更加栩栩如生。</p>
-                    <p style="font-size:13px; line-height:26px; padding:173px 460px 0px 60px; margin:0px;">
-                        <span style="font-weight:bold;">与你口袋里的 4K 摄影机正合拍。</span> 全新 iPhone 6s 可拍摄绚丽的 4K 视频。在配备 Retina 显示屏的 iMac 上，iMovie 和 Final Cut Pro 都能为你带来支持 4K 视频剪辑的分辨率和流畅度，让你把视频素材变成震撼的视觉体验。</p>
-                </div>
-                <div style="width:800px; margin:10px auto; padding:0px; font-family:'微软雅黑'; height:1019px; background:url(http://goodsimg.1yyg.com/GoodsInfo/20151022142006630.jpg) no-repeat center; color:#333; border-bottom:1px solid #C1C1C1;">
-                    <p style="font-size:20px; line-height:30px; padding:240px 0px 0px 420px; margin:0px; letter-spacing:2px;">
-                        设计</p>
-                    <p style="font-size:34px; line-height:50px; padding:10px 0px 0px 420px; margin:0px; letter-spacing:2px;">
-                        前沿创新，<br />
-                        及至每一边沿。</p>
-                    <p style="font-size:15px; line-height:30px; padding:20px 20px 0px 420px; margin:0px;">
-                        将 Retina 显示屏应用到各款 iMac 的过程，需要经过数量极为庞大的工程设计。呈现在你眼前的这款机身边缘薄至仅仅 5 毫米，却足以让你忘却身旁的世界，全身心地沉浸其中，让你和喜爱的内容之间再无阻隔。配备 Retina 显示屏的 iMac 外形浑然一体，尽显美感，不仅为你的工作空间平添优雅，更充分体现了精尖科技与精美设计的美妙融合。</p>
-                </div>
-                <div style="width:800px; margin:10px auto; padding:0px; font-family:'微软雅黑'; height:946px; background:url(http://goodsimg.1yyg.com/GoodsInfo/20151022142024391.jpg) no-repeat center; color:#333; border-bottom:1px solid #C1C1C1;">
-                    <p style="font-size:20px; line-height:30px; padding:200px 0px 0px 5px; margin:0px;">
-                        Fusion Drive</p>
-                    <p style="font-size:34px; line-height:50px; padding:10px 0px 0px 5px; margin:0px; letter-spacing:2px;">
-                        高速度、<br />
-                        高智能的存储方案。</p>
-                    <p style="font-size:15px; line-height:30px; padding:20px 430px 0px 5px; margin:0px;">
-                        数据的存储不仅需要空间，更需要速度和性能，Fusion Drive 让你两者兼得。这项创新的存储技术智能地将高速闪存与大容量硬盘融为一体，将使用频繁的 app、文档和照片存储在速度更快的闪存中，不常用的项目则移至硬盘。并且，随着系统逐渐了解你的工作方式，你还会发现应用软件的启动和文件的存取访问变得更快。你可以为 Fusion Drive 配置高达 3TB 的存储容量1。如果需要更为出众的性能，可以选择全闪存选项，其速度可达之前版本的 2.5 倍。</p>
-                    <p style="font-size:16px; line-height:30px; padding:20px 0px 0px 5px; margin:0px;">
-                        高达</p>
-                    <p style="font-size:30px; line-height:40px; padding:0px 0px 0px 5px; margin:0px; letter-spacing:2px;">
-                        3TB</p>
-                    <p style="font-size:15px; line-height:26px; padding:0px 430px 0px 5px; margin:0px;">
-                        Fusion Drive</p>
-                </div>
-                <div style="width:800px; margin:10px auto; padding:0px; font-family:'微软雅黑'; color:#333;">
-                    <div style="width:450px; font-family:'微软雅黑'; float:left;">
-                        <p style="font-size:20px; line-height:30px; padding:30px 0px 0px 5px; margin:0px;">
-                            性能</p>
-                        <p style="font-size:34px; line-height:50px; padding:10px 0px 0px 5px; margin:0px; letter-spacing:2px;">
-                            为速度而来，<br />
-                            为实现更多而打造。</p>
-                        <p style="font-size:15px; line-height:30px; padding:20px 0px 0px 5px; margin:0px;">
-                            27 英寸 iMac 配备第六代 Intel Core 处理器和新一代 AMD 高性能图形处理器，比以往更快，更强大。21.5 英寸 iMac 配备第五代 Intel Core 处理器和增强的 Intel Iris Pro Graphics 图形处理器。两款机型均以高速的表现，带来震撼的视觉效果。</p>
-                    </div>
-                    <div style="width:350px; font-family:'微软雅黑'; float:left;">
-                        <p style="font-size:14px; line-height:30px; padding:60px 0px 0px 140px; margin:0px;">
-                            高达每秒</p>
-                        <p style="font-size:40px; line-height:45px; padding:0px 0px 0px 140px; margin:0px; letter-spacing:2px;">
-                            3.7</p>
-                        <p style="font-size:14px; line-height:24px; padding:0px 0px 10px 140px; margin:0px;">
-                            兆次浮点运算<br />
-                            图形处理能力</p>
-                        <p style="font-size:14px; line-height:30px; padding:10px 0px 0px 140px; margin:0px;">
-                            高达</p>
-                        <p style="font-size:40px; line-height:45px; padding:0px 0px 0px 140px; margin:0px; letter-spacing:2px;">
-                            3.2GHz</p>
-                        <p style="font-size:15px; line-height:26px; padding:0px 0px 10px 140px; margin:0px;">
-                            四核 i5 处理器</p>
-                    </div>
-                    <div style="clear:both;">
-                        &nbsp;</div>
-                    <p style="padding:10px 0px 10px 0px; margin:0px; text-align:center; border-bottom:1px solid #C1C1C1;">
-                        <img src2="http://goodsimg.1yyg.com/GoodsInfo/20151022142047361.jpg" /></p>
-                </div>
-                <div style="width:800px; margin:0px auto; padding:0px; font-family:'微软雅黑'; color:#333;">
-                    <p style="font-size:25px; line-height:30px; padding:30px 0px 0px 0px; margin:0px; text-align:center;">
-                        Apple 配件</p>
-                    <p style="font-size:34px; line-height:50px; padding:10px 0px 0px 0px; margin:0px; letter-spacing:2px; text-align:center;">
-                        可心的新设计，可充电，还可实现更多。</p>
-                    <p style="font-size:15px; line-height:30px; padding:20px 20px 30px 20px; margin:0px; text-align:center;">
-                        全新 Magic Keyboard、Magic Mouse 2 和 Magic Trackpad 2 经过重新设计，为每次互动带来更出色的感受。从内置充电电池到更低的倾斜角度，方方面面都经过优化，带来更舒适的体验和更精彩的功能。与 iMac 配对使用时，更加默契出众。</p>
-                    <p style="padding:0px; margin:0px; text-align:center;">
-                        <img src2="http://goodsimg.1yyg.com/GoodsInfo/20151022142054915.jpg" /></p>
-                    <div style="width:280px; font-family:'微软雅黑'; float:left;">
-                        <p style="font-size:25px; line-height:30px; padding:30px 0px 0px 5px; margin:0px; letter-spacing:2px;">
-                            Magic Keyboard</p>
-                        <p style="font-size:14px; line-height:26px; padding:10px 10px 0px 5px; margin:0px;">
-                            全新的设计具有更低的倾斜角度，而更高的稳定性则让输入更加精确、迅速。</p>
-                    </div>
-                    <div style="width:260px; font-family:'微软雅黑'; float:left;">
-                        <p style="font-size:25px; line-height:30px; padding:30px 0px 0px 5px; margin:0px; letter-spacing:2px;">
-                            Magic Mouse 2</p>
-                        <p style="font-size:14px; line-height:26px; padding:10px 10px 0px 5px; margin:0px;">
-                            经过全新设计的 Multi-Touch 鼠标构造坚固，滑动时更加流畅，使用更称心</p>
-                    </div>
-                    <div style="width:260px; font-family:'微软雅黑'; float:left;">
-                        <p style="font-size:25px; line-height:30px; padding:30px 0px 0px 5px; margin:0px; letter-spacing:2px;">
-                            Magic Trackpad 2</p>
-                        <p style="font-size:14px; line-height:26px; padding:10px 0px 20px 5px; margin:0px;">
-                            支持 Force Touch 技术，并拥有更大表面，让你可以随处点击，只需稍加力度就能实现更多操作。<span style="color:#F00;">（此配件需用户自行购买）</span></p>
-                    </div>
-                    <div style="clear:both; border-bottom:1px solid #C1C1C1;">
-                        &nbsp;</div>
-                </div>
-                <div style="width:800px; margin:0px auto; padding:0px; font-family:'微软雅黑'; height:528px; background:url(http://goodsimg.1yyg.com/GoodsInfo/20151022142102649.jpg) no-repeat center; color:#333; border-bottom:1px solid #C1C1C1;">
-                    <p style="font-size:20px; line-height:30px; padding:215px 0px 0px 5px; margin:0px;">
-                        连接</p>
-                    <p style="font-size:34px; line-height:50px; padding:10px 0px 0px 5px; margin:0px; letter-spacing:2px;">
-                        高速连接，<br />
-                        带来高性能表现。</p>
-                    <p style="font-size:15px; line-height:30px; padding:20px 230px 0px 5px; margin:0px;">
-                        iMac 令人惊叹的纤薄机身之中，却满载各种先进的技术。所有 iMac 机型均标配两个 Thunderbolt 2 端口，可与外接硬盘和相机相连，实现疾速的数据传输。四个 USB 3 端口为你带来更多选择，让你可以轻松连接打印机、视频设备以及更多外设。你还可通过疾速的三串流 Wi-Fi 和蓝牙 4.0 无线技术随时连接，访问你喜欢的内容。</p>
-                </div>
-                <div style="width:800px; margin:10px auto; padding:0px; font-family:'微软雅黑'; color:#333; border-bottom:1px solid #C1C1C1;">
-                    <p style="font-size:34px; line-height:50px; padding:30px 0px 0px 0px; margin:0px; letter-spacing:2px; text-align:center;">
-                        为速度而来，<br />
-                        为实现更多而打造。</p>
-                    <p style="font-size:15px; line-height:30px; padding:10px 20px 20px 20px; margin:0px; text-align:center;">
-                        初识 iMac，你会着迷于它纤薄的机身。然而，精美的外观，只是演绎其强大性能的舞台。凭借新一代 Intel Core 处理器、全新 AMD 图形处理器、先进的 Fusion Drive 可选配存储方案与 Thunderbolt 2，iMac 有着快若闪电的速度，以及令人叹为观止的强大动力。</p>
-                    <p style="paddin:0px; margin:0px; text-align:center;">
-                        <img src2="http://goodsimg.1yyg.com/GoodsInfo/20151022142130891.jpg" /></p>
-                </div>
-                <div style="width:800px; margin:10px auto; padding:0px; font-family:'微软雅黑'; color:#333; border-bottom:1px solid #C1C1C1;">
-                    <p style="font-size:25px; line-height:30px; padding:30px 0px 0px 0px; margin:0px; text-align:center;">
-                        OS X El Capitan</p>
-                    <p style="font-size:34px; line-height:50px; padding:10px 0px 0px 0px; margin:0px; letter-spacing:2px; text-align:center;">
-                        先进的电脑操作系统。</p>
-                    <p style="font-size:15px; line-height:30px; padding:20px 20px 30px 20px; margin:0px; text-align:center;">
-                        Mac 之所以是 Mac，OS X 功不可没。它不仅设计直观、易用，更经过精心打造，能够充分发挥 Retina 显示屏的优势，让桌面上的一切都呈现令人惊艳的清晰效果。它配备一系列出众的 app，不仅便于你日常使用，更能让你乐在其中。此外，它还经过精心设计，实现了 Mac 和 iOS 设备之间的绝妙合作。</p>
-                    <p style="padding:0px; margin:0px; text-align:center;">
-                        <img src2="http://goodsimg.1yyg.com/GoodsInfo/20151022142159654.jpg" /></p>
-                </div>
-                <div style="width:800px; margin:10px auto; padding:0px; font-family:'微软雅黑'; color:#333; border-bottom:1px solid #C1C1C1;">
-                    <p style="font-size:34px; line-height:50px; padding:30px 0px 0px 0px; margin:0px; letter-spacing:2px; text-align:center;">
-                        Mac 之所以是 Mac，OS X 功不可没。</p>
-                    <p style="font-size:15px; line-height:30px; padding:10px 20px 20px 20px; margin:0px; text-align:center;">
-                        OS X 是赋予每部 Mac 强大动力的操作系统，它构建于坚如磐石的 UNIX 基础之上，并为充分发挥 Mac 的硬件性能而打造。OS X 的设计易用而又美观，并配有一系列令你每天都爱不释手的精彩 app，更能让你的 Mac 和 iOS 设备以卓越方式默契合作，紧密相连。</p>
-                    <p style="padding-bottom:30px; margin:0px; text-align:center;">
-                        <img src2="http://goodsimg.1yyg.com/GoodsInfo/20151022142208441.jpg" /></p>
-                </div>
-                <div style="width:800px; margin:10px auto; padding:0px; font-family:'微软雅黑'; color:#333; border-bottom:1px solid #C1C1C1;">
-                    <p style="font-size:25px; line-height:30px; padding:30px 0px 0px 0px; margin:0px; text-align:center;">
-                        内置 App</p>
-                    <p style="font-size:34px; line-height:50px; padding:10px 0px 0px 0px; margin:0px; letter-spacing:2px; text-align:center;">
-                        众多精彩内置 App，如今更出彩。</p>
-                    <p style="font-size:15px; line-height:30px; padding:20px 20px 30px 20px; margin:0px; text-align:center;">
-                        每台新购买的 Mac 均配备照片、iMovie、GarageBand、Pages、Numbers 和 Keynote。让你从开启它的那一刻起，就能尽情挥洒创意。同时，你还享有多款精彩 app，可用以收发电子邮件、畅游网络、发送文本信息、进行 FaceTime 视频通话，甚至还有一款专门的 app，能够帮助你寻找更多新的 app。</p>
-                    <p style="padding-bottom:30px; margin:0px; text-align:center;">
-                        <img src2="http://goodsimg.1yyg.com/GoodsInfo/20151022142216493.jpg" /></p>
-                </div>
-                <div style="width:800px; margin:10px auto; padding:0px; font-family:'微软雅黑'; color:#333;">
-                    <p style="font-size:25px; line-height:30px; padding:30px 0px 0px 0px; margin:0px; text-align:center;">
-                        iCloud</p>
-                    <p style="font-size:34px; line-height:50px; padding:10px 0px 0px 30px; margin:0px; letter-spacing:2px; text-align:center;">
-                        让你在 iMac 上的种种所爱，<br />
-                        现身你的各种设备。</p>
-                    <p style="font-size:15px; line-height:30px; padding:20px 20px 15px 20px; margin:0px; text-align:center;">
-                        iCloud 可以存放你的内容，并让你无论使用什么设备，都能轻松访问照片、日历、联系人等等。你可以通过 iCloud Drive，将所有演示文稿、电子表格、PDF 文件、图片和任何其他格式的文件安全储存到 iCloud 上，然后在 iPhone、iPad、iPod touch、Mac 或 PC 上进行访问。</p>
-                    <p style="padding:0px; margin:0px; text-align:center;">
-                        <img src2="http://goodsimg.1yyg.com/GoodsInfo/20151022142224617.jpg" /></p>
-                </div>
-                <div style="width:800px; margin:0px auto; font-family:'微软雅黑'; padding-bottom:20px; border-bottom:1px solid #C1C1C1;">
-                    <p style="font-size:18px; line-height:25px; padding:20px 0 10px 0px; margin:0px;">
-                        重要说明：</p>
-                    <p style="font-size:14px; line-height:22px; padding:0 0 10px 0px; margin:0px;">
-                        1、商品获得者拥有苹果（Apple）iMac MK462CH/A 27英寸一体电脑 10年免费使用权。</p>
-                    <p style="font-size:14px; line-height:22px; padding:0 0 10px 0px; margin:0px;">
-                        2、1元云购对本商品使用权在法律范围内拥有最终解释权。</p>
-                    <p style="font-size:14px; line-height:22px; padding:0 0 10px 0px; margin:0px;">
-                        3、商品详情图片仅供参考，具体以收到实物为准。</p>
-                </div>
+                <?php echo $content?>
             </div>
 
         </div>
