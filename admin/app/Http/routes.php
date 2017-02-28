@@ -85,11 +85,9 @@ Route::get('typeDelete',['uses' => 'TypeController@delete']);
 Route::any('goodsAdd',['uses' => 'GoodsController@add']);
 Route::any('goodsShow',['uses' => 'GoodsController@show']);
 Route::any('goodsEdit',['uses' => 'GoodsController@edit']);
-<<<<<<< HEAD
-Route::any('goodsDelete',['uses' => 'GoodsContr oller@delete']);
-=======
+
 Route::get('goodsDelete',['uses' => 'GoodsController@delete']);
->>>>>>> master
+
 
 Route::any('goodsAlter',['uses' => 'GoodsController@alter']);
 Route::any('goodsSearch',['uses' => 'GoodsController@search']);
