@@ -40,6 +40,10 @@ Route::group(['middleware' => 'session'], function () {
     Route::get("header","SetController@header");//修改头像页面
     Route::post("uploadHead","SetController@uploadHead");//上传头像
 
+
+    Route::any("setMyself","SetController@myself");//个人主页
+
+
 });
 //通用
 Route::get("login",function(){ return view("login"); });//登陆页面
@@ -65,8 +69,6 @@ Route::any("indexHot","IndexController@hot");//查询最热产品
 
 
 
-
-
 //我的一元云够
 Route::any("userIndex",function(){ return view("user/index"); });
 Route::any("userRecord",function(){ return view("user/record"); });//我的记录
@@ -74,15 +76,12 @@ Route::any("userRecord",function(){ return view("user/record"); });//我的记�
 
 
 
-
-//商品详情
-Route::any("shopIndex",function(){ return view("shop/index"); });
-
-
-
 //buy
 
 Route::any("buycarIndex","BuycarController@index");//购物车
+Route::any("buycarCart_num","BuycarController@cart_num");//在购物车 增加和减少的时候用
+
+Route::any("buycaraccount","BuycarController@account");//结算1
 
 
 Route::any("buycarAccount",function(){ return view("buycar/account"); });//结算1

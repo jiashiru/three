@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use DB;
+
+use Illuminate\Support\Facades\Input;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Session;
 use Storage;
@@ -170,15 +171,16 @@ class SetController extends Controller
 
 
     //用于对图片进行缩放
-    function thumb($filename,$name,$savePath,$width=200,$height=200){
+    function thumb($filename,$name,$savePath,$width=200,$height=200)
+    {
         //获取原图像$filename的宽度$width_orig和高度$height_orig
-        list($width_orig,$height_orig) = getimagesize($filename);
+        list($width_orig, $height_orig) = getimagesize($filename);
 
         //根据参数$width和$height值，换算出等比例缩放的高度和宽度
-        if ($width && ($width_orig<$height_orig)){
-            $width = ($height/$height_orig)*$width_orig;
-        }else{
-            $height = ($width / $width_orig)*$height_orig;
+        if ($width && ($width_orig < $height_orig)) {
+            $width = ($height / $height_orig) * $width_orig;
+        } else {
+            $height = ($width / $width_orig) * $height_orig;
         }
 
         //将原图缩放到这个新创建的图片资源中
@@ -187,12 +189,30 @@ class SetController extends Controller
         $image = imagecreatefromjpeg($filename);
 
         //使用imagecopyresampled()函数进行缩放设置
-        imagecopyresampled($image_p,$image,0,0,0,0,$width,$height,$width_orig,$height_orig);
+        imagecopyresampled($image_p, $image, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
 
         //将缩放后的图片$image_p保存，100(质量最佳，文件最大)
-        imagejpeg($image_p,$_SERVER['DOCUMENT_ROOT'].$savePath.'/'.$name);
+        imagejpeg($image_p, $_SERVER['DOCUMENT_ROOT'] . $savePath . '/' . $name);
 //echo $_SERVER['DOCUMENT_ROOT'].$savePath.'/'.$name;die;
         imagedestroy($image_p);
         imagedestroy($image);
+    }
+
+
+
+    //个人主页
+    public function myself()
+    {
+        $user = "18840825602";
+        $user = DB::table('user')->where(['tel'=>$user])->orwhere(['email'=>$user])->first();
+        $id = $user['u_id'];
+        //用  用户ID 查询  user_information 表
+        $user_info = DB::table("user_information")->where(['u_id'=>$id])->first();
+
+        return view("set/myself",[
+            "user_info"=>$user_info,
+
+        ]);
+
     }
 }
