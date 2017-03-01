@@ -71,7 +71,7 @@ class ServerBagTest extends \PHPUnit_Framework_TestCase
     {
         $bag = new ServerBag(array('HTTP_AUTHORIZATION' => 'Basic_'.base64_encode('foo:bar')));
 
-        // Username and passwords should not be set as the header is bogus
+        // Username and passwords should not be set as the uploads is bogus
         $headers = $bag->getHeaders();
         $this->assertFalse(isset($headers['PHP_AUTH_USER']));
         $this->assertFalse(isset($headers['PHP_AUTH_PW']));
@@ -115,7 +115,7 @@ class ServerBagTest extends \PHPUnit_Framework_TestCase
         $digest = 'Digest_username="foo", realm="acme", nonce="'.md5('secret').'", uri="/protected, qop="auth"';
         $bag = new ServerBag(array('HTTP_AUTHORIZATION' => $digest));
 
-        // Username and passwords should not be set as the header is bogus
+        // Username and passwords should not be set as the uploads is bogus
         $headers = $bag->getHeaders();
         $this->assertFalse(isset($headers['PHP_AUTH_USER']));
         $this->assertFalse(isset($headers['PHP_AUTH_PW']));

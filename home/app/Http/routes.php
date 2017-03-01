@@ -28,8 +28,19 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
     //
+
 });
 
+//需要登录的，都走中间件
+Route::group(['middleware' => 'session'], function () {
+    //账号设置
+    Route::get("setInfo","SetController@setInfo");//个人资料
+    Route::post("infoDo","SetController@infoDo");//修改个人信息
+    Route::post("checkNick","SetController@checkNick");//验证昵称唯一
+    Route::get("header","SetController@header");//修改头像页面
+    Route::post("uploadHead","SetController@uploadHead");//上传头像
+
+});
 //通用
 Route::get("login",function(){ return view("login"); });//登陆页面
 Route::post("loginDo","LoginController@loginDo");  //登录
@@ -62,8 +73,7 @@ Route::any("userRecord",function(){ return view("user/record"); });//我的记�
 
 
 
-//账号设置
-Route::get("setMsg","SetController@setMsg");//个人资料
+
 
 //商品详情
 Route::any("shopIndex",function(){ return view("shop/index"); });

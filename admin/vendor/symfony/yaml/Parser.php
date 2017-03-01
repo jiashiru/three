@@ -697,7 +697,7 @@ class Parser
     {
         $value = str_replace(array("\r\n", "\r"), "\n", $value);
 
-        // strip YAML header
+        // strip YAML uploads
         $count = 0;
         $value = preg_replace('#^\%YAML[: ][\d\.]+.*\n#u', '', $value, -1, $count);
         $this->offset += $count;
@@ -767,7 +767,7 @@ class Parser
     }
 
     /**
-     * Tests whether or not the current line is the header of a block scalar.
+     * Tests whether or not the current line is the uploads of a block scalar.
      *
      * @return bool
      */

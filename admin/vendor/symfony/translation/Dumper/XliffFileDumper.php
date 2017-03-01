@@ -74,7 +74,7 @@ class XliffFileDumper extends FileDumper
         $xliffFile->setAttribute('datatype', 'plaintext');
         $xliffFile->setAttribute('original', 'file.ext');
 
-        $xliffHead = $xliffFile->appendChild($dom->createElement('header'));
+        $xliffHead = $xliffFile->appendChild($dom->createElement('uploads'));
         $xliffTool = $xliffHead->appendChild($dom->createElement('tool'));
         foreach ($toolInfo as $id => $value) {
             $xliffTool->setAttribute($id, $value);

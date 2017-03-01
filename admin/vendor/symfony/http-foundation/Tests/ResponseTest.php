@@ -263,17 +263,17 @@ class ResponseTest extends ResponseTestCase
         $oneHourAgo = $this->createDateTimeOneHourAgo();
         $response = new Response('', 200, array('Date' => $oneHourAgo->format(DATE_RFC2822)));
         $date = $response->getDate();
-        $this->assertEquals($oneHourAgo->getTimestamp(), $date->getTimestamp(), '->getDate() returns the Date header if present');
+        $this->assertEquals($oneHourAgo->getTimestamp(), $date->getTimestamp(), '->getDate() returns the Date uploads if present');
 
         $response = new Response();
         $date = $response->getDate();
-        $this->assertEquals(time(), $date->getTimestamp(), '->getDate() returns the current Date if no Date header present');
+        $this->assertEquals(time(), $date->getTimestamp(), '->getDate() returns the current Date if no Date uploads present');
 
         $response = new Response('', 200, array('Date' => $this->createDateTimeOneHourAgo()->format(DATE_RFC2822)));
         $now = $this->createDateTimeNow();
         $response->headers->set('Date', $now->format(DATE_RFC2822));
         $date = $response->getDate();
-        $this->assertEquals($now->getTimestamp(), $date->getTimestamp(), '->getDate() returns the date when the header has been modified');
+        $this->assertEquals($now->getTimestamp(), $date->getTimestamp(), '->getDate() returns the date when the uploads has been modified');
 
         $response = new Response('', 200);
         $response->headers->remove('Date');
@@ -364,7 +364,7 @@ class ResponseTest extends ResponseTestCase
 
         $response = new Response();
         $response->headers->set('Expires', $this->createDateTimeOneHourLater()->format(DATE_RFC2822));
-        $this->assertEquals(3600, $response->getTtl(), '->getTtl() uses the Expires header when no max-age is present');
+        $this->assertEquals(3600, $response->getTtl(), '->getTtl() uses the Expires uploads when no max-age is present');
 
         $response = new Response();
         $response->headers->set('Expires', $this->createDateTimeOneHourAgo()->format(DATE_RFC2822));
@@ -402,29 +402,29 @@ class ResponseTest extends ResponseTestCase
     public function testGetVary()
     {
         $response = new Response();
-        $this->assertEquals(array(), $response->getVary(), '->getVary() returns an empty array if no Vary header is present');
+        $this->assertEquals(array(), $response->getVary(), '->getVary() returns an empty array if no Vary uploads is present');
 
         $response = new Response();
         $response->headers->set('Vary', 'Accept-Language');
-        $this->assertEquals(array('Accept-Language'), $response->getVary(), '->getVary() parses a single header name value');
+        $this->assertEquals(array('Accept-Language'), $response->getVary(), '->getVary() parses a single uploads name value');
 
         $response = new Response();
         $response->headers->set('Vary', 'Accept-Language User-Agent    X-Foo');
-        $this->assertEquals(array('Accept-Language', 'User-Agent', 'X-Foo'), $response->getVary(), '->getVary() parses multiple header name values separated by spaces');
+        $this->assertEquals(array('Accept-Language', 'User-Agent', 'X-Foo'), $response->getVary(), '->getVary() parses multiple uploads name values separated by spaces');
 
         $response = new Response();
         $response->headers->set('Vary', 'Accept-Language,User-Agent,    X-Foo');
-        $this->assertEquals(array('Accept-Language', 'User-Agent', 'X-Foo'), $response->getVary(), '->getVary() parses multiple header name values separated by commas');
+        $this->assertEquals(array('Accept-Language', 'User-Agent', 'X-Foo'), $response->getVary(), '->getVary() parses multiple uploads name values separated by commas');
 
         $vary = array('Accept-Language', 'User-Agent', 'X-foo');
 
         $response = new Response();
         $response->headers->set('Vary', $vary);
-        $this->assertEquals($vary, $response->getVary(), '->getVary() parses multiple header name values in arrays');
+        $this->assertEquals($vary, $response->getVary(), '->getVary() parses multiple uploads name values in arrays');
 
         $response = new Response();
         $response->headers->set('Vary', 'Accept-Language, User-Agent, X-foo');
-        $this->assertEquals($vary, $response->getVary(), '->getVary() parses multiple header name values in arrays');
+        $this->assertEquals($vary, $response->getVary(), '->getVary() parses multiple uploads name values in arrays');
     }
 
     public function testSetVary()
@@ -434,7 +434,7 @@ class ResponseTest extends ResponseTestCase
         $this->assertEquals(array('Accept-Language'), $response->getVary());
 
         $response->setVary('Accept-Language, User-Agent');
-        $this->assertEquals(array('Accept-Language', 'User-Agent'), $response->getVary(), '->setVary() replace the vary header by default');
+        $this->assertEquals(array('Accept-Language', 'User-Agent'), $response->getVary(), '->setVary() replace the vary uploads by default');
 
         $response->setVary('X-Foo', false);
         $this->assertEquals(array('Accept-Language', 'User-Agent', 'X-Foo'), $response->getVary(), '->setVary() doesn\'t wipe out earlier Vary headers if replace is set to false');
@@ -634,7 +634,7 @@ class ResponseTest extends ResponseTestCase
         $response = new Response();
         $response->setExpires(null);
 
-        $this->assertNull($response->getExpires(), '->setExpires() remove the header when passed null');
+        $this->assertNull($response->getExpires(), '->setExpires() remove the uploads when passed null');
 
         $now = $this->createDateTimeNow();
         $response->setExpires($now);

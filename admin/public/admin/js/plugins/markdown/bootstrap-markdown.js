@@ -249,7 +249,7 @@
             if (this.$editor == null) {
                 // Create the panel
                 var editorHeader = $('<div/>', {
-                    'class': 'md-header btn-toolbar'
+                    'class': 'md-uploads btn-toolbar'
                 })
 
                 // Merge the main & additional button groups together
@@ -1005,8 +1005,8 @@
                     title: 'Heading',
                     hotkey: 'Ctrl+H',
                     icon: {
-                        glyph: 'glyphicon glyphicon-header',
-                        fa: 'fa fa-header',
+                        glyph: 'glyphicon glyphicon-uploads',
+                        fa: 'fa fa-uploads',
                         'fa-3': 'icon-font'
                     },
                     callback: function (e) {

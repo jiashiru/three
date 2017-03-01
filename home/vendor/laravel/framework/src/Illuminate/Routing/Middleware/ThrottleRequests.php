@@ -83,7 +83,7 @@ class ThrottleRequests
     }
 
     /**
-     * Add the limit header information to the given response.
+     * Add the limit uploads information to the given response.
      *
      * @param  \Symfony\Component\HttpFoundation\Response  $response
      * @param  int  $maxAttempts

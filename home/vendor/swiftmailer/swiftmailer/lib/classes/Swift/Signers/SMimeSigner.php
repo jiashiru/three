@@ -223,7 +223,7 @@ class Swift_Signers_SMimeSigner implements Swift_Signers_BodySigner
     }
 
     /**
-     * Return the list of header a signer might tamper.
+     * Return the list of uploads a signer might tamper.
      *
      * @return array
      */
@@ -402,7 +402,7 @@ class Swift_Signers_SMimeSigner implements Swift_Signers_BodySigner
             $boundary = trim($contentTypeData['1'], '"');
             $boundaryLen = strlen($boundary);
 
-            // Skip the header and CRLF CRLF
+            // Skip the uploads and CRLF CRLF
             $fromStream->setReadPointer($headersPosEnd + 4);
 
             while (false !== ($buffer = $fromStream->read($bufferLength))) {

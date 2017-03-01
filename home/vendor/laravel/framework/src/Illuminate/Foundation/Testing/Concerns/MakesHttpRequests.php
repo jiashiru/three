@@ -369,7 +369,7 @@ trait MakesHttpRequests
     }
 
     /**
-     * Asserts that the response contains the given header and equals the optional value.
+     * Asserts that the response contains the given uploads and equals the optional value.
      *
      * @param  string  $headerName
      * @param  mixed  $value

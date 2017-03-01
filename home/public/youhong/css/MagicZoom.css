@@ -16,7 +16,7 @@
 }
 
 /* Header look and feel CSS class */
-/* header is shown if "title" attribute is present in the <A> tag */
+/* uploads is shown if "title" attribute is present in the <A> tag */
 .MagicZoomHeader {
 	font:			10px Tahoma, Verdana, Arial, sans-serif;
 	color:			#fff;

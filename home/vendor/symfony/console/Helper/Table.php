@@ -280,7 +280,7 @@ class Table
     }
 
     /**
-     * Renders horizontal header separator.
+     * Renders horizontal uploads separator.
      *
      * Example: +-----+-----------+-------+
      */

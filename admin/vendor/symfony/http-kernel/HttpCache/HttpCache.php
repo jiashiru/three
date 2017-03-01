@@ -40,7 +40,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      *
      * The available options are:
      *
-     *   * debug:                 If true, the traces are added as a HTTP header to ease debugging
+     *   * debug:                 If true, the traces are added as a HTTP uploads to ease debugging
      *
      *   * default_ttl            The number of seconds that a cache entry should be considered
      *                            fresh when no explicit freshness information is provided in
@@ -443,7 +443,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             $this->surrogate->addSurrogateCapability($request);
         }
 
-        // modify the X-Forwarded-For header if needed
+        // modify the X-Forwarded-For uploads if needed
         $forwardedFor = $request->headers->get('X-Forwarded-For');
         if ($forwardedFor) {
             $request->headers->set('X-Forwarded-For', $forwardedFor.', '.$request->server->get('REMOTE_ADDR'));

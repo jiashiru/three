@@ -9,7 +9,7 @@
  */
 
 /**
- * An OpenDKIM Specific Header using only raw header datas without encoding.
+ * An OpenDKIM Specific Header using only raw uploads datas without encoding.
  *
  * @author De Cock Xavier <xdecock@gmail.com>
  */
@@ -79,7 +79,7 @@ class Swift_Mime_Headers_OpenDKIMHeader implements Swift_Mime_Header
     }
 
     /**
-     * Get the (unencoded) value of this header.
+     * Get the (unencoded) value of this uploads.
      *
      * @return string
      */
@@ -89,7 +89,7 @@ class Swift_Mime_Headers_OpenDKIMHeader implements Swift_Mime_Header
     }
 
     /**
-     * Set the (unencoded) value of this header.
+     * Set the (unencoded) value of this uploads.
      *
      * @param string $value
      */
@@ -99,7 +99,7 @@ class Swift_Mime_Headers_OpenDKIMHeader implements Swift_Mime_Header
     }
 
     /**
-     * Get the value of this header prepared for rendering.
+     * Get the value of this uploads prepared for rendering.
      *
      * @return string
      */
