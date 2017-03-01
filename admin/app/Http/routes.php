@@ -59,9 +59,9 @@ Route::group(['middleware' => ['web']], function () {
 
 //商品品牌
 Route::any('brandAdd',['uses' => 'BrandController@add']);
-Route::post('brandShow',['uses' => 'BrandController@show']);
+Route::any('brandShow',['uses' => 'BrandController@show']);
 Route::any('brandEdit',['uses' => 'BrandController@edit']);
-Route::get('brandDelete',['uses' => 'BrandController@delete']);
+Route::any('brandDelete',['uses' => 'BrandController@delete']);
 
 
 //导航
@@ -77,15 +77,15 @@ Route::any('getNode',['uses' => 'CommonController@getNode']);
 
 //商品类型
 Route::any('categoryAdd',['uses' => 'CategoryController@add']);
-Route::post('categoryShow',['uses' => 'CategoryController@show']);
+Route::any('categoryShow',['uses' => 'CategoryController@show']);
 Route::any('categoryEdit',['uses' => 'CategoryController@edit']);
-Route::get('categoryDelete',['uses' => 'CategoryController@delete']);
+Route::any('categoryDelete',['uses' => 'CategoryController@delete']);
 
 //商品分类
 Route::any('typeAdd',['uses' => 'TypeController@add']);
-Route::post('typeShow',['uses' => 'TypeController@show']);
+Route::any('typeShow',['uses' => 'TypeController@show']);
 Route::any('typeEdit',['uses' => 'TypeController@edit']);
-Route::get('typeDelete',['uses' => 'TypeController@delete']);
+Route::any('typeDelete',['uses' => 'TypeController@delete']);
 
 //商品添加
 Route::any('goodsAdd',['uses' => 'GoodsController@add']);
@@ -102,5 +102,10 @@ Route::any('goodsSearch',['uses' => 'GoodsController@search']);
 Route::group(['middleware' => ['web']], function () {
     Route::get('goodsAjax', 'GoodsController@ajax');
 });
+
+//前台轮播管理
+Route::any('carouselCarousel',['uses' => 'CarouselController@carousel']);
+Route::get('carouselDelete',['uses' => 'CarouselController@delete']);
+
 
 
