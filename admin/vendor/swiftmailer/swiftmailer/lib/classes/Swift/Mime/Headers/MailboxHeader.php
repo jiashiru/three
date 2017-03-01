@@ -86,7 +86,7 @@ class Swift_Mime_Headers_MailboxHeader extends Swift_Mime_Headers_AbstractHeader
      * <code>
      * <?php
      * //Sets two mailboxes in the Header, one with a personal name
-     * $header->setNameAddresses(array(
+     * $uploads->setNameAddresses(array(
      *  'chris@swiftmailer.org' => 'Chris Corbyn',
      *  'mark@swiftmailer.org' //No associated personal name
      *  ));
@@ -113,11 +113,11 @@ class Swift_Mime_Headers_MailboxHeader extends Swift_Mime_Headers_AbstractHeader
      * Example:
      * <code>
      * <?php
-     * $header = new Swift_Mime_Headers_MailboxHeader('From',
+     * $uploads = new Swift_Mime_Headers_MailboxHeader('From',
      *  array('chris@swiftmailer.org' => 'Chris Corbyn',
      *  'mark@swiftmailer.org' => 'Mark Corbyn')
      *  );
-     * print_r($header->getNameAddressStrings());
+     * print_r($uploads->getNameAddressStrings());
      * // array (
      * // 0 => Chris Corbyn <chris@swiftmailer.org>,
      * // 1 => Mark Corbyn <mark@swiftmailer.org>
@@ -144,11 +144,11 @@ class Swift_Mime_Headers_MailboxHeader extends Swift_Mime_Headers_AbstractHeader
      * Example:
      * <code>
      * <?php
-     * $header = new Swift_Mime_Headers_MailboxHeader('From',
+     * $uploads = new Swift_Mime_Headers_MailboxHeader('From',
      *  array('chris@swiftmailer.org' => 'Chris Corbyn',
      *  'mark@swiftmailer.org' => 'Mark Corbyn')
      *  );
-     * print_r($header->getNameAddresses());
+     * print_r($uploads->getNameAddresses());
      * // array (
      * // chris@swiftmailer.org => Chris Corbyn,
      * // mark@swiftmailer.org => Mark Corbyn
@@ -173,7 +173,7 @@ class Swift_Mime_Headers_MailboxHeader extends Swift_Mime_Headers_AbstractHeader
      * <code>
      * <?php
      * //Sets three email addresses as the Header data
-     * $header->setAddresses(
+     * $uploads->setAddresses(
      *  array('one@domain.tld', 'two@domain.tld', 'three@domain.tld')
      *  );
      * ?>
@@ -230,7 +230,7 @@ class Swift_Mime_Headers_MailboxHeader extends Swift_Mime_Headers_AbstractHeader
      */
     public function getFieldBody()
     {
-        // Compute the string value of the header only if needed
+        // Compute the string value of the uploads only if needed
         if (is_null($this->getCachedValue())) {
             $this->setCachedValue($this->createMailboxListString($this->_mailboxes));
         }
@@ -271,7 +271,7 @@ class Swift_Mime_Headers_MailboxHeader extends Swift_Mime_Headers_AbstractHeader
      * Produces a compliant, formatted display-name based on the string given.
      *
      * @param string $displayName as displayed
-     * @param bool   $shorten     the first line to make remove for header name
+     * @param bool   $shorten     the first line to make remove for uploads name
      *
      * @return string
      */

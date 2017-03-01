@@ -28,8 +28,14 @@ Route::any("/",function(){ return view("index/index"); });
 Route::any("indexV1",function(){ return view("index/index_v1"); });
 
 //login
-Route::any('loginLogin',['uses' => 'LoginController@login']);
-Route::any('loginGetCapath',['uses' => 'LoginController@getCapath']);
+Route::group(['middleware' => ['web']], function () {
+    Route::any('loginLogin', ['uses' => 'LoginController@login']);
+    Route::get('loginGetCapath', ['uses' => 'LoginController@getCapath']);
+});
+//register
+Route::group(['middleware' => ['web']], function () {
+    Route::any('registerRegister', ['uses' => 'RegisterController@register']);
+});
 //message
 Route::any('showMsg',['uses' => 'CommonController@showMsg']);
 
@@ -40,12 +46,6 @@ Route::any('roleShow',['uses' => 'RoleController@show']);
 Route::any('roleDelete',['uses' => 'RoleController@delete']);
 Route::any('nodeShow',['uses' => 'NodeController@show']);
 Route::any('nodeDelete',['uses' => 'NodeController@delete']);
-
-//RBAC
-Route::any('adminAdd',['uses' => 'AdminController@adminAdd']);
-Route::any('adminList',['uses' => 'AdminController@adminList']);
-
-
 
 Route::group(['middleware' => ['web']], function () {
     Route::any('adminAdd',['uses' => 'AdminController@add']);
@@ -64,7 +64,7 @@ Route::any('brandEdit',['uses' => 'BrandController@edit']);
 Route::any('brandDelete',['uses' => 'BrandController@delete']);
 
 
-
+//导航
 Route::group(['middleware' => ['web']], function () {
     Route::get('navAdd', 'NavController@add');
     Route::post('navDoAdd','NavController@doAdd');
@@ -91,10 +91,21 @@ Route::any('typeDelete',['uses' => 'TypeController@delete']);
 Route::any('goodsAdd',['uses' => 'GoodsController@add']);
 Route::any('goodsShow',['uses' => 'GoodsController@show']);
 Route::any('goodsEdit',['uses' => 'GoodsController@edit']);
-Route::any('goodsDelete',['uses' => 'GoodsController@delete']);
 
-Route::any('goodsDetail',['uses' => 'GoodsController@detail']);
+Route::get('goodsDelete',['uses' => 'GoodsController@delete']);
+
+
 Route::any('goodsAlter',['uses' => 'GoodsController@alter']);
 Route::any('goodsSearch',['uses' => 'GoodsController@search']);
+
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('goodsAjax', 'GoodsController@ajax');
+});
+
+//前台轮播管理
+Route::any('carouselCarousel',['uses' => 'CarouselController@carousel']);
+Route::get('carouselDelete',['uses' => 'CarouselController@delete']);
+
 
 

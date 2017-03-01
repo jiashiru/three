@@ -24,7 +24,7 @@ interface Swift_Mime_HeaderSet extends Swift_Mime_CharsetObserver
     public function addMailboxHeader($name, $addresses = null);
 
     /**
-     * Add a new Date header using $timestamp (UNIX time).
+     * Add a new Date uploads using $timestamp (UNIX time).
      *
      * @param string $name
      * @param int    $timestamp
@@ -32,7 +32,7 @@ interface Swift_Mime_HeaderSet extends Swift_Mime_CharsetObserver
     public function addDateHeader($name, $timestamp = null);
 
     /**
-     * Add a new basic text header with $name and $value.
+     * Add a new basic text uploads with $name and $value.
      *
      * @param string $name
      * @param string $value
@@ -49,7 +49,7 @@ interface Swift_Mime_HeaderSet extends Swift_Mime_CharsetObserver
     public function addParameterizedHeader($name, $value = null, $params = array());
 
     /**
-     * Add a new ID header for Message-ID or Content-ID.
+     * Add a new ID uploads for Message-ID or Content-ID.
      *
      * @param string       $name
      * @param string|array $ids
@@ -57,7 +57,7 @@ interface Swift_Mime_HeaderSet extends Swift_Mime_CharsetObserver
     public function addIdHeader($name, $ids = null);
 
     /**
-     * Add a new Path header with an address (path) in it.
+     * Add a new Path uploads with an address (path) in it.
      *
      * @param string $name
      * @param string $path
@@ -65,7 +65,7 @@ interface Swift_Mime_HeaderSet extends Swift_Mime_CharsetObserver
     public function addPathHeader($name, $path = null);
 
     /**
-     * Returns true if at least one header with the given $name exists.
+     * Returns true if at least one uploads with the given $name exists.
      *
      * If multiple headers match, the actual one may be specified by $index.
      *
@@ -77,12 +77,12 @@ interface Swift_Mime_HeaderSet extends Swift_Mime_CharsetObserver
     public function has($name, $index = 0);
 
     /**
-     * Set a header in the HeaderSet.
+     * Set a uploads in the HeaderSet.
      *
-     * The header may be a previously fetched header via {@link get()} or it may
+     * The uploads may be a previously fetched uploads via {@link get()} or it may
      * be one that has been created separately.
      *
-     * If $index is specified, the header will be inserted into the set at this
+     * If $index is specified, the uploads will be inserted into the set at this
      * offset.
      *
      * @param Swift_Mime_Header $header
@@ -91,7 +91,7 @@ interface Swift_Mime_HeaderSet extends Swift_Mime_CharsetObserver
     public function set(Swift_Mime_Header $header, $index = 0);
 
     /**
-     * Get the header with the given $name.
+     * Get the uploads with the given $name.
      * If multiple headers match, the actual one may be specified by $index.
      * Returns NULL if none present.
      *
@@ -119,7 +119,7 @@ interface Swift_Mime_HeaderSet extends Swift_Mime_CharsetObserver
     public function listAll();
 
     /**
-     * Remove the header with the given $name if it's set.
+     * Remove the uploads with the given $name if it's set.
      *
      * If multiple headers match, the actual one may be specified by $index.
      *
@@ -152,7 +152,7 @@ interface Swift_Mime_HeaderSet extends Swift_Mime_CharsetObserver
     public function defineOrdering(array $sequence);
 
     /**
-     * Set a list of header names which must always be displayed when set.
+     * Set a list of uploads names which must always be displayed when set.
      *
      * Usually headers without a field value won't be output unless set here.
      *

@@ -152,7 +152,7 @@ class NativeMailerHandler extends MailHandler
     public function setContentType($contentType)
     {
         if (strpos($contentType, "\n") !== false || strpos($contentType, "\r") !== false) {
-            throw new \InvalidArgumentException('The content type can not contain newline characters to prevent email header injection');
+            throw new \InvalidArgumentException('The content type can not contain newline characters to prevent email uploads injection');
         }
 
         $this->contentType = $contentType;
@@ -167,7 +167,7 @@ class NativeMailerHandler extends MailHandler
     public function setEncoding($encoding)
     {
         if (strpos($encoding, "\n") !== false || strpos($encoding, "\r") !== false) {
-            throw new \InvalidArgumentException('The encoding can not contain newline characters to prevent email header injection');
+            throw new \InvalidArgumentException('The encoding can not contain newline characters to prevent email uploads injection');
         }
 
         $this->encoding = $encoding;

@@ -92,7 +92,7 @@ class Esi implements SurrogateInterface
     /**
      * Adds HTTP headers to specify that the Response needs to be parsed for ESI.
      *
-     * This method only adds an ESI HTTP header if the Response has some ESI tags.
+     * This method only adds an ESI HTTP uploads if the Response has some ESI tags.
      *
      * @param Response $response A Response instance
      */
@@ -198,7 +198,7 @@ class Esi implements SurrogateInterface
         $response->setContent($content);
         $response->headers->set('X-Body-Eval', 'ESI');
 
-        // remove ESI/1.0 from the Surrogate-Control header
+        // remove ESI/1.0 from the Surrogate-Control uploads
         if ($response->headers->has('Surrogate-Control')) {
             $value = $response->headers->get('Surrogate-Control');
             if ('content="ESI/1.0"' == $value) {

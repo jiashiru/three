@@ -161,7 +161,7 @@ class JsonResponse extends Response
             return $this->setContent(sprintf('/**/%s(%s);', $this->callback, $this->data));
         }
 
-        // Only set the header when there is none or when it equals 'text/javascript' (from a previous update with callback)
+        // Only set the uploads when there is none or when it equals 'text/javascript' (from a previous update with callback)
         // in order to not overwrite a custom definition.
         if (!$this->headers->has('Content-Type') || 'text/javascript' === $this->headers->get('Content-Type')) {
             $this->headers->set('Content-Type', 'application/json');

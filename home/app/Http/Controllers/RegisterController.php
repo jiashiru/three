@@ -55,17 +55,26 @@ class RegisterController extends Controller
         if(strpos($name,"@")){
             //找到为邮箱
            $result = DB::table('user')->insertGetId([
-               'uname'=>$uname,
                'email' => $name,
                'password' => $new_pwd,
                'create_time'=>time()
             ]);
             if($result){
-                //添加成功，存session
-                $_SESSION['u_id'] = $result;
-                $_SESSION['email'] = $name;
+                //添加昵称到用户信息表
+                $result_info = DB::table('user_information')->insertGetId([
+                    'nickname' => $uname,
+                    'u_id'=>$result
+                ]);
+                if($result_info){
+                    //添加成功，存session
+                    $_SESSION['u_id'] = $result;
+                    $_SESSION['email'] = $name;
 
-                return 1;
+                    return 1;
+                }else{
+                    return 0;
+                }
+
             }else{
 
                 return 0;
@@ -80,11 +89,21 @@ class RegisterController extends Controller
                 'create_time'=>time()
             ]);
             if($result){
-                //添加成功，存session
-                $_SESSION['u_id'] = $result;
-                $_SESSION['tel'] = $name;
+                //添加昵称到用户信息表
+                $result_info = DB::table('user_information')->insertGetId([
+                    'nickname' => $uname,
+                    'u_id'=>$result
+                ]);
+                if($result_info){
+                    //添加成功，存session
+                    $_SESSION['u_id'] = $result;
+                    $_SESSION['email'] = $name;
 
-                return 1;
+                    return 1;
+                }else{
+
+                    return 0;
+                }
             }else{
 
                 return 0;

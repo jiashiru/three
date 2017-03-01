@@ -26,7 +26,7 @@ class PHP_CodeCoverage_Report_Text
         'green'  => "\x1b[30;42m",
         'yellow' => "\x1b[30;43m",
         'red'    => "\x1b[37;41m",
-        'header' => "\x1b[1;37;40m",
+        'uploads' => "\x1b[1;37;40m",
         'reset'  => "\x1b[0m",
         'eol'    => "\x1b[2K",
     );
@@ -51,7 +51,7 @@ class PHP_CodeCoverage_Report_Text
         unset($coverage);
 
         $colors = array(
-            'header'  => '',
+            'uploads'  => '',
             'classes' => '',
             'methods' => '',
             'lines'   => '',
@@ -73,7 +73,7 @@ class PHP_CodeCoverage_Report_Text
                 $report->getNumExecutableLines()
             );
             $colors['reset']   = $this->colors['reset'];
-            $colors['header']  = $this->colors['header'];
+            $colors['uploads']  = $this->colors['uploads'];
             $colors['eol']     = $this->colors['eol'];
         }
 
@@ -116,15 +116,15 @@ class PHP_CodeCoverage_Report_Text
             $title   = 'Code Coverage Report Summary:';
             $padding = max($padding, strlen($title));
 
-            $output .= $this->format($colors['header'], $padding, $title);
+            $output .= $this->format($colors['uploads'], $padding, $title);
         } else {
             $date  = date('  Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);
             $title = 'Code Coverage Report:';
 
-            $output .= $this->format($colors['header'], $padding, $title);
-            $output .= $this->format($colors['header'], $padding, $date);
-            $output .= $this->format($colors['header'], $padding, '');
-            $output .= $this->format($colors['header'], $padding, ' Summary:');
+            $output .= $this->format($colors['uploads'], $padding, $title);
+            $output .= $this->format($colors['uploads'], $padding, $date);
+            $output .= $this->format($colors['uploads'], $padding, '');
+            $output .= $this->format($colors['uploads'], $padding, ' Summary:');
         }
 
         $output .= $this->format($colors['classes'], $padding, $classes);

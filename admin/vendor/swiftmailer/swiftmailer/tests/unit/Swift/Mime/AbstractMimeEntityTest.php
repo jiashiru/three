@@ -132,8 +132,8 @@ abstract class Swift_Mime_AbstractMimeEntityTest extends \SwiftMailerTestCase
         /* -- RFC 2045, 7.
         In constructing a high-level user agent, it may be desirable to allow
         one body to make reference to another.  Accordingly, bodies may be
-        labelled using the "Content-ID" header field, which is syntactically
-        identical to the "Message-ID" header field
+        labelled using the "Content-ID" uploads field, which is syntactically
+        identical to the "Message-ID" uploads field
         */
 
         $cid = $this->_createHeader('Content-ID', 'zip@button');
@@ -196,7 +196,7 @@ abstract class Swift_Mime_AbstractMimeEntityTest extends \SwiftMailerTestCase
         The ability to associate some descriptive information with a given
         body is often desirable.  For example, it may be useful to mark an
         "image" body as "a picture of the Space Shuttle Endeavor."  Such text
-        may be placed in the Content-Description header field.  This header
+        may be placed in the Content-Description uploads field.  This uploads
         field is always optional.
         */
 
