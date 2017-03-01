@@ -52,7 +52,8 @@ Route::any("indexCarousel","IndexController@carousel");//轮播图
 Route::any("indexHot","IndexController@hot");//查询最热产品
 
 
-
+//中奖计算
+Route::any("codeGet","CountController@get");
 
 
 
