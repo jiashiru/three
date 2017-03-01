@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,13 +18,10 @@
 <body id="loadingPicBlock">
 <div class="wrapper">
     <!--顶部-->
-
     @include("public.head")
     <input name="hidUserID" type="hidden" id="hidUserID" value="15519195" />
     <!--头部-->
     <div class="w1190 clrfix">
-
-
         <div class="g-special-head">
             <div class="fl logo-con">
                 <a href="http://www.1yyg.com/" class="f-logo"></a>
@@ -37,13 +33,8 @@
                 <a href="javascript:location.reload();"><b class="z-arrows"></b>刷新</a>
             </div>
         </div>
-
-
-
         <div class="g-main-con clrfix">
-
             <div id="div_cartlist" class="m-cart-list gray9 clrfix">
-
                 <div class="g-list-title">
                     <span class="f-cart-comm">商品</span>
                     <span class="f-cart-price">剩余人次</span>
@@ -51,12 +42,13 @@
                     <span class="f-cart-subtotal">小计</span>
                     <span class="f-cart-operate">操作</span>
                 </div>
-
-
                 {{--商品--}}
                 <input type="hidden" value="3" id="shop_num">
-                <?php foreach($cart_goods as $k=>$v){ ?>
+                <?php foreach($end as $k=>$v){ 
+                        if ($v['state']==1) 
+                        {
 
+                    ?>
                     <div id="div_normallist" class="g-list-con clrfix"  >
                         <ul type="0" cart_id="{{$v['cart_id']}}" goods_id="{{$v['goods_id']}}" >
                             <li class="f-cart-comm m-pay-fail">
@@ -79,91 +71,61 @@
                                     价值：￥{{$v['goods_price']}}.00
                                 </cite>
                             </li>
-                            <li class="f-cart-price" id="over">{{$v['number']}}</li>
-                            <li class="f-cart-plusLess" style="margin-left: 50px; margin-right: -50px;">
+                            <li class="f-cart-price" class="over">{{$v['number']}}</li>
+                            <li class="f-cart-plusLess" style="margin-left: 50px; margin-right: -50px;"  limit="{{$v['limit_number']}}">
                                 <input type="button" value="-" style="width: 30px;" class="jian" >
                                 <span>
                                     <input type="text" mylimitsales="0" limitbuy="0" surplus="8739" id="num"
                                            codeid="8629245" value="{{$v['code_number']}}" oldnum="1" maxlength="6" state="1"  name="num">
                                     <input type="button" value="+" style="width: 30px;" class="jia" >
                                 </span>
+                          
+
                             </li>
                             <li class="f-cart-subtotal orange">￥<span class="price">{{$v['code_number']}}</span>.00</li>
                             <li class="f-cart-operate fr">
-                                <input type="button" value="删除" style="margin-top: -20px;" goods_id="{{$v['cart_id']}}" class="del" >
+                                <input type="button" value="删除" style="margin-top: -20px;" cart_id="{{$v['cart_id']}}" goods_id="{{$v['cart_id']}}" class="del" >
                             </li>
                         </ul>
                     </div>
 
-                <?php } ?>
-                <div id="div_normallist" class="g-list-con clrfix">
-                    <ul type="0">
-                        <li class="f-cart-comm m-pay-fail">
-                            <cite>
-                                <a class="z-check" href="javascript:;">
-                                    <input type="checkbox"  value="2" class="che" >
-                                </a>
-                            </cite>
-                            <cite class="u-cart-pic">
-                                <a href="http://www.1yyg.com/product/8629245.html" target="_blank">
-                                    <img src="http://img.1yyg.net/GoodsPic/pic-70-70/20160511140647469.jpg">
-                                </a>
-                            </cite>
-                            <cite class="u-cart-name">
-                                <span>
-                                <a href="http://www.1yyg.com/product/8629245.html" target="_blank">
-                                    这条不算，这是测试数据
-                                </a>
-                                </span>
-                                价值：￥12788.00
-                            </cite>
-                        </li>
-                        <li class="f-cart-price" id="over">8739</li>
-                        <li class="f-cart-plusLess" style="margin-left: 50px; margin-right: -50px;">
-                            <input type="button" value="-" style="width: 30px;" class="jian" >
-                            <span>
-                            <input type="text" mylimitsales="0" limitbuy="0" surplus="8739" id="num"
-                                   codeid="8629245" value="1" oldnum="1" maxlength="6" state="1"  name="num">
-                            <input type="button" value="+" style="width: 30px;" class="jia" >
-                            </span>
-                        </li>
-                        <li class="f-cart-subtotal orange">￥<span class="price">1</span>.00</li>
-                        <li class="f-cart-operate fr">
-                            <input type="button" value="删除" style="margin-top: -20px;" goods_id="2" class="del" >
-                        </li>
-                    </ul>
-                </div>
-
+                <?php  }} ?>
                 <script>
                     //删除
                     $(".del").click(function(){
                         var res = confirm("确认要删除改商品？");
                         if(res){
-                            var goods_id = $(this).attr("goods_id");
-                            alert("删除了goods_id是"+goods_id+"的商品，这里应该是ajax删除");
-                            $(this).parent().parent().parent().remove();
-                            price();
+                            var cart_id = $(this).attr("cart_id");
+                            var _this = $(this);
+                            $.ajax({
+                                type: "POST",
+                                url: "buycarDel",
+                                data: {cart_id:cart_id},
+                                success: function(msg)
+                                {
+                                    if(msg==1)
+                                    {
+                                         _this.parent().parent().parent().remove();
+                                    }
+                                }
+                            });
+                           
                         }
                     });
                     //数量减
                     $(".jian").click(function(){
                         var the = $(this);
                         var num = $(this).next().children().first().val();
+                        var status = $(this).parent().parent().find(".che").prop("checked");
                         if(num>1){
                             var new_num = num-1;//购物车要更改的数量
                             var cart_id = the.parent().parent().attr("cart_id");//购物车的ID
-                            $.ajax({
-                                type: "POST",
-                                url: "buycarCart_num",
-                                data: {new_num:new_num,cart_id:cart_id},
-                                success: function(msg){
-                                    if(msg){
-                                        the.next().children().first().val(new_num);
-                                        the.parent().next().children().html(new_num);//小计
-                                        price_jian();
-                                    }
-                                }
-                            });
+                            the.next().children().first().val(new_num);
+                            the.parent().next().children().html(new_num);//小计
+                            if(status)
+                            {
+                                price_jian();
+                            }
 
                         }
                     });
@@ -172,21 +134,17 @@
                         var the = $(this);
                         var num = $(this).prev().val()*1;
                         var over = $(this).parent().parent().prev().html()*1;//剩余人数
-                        if(num<over){
+                        var limit = $(this).parent().parent().attr('limit');
+                        if(num<over&&num<limit){
                             var new_num = num*1+1;//购物车要更改的数量
                             var cart_id = the.parent().parent().parent().attr("cart_id");//购物车的ID
-                            $.ajax({
-                                type: "POST",
-                                url: "buycarCart_num",
-                                data: {new_num:new_num,cart_id:cart_id},
-                                success: function(msg){
-                                    if(msg){
-                                        the.prev().val(new_num);//人次
-                                        the.parent().parent().next().children().html(new_num);//小计
-                                        price_jia();
-                                    }
-                                }
-                            });
+                           the.prev().val(new_num);//人次
+                            the.parent().parent().next().children().html(new_num);//小计
+                        var status = $(this).parent().parent().parent().find(".che").prop("checked");
+                            if(status)
+                            {
+                              price_jia();
+                          }
                         }
                     });
                     function price_jia()
@@ -202,26 +160,30 @@
                         var new_price = price*1 - 1;
                         $("#price_all").html(new_price);
                     }
-
-
-
                 </script>
-
                 <div id="div_overlist" class="g-over-con clrfix">
                     <div class="end-delete clrfix">
                         <h3 class="fl">已结束</h3>
                         <a id="a_delover1" class="fr gray6" href="javascript:;">清除</a>
                     </div>
                     <ul type="2">
-                        <li>
+                        <?php 
+                                foreach ($end as $k => $v) 
+                                {
+                                    if ($v['state']==3) {
+                                      
+                                   
+                           ?>
+                                <li>
+                                    <input type='hidden' class='buycart_id' value="<?=$v['cart_id']?>">
                             <cite>
                                 <a href="http://www.1yyg.com/product/10333233.html" target="_blank">
-                                    <img src="http://img.1yyg.net/GoodsPic/pic-70-70/20170122144823912.jpg">
+                                    <img src="<?= $v['goods_picture']?>">
                                 </a>
                             </cite>
                             <cite class="u-cart-name u-cart-padding">
                                 <span>
-                                <a class="gray9" href="http://www.1yyg.com/product/10333233.html" target="_blank">苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）</a>
+                                <a class="gray9" href="http://www.1yyg.com/product/10333233.html" target="_blank">第（<?= $v['times'] ?>）云&nbsp;&nbsp;&nbsp;<?=$v['goods_name']?>&nbsp;&nbsp;&nbsp;<?= $v['goods_desc']?></a>
                                 </span>
                                 <em>已结束</em>
                             </cite>
@@ -229,6 +191,8 @@
                                 <a class="z-comms" codeid="10333233" href="javascript:;"></a>
                             </cite>
                         </li>
+          <?   }  }?>         
+
                     </ul>
                 </div>
                 <script>
@@ -240,12 +204,8 @@
                         }
                     });
                 </script>
-
-
-
                 <div id="div_operate" class="m-list-operating clrfix" style="position: relative; bottom: 0px;">
                     <p class="fl">
-
                         <span>
                             <a id="btnSelAll" title="全选" href="javascript:;">全选</a>
                         </span>
@@ -310,10 +270,18 @@
 //                }
 
                 //全选
-                $("#btnSelAll").click(function(){
-                    $(":checkbox").attr("checked",true);
+                $("#btnSelAll").on('click',function(){
 
-                });
+                    if ($(":checkbox").prop("checked")==true) 
+                    {
+                        $(":checkbox").prop("checked",false);
+                    }
+                    else
+                    {
+                        $(":checkbox").prop("checked",true);
+                    }
+                })
+               
                 //删除
                 $("#btnDelete").click(function(){
                     var a = "";

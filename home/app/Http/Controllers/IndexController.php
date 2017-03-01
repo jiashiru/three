@@ -157,21 +157,36 @@ class IndexController extends Controller
     //商品详情
     public function shop()
     {
-        $goods_id = Input::get("goods_id");//接受商品的ID
+        if ($_SESSION['u_id']) 
+        {
+           $u_id = $_SESSION['u_id'];
+        }
+        else
+        {
+            $u_id = '';
+        }
+        //接受商品的ID
+        $goods_id = Input::get("goods_id");
+        //该商品的所有云期
+        $times_all = DB::table('goods_times')->where(['goods_id'=>$goods_id])->orderBy('times','desc')->get();
+        //该商品现在的云期
+        $times_ing = DB::table('goods_times')->where(['goods_id'=>$goods_id,'state'=>1])->first();
         //查询本商品的信息
         $goods = DB::table("goods")->where(['goods_id'=>$goods_id])->first();
         $content = DB::table('goods_content')->where(['goods_id'=>$goods_id])->first();
         return view("index/shop",[
-            'goods'=>$goods,
-            'content'=>$content['goods_content']
-        ]);
+                        'goods'=>$goods,
+                        'content'=>$content['goods_content'],
+                        'times'=>$times_all,
+                        'times_ing'=>$times_ing,
+                        'session_u'=>$u_id
+                    ]);
     }
     //查询单个商品的 商品图片
     public function goods_photo()
     {
         $goods_id = Input::get("goods_id");
         $goods_gallery = DB::table("goods_gallery")->where(['goods_id'=>$goods_id,'img_type'=>0])->get();
-
         echo json_encode($goods_gallery);
     }
     //获取当前服务器时间，用户主页下面
@@ -182,4 +197,5 @@ class IndexController extends Controller
         $data['s'] = date("s",time());
         return $data;
     }
+    
 }
