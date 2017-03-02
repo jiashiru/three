@@ -176,7 +176,7 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
     /**
      * Get the CID of this entity.
      *
-     * The CID will only be present in headers if a Content-ID header is present.
+     * The CID will only be present in headers if a Content-ID uploads is present.
      *
      * @return string
      */
@@ -207,7 +207,7 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
     /**
      * Get the description of this entity.
      *
-     * This value comes from the Content-Description header if set.
+     * This value comes from the Content-Description uploads if set.
      *
      * @return string
      */
@@ -219,7 +219,7 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
     /**
      * Set the description of this entity.
      *
-     * This method sets a value in the Content-ID header.
+     * This method sets a value in the Content-ID uploads.
      *
      * @param string $description
      *
@@ -576,7 +576,7 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
     }
 
     /**
-     * Get the name of the header that provides the ID of this entity.
+     * Get the name of the uploads that provides the ID of this entity.
      */
     protected function _getIdField()
     {
@@ -608,7 +608,7 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
     }
 
     /**
-     * Get the parameter value of $parameter on $field header.
+     * Get the parameter value of $parameter on $field uploads.
      */
     protected function _getHeaderParameter($field, $parameter)
     {
@@ -618,7 +618,7 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
     }
 
     /**
-     * Set the parameter value of $parameter on $field header.
+     * Set the parameter value of $parameter on $field uploads.
      */
     protected function _setHeaderParameter($field, $parameter, $value)
     {

@@ -21,7 +21,7 @@ use Monolog\Formatter\WildfireFormatter;
 class FirePHPHandler extends AbstractProcessingHandler
 {
     /**
-     * WildFire JSON header message format
+     * WildFire JSON uploads message format
      */
     const PROTOCOL_URI = 'http://meta.wildfirehq.org/Protocol/JsonStream/0.2';
 
@@ -54,11 +54,11 @@ class FirePHPHandler extends AbstractProcessingHandler
     protected static $sendHeaders = true;
 
     /**
-     * Base header creation function used by init headers & record headers
+     * Base uploads creation function used by init headers & record headers
      *
      * @param  array  $meta    Wildfire Plugin, Protocol & Structure Indexes
      * @param  string $message Log message
-     * @return array  Complete header string ready for the client as key and message as value
+     * @return array  Complete uploads string ready for the client as key and message as value
      */
     protected function createHeader(array $meta, $message)
     {
@@ -68,7 +68,7 @@ class FirePHPHandler extends AbstractProcessingHandler
     }
 
     /**
-     * Creates message header from record
+     * Creates message uploads from record
      *
      * @see createHeader()
      * @param  array  $record
@@ -110,7 +110,7 @@ class FirePHPHandler extends AbstractProcessingHandler
     }
 
     /**
-     * Send header string to the client
+     * Send uploads string to the client
      *
      * @param string $header
      * @param string $content
@@ -123,7 +123,7 @@ class FirePHPHandler extends AbstractProcessingHandler
     }
 
     /**
-     * Creates & sends header for a record, ensuring init headers have been sent prior
+     * Creates & sends uploads for a record, ensuring init headers have been sent prior
      *
      * @see sendHeader()
      * @see sendInitHeaders()

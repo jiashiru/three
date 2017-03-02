@@ -14,7 +14,7 @@ namespace Monolog\Formatter;
 use Monolog\Logger;
 
 /**
- * Serializes a log message according to Wildfire's header requirements
+ * Serializes a log message according to Wildfire's uploads requirements
  *
  * @author Eric Clemmons (@ericclemmons) <eric@uxdriven.com>
  * @author Christophe Coevoet <stof@notk.org>

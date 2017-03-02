@@ -296,7 +296,7 @@ class Swift_Mime_Headers_ParameterizedHeaderTest extends \SwiftMailerTestCase
         5.  Language specification in Encoded Words
 
         RFC 2047 provides support for non-US-ASCII character sets in RFC 822
-        message header comments, phrases, and any unstructured text field.
+        message uploads comments, phrases, and any unstructured text field.
         This is done by defining an encoded word construct which can appear
         in any of these places.  Given that these are fields intended for
         display, it is sometimes necessary to associate language information

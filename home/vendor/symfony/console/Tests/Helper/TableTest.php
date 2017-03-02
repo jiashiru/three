@@ -445,7 +445,7 @@ TABLE
 
 TABLE
             ),
-            'Multiple header lines' => array(
+            'Multiple uploads lines' => array(
                 array(
                     array(new TableCell('Main title', array('colspan' => 3))),
                     array('ISBN', 'Title', 'Author'),

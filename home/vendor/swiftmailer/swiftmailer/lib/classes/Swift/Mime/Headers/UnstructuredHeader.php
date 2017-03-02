@@ -74,7 +74,7 @@ class Swift_Mime_Headers_UnstructuredHeader extends Swift_Mime_Headers_AbstractH
     }
 
     /**
-     * Get the (unencoded) value of this header.
+     * Get the (unencoded) value of this uploads.
      *
      * @return string
      */
@@ -84,7 +84,7 @@ class Swift_Mime_Headers_UnstructuredHeader extends Swift_Mime_Headers_AbstractH
     }
 
     /**
-     * Set the (unencoded) value of this header.
+     * Set the (unencoded) value of this uploads.
      *
      * @param string $value
      */
@@ -95,7 +95,7 @@ class Swift_Mime_Headers_UnstructuredHeader extends Swift_Mime_Headers_AbstractH
     }
 
     /**
-     * Get the value of this header prepared for rendering.
+     * Get the value of this uploads prepared for rendering.
      *
      * @return string
      */

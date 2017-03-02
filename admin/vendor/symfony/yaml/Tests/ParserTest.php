@@ -737,7 +737,7 @@ EOF
     {
         $this->assertEquals(array('content' => <<<'EOT'
 # comment 1
-header
+uploads
 
     # comment 2
     <body>
@@ -749,7 +749,7 @@ EOT
         ), Yaml::parse(<<<'EOF'
 content: |
     # comment 1
-    header
+    uploads
 
         # comment 2
         <body>
@@ -765,7 +765,7 @@ EOF
     {
         $this->assertEquals(array(array('content' => <<<'EOT'
 # comment 1
-header
+uploads
 
     # comment 2
     <body>
@@ -778,7 +778,7 @@ EOT
 -
     content: |
         # comment 1
-        header
+        uploads
 
             # comment 2
             <body>
@@ -796,7 +796,7 @@ EOF
             'title' => 'some title',
             'content' => <<<'EOT'
 # comment 1
-header
+uploads
 
     # comment 2
     <body>
@@ -810,7 +810,7 @@ EOT
     title: some title
     content: |
         # comment 1
-        header
+        uploads
 
             # comment 2
             <body>
@@ -918,7 +918,7 @@ pages:
         title: some title
         content: |
             # comment 1
-            header
+            uploads
 
                 # comment 2
                 <body>
@@ -933,7 +933,7 @@ EOT;
                     'title' => 'some title',
                     'content' => <<<'EOT'
 # comment 1
-header
+uploads
 
     # comment 2
     <body>

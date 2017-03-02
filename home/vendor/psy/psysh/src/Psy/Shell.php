@@ -805,7 +805,7 @@ class Shell extends Application
     }
 
     /**
-     * Get the shell output header.
+     * Get the shell output uploads.
      *
      * @return string
      */

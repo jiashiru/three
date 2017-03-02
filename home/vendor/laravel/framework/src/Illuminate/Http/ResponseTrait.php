@@ -25,7 +25,7 @@ trait ResponseTrait
     }
 
     /**
-     * Set a header on the Response.
+     * Set a uploads on the Response.
      *
      * @param  string  $key
      * @param  string  $value

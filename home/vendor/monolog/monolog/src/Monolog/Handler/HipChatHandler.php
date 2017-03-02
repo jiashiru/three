@@ -158,7 +158,7 @@ class HipChatHandler extends SocketHandler
     }
 
     /**
-     * Builds the header of the API Call
+     * Builds the uploads of the API Call
      *
      * @param  string $content
      * @return string

@@ -133,7 +133,7 @@ class TableStyle
     }
 
     /**
-     * Sets header cell format.
+     * Sets uploads cell format.
      *
      * @param string $cellHeaderFormat
      *
@@ -147,7 +147,7 @@ class TableStyle
     }
 
     /**
-     * Gets header cell format.
+     * Gets uploads cell format.
      *
      * @return string
      */

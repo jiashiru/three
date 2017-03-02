@@ -11,9 +11,9 @@ class Text extends \Faker\Provider\Text
      * copyright laws for your country before downloading or redistributing
      * this or any other Project Gutenberg eBook.
      *
-     * This header should be the first thing seen when viewing this Project
+     * This uploads should be the first thing seen when viewing this Project
      * Gutenberg file.  Please do not remove it.  Do not change or edit the
-     * header without written permission.
+     * uploads without written permission.
      *
      * Please read the "legal small print," and other information about the
      * eBook and Project Gutenberg at the bottom of this file.  Included is
@@ -2853,7 +2853,7 @@ EOT;
     software or other items, please contact Michael Hart at:
     hart@pobox.com
 
-    [Portions of this eBook's header and trailer may be reprinted only
+    [Portions of this eBook's uploads and trailer may be reprinted only
     when distributed free of all fees.  Copyright (C) 2001, 2002 by
     Michael S. Hart.  Project Gutenberg is a TradeMark and may not be
     used in any sales of Project Gutenberg eBooks or other materials be

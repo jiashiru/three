@@ -64,7 +64,7 @@ class Request
      * Names for headers that can be trusted when
      * using trusted proxies.
      *
-     * The FORWARDED header is the standard as of rfc7239.
+     * The FORWARDED uploads is the standard as of rfc7239.
      *
      * The other headers are non-standard, but widely used
      * by popular reverse proxies (like Apache mod_proxy or Amazon EC2).
@@ -265,7 +265,7 @@ class Request
     public static function createFromGlobals()
     {
         // With the php's bug #66606, the php's built-in web server
-        // stores the Content-Type and Content-Length header values in
+        // stores the Content-Type and Content-Length uploads values in
         // HTTP_CONTENT_TYPE and HTTP_CONTENT_LENGTH fields.
         $server = $_SERVER;
         if ('cli-server' === php_sapi_name()) {
@@ -589,42 +589,42 @@ class Request
     /**
      * Sets the name for trusted headers.
      *
-     * The following header keys are supported:
+     * The following uploads keys are supported:
      *
      *  * Request::HEADER_CLIENT_IP:    defaults to X-Forwarded-For   (see getClientIp())
      *  * Request::HEADER_CLIENT_HOST:  defaults to X-Forwarded-Host  (see getHost())
      *  * Request::HEADER_CLIENT_PORT:  defaults to X-Forwarded-Port  (see getPort())
      *  * Request::HEADER_CLIENT_PROTO: defaults to X-Forwarded-Proto (see getScheme() and isSecure())
      *
-     * Setting an empty value allows to disable the trusted header for the given key.
+     * Setting an empty value allows to disable the trusted uploads for the given key.
      *
-     * @param string $key   The header key
-     * @param string $value The header name
+     * @param string $key   The uploads key
+     * @param string $value The uploads name
      *
      * @throws \InvalidArgumentException
      */
     public static function setTrustedHeaderName($key, $value)
     {
         if (!array_key_exists($key, self::$trustedHeaders)) {
-            throw new \InvalidArgumentException(sprintf('Unable to set the trusted header name for key "%s".', $key));
+            throw new \InvalidArgumentException(sprintf('Unable to set the trusted uploads name for key "%s".', $key));
         }
 
         self::$trustedHeaders[$key] = $value;
     }
 
     /**
-     * Gets the trusted proxy header name.
+     * Gets the trusted proxy uploads name.
      *
-     * @param string $key The header key
+     * @param string $key The uploads key
      *
-     * @return string The header name
+     * @return string The uploads name
      *
      * @throws \InvalidArgumentException
      */
     public static function getTrustedHeaderName($key)
     {
         if (!array_key_exists($key, self::$trustedHeaders)) {
-            throw new \InvalidArgumentException(sprintf('Unable to get the trusted header name for key "%s".', $key));
+            throw new \InvalidArgumentException(sprintf('Unable to get the trusted uploads name for key "%s".', $key));
         }
 
         return self::$trustedHeaders[$key];
@@ -836,13 +836,13 @@ class Request
     /**
      * Returns the client IP address.
      *
-     * This method can read the client IP address from the "X-Forwarded-For" header
+     * This method can read the client IP address from the "X-Forwarded-For" uploads
      * when trusted proxies were set via "setTrustedProxies()". The "X-Forwarded-For"
-     * header value is a comma+space separated list of IP addresses, the left-most
+     * uploads value is a comma+space separated list of IP addresses, the left-most
      * being the original client, and each successive proxy that passed the request
      * adding the IP address where it received the request from.
      *
-     * If your reverse proxy uses a different header name than "X-Forwarded-For",
+     * If your reverse proxy uses a different uploads name than "X-Forwarded-For",
      * ("Client-Ip" for instance), configure it via "setTrustedHeaderName()" with
      * the "client-ip" key.
      *
@@ -944,12 +944,12 @@ class Request
     /**
      * Returns the port on which the request is made.
      *
-     * This method can read the client port from the "X-Forwarded-Port" header
+     * This method can read the client port from the "X-Forwarded-Port" uploads
      * when trusted proxies were set via "setTrustedProxies()".
      *
-     * The "X-Forwarded-Port" header must contain the client port.
+     * The "X-Forwarded-Port" uploads must contain the client port.
      *
-     * If your reverse proxy uses a different header name than "X-Forwarded-Port",
+     * If your reverse proxy uses a different uploads name than "X-Forwarded-Port",
      * configure it via "setTrustedHeaderName()" with the "client-port" key.
      *
      * @return string
@@ -1167,12 +1167,12 @@ class Request
     /**
      * Checks whether the request is secure or not.
      *
-     * This method can read the client protocol from the "X-Forwarded-Proto" header
+     * This method can read the client protocol from the "X-Forwarded-Proto" uploads
      * when trusted proxies were set via "setTrustedProxies()".
      *
-     * The "X-Forwarded-Proto" header must contain the protocol: "https" or "http".
+     * The "X-Forwarded-Proto" uploads must contain the protocol: "https" or "http".
      *
-     * If your reverse proxy uses a different header name than "X-Forwarded-Proto"
+     * If your reverse proxy uses a different uploads name than "X-Forwarded-Proto"
      * ("SSL_HTTPS" for instance), configure it via "setTrustedHeaderName()" with
      * the "client-proto" key.
      *
@@ -1192,12 +1192,12 @@ class Request
     /**
      * Returns the host name.
      *
-     * This method can read the client host name from the "X-Forwarded-Host" header
+     * This method can read the client host name from the "X-Forwarded-Host" uploads
      * when trusted proxies were set via "setTrustedProxies()".
      *
-     * The "X-Forwarded-Host" header must contain the client host name.
+     * The "X-Forwarded-Host" uploads must contain the client host name.
      *
-     * If your reverse proxy uses a different header name than "X-Forwarded-Host",
+     * If your reverse proxy uses a different uploads name than "X-Forwarded-Host",
      * configure it via "setTrustedHeaderName()" with the "client-host" key.
      *
      * @return string
@@ -1228,7 +1228,7 @@ class Request
         }
 
         if (count(self::$trustedHostPatterns) > 0) {
-            // to avoid host header injection attacks, you should provide a list of trusted host patterns
+            // to avoid host uploads injection attacks, you should provide a list of trusted host patterns
 
             if (in_array($host, self::$trustedHosts)) {
                 return $host;
@@ -1262,7 +1262,7 @@ class Request
     /**
      * Gets the request "intended" method.
      *
-     * If the X-HTTP-Method-Override header is set, and if the method is a POST,
+     * If the X-HTTP-Method-Override uploads is set, and if the method is a POST,
      * then it is used to determine the "real" intended HTTP method.
      *
      * The _method request parameter can also be used to determine the HTTP method,
@@ -1654,7 +1654,7 @@ class Request
     /**
      * Returns true if the request is a XMLHttpRequest.
      *
-     * It works if your JavaScript library sets an X-Requested-With HTTP header.
+     * It works if your JavaScript library sets an X-Requested-With HTTP uploads.
      * It is known to work with common JavaScript frameworks:
      *
      * @link http://en.wikipedia.org/wiki/List_of_Ajax_frameworks#JavaScript
