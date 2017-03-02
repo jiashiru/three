@@ -396,7 +396,7 @@
                                         <select name="location_a" id=""></select>
                                         <script src="style/js/region_select.js"></script>
                                         <script type="text/javascript">
-                                            new PCAS('location_p', 'location_c', 'location_a', '北京市', '', '');
+                                            new PCAS('location_p', 'location_c', 'location_a', '', '', '');
                                         </script>
                                     </div>
                                 </div>

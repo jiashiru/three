@@ -143,7 +143,7 @@
                         <span class="f-pay-subtotal">小计(元)</span>
                     </dt>
 
-                    <?php foreach($$goods_cart as $k=>$v){ ?>
+                    <?php foreach($goods_cart as $k=>$v){ ?>
 
                     <dd>
                         <ul>
