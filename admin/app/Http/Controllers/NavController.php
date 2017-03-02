@@ -7,7 +7,7 @@ use Illuminate\Contracts\Validation\Validator;
 use App\Model\Nav;
 
 
-class NavController extends Controller
+class NavController extends CommonController
 {
     //导航添加页面
     public function add()
