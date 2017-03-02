@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Session;
 use Storage;
 use App\Http\Requests;
+use App\Http\Models\REST;
 
 class SetController extends Controller
 {
@@ -171,7 +172,7 @@ class SetController extends Controller
 
 
     //用于对图片进行缩放
-    function thumb($filename,$name,$savePath,$width=200,$height=200)
+    public function thumb($filename,$name,$savePath,$width=200,$height=200)
     {
         //获取原图像$filename的宽度$width_orig和高度$height_orig
         list($width_orig, $height_orig) = getimagesize($filename);
@@ -198,6 +199,148 @@ class SetController extends Controller
         imagedestroy($image);
     }
 
+    //收货地址页面
+    public function address()
+    {
+        //查询收货地址
+        $address = DB::table('address')
+            ->where('u_id',$_SESSION['u_id'])
+            ->orderBy('status','desc')
+            ->get();
+
+
+        return view('set/address',['address'=>$address]);
+    }
+
+    //添加收货地址
+    public function addressAdd()
+    {
+        //接值
+        $data = Input::get();
+        //验证
+        if(empty($data['consignee'])){
+            return view('public/jump',['msg'=>'用户名不能为空','url'=>'address']);
+        }
+        if(empty($data['tel'])){
+            return view('public/jump',['msg'=>'手机号不能为空','url'=>'address']);
+        }
+
+       //处理城市
+        $location = implode(" ",[$data['location_p'],$data['location_c'],$data['location_a']]);
+
+        //先查询数据库中该用户的收货地址是否大于等于4条，如果是，不能添加
+        $count = DB::table('address')->where('u_id',$_SESSION['u_id'])->count();
+        if($count>=4){
+            return view('public/jump',['msg'=>'您已经添加了4个收货地址，不能再添加','url'=>'address']);
+        }else{
+            if($count==0){
+                //默认地址
+                $status = 1;
+            }else{
+                $status = 0;
+            }
+            //执行添加
+            $res = DB::table('address')
+                ->insert([
+                    'consignee'=>$data['consignee'],
+                    'tel'=>$data['tel'],
+                    'u_id'=>$_SESSION['u_id'],
+                    'address'=>$location,
+                    'postcode'=>$data['postcode'],
+                    'detail_address'=>$data['detail_address'],
+                    'phone'=>$data['phone'],
+                    'status'=>$status
+                ]);
+            if($res){
+                return view('public/jump',['msg'=>'收货地址添加成功','url'=>'address']);
+            }else{
+                return view('public/jump',['msg'=>'收货地址添加失败','url'=>'address']);
+            }
+        }
+
+    }
+
+    //账户安全页面
+    public function security()
+    {
+        return view('set/security');
+    }
+
+    //修改密码页面
+    public function updatePwd()
+    {
+        return view('set/updatePwd');
+    }
+
+    //验证原始密码
+    public function checkPwd()
+    {
+        $oldpwd = Input::get('oldpwd');
+        $pwd =  md5(md5($oldpwd).'three');
+
+        $data = DB::table('user')
+            ->select('password')
+            ->where(['u_id'=>$_SESSION['u_id'],'password'=>$pwd])
+            ->first();
+//print_r($data);
+        return $data ? 1 : 0;
+    }
+
+    //修改密码
+    public function pwdDo()
+    {
+        $oldpwd = Input::get('oldPass');
+        $newpwd = Input::get('newPass');
+        $newPassAgain = Input::get('newPassAgain');
+        if($newpwd!=$newPassAgain){
+
+            return view('public/jump',['msg'=>'密码和确认密码不一致','url'=>'updatePwd']);
+        }
+        $pwd =  md5(md5($oldpwd).'three');
+        //验证旧密码是否正确
+        $data = DB::table('user')
+            ->select('password')
+            ->where(['u_id'=>$_SESSION['u_id'],'password'=>$pwd])
+            ->first();
+        if($data){
+            $newPwd =  md5(md5($newpwd).'three');
+            //执行修改
+            $res = DB::table('user')
+                ->where(['u_id'=>$_SESSION['u_id'],'password'=>$pwd])
+                ->update(['password'=>$newPwd]);
+            if($res){
+                return view('public/jump',['msg'=>'修改成功','url'=>'security']);
+            }else{
+                return view('public/jump',['msg'=>'修改失败','url'=>'updatePwd']);
+            }
+        }
+    }
+
+    //验证码页面
+    public function telCode()
+    {
+        //查询为手机绑定还是邮箱绑定
+        $data = DB::table('user')->select('tel','email')->where('u_id',$_SESSION['u_id'])->first();
+        if($data['tel']){
+            //为手机绑定
+            $tel = substr($data['tel'],4)."****".substr($data['tel'],9,2);
+
+            return view('set/telCode',['tel'=>$tel,'tel_hide'=>$data['tel']]);
+        }else{
+            //为邮箱绑定
+            $length = strlen($data['email']);
+            $count = strpos($data['email'],'@');
+
+            $email = substr($data['email'],1)."*".substr($data['email'],$count,$length);
+
+            return view('set/telCode',['email'=>$email,'email_hide'=>$data['email']]);
+        }
+
+    }
+
+
+
+
 
 
     //个人主页
@@ -215,4 +358,6 @@ class SetController extends Controller
         ]);
 
     }
+
+
 }
