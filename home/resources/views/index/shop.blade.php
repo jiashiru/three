@@ -1,8 +1,6 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head id="htmlHead"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
         苹果（Apple）iMac MK462CH/A 27英寸一体电脑 苹果（Apple）iMac MK462CH/A 27英寸一体电脑_1元云购
     </title><meta name="Description" content="配备Retina 5K 显示屏的iMac，画质如此夺目，足以让画面之外的世界都顿显失色！" />
@@ -48,7 +46,18 @@
         <!--期数-->
         <div class="ng-total-nav">
             <ul class="ng-sort clearfix">
-                <li class="current now "><a href="javascript:;" title="第1666云进行中">第1666云进行中<span class="dotting"></span></a></li><li class=""><a href="http://www.1yyg.com/lottery/8629234.html" title="第1665云">第1665云</a></li><li class=""><a href="http://www.1yyg.com/lottery/8629232.html" title="第1664云">第1664云</a></li><li class=""><a href="http://www.1yyg.com/lottery/8629228.html" title="第1663云">第1663云</a></li><li class=""><a href="http://www.1yyg.com/lottery/8629225.html" title="第1662云">第1662云</a></li><li class=""><a href="http://www.1yyg.com/lottery/8629222.html" title="第1661云">第1661云</a></li><li class=""><a href="http://www.1yyg.com/lottery/8629219.html" title="第1660云">第1660云</a></li><li class=""><a href="http://www.1yyg.com/lottery/8629216.html" title="第1659云">第1659云</a></li><li class=""><a href="http://www.1yyg.com/lottery/8629213.html" title="第1658云">第1658云</a></li><li id="li_more"><a href="javascript:;" title="更多">更多<i>+</i></a></li>
+                   <?php foreach ($times as $k => $v) { 
+                        if ($v['state']==1) 
+                        {
+                          echo '<li class="current now "><a href="javascript:;" title="第'.$v['times'].'云进行中">第'.$v['times'].'云进行中<span class="dotting"></span></a></li>';
+                        }
+                        else
+                        {
+                          echo '<li class=""><a href="http://www.1yyg.com/lottery/8629234.html" title="第'.$v['times'].'云">第'.$v['times'].'云</a></li>'; 
+                        }
+                  } ?>
+                <li id="li_more"><a href="javascript:;" title="更多">更多<i>+</i></a></li>
+                
             </ul>
         </div>
 
@@ -141,8 +150,11 @@
             <div class="ng-goods-detail">
 
                 <h2 class="o-title">
-                    <span class="num">
-                                (第1666云)
+                    <span class="num" id = 'times_num' >
+
+                                (第
+                                   {{$times_ing['times']}}
+                                云)
                     </span>
                     <?php echo $goods['goods_name'] ?>
                     <span class="o-info"><?php echo $goods['goods_desc'] ?></span>
@@ -151,15 +163,10 @@
                     价值：￥<?php echo $goods['goods_price'] ?>
                 </p>
                 <div class="line-time">
-                    <div class="line-wrapper u-progress" title="完成50%">
-                        <span class="pgbar" style="width:45px;">
-                            <span class="pging"></span>
-                        </span>
-                    </div>
                     <div class="text-wrapper clearfix">
                         <div class="now-has">
                                             <span>
-                                            10</span>
+                                             {{$goods['goods_price']-$times_ing['times']}}</span>
                             <p>已参与</p>
                         </div>
                         <div class="total-has">
@@ -169,7 +176,7 @@
                         </div>
                         <div class="overplus-has">
                                             <span id="CodeLift">
-                                            15226</span>
+                                             {{$times_ing['number']}}</span>
                             <p>剩余</p>
                         </div>
                     </div>
@@ -178,18 +185,29 @@
                     <p class="mine">我要参与</p>
                     <div id="divNumber" class="option-wrapper clearfix">
                         <a href="javascript:;" class="mius">-</a>
-                        <input type="text" class="input-num" value="1" />
+                        <input type="text" class="input-num" id = 'code_number' value="1" />
                         <a href="javascript:;" class="add">+</a>
 
                     </div>
+                    @if($goods['is_limit']==0)
                     <ul class="check-num clearfix"><li>10</li><li>50</li><li>100</li><li>200</li></ul>
                     <p class="fl">人次</p>
-                    <div class="mine-prob" style="display:none;"><i></i></div>
-                    <span id="span_tip"></span>
+                    @endif
+                    <div class="mine-prob" style="display:none;" ><i></i></div>
+                    <span id="span_tip">
+                        @if($goods['is_limit']==1)
+                          <div class="xg-tips">
+                            <i></i>
+                            限购
+                            <span>{{$goods['limit_number']}}</span>
+                            人次
+                            </div>
+                            @endif
+                    </span>
                 </div>
                 <div id="divBuy" class="consume-wrapper clearfix">
                     <a href="javascript:;" class="consume-now">立即1元云购</a>
-                    <a href="javascript:;" class="consume-addcar">加入购物车</a>
+                    <a href="javascript:;" class="consume-addcar" id='buycart'>加入购物车</a>
                     <div class="min-code-con">
                         <a href="javascript:;"><i class="ng-xq-bg"></i></a>
                         <div class="code-show" style="display:none;">
@@ -706,7 +724,7 @@
         <!--登录-->
         <div id="divRTLogin" class="cartLogin-wrapper clrfix" style="display: none; height:230px;" >
             <div class="cartLogin-title" style="display: block;">
-                <a href="https://passport.1yyg.com/register.html" target="_blank" class="orange fr">免费注册<em class="f-tran">>></em></a>登录
+                <a href="register" target="_blank" class="orange fr">免费注册<em class="f-tran">>></em></a>登录
             </div>
             <div class="cartLogin-con clrfix" style="display: block;">
                 <ul>
@@ -741,7 +759,9 @@
                         </div>
                     </li>
                     <li class="f-error-message orange" id="miniLoginErrorMsgLi"></li>
-                    <li class="cart-login-btn"><input type="button"  name="vCode" value="登录" id="miniLoginBtn" /></li>
+                    <li class="cart-login-btn">
+                        <input type="button"  name="vCode" value="登录" id="miniLoginBtn" />
+                    </li>
                     <li class="f-wjpwd">
                         <a class="gray9 fl" href="https://passport.1yyg.com/findpassword.html" target="_blank">忘记密码？</a>
                                      <span class="fr">快捷登录：
@@ -827,10 +847,68 @@
     </div>
 </div>
 </div>
+
+<input type='hidden'  id='session_u' value="{{$session_u}}">
+<input type='hidden'  id='times_id' value="{{$times_ing['times_id']}}">
+<input type='hidden'  id='goods_id' value="{{$times_ing['goods_id']}}">
 <script language="javascript" type="text/javascript">
     var Base = { head: document.getElementsByTagName("head")[0] || document.documentElement, Myload: function (B, A) { this.done = false; B.onload = B.onreadystatechange = function () { if (!this.done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) { this.done = true; A(); B.onload = B.onreadystatechange = null; if (this.head && B.parentNode) { this.head.removeChild(B) } } } }, getScript: function (A, C) { var B = function () { }; if (C != undefined) { B = C } var D = document.createElement("script"); D.setAttribute("language", "javascript"); D.setAttribute("type", "text/javascript"); D.setAttribute("src", A); this.head.appendChild(D); this.Myload(D, B) }, getStyle: function (A, CB) { var B = function () { }; if (CB != undefined) { B = CB } var C = document.createElement("link"); C.setAttribute("type", "text/css"); C.setAttribute("rel", "stylesheet"); C.setAttribute("href", A); this.head.appendChild(C); this.Myload(C, B) } }
     function GetVerNum() { var D = new Date(); return D.getFullYear().toString().substring(2, 4) + '.' + (D.getMonth() + 1) + '.' + D.getDate() + '.' + D.getHours() + '.' + (D.getMinutes() < 10 ? '0' : D.getMinutes().toString().substring(0, 1)) }
     Base.getScript('style/JS/Bottom.js?v=' + GetVerNum());
+    
+    $('#buycart').click(function(){
+        var u_id = $('#session_u').val();
+        var times_id = $('#times_id').val();
+        var code_number = $('#code_number').val();
+        var goods_id = $('#goods_id').val();
+
+        if (u_id) 
+            {
+                      $.ajax({
+                        type: "POST",
+                        url: "buycarAdd",
+                        data: {goods_id:goods_id,u_id:u_id,times_id:times_id,code_number:code_number},
+                        success: function(msg)
+                        {
+                            if(msg==1)
+                            {
+                                location.href = 'buycarIndex';
+                            }
+                            else
+                            {
+                                alert('系统繁忙，请重新添加');
+                            }
+                        }
+                    });
+            }
+            else
+            {
+                $('#divRTLogin').show();
+            }
+    })
+   $('#miniLoginBtn').click(function(){
+       var username  = $('#username').val();
+       var password = $('#password').val();
+       var ajax = 1;
+        $.ajax({
+                    type: "POST",
+                    url: "loginDo",
+                    data: {name:username,pwd:password,ajax:ajax},
+                    success: function(msg)
+                    {
+                        if(msg==1)
+                        {
+                            history.go(0);
+                           $('#divRTLogin').hide();
+                        }
+                        else
+                        {
+                            alert('登录失败');
+                        }
+                    }
+                });
+
+   })
 </script>
 <div style="display: none;">
     <script type="text/javascript" language="JavaScript" src="http://s22.cnzz.com/stat.php?id=3362429&web_id=3362429"  async="async"></script>

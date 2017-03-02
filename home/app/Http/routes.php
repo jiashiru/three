@@ -81,7 +81,8 @@ Route::any("userRecord",function(){ return view("user/record"); });//我的记�
 
 Route::any("buycarIndex","BuycarController@index");//购物车
 Route::any("buycarCart_num","BuycarController@cart_num");//在购物车 增加和减少的时候用
-
+Route::any("buycarAdd","BuycarController@add_buy");//添加购物车
+Route::any("buycarDel","BuycarController@buy_del");//删除
 Route::any("buycaraccount","BuycarController@account");//结算1
 
 
