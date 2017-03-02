@@ -53,7 +53,7 @@ class CouchDBHandler extends AbstractProcessingHandler
                 'content'       => $record['formatted'],
                 'ignore_errors' => true,
                 'max_redirects' => 0,
-                'header'        => 'Content-type: application/json',
+                'uploads'        => 'Content-type: application/json',
             ),
         ));
 

@@ -12,7 +12,7 @@
 namespace Symfony\Component\HttpFoundation;
 
 /**
- * Represents an Accept-* header item.
+ * Represents an Accept-* uploads item.
  *
  * @author Jean-François Simon <contact@jfsimon.fr>
  */
@@ -82,7 +82,7 @@ class AcceptHeaderItem
     }
 
     /**
-     * Returns header  value's string representation.
+     * Returns uploads  value's string representation.
      *
      * @return string
      */

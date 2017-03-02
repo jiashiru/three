@@ -153,7 +153,7 @@ class Ssi implements SurrogateInterface
         $response->setContent($content);
         $response->headers->set('X-Body-Eval', 'SSI');
 
-        // remove SSI/1.0 from the Surrogate-Control header
+        // remove SSI/1.0 from the Surrogate-Control uploads
         if ($response->headers->has('Surrogate-Control')) {
             $value = $response->headers->get('Surrogate-Control');
             if ('content="SSI/1.0"' == $value) {

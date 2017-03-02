@@ -63,7 +63,7 @@ class Swift_Mime_SimpleHeaderFactory implements Swift_Mime_HeaderFactory
     }
 
     /**
-     * Create a new Date header using $timestamp (UNIX time).
+     * Create a new Date uploads using $timestamp (UNIX time).
      *
      * @param string   $name
      * @param int|null $timestamp
@@ -82,7 +82,7 @@ class Swift_Mime_SimpleHeaderFactory implements Swift_Mime_HeaderFactory
     }
 
     /**
-     * Create a new basic text header with $name and $value.
+     * Create a new basic text uploads with $name and $value.
      *
      * @param string $name
      * @param string $value
@@ -130,7 +130,7 @@ class Swift_Mime_SimpleHeaderFactory implements Swift_Mime_HeaderFactory
     }
 
     /**
-     * Create a new ID header for Message-ID or Content-ID.
+     * Create a new ID uploads for Message-ID or Content-ID.
      *
      * @param string       $name
      * @param string|array $ids
@@ -149,7 +149,7 @@ class Swift_Mime_SimpleHeaderFactory implements Swift_Mime_HeaderFactory
     }
 
     /**
-     * Create a new Path header with an address (path) in it.
+     * Create a new Path uploads with an address (path) in it.
      *
      * @param string $name
      * @param string $path

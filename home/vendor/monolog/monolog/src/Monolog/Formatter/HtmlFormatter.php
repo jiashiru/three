@@ -46,7 +46,7 @@ class HtmlFormatter extends NormalizerFormatter
     /**
      * Creates an HTML table row
      *
-     * @param  string $th       Row header content
+     * @param  string $th       Row uploads content
      * @param  string $td       Row standard cell content
      * @param  bool   $escapeTd false if td content must not be html escaped
      * @return string

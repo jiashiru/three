@@ -253,12 +253,12 @@ class Store implements StoreInterface
     }
 
     /**
-     * Determines whether two Request HTTP header sets are non-varying based on
-     * the vary response header value provided.
+     * Determines whether two Request HTTP uploads sets are non-varying based on
+     * the vary response uploads value provided.
      *
-     * @param string $vary A Response vary header
-     * @param array  $env1 A Request HTTP header array
-     * @param array  $env2 A Request HTTP header array
+     * @param string $vary A Response vary uploads
+     * @param array  $env1 A Request HTTP uploads array
+     * @param array  $env2 A Request HTTP uploads array
      *
      * @return bool true if the two environments match, false otherwise
      */
@@ -375,7 +375,7 @@ class Store implements StoreInterface
      * normalized version of the request URI.
      *
      * If the same URI can have more than one representation, based on some
-     * headers, use a Vary header to indicate them, and each representation will
+     * headers, use a Vary uploads to indicate them, and each representation will
      * be stored independently under the same cache key.
      *
      * @param Request $request A Request instance

@@ -42,7 +42,7 @@
                     <input type="password" class="form-control" placeholder="密码" name = "password" required="" value="{{ old('password') }}"><span>{{ $errors->first('password') }}</span>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="验证码" name="capath" required="" value="{{ old('capath') }}"><span>{{ $errors->first('capath') }} {{ session('error') }}</span>
+                    <input type="password" class="form-control" placeholder="验证码" name="capath" required="" value="{{ old('capath') }}"><span>{{ $errors->first('capath') }} <font color="red">{{ session('error') }}</font></span>
                 </div>
                 <div class="form-group">
                     <img src="{{ url('loginGetCapath') }}" alt="验证码" width="298" height="28" onclick="this.src='{{ url("loginGetCapath") }}?math='+Math.random()">
@@ -50,7 +50,7 @@
                 <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
 
 
-                <p class="text-muted text-center"> <a href="login.html#"><small>忘记密码了？</small></a> | <a href="{{ url('registerRegister') }}">注册一个新账号</a>
+                <p class="text-muted text-center"> <a href="{{ url('loginReset') }}"><small>忘记密码了？</small></a> | <a href="{{ url('registerRegister') }}">注册一个新账号</a>
                 </p>
 
             </form>

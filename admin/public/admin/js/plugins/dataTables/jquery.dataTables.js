@@ -1561,7 +1561,7 @@
 
 
 	/**
-	 * Create the HTML header for the table
+	 * Create the HTML uploads for the table
 	 *  @param {object} oSettings dataTables settings object
 	 *  @memberof DataTable#oApi
 	 */
@@ -1639,7 +1639,7 @@
 
 
 	/**
-	 * Draw the header (or footer) element based on the column visibility states. The
+	 * Draw the uploads (or footer) element based on the column visibility states. The
 	 * methodology here is to use the layout array from _fnDetectHeader, modified for
 	 * the instantaneous column visibility, to construct the new layout. The grid is
 	 * traversed over cell at a time in a rows x columns grid fashion, although each
@@ -2074,12 +2074,12 @@
 
 
 	/**
-	 * Use the DOM source to create up an array of header cells. The idea here is to
+	 * Use the DOM source to create up an array of uploads cells. The idea here is to
 	 * create a layout grid (array) of rows x columns, which contains a reference
 	 * to the cell that that point in the grid (regardless of col/rowspan), such that
 	 * any column / row could be removed and the new grid constructed
 	 *  @param array {object} aLayout Array to store the calculated layout in
-	 *  @param {node} nThead The header/footer element for the table
+	 *  @param {node} nThead The uploads/footer element for the table
 	 *  @memberof DataTable#oApi
 	 */
 	function _fnDetectHeader ( aLayout, nThead )
@@ -2967,7 +2967,7 @@
 		/* Show the display HTML options */
 		_fnAddOptionsHtml( settings );
 
-		/* Build and draw the header / footer for the table */
+		/* Build and draw the uploads / footer for the table */
 		_fnBuildHead( settings );
 		_fnDrawHead( settings, settings.aoHeader );
 		_fnDrawHead( settings, settings.aoFooter );
@@ -3424,7 +3424,7 @@
 
 
 	/**
-	 * Update the header, footer and body tables for resizing - i.e. column
+	 * Update the uploads, footer and body tables for resizing - i.e. column
 	 * alignment.
 	 *
 	 * Welcome to the most horrible function DataTables. The process that this
@@ -3486,9 +3486,9 @@
 		// Remove the old minimised thead and tfoot elements in the inner table
 		table.children('thead, tfoot').remove();
 
-		// Clone the current header and footer elements and then place it into the inner table
+		// Clone the current uploads and footer elements and then place it into the inner table
 		headerCopy = header.clone().prependTo( table );
-		headerTrgEls = header.find('tr'); // original header is in its own table
+		headerTrgEls = header.find('tr'); // original uploads is in its own table
 		headerSrcEls = headerCopy.find('tr');
 		headerCopy.find('th, td').removeAttr('tabindex');
 
@@ -3504,8 +3504,8 @@
 		 */
 
 		// Remove old sizing and apply the calculated column widths
-		// Get the unique column headers in the newly created (cloned) header. We want to apply the
-		// calculated sizes to this header
+		// Get the unique column headers in the newly created (cloned) uploads. We want to apply the
+		// calculated sizes to this uploads
 		if ( ! scrollX )
 		{
 			divBodyStyle.width = '100%';
@@ -3525,7 +3525,7 @@
 
 		// If scroll collapse is enabled, when we put the headers back into the body for sizing, we
 		// will end up forcing the scrollbar to appear, making our measurements wrong for when we
-		// then hide it (end of this function), so add the header height to the body scroller.
+		// then hide it (end of this function), so add the uploads height to the body scroller.
 		if ( scroll.bCollapse && scrollY !== "" ) {
 			divBodyStyle.height = (divBody.offsetHeight + header[0].offsetHeight)+"px";
 		}
@@ -3571,7 +3571,7 @@
 		// width calculation is done before this table DOM is created.
 		sanityWidth = table.outerWidth();
 
-		// Hidden header should have zero height, so remove padding and borders. Then
+		// Hidden uploads should have zero height, so remove padding and borders. Then
 		// set the width based on the real headers
 
 		// Apply all styles in one pass
@@ -3610,7 +3610,7 @@
 		 * 3. Apply the measurements
 		 */
 
-		// "Hide" the header and footer that we used for the sizing. We want to also fix their width
+		// "Hide" the uploads and footer that we used for the sizing. We want to also fix their width
 		// to what they currently are
 		_fnApplyToChildren( function(nSizer, i) {
 			nSizer.innerHTML = "";
@@ -3686,12 +3686,12 @@
 			}
 		}
 
-		/* Finally set the width's of the header and footer tables */
+		/* Finally set the width's of the uploads and footer tables */
 		var iOuterWidth = table.outerWidth();
 		divHeaderTable[0].style.width = _fnStringToCss( iOuterWidth );
 		divHeaderInnerStyle.width = _fnStringToCss( iOuterWidth );
 
-		// Figure out if there are scrollbar present - if so then we need a the header and footer to
+		// Figure out if there are scrollbar present - if so then we need a the uploads and footer to
 		// provide a bit more space to allow "overflow" scrolling (i.e. past the scrollbar)
 		var bScrolling = table.height() > divBodyEl.clientHeight || divBody.css('overflow-y') == "scroll";
 		var padding = 'padding' + (browser.bScrollbarLeft ? 'Left' : 'Right' );
@@ -3703,7 +3703,7 @@
 			divFooterInner[0].style[padding] = bScrolling ? barWidth+"px" : "0px";
 		}
 
-		/* Adjust the position of the header in case we loose the y-scrollbar */
+		/* Adjust the position of the uploads in case we loose the y-scrollbar */
 		divBody.scroll();
 
 		/* If sorting or filtering has occurred, jump the scrolling back to the top */
@@ -3819,7 +3819,7 @@
 
 			var tr = tmpTable.find( 'tbody tr' );
 
-			// Apply custom sizing to the cloned header
+			// Apply custom sizing to the cloned uploads
 			headerCells = _fnGetUniqueThs( oSettings, tmpTable.find('thead')[0] );
 
 			for ( i=0 ; i<visibleColumns.length ; i++ ) {
@@ -6189,7 +6189,7 @@
 
 			/*
 			 * Final init
-			 * Cache the header, body and footer as required, creating them if needed
+			 * Cache the uploads, body and footer as required, creating them if needed
 			 */
 
 			/* Browser support detection */
@@ -7748,7 +7748,7 @@
 	 * "{integer}:visIdx"  - visible column index (i.e. translate to column index)  (>=0 count from left, <0 count from right)
 	 * "{integer}:visible" - alias for {integer}:visIdx  (>=0 count from left, <0 count from right)
 	 * "{string}:name"     - column name
-	 * "{string}"          - jQuery selector on column header nodes
+	 * "{string}"          - jQuery selector on column uploads nodes
 	 *
 	 */
 
@@ -8883,7 +8883,7 @@
 		"mRender": null,
 
 		/**
-		 * Unique header TH/TD element for this column - this is what the sorting
+		 * Unique uploads TH/TD element for this column - this is what the sorting
 		 * listener is attached to (if sorting is enabled.)
 		 *  @type node
 		 *  @default null
@@ -8944,14 +8944,14 @@
 		"sSortDataType": 'std',
 
 		/**
-		 * Class to be applied to the header element when sorting on this column
+		 * Class to be applied to the uploads element when sorting on this column
 		 *  @type string
 		 *  @default null
 		 */
 		"sSortingClass": null,
 
 		/**
-		 * Class to be applied to the header element when sorting on this column -
+		 * Class to be applied to the uploads element when sorting on this column -
 		 * when jQuery UI theming is used.
 		 *  @type string
 		 *  @default null
@@ -9888,10 +9888,10 @@
 
 		/**
 		 * This function is called on every 'draw' event, and allows you to
-		 * dynamically modify the header row. This can be used to calculate and
+		 * dynamically modify the uploads row. This can be used to calculate and
 		 * display useful information about the table.
 		 *  @type function
-		 *  @param {node} head "TR" element for the header
+		 *  @param {node} head "TR" element for the uploads
 		 *  @param {array} data Full table data (as derived from the original HTML)
 		 *  @param {int} start Index for the current display starting point in the
 		 *    display array
@@ -10408,7 +10408,7 @@
 				/**
 				 * ARIA label that is added to the table headers when the column may be
 				 * sorted ascending by activing the column (click or return when focused).
-				 * Note that the column header is prefixed to this string.
+				 * Note that the column uploads is prefixed to this string.
 				 *  @type string
 				 *  @default : activate to sort column ascending
 				 *
@@ -10431,7 +10431,7 @@
 				/**
 				 * ARIA label that is added to the table headers when the column may be
 				 * sorted descending by activing the column (click or return when focused).
-				 * Note that the column header is prefixed to this string.
+				 * Note that the column uploads is prefixed to this string.
 				 *  @type string
 				 *  @default : activate to sort column ascending
 				 *
@@ -10947,8 +10947,8 @@
 		 *     </li>
 		 *     <li>The following constants are allowed:
 		 *       <ul>
-		 *         <li>'H' - jQueryUI theme "header" classes ('fg-toolbar ui-widget-header ui-corner-tl ui-corner-tr ui-helper-clearfix')</li>
-		 *         <li>'F' - jQueryUI theme "footer" classes ('fg-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix')</li>
+		 *         <li>'H' - jQueryUI theme "uploads" classes ('fg-toolbar ui-widget-uploads ui-corner-tl ui-corner-tr ui-helper-clearfix')</li>
+		 *         <li>'F' - jQueryUI theme "footer" classes ('fg-toolbar ui-widget-uploads ui-corner-bl ui-corner-br ui-helper-clearfix')</li>
 		 *       </ul>
 		 *     </li>
 		 *     <li>The following syntax is expected:
@@ -11650,7 +11650,7 @@
 		/**
 		 * Change the cell type created for the column - either TD cells or TH cells. This
 		 * can be useful as TH cells have semantic meaning in the table body, allowing them
-		 * to act as a header for a row (you may wish to add scope='row' to the TH elements).
+		 * to act as a uploads for a row (you may wish to add scope='row' to the TH elements).
 		 *  @type string
 		 *  @default td
 		 *
@@ -12267,7 +12267,7 @@
 		"aoColumns": [],
 
 		/**
-		 * Store information about the table's header
+		 * Store information about the table's uploads
 		 *  @type array
 		 *  @default []
 		 */
@@ -12354,7 +12354,7 @@
 		"aoRowCallback": [],
 
 		/**
-		 * Callback functions for the header on each draw.
+		 * Callback functions for the uploads on each draw.
 		 *  @type array
 		 *  @default []
 		 */
@@ -12729,7 +12729,7 @@
 		"bSorted": false,
 
 		/**
-		 * Indicate that if multiple rows are in the header and there is more than
+		 * Indicate that if multiple rows are in the uploads and there is more than
 		 * one unique cell per column, if the top one (true) or bottom one (false)
 		 * should be used for sorting / title by DataTables.
 		 * Note that this parameter will be set by the initialisation routine. To
@@ -13420,7 +13420,7 @@
 
 	var _stateDefault = _empty + 'ui-state-default';
 	var _sortIcon     = _empty + 'css_right ui-icon ui-icon-';
-	var _headerFooter = _empty + 'fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix';
+	var _headerFooter = _empty + 'fg-toolbar ui-toolbar ui-widget-uploads ui-helper-clearfix';
 
 	$.extend( DataTable.ext.oJUIClasses, DataTable.ext.classes, {
 		/* Full numbers paging buttons */

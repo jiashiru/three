@@ -48,7 +48,7 @@ class PoFileLoader extends FileLoader
      *
      * The definition states:
      * - white-space and comments are optional.
-     * - msgid "" that an empty singleline defines a header.
+     * - msgid "" that an empty singleline defines a uploads.
      *
      * This parser sacrifices some features of the reference implementation the
      * differences to that implementation are as follows.

@@ -488,7 +488,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     }
 
     /**
-     * Retrieve a header from the request.
+     * Retrieve a uploads from the request.
      *
      * @param  string  $key
      * @param  string|array|null  $default
