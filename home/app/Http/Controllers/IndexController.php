@@ -157,7 +157,7 @@ class IndexController extends Controller
     //商品详情
     public function shop()
     {
-        if ($_SESSION['u_id']) 
+        if (isset($_SESSION['u_id'])) 
         {
            $u_id = $_SESSION['u_id'];
         }

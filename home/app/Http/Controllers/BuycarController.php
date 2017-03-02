@@ -18,39 +18,20 @@ class BuycarController extends Controller
     //购物车
     public function index()
     {
-        $u_id = $_SESSION['u_id'];//模拟登陆的ID
+        
+        if (!isset($_SESSION['u_id'])) 
+        {
+           return view("buycar/index",[
+                        'end'=>0
+                    ]);
+        }
+        else
+        {
+            $u_id = $_SESSION['u_id'];
+        }
         //查询用户的购物车里面数据
         $cart = DB::table('cart')->where(['u_id'=>$u_id])->get();
-        $goods_end_desc = DB::table('goods')->get();
-        $times = DB::table('goods_times')->get();
-         foreach ($times as $k => $v) 
-        {
-            foreach ($cart as $ke => $val) 
-            {
-                if ($v['times_id']==$val['times_id']) 
-                {
-                    $data[$k] = $val;
-                    $data[$k]['times'] = $v['times'];
-                    $data[$k]['state'] = $v['state'];
-                    $data[$k]['number'] = $v['number'];
-                }
-            }
-        }
-        
-        foreach ($goods_end_desc as $key => $v) 
-        {
-            foreach ($data as $k => $val) 
-            {
-                 if ($v['goods_id']==$val['goods_id']) 
-                {
-                    $data[$k]['goods_name'] = $v['goods_name'];
-                    $data[$k]['goods_desc'] = $v['goods_desc'];
-                    $data[$k]['goods_picture'] = $v['goods_picture'];
-                    $data[$k]['goods_price'] = $v['goods_price'];
-                    $data[$k]['limit_number'] = $v['limit_number'];
-                }
-            }
-        }
+        $data = $this->goods_info($cart);
         return view("buycar/index",[
          
             'end'=>$data
@@ -79,8 +60,8 @@ class BuycarController extends Controller
     //更改购物车的数量
     public function cart_num()
     {
-        $where['u_id'] = 10;//模拟登陆ID
-        $data['code_number'] = Input::get("new_num");
+        $where['u_id'] = $_SESSION['u_id'];//模拟登陆ID
+        $data['code_number'] = Input::get("code_number");
         $where['cart_id'] = Input::get("cart_id");
         $res = DB::table("cart")->where($where)->update($data);
         return $res ? 1 :0;
@@ -89,40 +70,57 @@ class BuycarController extends Controller
     public function account()
     {
          $u_id = $_SESSION['u_id'];
-        $id_all = Input::get("id_all");
+         $id_all = Input::get("id_all");
         //查询购物车表，取出商品信息
         $sql = "select * from cart WHERE u_id=$u_id AND cart_id in($id_all)";
         $cart = DB::select($sql);
-        $goods_cart = $this->shop_info($cart);
-        foreach($goods_cart as $k=>$v){
-            foreach($cart as $key=>$val){
-                if($v['goods_id'] == $val['goods_id']){
-                    $goods_cart[$k]['code_number'] = $val['code_number'];
-                }
-            }
-        }
+        $data = $this->goods_info($cart);
         return view("buycar/account",[
-            'goods_cart'=>$goods_cart,
-
-        ]);
+                            'data'=>$data
+                    ]);
     }
     //购物车删除
     public function buy_del()
     {
         $cart_id = Input::get("cart_id");
-        $del = DB::table('cart')->where(['cart_id'=>$cart_id])->delete();
+        $cart_id = explode(',', $cart_id);
+        $del = DB::table('cart')->whereIn('cart_id',$cart_id)->delete();
         return $del ? json_encode(1):json_encode(0);
     }
-    //展示过期
-    public function buy_end()
+  //商品详细信息
+    public function goods_info($cart)
     {
-        $u_id = $_SESSION['u_id'];
-       
-     
+         $goods_end_desc = DB::table('goods')->get();
+         $times = DB::table('goods_times')->get();
+         foreach ($times as $k => $v) 
+        {
+            foreach ($cart as $ke => $val) 
+            {
+                if ($v['times_id']==$val['times_id']) 
+                {
+                    $data[$k] = $val;
+                    $data[$k]['times'] = $v['times'];
+                    $data[$k]['state'] = $v['state'];
+                    $data[$k]['number'] = $v['number'];
+                }
+            }
+        }
+        
+        foreach ($goods_end_desc as $key => $v) 
+        {
+            foreach ($data as $k => $val) 
+            {
+                 if ($v['goods_id']==$val['goods_id']) 
+                {
+                    $data[$k]['goods_name'] = $v['goods_name'];
+                    $data[$k]['goods_desc'] = $v['goods_desc'];
+                    $data[$k]['goods_picture'] = $v['goods_picture'];
+                    $data[$k]['goods_price'] = $v['goods_price'];
+                    $data[$k]['limit_number'] = $v['limit_number'];
+                }
+            }
+        }
+        return $data;
     }
-    //清除过期的
-    public function buy_del_end()
-    {
 
-    }
 }

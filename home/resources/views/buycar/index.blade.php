@@ -25,7 +25,7 @@
         <div class="g-special-head">
             <div class="fl logo-con">
                 <a href="http://www.1yyg.com/" class="f-logo"></a>
-                <span>购物1车</span>
+                <span>购物车</span>
             </div>
             <div class="fr refresh-con">
                 <a href="http://www.1yyg.com/" title="继续云购" class="f-carryOn">继续云购</a>
@@ -33,7 +33,18 @@
                 <a href="javascript:location.reload();"><b class="z-arrows"></b>刷新</a>
             </div>
         </div>
-        <div class="g-main-con clrfix">
+        @if($end==0)
+         <div id="div_myrecord" class="list-wrap" >
+            <div class="my-record">
+                <!--未登录-->
+                <div class="no-login-wrapper">
+                    <div class="gth-icon transparent-png"></div>
+                    <p class="ng-see-mycord">请您<a id="a_login" href="login">登录</a>后查看云购记录！</p>
+                </div>
+               </div>
+        </div>
+        @else
+        <div class="g-main-con clrfix" >
             <div id="div_cartlist" class="m-cart-list gray9 clrfix">
                 <div class="g-list-title">
                     <span class="f-cart-comm">商品</span>
@@ -120,8 +131,20 @@
                         if(num>1){
                             var new_num = num-1;//购物车要更改的数量
                             var cart_id = the.parent().parent().attr("cart_id");//购物车的ID
-                            the.next().children().first().val(new_num);
-                            the.parent().next().children().html(new_num);//小计
+                            $.ajax({
+                                type: "POST",
+                                url: "buycarCart_num",
+                                data: {cart_id:cart_id,code_number:new_num},
+                                success: function(msg)
+                                {
+                                    if(msg==1)
+                                    {
+                                          the.next().children().first().val(new_num);
+                                            the.parent().next().children().html(new_num);//小计
+                                    }
+                                }
+                            });
+                           
                             if(status)
                             {
                                 price_jian();
@@ -138,9 +161,20 @@
                         if(num<over&&num<limit){
                             var new_num = num*1+1;//购物车要更改的数量
                             var cart_id = the.parent().parent().parent().attr("cart_id");//购物车的ID
-                           the.prev().val(new_num);//人次
-                            the.parent().parent().next().children().html(new_num);//小计
-                        var status = $(this).parent().parent().parent().find(".che").prop("checked");
+                             $.ajax({
+                                type: "POST",
+                                url: "buycarCart_num",
+                                data: {cart_id:cart_id,code_number:new_num},
+                                success: function(msg)
+                                {
+                                    if(msg==1)
+                                    {
+                                       the.prev().val(new_num);//人次
+                                        the.parent().parent().next().children().html(new_num);//小计
+                                   }
+                                }
+                            });
+                           var status = $(this).parent().parent().parent().find(".che").prop("checked");
                             if(status)
                             {
                               price_jia();
@@ -200,7 +234,22 @@
                     $(".gray6").click(function(){
                         var res = confirm("确认清除结束商品？");
                         if(res){
-                            $("#div_overlist").remove();
+                           var a = '';
+                            $('.buycart_id').each(function(i){
+                                 a += ','+$(this).val();
+                                $("#div_overlist").remove();
+                            })
+                             var cart_id = a.substr(1);
+                             $.ajax({
+                                        type: "POST",
+                                        url: "buycarDel",
+                                        data: {cart_id:cart_id},
+                                        success: function(msg)
+                                        {
+                                            
+                                        }
+                                    });
+                     
                         }
                     });
                 </script>
@@ -255,20 +304,6 @@
                     $("#price_all").html(price);//选择的商品的总价钱
                 });
 
-
-
-                //这个方法是用来显示 商品个个数 以及 金额总计
-//                function price(){
-//                    var shop_num = $("#shop_num").val();//商品的数量
-//                    var price_all = 0;
-//                    $(".price").each(function(i){
-//                        var priceOne = $(this).html();
-//                        price_all += parseInt(priceOne);
-//                    });
-//                    $("#price_all").html(price_all);//商品的价钱
-//                    $("#orange_num").html(shop_num);//商品的数量
-//                }
-
                 //全选
                 $("#btnSelAll").on('click',function(){
 
@@ -289,7 +324,6 @@
                         a += ","+$(this).val();
                         $(this).parent().parent().parent().parent().remove();
                     });
-                    alert(a);
                 });
                 //结算
                 $("#btnGoPay").click(function(){
@@ -302,7 +336,7 @@
 
         </div>
     </div>
-
+@endif
     <!--footer 开始-->
     <!--版权-->
     <div class="g-copyrightCon clrfix">

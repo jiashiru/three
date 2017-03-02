@@ -898,9 +898,7 @@
                     {
                         if(msg==1)
                         {
-                            // history.go(0);
-
-                            alert(11)
+                            history.go(0);
                            $('#divRTLogin').hide();
                         }
                         else
