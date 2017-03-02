@@ -40,6 +40,17 @@ Route::group(['middleware' => 'session'], function () {
     Route::get("header","SetController@header");//修改头像页面
     Route::post("uploadHead","SetController@uploadHead");//上传头像
 
+    Route::get("address","SetController@address");//收货地址页面
+    Route::post("addressAdd","SetController@addressAdd");//添加收货地址
+
+    Route::get("security","SetController@security");//账户安全页面
+    Route::get("updatePwd","SetController@updatePwd");//修改密码页面
+    Route::post("checkPwd","SetController@checkPwd");//验证原始密码
+    Route::post("pwdDo","SetController@pwdDo");//修改密码
+
+
+    Route::get("telCode","SetController@telCode");//手机验证码页面
+
 
     Route::any("setMyself","SetController@myself");//个人主页
 
