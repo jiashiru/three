@@ -24,13 +24,16 @@ Route::get('404',function(){ return view("errors.404"); });
 Route::get('500',function(){ return view("errors.500"); });
 Route::get('503',function(){ return view("errors.503"); });
 
-Route::any("/",function(){ return view("index/index"); });
+Route::any('/', ['uses' => 'IndexController@index']);
 Route::any("indexV1",function(){ return view("index/index_v1"); });
 
 //login
 Route::group(['middleware' => ['web']], function () {
     Route::any('loginLogin', ['uses' => 'LoginController@login']);
     Route::get('loginGetCapath', ['uses' => 'LoginController@getCapath']);
+    Route::get('loginLogout', ['uses' => 'LoginController@logout']);
+    Route::any('loginReset', ['uses' => 'LoginController@reset']);
+    Route::any('loginEmail', ['uses' => 'LoginController@email']);
 });
 //register
 Route::group(['middleware' => ['web']], function () {
