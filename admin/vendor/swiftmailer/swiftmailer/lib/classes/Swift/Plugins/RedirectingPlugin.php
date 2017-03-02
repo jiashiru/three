@@ -124,7 +124,7 @@ class Swift_Plugins_RedirectingPlugin implements Swift_Events_SendListener
     }
 
     /**
-     * Filter header set against a whitelist of regular expressions.
+     * Filter uploads set against a whitelist of regular expressions.
      *
      * @param Swift_Mime_HeaderSet $headerSet
      * @param string               $type

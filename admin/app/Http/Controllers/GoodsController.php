@@ -2,10 +2,11 @@
 namespace App\Http\Controllers;
 
 
-use DB;
+
 use App\Model\Goods;
 use App\Model\Category;
 use App\Model\Type;
+use App\Model\Admin;
 use App\Model\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Validation\Validator;

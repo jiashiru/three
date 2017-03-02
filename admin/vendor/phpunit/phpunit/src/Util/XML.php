@@ -547,7 +547,7 @@ class PHPUnit_Util_XML
               // HTML5
               'article', 'aside', 'audio', 'bdi', 'canvas', 'command',
               'datalist', 'details', 'dialog', 'embed', 'figure', 'figcaption',
-              'footer', 'header', 'hgroup', 'keygen', 'mark', 'meter', 'nav',
+              'footer', 'uploads', 'hgroup', 'keygen', 'mark', 'meter', 'nav',
               'output', 'progress', 'ruby', 'rt', 'rp', 'track', 'section',
               'source', 'summary', 'time', 'video', 'wbr'
             );

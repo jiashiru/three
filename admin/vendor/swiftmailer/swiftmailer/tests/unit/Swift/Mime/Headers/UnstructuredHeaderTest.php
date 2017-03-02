@@ -37,10 +37,10 @@ class Swift_Mime_Headers_UnstructuredHeaderTest extends \SwiftMailerTestCase
     public function testLongHeadersAreFoldedAtWordBoundary()
     {
         /* -- RFC 2822, 2.2.3
-        Each header field is logically a single line of characters comprising
+        Each uploads field is logically a single line of characters comprising
         the field name, the colon, and the field body.  For convenience
         however, and to deal with the 998/78 character limitations per line,
-        the field body portion of a header field can be split into a multiple
+        the field body portion of a uploads field can be split into a multiple
         line representation; this is called "folding".  The general rule is
         that wherever this standard allows for folding white space (not
         simply WSP characters), a CRLF may be inserted before any WSP.
@@ -61,7 +61,7 @@ class Swift_Mime_Headers_UnstructuredHeaderTest extends \SwiftMailerTestCase
             'X-Custom-Header: The quick brown fox jumped over the fence, he was a'.
             ' very very'."\r\n".//Folding
             ' scary brown fox with a bushy tail'."\r\n",
-            $header->toString(), '%s: The header should have been folded at 78th char'
+            $header->toString(), '%s: The uploads should have been folded at 78th char'
             );
     }
 
@@ -185,8 +185,8 @@ class Swift_Mime_Headers_UnstructuredHeaderTest extends \SwiftMailerTestCase
 
         ... SNIP ...
 
-        While there is no limit to the length of a multiple-line header
-        field, each line of a header field that contains one or more
+        While there is no limit to the length of a multiple-line uploads
+        field, each line of a uploads field that contains one or more
         'encoded-word's is limited to 76 characters.
         */
 
@@ -246,8 +246,8 @@ class Swift_Mime_Headers_UnstructuredHeaderTest extends \SwiftMailerTestCase
     {
         /* -- RFC 2047, 5 (1)
      Ordinary ASCII text and 'encoded-word's may appear together in the
-     same header field.  However, an 'encoded-word' that appears in a
-     header field defined as '*text' MUST be separated from any adjacent
+     same uploads field.  However, an 'encoded-word' that appears in a
+     uploads field defined as '*text' MUST be separated from any adjacent
      'encoded-word' or 'text' by 'linear-white-space'.
 
      -- RFC 2047, 2.
@@ -292,7 +292,7 @@ class Swift_Mime_Headers_UnstructuredHeaderTest extends \SwiftMailerTestCase
         5.  Language specification in Encoded Words
 
         RFC 2047 provides support for non-US-ASCII character sets in RFC 822
-        message header comments, phrases, and any unstructured text field.
+        message uploads comments, phrases, and any unstructured text field.
         This is done by defining an encoded word construct which can appear
         in any of these places.  Given that these are fields intended for
         display, it is sometimes necessary to associate language information

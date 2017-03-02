@@ -125,7 +125,7 @@ class Swift_Mime_Headers_ParameterizedHeader extends Swift_Mime_Headers_Unstruct
     }
 
     /**
-     * Get the value of this header prepared for rendering.
+     * Get the value of this uploads prepared for rendering.
      *
      * @return string
      */
@@ -143,7 +143,7 @@ class Swift_Mime_Headers_ParameterizedHeader extends Swift_Mime_Headers_Unstruct
     }
 
     /**
-     * Generate a list of all tokens in the final header.
+     * Generate a list of all tokens in the final uploads.
      *
      * This doesn't need to be overridden in theory, but it is for implementation
      * reasons to prevent potential breakage of attributes.
@@ -171,7 +171,7 @@ class Swift_Mime_Headers_ParameterizedHeader extends Swift_Mime_Headers_Unstruct
     }
 
     /**
-     * Render a RFC 2047 compliant header parameter from the $name and $value.
+     * Render a RFC 2047 compliant uploads parameter from the $name and $value.
      *
      * @param string $name
      * @param string $value

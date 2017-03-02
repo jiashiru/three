@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -143,79 +141,37 @@
                         <span class="f-pay-subtotal">小计(元)</span>
                     </dt>
 
-                    <?php foreach($goods_cart as $k=>$v){ ?>
 
+                    <?php foreach($data as $k=>$v){ ?>
+            
                     <dd>
                         <ul>
                             <li class="f-pay-comm">
                                 <cite class="u-pay-pic">
                                     <a href="http://www.1yyg.com/product/8629228.html" target="_blank"
-                                       title="苹果（Apple）iMac MK462CH/A 27英寸一体电脑">
+                                       title="{{$v['goods_name']}}&nbsp;&nbsp;{{$v['goods_desc']}}">
                                         <img alt="" src="http://skin.1yyg.net/images/loding.gif"
-                                             src2="http://img.1yyg.net/GoodsPic/pic-70-70/20160511140647469.jpg" />
+                                             src2="{{$v['goods_picture']}}" />
                                     </a>
                                 </cite>
                                 <cite class="u-pay-name  ">
                                     <a href="http://www.1yyg.com/product/8629228.html" target="_blank"
-                                       title="苹果（Apple）iMac MK462CH/A 27英寸一体电脑">(
-                                        第1663云) 苹果（Apple）iMac MK462CH/A 27英寸一体电脑
+                                       title="{{$v['goods_name']}}&nbsp;&nbsp;{{$v['goods_desc']}}">(
+                                        第{{$v['times']}}云) &nbsp;&nbsp;{{$v['goods_name']}}&nbsp;&nbsp;{{$v['goods_desc']}}
                                     </a>
                                 </cite>
                             </li>
-                            <li class="f-pay-price">7670</li>
-                            <li class="f-pay-plusLess">1人次</li>
-                            <li class="f-pay-subtotal orange">1.00</li>
+                            <li class="f-pay-price">{{$v['number']}}</li>
+                            <li class="f-pay-plusLess">{{$v['code_number']}}人次</li>
+                            <li class="f-pay-subtotal orange">{{$v['code_number']}}</li>
                         </ul>
                     </dd>
-
-
                     <?php } ?>
-                    <dd>
-                        <ul>
-                            <li class="f-pay-comm">
-                                <cite class="u-pay-pic">
-                                    <a href="http://www.1yyg.com/product/10333230.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）">
-                                        <img alt="" src="http://skin.1yyg.net/images/loding.gif" src2="http://img.1yyg.net/GoodsPic/pic-70-70/20170122144823912.jpg" />
-                                    </a>
-                                </cite>
-                                <cite class="u-pay-name  ">
-
-                                    <a href="http://www.1yyg.com/product/10333230.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）">(第123云) 苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）</a></cite>
-                            </li>
-                            <li class="f-pay-price">7318</li>
-                            <li class="f-pay-plusLess">2人次</li>
-                            <li class="f-pay-subtotal orange">2.00</li>
-                        </ul>
-                    </dd>
-                    <dd>
-                        <ul>
-                            <li class="f-pay-comm">
-                                <cite class="u-pay-pic">
-                                    <a href="http://www.1yyg.com/product/10333230.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）">
-                                        <img alt="" src="http://skin.1yyg.net/images/loding.gif" src2="http://img.1yyg.net/GoodsPic/pic-70-70/20170122144823912.jpg" />
-                                    </a>
-                                </cite>
-                                <cite class="u-pay-name  ">
-
-                                    <a href="http://www.1yyg.com/product/10333230.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）">(第123云) 苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）</a></cite>
-                            </li>
-                            <li class="f-pay-price">7318</li>
-                            <li class="f-pay-plusLess">2人次</li>
-                            <li class="f-pay-subtotal orange">2.00</li>
-                        </ul>
-                    </dd>
-
-
-
-
-
                 </dl>
             </div>
 
             <input name="hidTotalCount" type="hidden" id="hidTotalCount" value="0" />
             <!--展开按钮-->
-
-
             <!--福分与余额-->
             <div id="divPayWayBox" class="m-pay-Total clrfix">
                 <dl>

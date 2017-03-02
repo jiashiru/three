@@ -141,7 +141,7 @@
                     <li class="curr" id="li_accset"><a href="http://member.1yyg.com/MemberModify.do" title="账号设置">账号设置<b><s></s></b></a><em class="z-account-settings u-personal"></em>
                         <div class="m-sub-menu">
                             <span><a href="/MemberModify.do">个人资料</a></span>
-                            <span><a href="/UserPhoto.do">修改头像</a></span>
+                            <span><a href="header">修改头像</a></span>
                             <span><a href="/Address.do">收货地址</a></span>
                             <span><a href="/Security/index.do">账户安全</a></span>
                             <span><a href="/PrivacySettings.do">隐私设置</a></span>
@@ -285,8 +285,8 @@
             <ul>
 
                 <li class="curr z-first"><a href="/MemberModify.do" title="个人资料">个人资料</a><b></b></li>
-                <li><a href="/UserPhoto.do" title="修改头像">修改头像</a><b></b></li>
-                <li><a href="/Address.do" title="收货地址">收货地址</a><b></b></li>
+                <li><a href="header" title="修改头像">修改头像</a><b></b></li>
+                <li><a href="address" title="收货地址">收货地址</a><b></b></li>
                 <li><a href="/Security/index.do" title="账户安全">账户安全</a><b></b></li>
                 <li><a href="/PrivacySettings.do" title="隐私设置">隐私设置</a><b></b></li>
                 <li><a href="/NoticeSettings.do" title="其它设置">其它设置</a><b></b></li>
@@ -302,7 +302,7 @@
                 <div class="con">
                     <div class="pic-side">
                         <div class="pic-wrap">
-                            <a href="/UserPhoto.do?forward=%2fMemberModify.do" class="h-pic"><img src="http://img.1yyg.net/UserFace/160/00000000000000000.jpg" width="120" height="120" /></a><a href="/UserPhoto.do?forward=%2fMemberModify.do" class="h-txt">修改头像</a>
+                            <a href="header" class="h-pic"><img src="style/images/set/00000000000000000_002.jpg" width="120" height="120" /></a><a href="header" class="h-txt">修改头像</a>
                         </div>
                         <div class="pic-wrap">
                             <a href="/security/index.do"><span class="p-icon"><i class="tel"></i></span><p class="gray9">已绑定</p>
@@ -314,59 +314,79 @@
                     </div>
                     <div class="info-side">
                         <div class="info-sign"><i></i>温馨提示：完善以下资料即可获得50福分，1元云购不会以任何形式公开您的个人隐私！</div>
+
+
+                        <form method="post" action="infoDo" id="form">
                         <ul class="info-list">
                             <li>
                                 <span class="label">昵　　称：</span>
-                                <input name="txtName" type="text" id="txtName" class="inp-long" maxlength="20" value="USER.1016650713" />
+                                <input name="nickname" type="text" id="nickname" class="inp-long" maxlength="20" value="{{$info['nickname']}}" />
                                 <em class="orange">*</em>
-                                <span class="orange"></span>
+                                <span class="orange" id="nick"></span>
                             </li>
                             <li>
                                 <span class="label">备用电话：</span>
-                                <input name="txtPhone" type="text" id="txtPhone" class="inp-long" value="手机号/座机" />
-                                <span class="orange"></span>
+                                <input name="phone" type="text" id="txtPhone" class="inp-long" value="{{$info['phone']}}" placeholder="手机号/座机" />
+                                <span class="orange" id="phone"></span>
                             </li>
                             <li>
                                 <span class="label">性　　别：</span>
+                                <input type="hidden" name="sex" id="sex" value="{{$info['sex']}}" />
                                 <div class="sex-list">
-                                    <div class="box" value="2">
-                                        <div class="box-check">
+                                    <div class="box">
+                                        <div class="box-check" id="check1" value="1">
                                             <i></i>
                                         </div>
                                         <span class="blank1">男</span>
                                     </div>
-                                    <div class="box" value="1">
-                                        <div class="box-check">
+                                    <div class="box" >
+                                        <div class="box-check" id="check2" value="2">
                                             <i></i>
                                         </div>
-                                        <span class="blank1">女</span>
+                                        <span class="blank2">女</span>
                                     </div>
-                                    <div class="box" value="3">
-                                        <div class="box-check current">
+                                    <div class="box" >
+                                        <div class="box-check" id="check3" value="3">
                                             <i></i>
                                         </div>
-                                        <span class="blank1">保密</span>
+                                        <span class="blank3">保密</span>
                                     </div>
                                 </div>
                                 <span class="orange"></span>
                             </li>
+
+                            <script>
+                                $(function(){
+                                   //获取性别值
+                                    var sex = $("#sex").val();
+                                    if(sex==1){
+                                        $("#check1").attr("class","box-check current");
+                                    }else if(sex==2){
+                                        $("#check2").attr("class","box-check current");
+                                    }else if(sex==3){
+                                        $("#check3").attr("class","box-check current");
+                                    }
+
+                                    //点击修改性别
+                                    $(".box-check").click(function () {
+                                        var value = $(this).attr('value');
+                                        $(this).attr('class',"box-check current");
+                                        $("#sex").val(value);
+                                    });
+                                });
+                            </script>
+
                             <li>
                                 <span class="label">生　　日：</span>
 
                                 <div id="main" >
                                     <div class="demo" >
 
-                                        {{--<p>--}}
-                                            {{--<select id="sel_year"></select>年--}}
-                                            {{--<select id="sel_month"></select>月--}}
-                                            {{--<select id="sel_day"></select>日--}}
-                                        {{--</p>--}}
                                         <p>
-                                            <select class="sel_year" rel="2000"></select>年
-                                            <select class="sel_month" rel="2"></select>月
-                                            <select class="sel_day" rel="14"></select>日
+                                            <select class="sel_year" name="year" rel="{{$info['year'] or ''}}"></select>年
+                                            <select class="sel_month" name="month" rel="{{$info['month'] or ''}}"></select>月
+                                            <select class="sel_day" name="day" rel="{{$info['day'] or ''}}"></select>日
                                         </p>
-
 
                                     </div>
 
@@ -396,7 +416,10 @@
                                         <select name="location_a" id=""></select>
                                         <script src="style/js/region_select.js"></script>
                                         <script type="text/javascript">
-                                            new PCAS('location_p', 'location_c', 'location_a', '', '', '');
+
+                                            new PCAS('location_p', 'location_c', 'location_a', "{{ $info['location_p'] or '' }}",
+                                                    "{{$info['location_c'] or ''}}", "{{$info['location_a'] or ''}}");
+
                                         </script>
                                     </div>
                                 </div>
@@ -405,36 +428,153 @@
 
                             <li>
                                 <span class="label">QQ&nbsp;号码：</span>
-                                <input name="txtQQ" type="text" id="txtQQ" class="inp-long" value="您的QQ号码" />
-                                <span class="orange"></span>
+                                <input name="txtQQ" type="text" id="qq" class="inp-long" value="{{$info['qq']}}" placeholder="您的QQ号码" />
+                                <span class="orange" id="QQ"></span>
                                 <div class="clear"></div>
                             </li>
-                            <li>
-                                <span class="label">月<em class="blank2">收</em>入：</span>
-                                <div class="shi-address-box oth-address-box">
-                                    <ul>
-                                        <li class="select-list">
-                                            <div class="fl clrfix">
-                                                    <span id="selMonthIncome" class="u-select-con">
-                                                        <a href="javascript:;" class="gray6">---请选择---<s class="u-personal"></s>
-                                                        </a>
-                                                        <div class="select-state">
-                                                        </div>
-                                                    </span>
-                                            </div>
 
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
                             <li>
                                 <span class="label">签　　名：</span>
-                                <textarea name="txtSignature" id="txtSignature" rows="5" cols="10" class="u-sign">让别人看到不一样的你</textarea>
+                                <textarea name="txtSignature" id="txtSignature" name="signature" rows="5" cols="10" class="u-sign" placeholder="让别人看到不一样的你">{{$info['signature']}}</textarea>
+                                <span class="orange" id="txt"></span>
                             </li>
                             <li>
-                                <a id="btnSave" href="javascript:;" class="save-btn">保存</a>
+                                {{--<a id="btnSave" href="javascript:;" class="save-btn">保存</a>--}}
+                                <input type="submit" value="保存" id="save" class="save-btn"/>
                             </li>
                         </ul>
+                        </form>
+
+                        <script>
+
+
+
+                            $(function () {
+
+                                var flag = 1;
+                                //失去焦点验证昵称
+                                $("#form").delegate("#nickname","blur", function () {
+                                    //验证昵称
+                                    var nickname = $("#nickname").val();
+                                    //正则
+                                    var reg_name = /^.{2,20}$/;
+                                    if(nickname==''){
+                                        $("#nick").html('昵称不能为空');
+                                        flag = 0;
+                                    }else if(!reg_name.test(nickname)){
+                                        $("#nick").html('昵称为2-20个字符');
+                                        flag = 0;
+                                    }else{
+                                        //验证唯一
+                                        $.post("checkNick",{nickname:nickname}, function (res) {
+                                            if(res==1){
+                                            $("#nick").html(' ');
+                                            flag = 1;
+                                        }else{
+                                            $("#nick").html('该昵称已经存在');
+                                            flag = 0;
+                                        }
+                                        });
+                                    }
+                                });
+
+                                //失去焦点验证电话
+                                $("#form").delegate("#txtPhone","blur", function () {
+                                    //获取
+                                    var phone = $(this).val();
+                                    //电话正则
+                                    var reg_tel = /^1[3|4|5|7|8][0-9]{9}$/;
+                                    //座机正则  区号+号码，区号以0开头，3位或4位
+                                    var reg_phone = /^0\d{2,3}-?\d{7,8}$/;
+                                    if(phone!=""){
+                                        if(!reg_tel.test(phone)){
+                                            if(!reg_phone.test(phone)){
+                                                $("#phone").html("请输入正确的电话号");
+                                                flag = 0;
+                                            }else{
+                                                $("#phone").html(" ");
+                                                flag = 1;
+                                            }
+                                        }else{
+                                            $("#phone").html(" ");
+                                            flag = 1;
+                                        }
+                                    }else{
+                                        $("#phone").html(" ");
+                                        flag = 1;
+                                    }
+                                });
+
+                                //失去焦点验证qq
+                                $("#form").delegate("#qq","blur", function () {
+                                    //获取qq
+                                    var qq = $(this).val();
+                                    //qq正则
+                                    var reg_qq = /^[1-9]\d{4,10}$/;
+                                    if(qq!=""){
+                                        if(!reg_qq.test(qq)){
+                                            $("#QQ").html("请输入正确的qq");
+                                            flag = 0;
+                                        }else{
+                                            $("#QQ").html(" ");
+                                            flag = 1;
+                                        }
+                                    }else{
+                                        $("#QQ").html(" ");
+                                        flag = 1;
+                                    }
+                                });
+
+                                //验证签名
+                                $("#form").delegate("#txtSignature","blur", function () {
+                                    //获取内容
+                                    var signature = $(this).val();
+                                    var reg_sign = /^.{0,100}$/;
+                                    if(signature!=""){
+                                        if(!reg_sign.test(signature)){
+                                            $("#txt").html("请输入0-100个字符");
+                                            flag = 0;
+                                        }else{
+                                            $("#txt").html(" ");
+                                            flag = 1;
+                                        }
+                                    }else{
+                                        $("#txt").html(" ");
+                                        flag = 1;
+                                    }
+                                });
+
+                                //提交
+                                if(flag==1){
+
+                                $("#form").delegate("#save","click", function () {
+                                    //验证昵称
+                                    var nickname = $("#nickname").val();
+                                    //正则
+                                    var reg_name = /^.{2,20}$/;
+                                    if(nickname==""){
+                                        $("#nick").html('昵称不能为空');
+                                        return false;
+                                    }else if(!reg_name.test(nickname)){
+                                        $("#nick").html('昵称为2-20个字符');
+                                        return false;
+                                    }else{
+                                        var res = checknick(nickname);
+                                        if(res==1){
+                                            return true;
+                                        }else{
+                                            $("#nick").html('该昵称已经存在');
+                                            return false;
+                                        }
+                                    }
+                                });
+
+                                }
+
+                            });
+                        </script>
+
+
                     </div>
                 </div>
             </div>

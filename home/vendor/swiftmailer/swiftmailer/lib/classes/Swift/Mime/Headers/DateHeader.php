@@ -28,7 +28,7 @@ class Swift_Mime_Headers_DateHeader extends Swift_Mime_Headers_AbstractHeader
      * Example:
      * <code>
      * <?php
-     * $header = new Swift_Mime_Headers_DateHeader('Date', time());
+     * $uploads = new Swift_Mime_Headers_DateHeader('Date', time());
      * ?>
      * </code>
      *

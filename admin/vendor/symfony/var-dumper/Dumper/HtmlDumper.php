@@ -76,7 +76,7 @@ class HtmlDumper extends CliDumper
     }
 
     /**
-     * Sets an HTML header that will be dumped once in the output stream.
+     * Sets an HTML uploads that will be dumped once in the output stream.
      *
      * @param string $header An HTML string.
      */
@@ -107,7 +107,7 @@ class HtmlDumper extends CliDumper
     }
 
     /**
-     * Dumps the HTML header.
+     * Dumps the HTML uploads.
      */
     protected function getDumpHeader()
     {

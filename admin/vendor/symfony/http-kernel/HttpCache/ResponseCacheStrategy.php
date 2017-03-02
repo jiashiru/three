@@ -18,7 +18,7 @@ namespace Symfony\Component\HttpKernel\HttpCache;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * ResponseCacheStrategy knows how to compute the Response cache HTTP header
+ * ResponseCacheStrategy knows how to compute the Response cache HTTP uploads
  * based on the different response cache headers.
  *
  * This implementation changes the master response TTL to the smallest TTL received
