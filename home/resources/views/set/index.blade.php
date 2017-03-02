@@ -416,8 +416,10 @@
                                         <select name="location_a" id=""></select>
                                         <script src="style/js/region_select.js"></script>
                                         <script type="text/javascript">
+
                                             new PCAS('location_p', 'location_c', 'location_a', "{{ $info['location_p'] or '' }}",
                                                     "{{$info['location_c'] or ''}}", "{{$info['location_a'] or ''}}");
+
                                         </script>
                                     </div>
                                 </div>

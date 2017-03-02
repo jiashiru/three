@@ -25,11 +25,117 @@ class IndexController extends Controller
         $goods_type = $this->type_and_category();
         //获取当前服务器时间，用户主页下面
         $time = $this->server_time();
+        //获取最新 揭晓
+        $new_end = $this->newest();
+
+        //正在云购
+        $goods_code = $this->code();
 
         return view("index/index",[
             'goods_type'=>$goods_type,//分类表 与 类型表
             'time'=>$time,//分类表 与 类型表
+            'new_end'=>$new_end,//获取最新 揭晓
+            'goods_code'=>$goods_code,//获取最新 揭晓
+
         ]);
+    }
+    //获取正在云购的信息
+    public function code()
+    {
+        $goods_code = DB::table("goods_code")->orderby('code_id',"desc")->limit(14)->get();
+        //提取goods_id  u_id
+        $goods_id_all = array();
+        $user_id = array();
+        foreach($goods_code as $k=>$v){
+            $goods_id_all[] = $v['goods_id'];
+            $user_id[] = $v['u_id'];
+        }
+        //用户信息
+        $user = DB::table('user_information')->wherein('u_id',$user_id)->get();
+        //商品信息
+        $goods = DB::table("goods")->wherein("goods_id",$goods_id_all)->get();
+        foreach($goods_code as $k=>$v){
+            foreach($goods as $key=>$val){
+                if($v['goods_id'] == $val['goods_id']){
+                    $goods_code[$k]['keywords'] = $val['keywords'];//品牌
+                    $goods_code[$k]['goods_name'] = $val['goods_name'];//名字
+                    $goods_code[$k]['goods_desc'] = $val['goods_desc'];//描述
+                }
+            }
+            foreach($user as $a=>$b){
+                if($v['u_id'] == $b['u_id']){
+                    $goods_code[$k]['nickname'] = $b['nickname'];
+                    $goods_code[$k]['u_img'] = $b['u_img'];
+                }
+            }
+        }
+
+        return $goods_code;
+    }
+    //获取最新 揭晓
+    public function newest()
+    {
+        //查询表 中 最新的数据
+        $goods_code = DB::table("goods_code")->where(['state'=>1])->orderby('buy_time',"desc")->get();
+        //提取goods_id  u_id
+        $goods_id_all = array();
+        $user_id = array();
+        foreach($goods_code as $k=>$v){
+            $goods_id_all[] = $v['goods_id'];
+            $user_id[] = $v['u_id'];
+        }
+
+        //查询用户信息
+        $user = DB::table("user_information")->wherein('u_id',$user_id)->get();
+        foreach($goods_code as $k=>$v){
+            foreach($user as $key=>$val){
+                if($v['u_id'] == $val['u_id']) {
+                    $goods_code[$k]['nickname'] = $val['nickname'];//昵称
+                    $goods_code[$k]['location'] = $val['location'];//地区
+                }
+            }
+        }
+        //查询商品信息
+        $goods = $this->goods_mess($goods_id_all);
+        $times = DB::table('goods_times')->where(['state'=>3])->wherein('goods_id',$goods_id_all)->get();
+
+        //获奖者信息
+        foreach($goods_code as $k=>$v){
+            foreach($goods as $key=>$val){
+                if($v['goods_id'] == $val['goods_id']){
+                    $goods_code[$k]['goods_picture'] = $val['goods_picture'];//图片
+                    $goods_code[$k]['keywords'] = $val['keywords'];//品牌
+                    $goods_code[$k]['goods_name'] = $val['goods_name'];//名字
+                }
+            }
+            foreach($times as $a=>$b){
+                if($v['goods_id'] == $b['goods_id']){
+                    $goods_code[$k]['times'] = $b['times'];
+                }
+            }
+        }
+
+        return $goods_code;
+    }
+    public function goods_mess($goods_id_all)
+    {
+        $goods = DB::table("goods")->wherein('goods_id',$goods_id_all)->get();
+        //查询品牌
+        $goods_all = array();
+        foreach($goods as $K=>$v){
+            $goods_all[] = $v['brand_id'];
+        }
+        $brand_goods = DB::table("goods_brand")->wherein('brand_id',$goods_all)->get();
+        foreach($goods as $k=>$v){
+            foreach($brand_goods as $key=>$val){
+                if($v['brand_id'] == $val['brand_id']){
+                    $goods[$k]['brand_name'] = $val['brand_name'];
+                }
+            }
+        }
+
+
+        return $goods;
     }
 
     //查询商品的 分类表 与 类型表 并且处理数组
@@ -68,92 +174,97 @@ class IndexController extends Controller
     public function hot()
     {
         $field = Input::get('field');
-        $model = new index_m();
-       //查看品牌
-        $brand = $model->brand_show();
-        //查看云期
-        $times = $model->times_show();
-        //参与的人数
+        //判断接的值  ， 是查询的什么类型
+        //查询的不是即将揭晓的
         if ($field != 'state') 
         {
-            $data = $model->hot_show($field);
-            $data = $this->show_filed($data,$brand,$times);
-            return  json_encode($data);
-        }
-        else
-        {
-            $goods_times = $model->goods_times();
-            $goods = $model->goods_all();  
-            foreach ($goods_times as $key => $value) 
-            {
-                foreach ($goods as $ke => $val) 
-                {
-                    if ($val['goods_id']==$value['goods_id']) 
-                    {
-                        $goods_times[$key]['goods_id'] = $val['goods_id'];
-                        $goods_times[$key]['brand_id'] = $val['brand_id'];
-                        $goods_times[$key]['goods_name'] = $val['goods_name'];
-                        $goods_times[$key]['goods_price'] = $val['goods_price'];
-                        $goods_times[$key]['goods_picture'] = $val['goods_picture'];
-                    }
-                }
-            }
-            foreach ($goods_times as $key => $val) 
-            {
-                  foreach ($brand as $k => $v) 
-                  {
-                        if ($val['brand_id']==$v['brand_id']) 
-                        {
-                            $goods_times[$key]['brand_name'] = $v['brand_name'];
-                            if ($v['brand_desc']) 
-                            {
-                                $goods_times[$key]['brand_desc'] = $v['brand_desc'];
-                            }
-                        }
-                  }
-            }
-  
-            return json_encode($goods_times);
+            //按条件查询 goods表 查询的最新或者最热
+            $goods = DB::table('goods')->where([$field=>1,'state'=>1])->limit(8)->get();
+            //处理最新 和 热门的商品信息
+            $goods = $this->hot_new($goods);
+
+            return  json_encode($goods);
+        } else {
+            //查询即将揭晓
+            $goods_time = DB::table("goods_times")->where(['state'=>1])->orderBy('number','asc')->limit(8)->get();
+
+            $goods = $this->be_about_to($goods_time);
+
+
+//            print_r($goods);
+            return json_encode($goods);
         }
 
     }
-    public function show_filed($data,$brand,$times)
+
+    //处理最新 和 热门的商品信息
+    public function hot_new($goods)
     {
-           
-            foreach ($data as $key => $val) 
-            {
-                foreach ($brand as $k => $v) 
-                {
-                    if ($val['brand_id']==$v['brand_id']) 
-                    {
-                        $data[$key]['brand_name'] = $v['brand_name'];
-                        if ($v['brand_desc']) 
-                        {
-                            $data[$key]['brand_desc'] = $v['brand_desc'];
-                        }
-                    }
-                }
-                foreach ($times as $key => $value) 
-                {
-                    if ($value['goods_id']==$val['goods_id']) 
-                    {
-                        if ($value['times']&&$value['number']) 
-                        {
-                            $data[$key]['times'] = $value['times'];
-                            $data[$key]['number'] = $value['number'];
-                            $data[$key]['num'] = $val['goods_price']-$value['number'];
-                        }
-                    }
-                }
-            }
-            return $data;
+        $goods_id_all = array();;//用goods_id查询云期
+        $brand_id = array();;//用 查goods_brand表的品牌
+        foreach($goods as $k=>$v){
+            $goods_id_all[] = $v['goods_id'];
+            $brand_id[] = $v['brand_id'];
+        };
+        //根据商品ID 查询 goods_brand表
+        $brand_goods = DB::table("goods_brand")->wherein('brand_id',$brand_id)->get();
+        //根据商品ID 查询 goods_times表
+        $times_goods = DB::table("goods_times")->where(['state'=>1])->wherein('goods_id',$goods_id_all)->get();
+        //处理数组
+        $goods = $this->hot_new_array($goods,$brand_goods,$times_goods);
+
+        return $goods;
     }
 
-    //分类
-    public function classify()
+    //处理即将揭晓的商品
+    public function be_about_to($goods_time)
     {
-        return view("index/classify");
+        $goods_time_id_all = array();
+        foreach($goods_time as $k=>$v){
+            $goods_time_id_all[] = $v['goods_id'];
+        }
+        //用goods_time表中的ID 查询goods表   查询goods中商品的信息  返回要展示的商品的信息
+        $goods = DB::table("goods")->wherein('goods_id',$goods_time_id_all)->get();
+        //查询品牌
+        $goods_all = array();
+        foreach($goods as $K=>$v){
+            $goods_all[] = $v['brand_id'];
+        }
+        $brand_goods = DB::table("goods_brand")->wherein('brand_id',$goods_all)->get();
+
+        //处理数组
+        $goods = $this->hot_new_array($goods,$brand_goods,$goods_time);
+
+        return $goods;
     }
+
+    //处理数组
+    public function hot_new_array($goods,$brand_goods,$goods_time)
+    {
+        //处理品牌的数组
+        foreach($goods as $k=>$v){
+            foreach($brand_goods as $key=>$val){
+                if($v['brand_id'] == $val['brand_id']){
+                    $goods[$k]['brand_name'] = $val['brand_name'];
+                }
+            }
+        }
+
+        //处理云期的数组
+        foreach($goods as $k=>$v){
+            foreach($goods_time as $key=>$val){
+                if($v['goods_id'] == $val['goods_id']){
+                    $goods[$k]['times'] = $val['times'];
+                    $goods[$k]['number'] = $val['number'];
+                    $goods[$k]['participation'] = $v['goods_price'] - $val['number'];
+                }
+            }
+        }
+
+        return $goods;
+    }
+
+
     //商品详情
     public function shop()
     {
@@ -197,5 +308,21 @@ class IndexController extends Controller
         $data['s'] = date("s",time());
         return $data;
     }
-    
+
+
+    //分类
+    public function classify()
+    {
+        //查询分类
+        $goods_type = DB::table("goods_type")->get();
+
+
+        return view("index/classify",[
+            'goods_type'=>$goods_type,
+
+        ]);
+    }
+
+
+
 }

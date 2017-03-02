@@ -185,22 +185,38 @@
 
             <ul id="ul_Lottery">
 
+                <?php foreach($new_end as $k=>$v){ ?>
+
                 <li >
                     <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10159769.html" target="_blank" title="加多宝 凉茶 310mlx12罐 整箱装" rel="nofollow">
-                                <img alt="加多宝 凉茶 310mlx12罐 整箱装" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160418162459140.jpg" /></a></dt>
+                        <dt><a href="http://www.1yyg.com/lottery/10159769.html" target="_blank"
+                               title="{{$v['keywords']}} {{$v['goods_name']}}" rel="nofollow">
+                                <img alt="(第qwe云){{$v['keywords']}} {{$v['goods_name']}}"
+                                     src="{{$v['goods_picture']}}" />
+                            </a>
+                        </dt>
                         <dd class="f-gx">
                             <div class="f-gx-user">
                                 <span>恭喜</span>
-                                <span class="blue"><a href="http://u.1yyg.com/1015197922" target="_blank" title="恭喜-本云获得者" class="blue">恭喜-本云获得者</a></span>
+                                <span class="blue">
+                                    <a href="http://u.1yyg.com/1015197922" target="_blank" title="{{$v['nickname']}}" class="blue">
+                                        {{$v['nickname']}}
+                                    </a>
+                                </span>
                                 <span>获得</span>
                             </div>
                         </dd>
-                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10159769.html" target="_blank" title="(第80018云)加多宝 凉茶 310mlx12罐 整箱装">(第80018云)加多宝 凉茶 310mlx12罐 整箱装</a></dd>
-                        <dd class="gray">广东省深圳市</dd>
+                        <dd class="u-name">
+                            <a href="http://www.1yyg.com/lottery/10159769.html" target="_blank"
+                                title="(第{{$v['times']}}云){{$v['keywords']}} {{$v['goods_name']}}">
+                                (第{{$v['times']}}云){{$v['keywords']}} {{$v['goods_name']}}
+                            </a>
+                        </dd>
+                        <dd class="gray">{{$v['location']}}</dd>
                     </dl>
                     <cite></cite>
                 </li>
+                <?php } ?>
 
                 <li >
                     <dl>
@@ -282,8 +298,47 @@
         </div>
         <div class="g-hot clrfix">
             <div class="g-hotL fl" id="divHotGoodsList">
-         
 
+                <div class="g-hotL-list">
+                    <div class="g-hotL-con">
+                        <div class="u-loading"><em></em></div>
+                    </div>
+                </div>
+                <div class="g-hotL-list">
+                    <div class="g-hotL-con">
+                        <div class="u-loading"><em></em></div>
+                    </div>
+                </div>
+                <div class="g-hotL-list">
+                    <div class="g-hotL-con">
+                        <div class="u-loading"><em></em></div>
+                    </div>
+                </div>
+                <div class="g-hotL-list">
+                    <div class="g-hotL-con">
+                        <div class="u-loading"><em></em></div>
+                    </div>
+                </div>
+                <div class="g-hotL-list">
+                    <div class="g-hotL-con">
+                        <div class="u-loading"><em></em></div>
+                    </div>
+                </div>
+                <div class="g-hotL-list">
+                    <div class="g-hotL-con">
+                        <div class="u-loading"><em></em></div>
+                    </div>
+                </div>
+                <div class="g-hotL-list">
+                    <div class="g-hotL-con">
+                        <div class="u-loading"><em></em></div>
+                    </div>
+                </div>
+                <div class="g-hotL-list">
+                    <div class="g-hotL-con">
+                        <div class="u-loading"><em></em></div>
+                    </div>
+                </div>
 
 
             </div>
@@ -295,101 +350,59 @@
                 <div class="g-zzyging">
                     <input name="hidBuyID" type="hidden" id="hidBuyID" value="923284212" />
                     <ul id="UserBuyNewList">
+
                         <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1014327156" target="_blank" rel="nofollow" title="将军来领取大奖了">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20170218211739482.jpg" /><i class="transparent-png"></i></a></span>
+                            <span class="fl">
+                                <a href="http://u.1yyg.com/1014327156" target="_blank" rel="nofollow" title="将军来领取大奖了">
+                                    <img alt="" src="http://img.1yyg.net/UserFace/20170218211739482.jpg" />
+                                    <i class="transparent-png"></i>
+                                </a>
+                            </span>
                             <p>
                                 <a href="http://u.1yyg.com/1014327156" target="_blank" title="将军来领取大奖了" class="blue">将军来领取大奖了</a><br />
                                 <a href="http://www.1yyg.com/product/10598403.html" target="_blank" title="平安银行 平安金福金条 Au9999 2g" class="u-ongoing">平安银行 平安金福金条 Au9999 2g</a>
                             </p>
                         </li>
 
-                        <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1001693040" target="_blank" rel="nofollow" title="最后一搏凯迪拉克">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160629000326622.jpg" /><i class="transparent-png"></i></a></span>
-                            <p>
-                                <a href="http://u.1yyg.com/1001693040" target="_blank" title="最后一搏凯迪拉克" class="blue">最后一搏凯迪拉克</a><br />
-                                <a href="http://www.1yyg.com/product/10333404.html" target="_blank" title="凯迪拉克 ATS-L 2016款 28T 技术型轿车" class="u-ongoing">凯迪拉克 ATS-L 2016款 28T 技术型轿车</a>
-                            </p>
-                        </li>
+                        <?php foreach($goods_code as $k=>$v){ ?>
 
-                        <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1001693040" target="_blank" rel="nofollow" title="最后一搏凯迪拉克">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160629000326622.jpg" /><i class="transparent-png"></i></a></span>
-                            <p>
-                                <a href="http://u.1yyg.com/1001693040" target="_blank" title="最后一搏凯迪拉克" class="blue">最后一搏凯迪拉克</a><br />
-                                <a href="http://www.1yyg.com/product/9443418.html" target="_blank" title="平安银行 平安金元宝 Au9999 200g" class="u-ongoing">平安银行 平安金元宝 Au9999 200g</a>
-                            </p>
-                        </li>
-
-                        <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
-                            <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10581839.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 128G版 4G手机" class="u-ongoing">苹果（Apple）iPhone 7 Plus 128G版 4G手机</a>
-                            </p>
-                        </li>
-
-                        <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
-                            <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10566619.html" target="_blank" title="伊利 原味优酸乳 250mlx24盒 整箱装" class="u-ongoing">伊利 原味优酸乳 250mlx24盒 整箱装</a>
-                            </p>
-                        </li>
-
-                        <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
-                            <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10499493.html" target="_blank" title="创维（Skyworth）G7 55英寸 4K超高清智能网络液晶平板电视" class="u-ongoing">创维（Skyworth）G7 55英寸 4K超高清智能网络液晶平板电视</a>
-                            </p>
-                        </li>
-
-                        <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
-                            <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10488720.html" target="_blank" title="华为（HUAWEI）P9 Plus 64GB 全网通 4G手机" class="u-ongoing">华为（HUAWEI）P9 Plus 64GB 全网通 4G手机</a>
-                            </p>
-                        </li>
-
-                        <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
-                            <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10311816.html" target="_blank" title="新大洲 本田（HONDA）电喷摩托车 CBF190R" class="u-ongoing">新大洲 本田（HONDA）电喷摩托车 CBF190R</a>
-                            </p>
-                        </li>
-
-                        <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
-                            <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10303747.html" target="_blank" title="斯柯达 明锐 2017款 1.6L 自动创行版轿车" class="u-ongoing">斯柯达 明锐 2017款 1.6L 自动创行版轿车</a>
-                            </p>
-                        </li>
-
-                        <li>
-                                        <span class="fl"><a href="http://u.1yyg.com/1008216608" target="_blank" rel="nofollow" title="我中过可乐">
-                                                <img alt="" src="http://img.1yyg.net/UserFace/20160616203205358.jpg" /><i class="transparent-png"></i></a></span>
-                            <p>
-                                <a href="http://u.1yyg.com/1008216608" target="_blank" title="我中过可乐" class="blue">我中过可乐</a><br />
-                                <a href="http://www.1yyg.com/product/10182093.html" target="_blank" title="康佳（KONKA）LED40M3000A 40英寸 高清智能网络LED液晶电视（标配底座）" class="u-ongoing">康佳（KONKA）LED40M3000A 40英寸 高清智能网络LED液晶电视（标配底座）</a>
-                            </p>
-                        </li>
+                            <li>
+                                <span class="fl">
+                                    <a href="http://u.1yyg.com/1001693040" target="_blank" rel="nofollow" title="{{$v['nickname']}}">
+                                        <img alt="" src="{{$v['u_img']}}" />
+                                        <i class="transparent-png"></i>
+                                    </a>
+                                </span>
+                                <p>
+                                    <a href="http://u.1yyg.com/1001693040" target="_blank"
+                                       title="{{$v['nickname']}}" class="blue">
+                                        {{$v['nickname']}}
+                                    </a>
+                                    <br />
+                                    <a href="http://www.1yyg.com/product/10333404.html" target="_blank"
+                                       title="{{$v['keywords']}} {{$v['goods_name']}}" class="u-ongoing">
+                                        {{$v['keywords']}} {{$v['goods_name']}}
+                                    </a>
+                                </p>
+                            </li>
+                        <?php } ?>
 
                     </ul>
                 </div>
                 <div class="u-see100"><a href="http://www.1yyg.com/newestBuyRecords.html" target="_blank">查看最新100条记录</a></div>
             </div>
         </div>
+        <script>
+//            last   before
+            setInterval(function() {
+                var content = $("#UserBuyNewList").children().last().html();
+                $("#UserBuyNewList").children().last().remove();
+                var new_content = "<li style='display: none;'>"+content+"</li>";
+                $("#UserBuyNewList").children().first().before(new_content);
+                $("#UserBuyNewList").children().first().show(500);
+
+            }, 5000*1000);
+        </script>
 
         <!--即将揭晓-->
         <div class="g-title m-sort">
@@ -405,7 +418,46 @@
             </div>
         </div>
         <div class="announced-soon clrfix" id="divSoonGoodsList">
-
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
         </div>
         <div class="check-out"><a href="http://www.1yyg.com/list/m1.html" target="_blank" title="查看所有商品">查看所有商品</a></div>
 
@@ -417,7 +469,46 @@
             </div>
         </div>
         <div class="announced-soon clrfix announced-soon-new" id="divNewGoodsList">
-
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
+            <div class="soon-list-con">
+                <div class="soon-list">
+                    <div class="u-loading"><em></em></div>
+                </div>
+            </div>
         </div>
 
         <script>
@@ -450,17 +541,18 @@
 
                 $(window).scroll(function() {
                     var scrollHeight = $(document).scrollTop();
-
+                    //热门推荐
                     if (hot < 2 & scrollHeight > 400 & scrollHeight < 500 ) {
                         hot = hot+1;
                         all_fun('is_hot');
-
                     }
-                    if (immediately < 2 & scrollHeight > 800 & scrollHeight < 1200 ) {
+                    //即将揭晓
+                    if (immediately < 2 & scrollHeight > 1000 & scrollHeight < 1200 ) {
                         immediately = immediately+1;
                        all_fun("state");
                     }
-                    if (new_shop < 2 & scrollHeight > 1300 & scrollHeight < 1900 ) {
+                    //新品上架
+                    if (new_shop < 2 & scrollHeight > 1800 & scrollHeight < 1900 ) {
                         new_shop = new_shop+1;
                         all_fun("is_new");
                     }
@@ -493,16 +585,14 @@
                                 str+='</a>';
                                 str+='</li>';
                                 str+='<li class="g-hot-name">';
-                                str+='<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23458.html">'+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+'</a></li>';
+                                str+='<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="indexShop?goods_id='+msg[i]['goods_id']+'">'
+                                        +'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+'</a></li>';
                                 str+='<li class="gray">价值：￥'+msg[i]['goods_price']+'.00</li>';
                                 str+='<li class="g-progress">';
                                 str+='<dl class="m-progress">';
-                                str+='<dt title="已完成1%">';
-                                str+='<b style="width:1%;"></b>';
-                                str+='</dt>';
                                 str+='<dd>';
                                 str+='<span class="orange fl">';
-                                str+='<em>'+msg[i]['num']+'</em>';
+                                str+='<em>'+msg[i]['participation']+'</em>';
                                 str+='已参与';
                                 str+='</span>';
                                 str+='<span class="gray6 fl">';
@@ -518,9 +608,6 @@
                                 str+='</li>';
                                 str+='<li>';
                                 str+='<a id="btnHotYgOnePay0" class="u-imm" title="立即1元云购" href="javascript:;">立即1元云购</a>';
-                                str+='<a class="u-cart" codeid="10607190" title="加入到购物车" href="javascript:;">';
-                                str+='<s></s>';
-                                str+='</a>';
                                 str+='</li>';
                                 str+='</ul>';
                                 str+='</div>';
@@ -533,22 +620,21 @@
                         {
                              for (var i = 0; i < msg.length; i++) 
                              {
-                                  str+='<div idx="1" class="soon-list-con">';
-                                    str+='<div class="soon-list">';
-                                        str+='<ul>';
-                                            str+='<li class="g-soon-pic"><a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23778.html">';
-                                            str+='<img src='+msg[i]['goods_picture']+' alt='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+'>';
-                                            str+='</a></li>';
-                                            str+='<li class="soon-list-name"><a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23778.html">'+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+'</a>';
-                                            str+='</li><li class="gray">';
-                                               str+='价值：￥'+msg[i]['goods_price']+'.00';
-                                            str+='</li>';
-                                       str+=' </ul>';
-                                    str+='</div>';
-                                    str+='<div codeid="10568778" style="top:210px;" class="u_buyCount"></div>';
+                                str+='<div idx="1" class="soon-list-con">';
+                                str+='<div class="soon-list">';
+                                str+='<ul>';
+                                str+='<li class="g-soon-pic"><a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="indexShop?goods_id='+msg[i]['goods_id']+'">';
+                                str+='<img src='+msg[i]['goods_picture']+' alt='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+'>';
+                                str+='</a></li>';
+                                str+='<li class="soon-list-name"><a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="indexShop?goods_id='+msg[i]['goods_id']+'">'+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+'</a>';                                str+='</li><li class="gray">';
+                                str+='价值：￥'+msg[i]['goods_price']+'.00';
+                                str+='</li>';
+                                str+=' </ul>';
+                                str+='</div>';
+                                str+='<div codeid="10568778" style="top:210px;" class="u_buyCount"></div>';
                                 str+='</div>';
                              };
-                             $('#divNewGoodsList').html(str); 
+                             $('#divNewGoodsList').html(str);
                         };
                         if (field == 'state') 
                         {
@@ -556,33 +642,29 @@
                             for (var i = 0; i < msg.length; i++) 
                             {
                                 str+='<div idx="1" goodsid="23172" class="soon-list-con">';
-                                    str+='<div class="soon-list">';
-                                       str+= '<ul>';
-                                            str+='<li class="g-soon-pic">';
-                                                str+= '<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23172.html">';
-                                                 str+= '<img src='+msg[i]['goods_picture']+'  alt='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' name="goodsImg">';
-                                                  str+= '</a></li><li class="soon-list-name">';
-                                                  str+= '<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23172.html">';
-                                                   str+= ''+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+'';
-                                                    str+= '价值：￥'+msg[i]['goods_price']+'.00</li>';
-                                                    str+= '<li class="g-progress"><dl class="m-progress">';
-                                                     str+= '<dt title="已完成96.20%">';
-                                                     str+= '<b style="width:96.20%;"></b></dt><dd>';
-                                                      str+= '<span class="orange fl">';
-                                                      str+= '<em>'+msg[i]['num']+'</em>已参与</span>';
-                                                       str+= '<span class="gray6 fl">';
-                                                       str+= '<em>'+msg[i]['goods_price']+'</em>';
-                                                       str+= '总需人次</span>';
-                                                        str+= '<span class="blue fr">';
-                                                        str+= '<em>'+msg[i]['number']+'</em>剩余</span></dd></dl></li>';
-                                                         str+= '<li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>';
-                                                          str+= '<a class="u-cart" surplus="3" codeid="10563443" title="加入到购物车" href="javascript:;">';
-                                                    str+='<s></s>';
-                                                str+='</a>';
-                                            str+='</li>';
-                                        str+='</ul>';
-                                     str+= '</div>';
-                                    str+='<div codeid="10563443" style="top:200px;" class="u_buyCount"></div>';
+                                str+='<div class="soon-list">';
+                                str+= '<ul>';
+                                str+='<li class="g-soon-pic">';
+                                str+= '<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23172.html">';
+                                str+= '<img src='+msg[i]['goods_picture']+'  alt='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' name="goodsImg">';
+                                str+= '</a></li><li class="soon-list-name">';
+                                str+= '<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23172.html">';
+                                str+= ''+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+'';
+                                str+= '价值：￥'+msg[i]['goods_price']+'.00</li>';
+                                str+= '<li class="g-progress"><dl class="m-progress">';
+                                str+= '<dd>';
+                                str+= '<span class="orange fl">';
+                                str+= '<em>'+msg[i]['participation']+'</em>已参与</span>';
+                                str+= '<span class="gray6 fl">';
+                                str+= '<em>'+msg[i]['goods_price']+'</em>';
+                                str+= '总需人次</span>';
+                                str+= '<span class="blue fr">';
+                                str+= '<em>'+msg[i]['number']+'</em>剩余</span></dd></dl></li>';
+                                str+= '<li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>';
+                                str+='</li>';
+                                str+='</ul>';
+                                str+= '</div>';
+                                str+='<div codeid="10563443" style="top:200px;" class="u_buyCount"></div>';
                                 str+='</div>';
                             };
                             $('#divSoonGoodsList').html(str)

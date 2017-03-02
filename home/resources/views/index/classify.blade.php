@@ -222,17 +222,10 @@
                 <div class="m-fication">
                     <ul>
                         <li class="current"><a class="" href="/list/m1.html">全部分类</a></li>
-                        <li class=""><a class="" href="/list/i100.html">手机数码</a></li>
-                        <li class=""><a class="" href="/list/i106.html">电脑办公</a></li>
-                        <li class=""><a class="" href="/list/i104.html">家用电器</a></li>
-                        <li class=""><a class="" href="/list/i2.html">化妆个护</a></li>
-                        <li class=""><a class="" href="/list/i397.html">食品饮料</a></li>
-                        <li class=""><a class="" href="/list/i213.html">家居家纺</a></li>
-                        <li class=""><a class="" href="/list/i222.html">钟表首饰</a></li>
-                        <li class=""><a class="" href="/list/i251.html">礼品箱包</a></li>
-                        <li class=""><a class="" href="/list/i276.html">运动户外</a></li>
-                        <li class=""><a class="" href="/list/i310.html">母婴用品</a></li>
-                        <li class=""><a class="" href="/list/i312.html">其他商品</a></li>
+                        <?php foreach($goods_type as $k=>$v){ ?>
+                            <li class=""><a class="" href="/list/i100.html">{{$v['type_name']}}</a></li>
+                        <?php } ?>
+
                     </ul>
                     <a href="javascript:;" class="expansion"></a>
                 </div>
