@@ -31,6 +31,7 @@ class IndexController extends Controller
         //正在云购
         $goods_code = $this->code();
 
+
         return view("index/index",[
             'goods_type'=>$goods_type,//分类表 与 类型表
             'time'=>$time,//分类表 与 类型表
@@ -311,16 +312,95 @@ class IndexController extends Controller
 
 
     //分类
+    public $array;
     public function classify()
     {
+        if(empty($_SESSION['u_id'])){
+            $u_id = 0;
+        }else{
+            $u_id = $_SESSION['u_id'];
+        }
+
+        $data['order'] = empty(Input::get("order")) ? "default" : Input::get("order");
+        $data['type_id'] = empty(Input::get("type_id")) ? "all" : Input::get("type_id");
+
         //查询分类
         $goods_type = DB::table("goods_type")->get();
 
+        //查询品牌
+        $goods_brand = DB::table("goods_brand")->get();
+
+        //查询正在卖的商品  在goods_times表中
+        $goods_times = DB::table("goods_times")->where(['state'=>1])->get();
+        $goods_times_id = $this->extract_id($goods_times,"goods_id");
+
+        //查询商品表
+        $goods = $this->goods_where($data,$goods_times_id);
+
+        //处理数组
+        $goods = $this->goods_array($goods,$goods_times,$goods_brand);
+
 
         return view("index/classify",[
-            'goods_type'=>$goods_type,
+            'goods_type'=>$goods_type,//查询出所有分类
+            'data'=>$data,//根据条件排序
+            'goods'=>$goods,//查询的商品
+            'u_id'=>$u_id,//用户ID
 
         ]);
+    }
+    //提取ID
+    public function extract_id($array,$val)
+    {
+        $goods_times_id = array();
+        foreach($array as $k=>$v){
+            $goods_times_id[]=$v[$val];
+        }
+
+        return $goods_times_id;
+    }
+    //处理数组
+    public function goods_array($goods,$goods_times,$goods_brand)
+    {
+        foreach($goods as $k=>$v){
+            //获取该商品的云期
+            foreach($goods_times as $key=>$val){
+                if($v['goods_id'] == $val['goods_id']){
+                    $goods[$k]['times'] = $val['times'];
+                    $goods[$k]['times_id'] = $val['times_id'];
+                    $goods[$k]['number'] = $val['number'];
+                    $goods[$k]['participation'] = $v['goods_price']-$val['number'];
+                }
+            }
+            //获取品牌
+            foreach($goods_brand as $key=>$val){
+                if($v['brand_id'] == $val['brand_id']){
+                    $goods[$k]['brand_id'] = $val['brand_id'];
+                }
+            }
+        }
+
+        return $goods;
+    }
+
+    //根据条件查询goods表
+    public function goods_where($data,$times_id)
+    {
+        if($data['order'] == "default"){
+            $order = "goods_id";
+        }else{
+            $order = $data['order'];
+        }
+
+        if($data['type_id'] == "all"){
+            $goods = DB::table("goods")->wherein('goods_id',$times_id)->orderby($order)->get();
+        }else{
+            $where['type_id'] = $data['type_id'];
+            $goods = DB::table("goods")->where($where)->wherein('goods_id',$times_id)->orderby($order)->get();
+        }
+
+
+        return $goods;
     }
 
 

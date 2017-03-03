@@ -204,16 +204,7 @@
 
 <div class="g-main-con clrfix">
     <div class="w1190">
-        <div class="m-position" id="mPositionContainer">
-            <span><a href='http://www.1yyg.com'>首页</a></span>
-            <span class='f-tran f-tran-prev f-tran-next'>&gt;</span>
-            <span><a href='/list/m1.html'>所有商品</a></span>
-            <span class='f-tran f-tran-prev f-tran-next'>&gt;</span>
-            <span>
-                <a href='javascript:;'>手机</a>
-                <a href='javascript:;' class='f-close-line'><i class='z-clump-icon'></i></a>
-            </span>
-        </div>
+
 
         <!--分类 品牌-->
         <div class="m-list-classification clrfix">
@@ -221,9 +212,11 @@
                 <div class="m-classi">分类</div>
                 <div class="m-fication">
                     <ul>
-                        <li class="current"><a class="" href="/list/m1.html">全部分类</a></li>
+                        <li class="<?php if($data['type_id'] == 'all') echo 'current'; ?>"><a class="type" href="indexClassify?type_id=0">全部分类</a></li>
                         <?php foreach($goods_type as $k=>$v){ ?>
-                            <li class=""><a class="" href="/list/i100.html">{{$v['type_name']}}</a></li>
+                            <li class="<?php if($data['type_id'] == $v['type_id']) echo 'current'; ?>">
+        <a class="type" href="indexClassify?order={{$data['order']}}&&type_id={{$v['type_id']}}">{{$v['type_name']}}</a>
+                            </li>
                         <?php } ?>
 
                     </ul>
@@ -231,156 +224,94 @@
                 </div>
             </div>
 
-            <div id="dlBrandBox" class="m-classification">
-                <div class="m-classi">品牌</div>
-                <div class="m-fication">
-                    <ul id="ulBrandList" style="height:28px;">
-                        <li class="current"><a href="/list/n101m1.html" title="全部">全部</a></li>
-                        <li class=""><a href="/list/n101b59.html" title="苹果(Apple)">苹果<em class="arial">(Apple)</em></a></li>
-                        <li class=""><a href="/list/n101b63.html" title="三星(SAMSUNG)">三星<em class="arial">(SAMSUNG)</em></a></li>
-                        <li class=""><a href="/list/n101b294.html" title="小米">小米<em class="arial"></em></a></li>
-                        <li class=""><a href="/list/n101b64.html" title="魅族(MEIZU)">魅族<em class="arial">(MEIZU)</em></a></li>
-                        <li class=""><a href="/list/n101b112.html" title="华为(HUAWEI)">华为<em class="arial">(HUAWEI)</em></a></li>
-                    </ul>
-                    <div class="f-a-expansion">
 
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!--排序-->
         <div class="m-filterForm clrfix">
             <div class="f-list-sorts fl">
-                <ul>
-                    <li class="current"><a href="/list/n101.html?r=10">即将揭晓</a></li><li class=""><a href="/list/n101.html?r=20">人气</a></li><li class=""><a href="/list/n101.html?r=40">剩余人次</a></li><li class=""><a href="/list/n101.html?r=50">最新</a></li><li name="liPrice" class="m-value"><a href="/list/n101.html?r=31">价值<s></s></a></li><li name="liPrice" class="m-value m-value-default" style="display:none;"><a href="/list/n101.html?r=31">价值<s></s></a></li><li class=""><a href="/list/m1.html?tag=10">限购</a></li>
+                <ul id="orderby">
+<li class="<?php if($data['order'] == 'default') echo 'current'; ?>"><a class="order_a"
+                      href="indexClassify?order=default&&type_id={{$data['type_id']}}">默认排序</a></li>
+<li class="<?php if($data['order'] == 'is_hot') echo 'current'; ?>"><a class="order_a"
+                     href="indexClassify?order=is_hot&&type_id={{$data['type_id']}}">最热</a></li>
+<li class="<?php if($data['order'] == 'is_new') echo 'current'; ?>"><a class="order_a"
+                     href="indexClassify?order=is_new&&type_id={{$data['type_id']}}">最新</a></li>
                 </ul>
             </div>
             <div id="divTopPageInfo" class="f-list-sortsR fr"></div>
         </div>
+        <script>
+            //分类
+            $(".type").click(function(){
+                $(this).parent().siblings().attr("class","");
+                $(this).parent().attr("class","current");
+            });
+
+            //排序
+            $(".order_a").click(function(){
+                $(this).parent().siblings().attr("class","");
+                $(this).parent().attr("class","current");
+            });
+        </script>
 
         <!--加载-->
-        <div id="divLoadingLine" class="g-loading-2014 w1190"><i></i></div>
+        <div id="" class="g-loading-2014 w1190" style="display: none;"><i></i></div>
 
         <!--列表-->
-        <div id="" class="announced-soon clrfix" style=";">
+        <div id="" class="announced-soon clrfix" style="">
+
+            <?php foreach($goods as $k=>$v){ ?>
 
 
-            <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="21">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                <img src="http://img.1yyg.net/GoodsPic/pic-200-200/20161010163528732.jpg" name="goodsImg">
-                            </a>
-                        </li>
-                        <li class="soon-list-name">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                (第
-                                <em>903</em>
-                                云) 小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）
-                            </a>
-                        </li>
-                        <li class="gray6">价值：￥2188.00</li>
-                        <li class="g-progress">
-                            <dl class="m-progress">
-                                <dt title="已完成9.28%">
-                                    <b style="width:24px;"></b>
-                                </dt>
-                                <dd>
-<span class="orange fl">
-<em>203</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>2188</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>1985</em>
-剩余
-</span>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li limitbuy="0" codeperiod="903" name="buyBox">
-                            <a id="btnYgOneBuy20" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>
-                            <a class="u-cart" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="f-add-attention" style="display: none;">
-                        <span>关注</span>
-                        <a class="ng-box-bg transparent-png" href="javascript:;"></a>
-                    </div>
-                </div>
-                <!--无购物车页面版-->
-                <div id="divRTool"  class="g-narrow-con" style="display:none;">
-                    <div class="m-narrow-list">
+                <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="{{$v['times_id']}}">
+                    <div class="soon-list">
                         <ul>
-                            <li class="f-pur-records">
-                                <div class="u-small-list">
-                                    <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                                        <i></i><cite>云购记录</cite>
-                                    </a>
-                                </div>
+                            <li class="g-soon-pic">
+                                <a title="(第{{$v['times']}}云){{$v['keywords']}} {{$v['goods_name']}}" target="_blank" href="/products/23516.html">
+                                    <img src="http://img.1yyg.net/GoodsPic/pic-200-200/20161010163528732.jpg" name="goodsImg">
+                                </a>
                             </li>
-                            <li class="f-client">
-                                <div class="u-small-list">
-                                    <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                        <i></i><cite>手机APP</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
-                                            下载客户端
-                                        </a>
-                                    </div>
-                                </div>
+                            <li class="soon-list-name">
+                                <a title="(第{{$v['times']}}云){{$v['keywords']}} {{$v['goods_name']}}" target="_blank" href="/products/23516.html">
+                                    (第
+                                    <em>{{$v['times']}}</em>
+                                    云) {{$v['keywords']}} {{$v['goods_name']}}
+                                </a>
                             </li>
-                            <li class="f-weixin">
-                                <div class="u-small-list">
-                                    <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                        <i></i><cite>官方微信</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                            关注官方微信
-                                        </a>
-                                    </div>
-                                </div>
+                            <li class="gray6">价值：￥{{$v['goods_price']}}.00</li>
+                            <li class="g-progress">
+                                <dl class="m-progress">
+                                    <dd>
+                                        <span class="orange fl">
+                                            <em>{{$v['participation']}}</em>
+                                            已参与
+                                        </span>
+                                            <span class="gray6 fl">
+                                            <em>{{$v['goods_price']}}</em>
+                                            总需人次
+                                        </span>
+                                        <span class="blue fr">
+                                            <em>{{$v['number']}}</em>
+                                            剩余
+                                        </span>
+                                    </dd>
+                                </dl>
                             </li>
-                            <li class="f-customer-service">
-                                <div class="u-small-list">
-                                    <a href="javascript:;" class="z-customer-on"  id="btnRigQQ2">
-                                        <i></i><cite>在线客服</cite>
-                                    </a><!-- z-customer-off 客服不在线时 -->
-                                </div>
-                            </li>
-                            <li class="f-feedback">
-                                <div class="u-small-list">
-                                    <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                                        <i></i><cite>意见反馈</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-back-to" title="返回顶部">
-                                <div class="u-small-list">
-                                    <a href="javascript:;"><i></i><cite>返回顶部</cite></a>
-                                </div>
+                            <li limitbuy="0" codeperiod="903" name="buyBox">
+                                <a id="btnYgOneBuy" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>
+                                <a class="u-cart" times_id="{{$v['times_id']}}" goods_id="{{$v['goods_id']}}" href="javascript:;">
+                                    <s></s>
+                                </a>
                             </li>
                         </ul>
+
                     </div>
                 </div>
-            </div>
+
+
+            <?php } ?>
+
             <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="21">
                 <div class="soon-list">
                     <ul>
@@ -399,942 +330,20 @@
                         <li class="gray6">价值：￥2188.00</li>
                         <li class="g-progress">
                             <dl class="m-progress">
-                                <dt title="已完成9.28%">
-                                    <b style="width:24px;"></b>
-                                </dt>
+
                                 <dd>
-<span class="orange fl">
-<em>203</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>2188</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>1985</em>
-剩余
-</span>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li limitbuy="0" codeperiod="903" name="buyBox">
-                            <a id="btnYgOneBuy20" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>
-                            <a class="u-cart" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="f-add-attention" style="display: none;">
-                        <span>关注</span>
-                        <a class="ng-box-bg transparent-png" href="javascript:;"></a>
-                    </div>
-                </div>
-                <!--无购物车页面版-->
-                <div id="divRTool"  class="g-narrow-con" style="display:none;">
-                    <div class="m-narrow-list">
-                        <ul>
-                            <li class="f-pur-records">
-                                <div class="u-small-list">
-                                    <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                                        <i></i><cite>云购记录</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-client">
-                                <div class="u-small-list">
-                                    <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                        <i></i><cite>手机APP</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
-                                            下载客户端
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-weixin">
-                                <div class="u-small-list">
-                                    <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                        <i></i><cite>官方微信</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                            关注官方微信
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-customer-service">
-                                <div class="u-small-list">
-                                    <a href="javascript:;" class="z-customer-on"  id="btnRigQQ2">
-                                        <i></i><cite>在线客服</cite>
-                                    </a><!-- z-customer-off 客服不在线时 -->
-                                </div>
-                            </li>
-                            <li class="f-feedback">
-                                <div class="u-small-list">
-                                    <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                                        <i></i><cite>意见反馈</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-back-to" title="返回顶部">
-                                <div class="u-small-list">
-                                    <a href="javascript:;"><i></i><cite>返回顶部</cite></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="21">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                <img src="http://img.1yyg.net/GoodsPic/pic-200-200/20161010163528732.jpg" name="goodsImg">
-                            </a>
-                        </li>
-                        <li class="soon-list-name">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                (第
-                                <em>903</em>
-                                云) 小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）
-                            </a>
-                        </li>
-                        <li class="gray6">价值：￥2188.00</li>
-                        <li class="g-progress">
-                            <dl class="m-progress">
-                                <dt title="已完成9.28%">
-                                    <b style="width:24px;"></b>
-                                </dt>
-                                <dd>
-<span class="orange fl">
-<em>203</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>2188</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>1985</em>
-剩余
-</span>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li limitbuy="0" codeperiod="903" name="buyBox">
-                            <a id="btnYgOneBuy20" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>
-                            <a class="u-cart" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="f-add-attention" style="display: none;">
-                        <span>关注</span>
-                        <a class="ng-box-bg transparent-png" href="javascript:;"></a>
-                    </div>
-                </div>
-                <!--无购物车页面版-->
-                <div id="divRTool"  class="g-narrow-con" style="display:none;">
-                    <div class="m-narrow-list">
-                        <ul>
-                            <li class="f-pur-records">
-                                <div class="u-small-list">
-                                    <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                                        <i></i><cite>云购记录</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-client">
-                                <div class="u-small-list">
-                                    <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                        <i></i><cite>手机APP</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
-                                            下载客户端
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-weixin">
-                                <div class="u-small-list">
-                                    <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                        <i></i><cite>官方微信</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                            关注官方微信
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-customer-service">
-                                <div class="u-small-list">
-                                    <a href="javascript:;" class="z-customer-on"  id="btnRigQQ2">
-                                        <i></i><cite>在线客服</cite>
-                                    </a><!-- z-customer-off 客服不在线时 -->
-                                </div>
-                            </li>
-                            <li class="f-feedback">
-                                <div class="u-small-list">
-                                    <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                                        <i></i><cite>意见反馈</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-back-to" title="返回顶部">
-                                <div class="u-small-list">
-                                    <a href="javascript:;"><i></i><cite>返回顶部</cite></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="21">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                <img src="http://img.1yyg.net/GoodsPic/pic-200-200/20161010163528732.jpg" name="goodsImg">
-                            </a>
-                        </li>
-                        <li class="soon-list-name">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                (第
-                                <em>903</em>
-                                云) 小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）
-                            </a>
-                        </li>
-                        <li class="gray6">价值：￥2188.00</li>
-                        <li class="g-progress">
-                            <dl class="m-progress">
-                                <dt title="已完成9.28%">
-                                    <b style="width:24px;"></b>
-                                </dt>
-                                <dd>
-<span class="orange fl">
-<em>203</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>2188</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>1985</em>
-剩余
-</span>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li limitbuy="0" codeperiod="903" name="buyBox">
-                            <a id="btnYgOneBuy20" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>
-                            <a class="u-cart" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="f-add-attention" style="display: none;">
-                        <span>关注</span>
-                        <a class="ng-box-bg transparent-png" href="javascript:;"></a>
-                    </div>
-                </div>
-                <!--无购物车页面版-->
-                <div id="divRTool"  class="g-narrow-con" style="display:none;">
-                    <div class="m-narrow-list">
-                        <ul>
-                            <li class="f-pur-records">
-                                <div class="u-small-list">
-                                    <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                                        <i></i><cite>云购记录</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-client">
-                                <div class="u-small-list">
-                                    <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                        <i></i><cite>手机APP</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
-                                            下载客户端
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-weixin">
-                                <div class="u-small-list">
-                                    <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                        <i></i><cite>官方微信</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                            关注官方微信
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-customer-service">
-                                <div class="u-small-list">
-                                    <a href="javascript:;" class="z-customer-on"  id="btnRigQQ2">
-                                        <i></i><cite>在线客服</cite>
-                                    </a><!-- z-customer-off 客服不在线时 -->
-                                </div>
-                            </li>
-                            <li class="f-feedback">
-                                <div class="u-small-list">
-                                    <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                                        <i></i><cite>意见反馈</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-back-to" title="返回顶部">
-                                <div class="u-small-list">
-                                    <a href="javascript:;"><i></i><cite>返回顶部</cite></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="21">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                <img src="http://img.1yyg.net/GoodsPic/pic-200-200/20161010163528732.jpg" name="goodsImg">
-                            </a>
-                        </li>
-                        <li class="soon-list-name">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                (第
-                                <em>903</em>
-                                云) 小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）
-                            </a>
-                        </li>
-                        <li class="gray6">价值：￥2188.00</li>
-                        <li class="g-progress">
-                            <dl class="m-progress">
-                                <dt title="已完成9.28%">
-                                    <b style="width:24px;"></b>
-                                </dt>
-                                <dd>
-<span class="orange fl">
-<em>203</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>2188</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>1985</em>
-剩余
-</span>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li limitbuy="0" codeperiod="903" name="buyBox">
-                            <a id="btnYgOneBuy20" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>
-                            <a class="u-cart" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="f-add-attention" style="display: none;">
-                        <span>关注</span>
-                        <a class="ng-box-bg transparent-png" href="javascript:;"></a>
-                    </div>
-                </div>
-                <!--无购物车页面版-->
-                <div id="divRTool"  class="g-narrow-con" style="display:none;">
-                    <div class="m-narrow-list">
-                        <ul>
-                            <li class="f-pur-records">
-                                <div class="u-small-list">
-                                    <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                                        <i></i><cite>云购记录</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-client">
-                                <div class="u-small-list">
-                                    <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                        <i></i><cite>手机APP</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
-                                            下载客户端
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-weixin">
-                                <div class="u-small-list">
-                                    <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                        <i></i><cite>官方微信</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                            关注官方微信
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-customer-service">
-                                <div class="u-small-list">
-                                    <a href="javascript:;" class="z-customer-on"  id="btnRigQQ2">
-                                        <i></i><cite>在线客服</cite>
-                                    </a><!-- z-customer-off 客服不在线时 -->
-                                </div>
-                            </li>
-                            <li class="f-feedback">
-                                <div class="u-small-list">
-                                    <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                                        <i></i><cite>意见反馈</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-back-to" title="返回顶部">
-                                <div class="u-small-list">
-                                    <a href="javascript:;"><i></i><cite>返回顶部</cite></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="21">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                <img src="http://img.1yyg.net/GoodsPic/pic-200-200/20161010163528732.jpg" name="goodsImg">
-                            </a>
-                        </li>
-                        <li class="soon-list-name">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                (第
-                                <em>903</em>
-                                云) 小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）
-                            </a>
-                        </li>
-                        <li class="gray6">价值：￥2188.00</li>
-                        <li class="g-progress">
-                            <dl class="m-progress">
-                                <dt title="已完成9.28%">
-                                    <b style="width:24px;"></b>
-                                </dt>
-                                <dd>
-<span class="orange fl">
-<em>203</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>2188</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>1985</em>
-剩余
-</span>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li limitbuy="0" codeperiod="903" name="buyBox">
-                            <a id="btnYgOneBuy20" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>
-                            <a class="u-cart" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="f-add-attention" style="display: none;">
-                        <span>关注</span>
-                        <a class="ng-box-bg transparent-png" href="javascript:;"></a>
-                    </div>
-                </div>
-                <!--无购物车页面版-->
-                <div id="divRTool"  class="g-narrow-con" style="display:none;">
-                    <div class="m-narrow-list">
-                        <ul>
-                            <li class="f-pur-records">
-                                <div class="u-small-list">
-                                    <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                                        <i></i><cite>云购记录</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-client">
-                                <div class="u-small-list">
-                                    <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                        <i></i><cite>手机APP</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
-                                            下载客户端
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-weixin">
-                                <div class="u-small-list">
-                                    <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                        <i></i><cite>官方微信</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                            关注官方微信
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-customer-service">
-                                <div class="u-small-list">
-                                    <a href="javascript:;" class="z-customer-on"  id="btnRigQQ2">
-                                        <i></i><cite>在线客服</cite>
-                                    </a><!-- z-customer-off 客服不在线时 -->
-                                </div>
-                            </li>
-                            <li class="f-feedback">
-                                <div class="u-small-list">
-                                    <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                                        <i></i><cite>意见反馈</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-back-to" title="返回顶部">
-                                <div class="u-small-list">
-                                    <a href="javascript:;"><i></i><cite>返回顶部</cite></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="21">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                <img src="http://img.1yyg.net/GoodsPic/pic-200-200/20161010163528732.jpg" name="goodsImg">
-                            </a>
-                        </li>
-                        <li class="soon-list-name">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                (第
-                                <em>903</em>
-                                云) 小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）
-                            </a>
-                        </li>
-                        <li class="gray6">价值：￥2188.00</li>
-                        <li class="g-progress">
-                            <dl class="m-progress">
-                                <dt title="已完成9.28%">
-                                    <b style="width:24px;"></b>
-                                </dt>
-                                <dd>
-<span class="orange fl">
-<em>203</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>2188</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>1985</em>
-剩余
-</span>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li limitbuy="0" codeperiod="903" name="buyBox">
-                            <a id="btnYgOneBuy20" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>
-                            <a class="u-cart" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="f-add-attention" style="display: none;">
-                        <span>关注</span>
-                        <a class="ng-box-bg transparent-png" href="javascript:;"></a>
-                    </div>
-                </div>
-                <!--无购物车页面版-->
-                <div id="divRTool"  class="g-narrow-con" style="display:none;">
-                    <div class="m-narrow-list">
-                        <ul>
-                            <li class="f-pur-records">
-                                <div class="u-small-list">
-                                    <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                                        <i></i><cite>云购记录</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-client">
-                                <div class="u-small-list">
-                                    <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                        <i></i><cite>手机APP</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
-                                            下载客户端
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-weixin">
-                                <div class="u-small-list">
-                                    <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                        <i></i><cite>官方微信</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                            关注官方微信
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-customer-service">
-                                <div class="u-small-list">
-                                    <a href="javascript:;" class="z-customer-on"  id="btnRigQQ2">
-                                        <i></i><cite>在线客服</cite>
-                                    </a><!-- z-customer-off 客服不在线时 -->
-                                </div>
-                            </li>
-                            <li class="f-feedback">
-                                <div class="u-small-list">
-                                    <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                                        <i></i><cite>意见反馈</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-back-to" title="返回顶部">
-                                <div class="u-small-list">
-                                    <a href="javascript:;"><i></i><cite>返回顶部</cite></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="21">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                <img src="http://img.1yyg.net/GoodsPic/pic-200-200/20161010163528732.jpg" name="goodsImg">
-                            </a>
-                        </li>
-                        <li class="soon-list-name">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                (第
-                                <em>903</em>
-                                云) 小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）
-                            </a>
-                        </li>
-                        <li class="gray6">价值：￥2188.00</li>
-                        <li class="g-progress">
-                            <dl class="m-progress">
-                                <dt title="已完成9.28%">
-                                    <b style="width:24px;"></b>
-                                </dt>
-                                <dd>
-<span class="orange fl">
-<em>203</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>2188</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>1985</em>
-剩余
-</span>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li limitbuy="0" codeperiod="903" name="buyBox">
-                            <a id="btnYgOneBuy20" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>
-                            <a class="u-cart" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="f-add-attention" style="display: none;">
-                        <span>关注</span>
-                        <a class="ng-box-bg transparent-png" href="javascript:;"></a>
-                    </div>
-                </div>
-                <!--无购物车页面版-->
-                <div id="divRTool"  class="g-narrow-con" style="display:none;">
-                    <div class="m-narrow-list">
-                        <ul>
-                            <li class="f-pur-records">
-                                <div class="u-small-list">
-                                    <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                                        <i></i><cite>云购记录</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-client">
-                                <div class="u-small-list">
-                                    <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                        <i></i><cite>手机APP</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
-                                            下载客户端
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-weixin">
-                                <div class="u-small-list">
-                                    <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                        <i></i><cite>官方微信</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                            关注官方微信
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-customer-service">
-                                <div class="u-small-list">
-                                    <a href="javascript:;" class="z-customer-on"  id="btnRigQQ2">
-                                        <i></i><cite>在线客服</cite>
-                                    </a><!-- z-customer-off 客服不在线时 -->
-                                </div>
-                            </li>
-                            <li class="f-feedback">
-                                <div class="u-small-list">
-                                    <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                                        <i></i><cite>意见反馈</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-back-to" title="返回顶部">
-                                <div class="u-small-list">
-                                    <a href="javascript:;"><i></i><cite>返回顶部</cite></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="21">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                <img src="http://img.1yyg.net/GoodsPic/pic-200-200/20161010163528732.jpg" name="goodsImg">
-                            </a>
-                        </li>
-                        <li class="soon-list-name">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                (第
-                                <em>903</em>
-                                云) 小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）
-                            </a>
-                        </li>
-                        <li class="gray6">价值：￥2188.00</li>
-                        <li class="g-progress">
-                            <dl class="m-progress">
-                                <dt title="已完成9.28%">
-                                    <b style="width:24px;"></b>
-                                </dt>
-                                <dd>
-<span class="orange fl">
-<em>203</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>2188</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>1985</em>
-剩余
-</span>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li limitbuy="0" codeperiod="903" name="buyBox">
-                            <a id="btnYgOneBuy20" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>
-                            <a class="u-cart" href="javascript:;">
-                                <s></s>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="f-add-attention" style="display: none;">
-                        <span>关注</span>
-                        <a class="ng-box-bg transparent-png" href="javascript:;"></a>
-                    </div>
-                </div>
-                <!--无购物车页面版-->
-                <div id="divRTool"  class="g-narrow-con" style="display:none;">
-                    <div class="m-narrow-list">
-                        <ul>
-                            <li class="f-pur-records">
-                                <div class="u-small-list">
-                                    <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                                        <i></i><cite>云购记录</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-client">
-                                <div class="u-small-list">
-                                    <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                        <i></i><cite>手机APP</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
-                                            下载客户端
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-weixin">
-                                <div class="u-small-list">
-                                    <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                        <i></i><cite>官方微信</cite>
-                                    </a>
-                                    <b class="curr-arrow"><s></s></b>
-                                </div>
-                                <div class="activateCon">
-                                    <div class="u-activate">
-                                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                            <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                            关注官方微信
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="f-customer-service">
-                                <div class="u-small-list">
-                                    <a href="javascript:;" class="z-customer-on"  id="btnRigQQ2">
-                                        <i></i><cite>在线客服</cite>
-                                    </a><!-- z-customer-off 客服不在线时 -->
-                                </div>
-                            </li>
-                            <li class="f-feedback">
-                                <div class="u-small-list">
-                                    <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                                        <i></i><cite>意见反馈</cite>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="f-back-to" title="返回顶部">
-                                <div class="u-small-list">
-                                    <a href="javascript:;"><i></i><cite>返回顶部</cite></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="soon-list-con" goodsid="23516" codeid="10595378" idx="21">
-                <div class="soon-list">
-                    <ul>
-                        <li class="g-soon-pic">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                <img src="http://img.1yyg.net/GoodsPic/pic-200-200/20161010163528732.jpg" name="goodsImg">
-                            </a>
-                        </li>
-                        <li class="soon-list-name">
-                            <a title="(第903云)小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）" target="_blank" href="/products/23516.html">
-                                (第
-                                <em>903</em>
-                                云) 小米（MIUI）5s 4G手机 全网通 标准版（3GB RAM+64GB ROM）
-                            </a>
-                        </li>
-                        <li class="gray6">价值：￥2188.00</li>
-                        <li class="g-progress">
-                            <dl class="m-progress">
-                                <dt title="已完成9.28%">
-                                    <b style="width:24px;"></b>
-                                </dt>
-                                <dd>
-<span class="orange fl">
-<em>203</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>2188</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>1985</em>
-剩余
-</span>
+                                    <span class="orange fl">
+                                    <em>203</em>
+                                    已参与
+                                    </span>
+                                    <span class="gray6 fl">
+                                    <em>2188</em>
+                                    总需人次
+                                    </span>
+                                    <span class="blue fr">
+                                    <em>1985</em>
+                                    剩余
+                                    </span>
                                 </dd>
                             </dl>
                         </li>
@@ -1417,8 +426,63 @@
                 </div>
             </div>
 
-
+            <input type="hidden" value="{{$u_id}}" id="u_id" />
         </div>
+        <script>
+            //加入购物车
+            $(".u-cart").click(function(){
+                var u_id = $("#u_id").val();
+                if(u_id != 0){
+                    var times_id = $(this).attr("times_id");
+                    var goods_id = $(this).attr("goods_id");
+                    $.ajax({
+                        type: "POST",
+                        url: "buycarAdd",
+                        data: {times_id:times_id,goods_id:goods_id,u_id:u_id,code_number:1},
+                        success: function(msg){
+                            if(msg){
+//                                alert( "添加购物车成功 ");
+                                var res = confirm("添加购物车成功,是否前去购物车");
+                                if(res){
+                                    window.location="buycarIndex";
+                                }
+                            }
+                        }
+                    });
+                }else{
+                    alert("请先登陆！")
+                }
+
+            });
+
+            //直接到结算页面
+            $(".u-now").click(function(){
+                var u_id = $("#u_id").val();
+                if(u_id != 0) {
+                    var times_id = $(this).next().attr("times_id");
+                    var goods_id = $(this).next().attr("goods_id");
+                    $.ajax({
+                        type: "POST",
+                        url: "buycarAdd",
+                        data: {times_id:times_id,goods_id:goods_id,u_id:u_id,code_number:1},
+                        success: function(msg){
+//                            alert(msg)
+                            if(msg){
+                                window.location="buycaraccount?id_all="+msg;
+                            }
+                        }
+                    });
+                }else{
+                    alert("请先登陆！")
+                }
+            });
+            $("#btnGoPay").click(function(){
+                var id = $("#buy").val();
+                if(id != ""){
+                    $("#buycar").submit();
+                }
+            });
+        </script>
 
         <!--分页-->
         <div id="divPageNav"></div>

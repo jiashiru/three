@@ -870,7 +870,7 @@
                         data: {goods_id:goods_id,u_id:u_id,times_id:times_id,code_number:code_number},
                         success: function(msg)
                         {
-                            if(msg==1)
+                            if(msg)
                             {
                                 location.href = 'buycarIndex';
                             }

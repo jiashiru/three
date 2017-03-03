@@ -163,12 +163,24 @@
                             </li>
                             <li class="f-pay-price">{{$v['number']}}</li>
                             <li class="f-pay-plusLess">{{$v['code_number']}}人次</li>
-                            <li class="f-pay-subtotal orange">{{$v['code_number']}}</li>
+                            <li class="f-pay-subtotal orange pay_all">{{$v['code_number']}}</li>
                         </ul>
                     </dd>
                     <?php } ?>
                 </dl>
             </div>
+
+            <script>
+                $(function(){
+                    var all = $(".pay_all")
+                    var a = 0;
+                    all.each(function(i){
+                        a = a*1+ all.eq(i).html()*1;
+                    })
+                    $("#pay").html(a);
+                });
+            </script>
+
 
             <input name="hidTotalCount" type="hidden" id="hidTotalCount" value="0" />
             <!--展开按钮-->
@@ -177,7 +189,7 @@
                 <dl>
                     <dt>
                         <span class="fl"><a href="CartList.do" title="返回修改">返回修改</a></span>
-                        <span class="fr">支付总额：<i class="orange">￥3.00</i></span>
+                        <span class="fr">支付总额：<i class="orange" >￥<span id="pay">0</span>.00</i></span>
                     </dt>
 
                     <dd style="display: none">
@@ -404,14 +416,21 @@
 
             </div>
 
-            <input type="hidden" id="hidPayBroker" value="0.00"/><input type="hidden" id="hidBalance" value="0.00"/><input type="hidden" id="hidCountMoney" value="3.00"/><input type="hidden" id="hidPoints" value="20.00"/><input type="hidden" id="hidAvailablePoints" value="0"/><input type="hidden" id="hidUsePaypwd" value="0"/><input type="hidden" id="hidSmallMoney" value="0"/>
+            <input type="hidden" id="hidPayBroker" value="0.00"/>
+            <input type="hidden" id="hidBalance" value="0.00"/>
+            <input type="hidden" id="hidCountMoney" value="3.00"/>
+            <input type="hidden" id="hidPoints" value="20.00"/>
+            <input type="hidden" id="hidAvailablePoints" value="0"/>
+            <input type="hidden" id="hidUsePaypwd" value="0"/>
+            <input type="hidden" id="hidSmallMoney" value="0"/>
 
             <!--使用网银支付提交表单-->
-            <form id="toPayForm" name="toPayForm" action="GoPay.do" method="post" target="_blank">
+            <form id="toPayForm" name="toPayForm" action="PayIndex" method="post" target="_blank">
                 <input type="hidden" id="hidPayName" name="payName" value="" />
                 <input type="hidden" id="hidPayBank" name="payBank" value="0" />
                 <input type="hidden" id="hidUseBalance" name="useBalance" value="" />
                 <input name="hidIsBuyNext" type="hidden" id="hidIsBuyNext" value="1" />
+                <input name="cart_id" type="hidden" id="" value="{{$card_id}}" />
                 <!-- 不使用福分时，值为0；使用福分时，值为使用福分值 2012.4.28-->
                 <input type="hidden" id="hidIntegral" name="integral" value="0" />
                 <input type="hidden" id="hidGoPayBroker" name="paybroker" value="0" />
@@ -723,7 +742,10 @@
         <ul>
             <li class="payment_ts_con">如您的浏览器不支持，请复制以下链接到IE浏览器打开，完成付款后跟据您的情况进行以下操作！</li>
             <li class="payment_ts_links">http://cart.1yyg.com/payment.do</li>
-            <li class="payment_ts_but"><a id="btnBuyOk" href="javascript:gotoClick();" class="pay_tipsbut">完成支付</a><a id="btnReSelect" href="javascript:gotoClick();" class="blue">支付遇到问题？返回重新选择</a></li>
+            <li class="payment_ts_but">
+                <a id="btnBuyOk" href="javascript:gotoClick();" class="pay_tipsbut">完成支付</a>
+                <a id="btnReSelect" href="javascript:gotoClick();" class="blue">支付遇到问题？返回重新选择</a>
+            </li>
         </ul>
     </div>
 </div>

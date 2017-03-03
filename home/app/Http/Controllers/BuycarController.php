@@ -29,14 +29,19 @@ class BuycarController extends Controller
         {
             $u_id = $_SESSION['u_id'];
         }
+
         //查询用户的购物车里面数据
         $cart = DB::table('cart')->where(['u_id'=>$u_id])->get();
         $data = $this->goods_info($cart);
+
+
         return view("buycar/index",[
          
             'end'=>$data
         ]);
     }
+
+
     //添加购物车
     public function add_buy()
     {
@@ -48,13 +53,16 @@ class BuycarController extends Controller
              $number = $arr['code_number']+$check_buy['code_number'];
 
              $data = DB::table('cart')->where(['cart_id'=>$check_buy['cart_id']])->update(['code_number'=>$number]);
+             if($data){
+                 return $check_buy['cart_id'];
+             }
          }
          else
          {
-            $data = DB::table('cart')->insert($arr);
+            $data = DB::table('cart')->insertGetId($arr);
+            return $data;
          }
-         
-         return $data ? json_encode(1):json_encode(0);
+
     }
    
     //更改购物车的数量
@@ -75,9 +83,16 @@ class BuycarController extends Controller
         $sql = "select * from cart WHERE u_id=$u_id AND cart_id in($id_all)";
         $cart = DB::select($sql);
         $data = $this->goods_info($cart);
+        //提取购物车的ID
+        $card_id = "";
+        foreach($data as $k=>$v){
+            $card_id = $card_id .",". $v['cart_id'];
+        }
+        $card_id = substr($card_id,1);
         return view("buycar/account",[
-                            'data'=>$data
-                    ]);
+            'data'=>$data,
+            "card_id"=>$card_id,
+        ]);
     }
     //购物车删除
     public function buy_del()

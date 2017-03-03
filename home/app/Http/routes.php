@@ -85,8 +85,10 @@ Route::any("buycarAdd","BuycarController@add_buy");//添加购物车
 Route::any("buycarDel","BuycarController@buy_del");//删除
 Route::any("buycaraccount","BuycarController@account");//结算1
 
+//支付
+Route::any("PayIndex","PayController@index");//当点击支付  跳转到本页面
 
-Route::any("buycarAccount",function(){ return view("buycar/account"); });//结算1
+
 
 
 
