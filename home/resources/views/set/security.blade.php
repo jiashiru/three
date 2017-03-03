@@ -130,12 +130,10 @@
 
                     <li class="curr" id="li_accset"><a href="http://member.1yyg.com/MemberModify.do" title="账号设置">账号设置<b><s></s></b></a><em class="z-account-settings u-personal"></em>
                         <div class="m-sub-menu">
-                            <span><a href="/MemberModify.do">个人资料</a></span>
-                            <span><a href="/UserPhoto.do">修改头像</a></span>
-                            <span><a href="/Address.do">收货地址</a></span>
-                            <span><a href="/Security/index.do">账户安全</a></span>
-                            <span><a href="/PrivacySettings.do">隐私设置</a></span>
-                            <span><a href="/NoticeSettings.do">其它设置</a></span>
+                            <span><a href="/setInfo">个人资料</a></span>
+                            <span><a href="/header">修改头像</a></span>
+                            <span><a href="/address">收货地址</a></span>
+                            <span><a href="security">账户安全</a></span>
                             <b><s></s></b>
                         </div>
                     </li>
@@ -273,12 +271,10 @@
         <div class="sidebar_l clrfix fl">
             <ul>
 
-                <li><a href="/MemberModify.do" title="个人资料">个人资料</a><b></b></li>
-                <li><a href="/UserPhoto.do" title="修改头像">修改头像</a><b></b></li>
-                <li><a href="/Address.do" title="收货地址">收货地址</a><b></b></li>
-                <li class="curr z-first"><a href="/Security/index.do" title="账户安全">账户安全</a><b></b></li>
-                <li><a href="/PrivacySettings.do" title="隐私设置">隐私设置</a><b></b></li>
-                <li><a href="/NoticeSettings.do" title="其它设置">其它设置</a><b></b></li>
+                <li><a href="setInfo" title="个人资料">个人资料</a><b></b></li>
+                <li><a href="header" title="修改头像">修改头像</a><b></b></li>
+                <li><a href="address" title="收货地址">收货地址</a><b></b></li>
+                <li  class="curr"><a href="security" title="账户安全">账户安全</a><b></b></li>
 
             </ul>
         </div>
@@ -294,7 +290,31 @@
                         <span class="orange"><b></b>建议您定期更改密码以保护账户安全。</span>
                         <span class="u-operating"><a href="updatePwd">修改</a></span>
                     </li>
-                    <li><span class="g-xuan g-ganta"><i></i>支付密码</span><span><b></b>用于使用账户余额、福分支付和转账时使用。</span><span class="u-operating u-operating-open"><a id="btnSetPayPwd" href="javascript:;" type="0">立即开启</a></span></li><li><span class="g-xuan g-ganta"><i></i>小额免密码设置</span><span><b></b>开启后支付金额小于设置额度时，无需输入支付密码。</span><span class="u-operating u-operating-open"><a id="btnSetSmall" href="javascript:;" type="0">立即开启</a></span></li><li><span class="g-xuan "><i></i>手机号绑定</span><span><b></b>您当前绑定的手机号18840****02，若已丢失或更换，请立即修改。</span><span class="u-operating "><a href="/UserAuth-40.do">修改</a></span></li><li><span class="g-xuan g-ganta"><i></i>邮箱绑定</span><span><b></b>多种渠道收到揭晓通知，快去绑定吧！</span><span class="u-operating u-operating-open"><a href="/UserAuth-50.do">立即绑定</a></span></li><li><span class="g-xuan g-ganta"><i></i>登录保护</span><span><b></b>关注官网微信后，登录您的账号时，将使用微信的方式提醒您，防止盗号。</span><span class="u-operating u-operating-open"><a id="btnSetWxMsg" href="javascript:;">立即开启</a></span></li>
+                    <li><span class="g-xuan g-ganta"><i></i>支付密码</span><span><b></b>用于使用账户余额、福分支付和转账时使用。</span><span class="u-operating u-operating-open"><a id="btnSetPayPwd" href="telCode" type="0">立即开启</a></span></li>
+                    <li>
+                        <span class="g-xuan "><i></i>手机号绑定</span>
+                        <span><b></b>
+                            @if (isset($tel))
+                                您当前绑定的手机号{{$tel}}，若已丢失或更换，请立即修改。
+                            @else
+                                多种渠道收到揭晓通知，快去绑定吧！
+                            @endif
+
+
+                        </span><span class="u-operating "><a href="telCode">修改</a></span>
+                    </li>
+                    <li>
+                        <span class="g-xuan g-ganta"><i></i>邮箱绑定</span>
+                        <span><b></b>
+                            @if (isset($email))
+                                您当前绑定的邮箱号{{$email}}，若已丢失或更换，请立即修改。
+                            @else
+                                多种渠道收到揭晓通知，快去绑定吧！
+                            @endif
+                        </span>
+                        <span class="u-operating u-operating-open"><a href="sendEmail">立即绑定</a></span>
+                    </li>
+
 
                 </ul>
             </div>

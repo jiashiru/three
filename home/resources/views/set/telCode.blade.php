@@ -133,12 +133,10 @@
 
                     <li class="curr" id="li_accset"><a href="http://member.1yyg.com/MemberModify.do" title="账号设置">账号设置<b><s></s></b></a><em class="z-account-settings u-personal"></em>
                         <div class="m-sub-menu">
-                            <span><a href="/MemberModify.do">个人资料</a></span>
-                            <span><a href="/UserPhoto.do">修改头像</a></span>
-                            <span><a href="/Address.do">收货地址</a></span>
-                            <span><a href="/Security/index.do">账户安全</a></span>
-                            <span><a href="/PrivacySettings.do">隐私设置</a></span>
-                            <span><a href="/NoticeSettings.do">其它设置</a></span>
+                            <span><a href="/setInfo">个人资料</a></span>
+                            <span><a href="/header">修改头像</a></span>
+                            <span><a href="/address">收货地址</a></span>
+                            <span><a href="security">账户安全</a></span>
                             <b><s></s></b>
                         </div>
                     </li>
@@ -179,108 +177,17 @@
             </ul>
         </div>
     </div>
-    <script>
-        var _MemberUpdateCartNum = function () { };
-        function GetJPData(domain, action, para, callfun) {
-            $.getJSON(domain + "/JPData?action=" + action + (para != "" ? "&" : "") + para + "&fun=?", callfun);
-        }
-        $(document).ready(function () {
-            var _MemberRTool = $("#divMemberRTool");
-            var _DivObj = _MemberRTool.children("div.m-narrow-list");
-            var _UlObj=_MemberRTool.find("ul");
-            var _LiObj=_UlObj.children("li");
-            var _CustomerObj = _LiObj.eq(0);
-            var _CartObj = _LiObj.eq(1);
-            var _FeedBackObj = _LiObj.eq(2);
-            var _BackTopObj = _LiObj.eq(3);
-            var _ServiceObj = $("#a_service");
-            /*------在线客服------*/
-            var _NowTime = new Date();
-            var _Hours = _NowTime.getHours();
-            var _Minute = _NowTime.getMinutes();
-            if (_Hours >= 9 && _Hours < 21) {
-                //上班时间
-                _CustomerObj.find("a").attr('class', 'z-customer-on').find("em").html("在<br>线<br>客<br>服");
-                _ServiceObj.removeClass('z-gray-msg').html("<b class=\"u-personal\"></b>在线客服");
-            } else {
-                _CustomerObj.find("a").attr('class', 'z-customer-off').find("em").html("离<br>线<br>留<br>言");
-                _ServiceObj.addClass('z-gray-msg').html("<b class=\"u-personal\"></b>离线留言");
-            }
-            //var isInitQQEvent = false;
-            var initQQEvent = function () {
-                //if (isInitQQEvent)
-                //    return false;
-                //isInitQQEvent = true;
-                Base.getScript("http://wpa.b.qq.com/cgi/wpa.php", function () {
-                    BizQQWPA.addCustom([{
-                        aty: "0",
-                        nameAccount: "4006859800",
-                        selector: "li_customer_service"
-                    }, {
-                        aty: "0",
-                        nameAccount: "4006859800",
-                        selector: "a_service"
-                    }]);
-                });
-            }
-            initQQEvent();
-            /*------购物车------*/
-            _CartObj.hover(function () {
-                $(this).addClass("cart-hover");
-                if ($(this).hasClass("f-member-cart2")) {
-                    $(this).find("em").attr("style", "display:none;");
-                }
-                $(this).find("cite").attr("style", "display:block;");
-            }, function () {
-                $(this).removeClass("cart-hover");
-                if ($(this).hasClass("f-member-cart2")) {
-                    $(this).find("em").attr("style", "display:block;");
-                }
-                $(this).find("cite").attr("style", "display:none;");
-            });
-            _MemberUpdateCartNum = function () { _InsertIntoCart(); }
-            /*------意见反馈------*/
-            _FeedBackObj.hover(function () { $(this).addClass("cart-hover"); }, function () { $(this).removeClass("cart-hover"); });
-            /*------回到顶部------*/
-            _BackTopObj.hover(function () { $(this).addClass("cart-hover"); }, function () { $(this).removeClass("cart-hover"); });
-            _BackTopObj.click(function () {
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 0);
-            });
-            var scrollFun = function () {
-                if ($(window).scrollTop() > 50) { //我的云购记录
-                    //_MemberRTool.height("289px");
-                    _DivObj.removeAttr("style");
-                    _BackTopObj.show();
-                } else {
-                    //_MemberRTool.height("232px");
-                    _DivObj.attr("style", "height:232px;");
-                    _BackTopObj.hide();
-                }
-            }
-            $(window).scroll(function () {
-                scrollFun();
-            });
-            if ($(window).scrollTop() > 0) {
-                scrollFun();
-            }
-            //账号设置快捷菜单
-            $("#li_accset").hover(function () { $(this).addClass("hover"); }, function () { $(this).removeClass("hover"); });
-        });
-    </script>
+
     <div class="p-center-main clrfix">
         <!--左边导航-->
 
         <div class="sidebar_l clrfix fl">
             <ul>
 
-                <li><a href="/MemberModify.do" title="个人资料">个人资料</a><b></b></li>
-                <li><a href="/UserPhoto.do" title="修改头像">修改头像</a><b></b></li>
-                <li><a href="/Address.do" title="收货地址">收货地址</a><b></b></li>
-                <li class="curr"><a href="/Security/index.do" title="账户安全">账户安全</a><b></b></li>
-                <li><a href="/PrivacySettings.do" title="隐私设置">隐私设置</a><b></b></li>
-                <li><a href="/NoticeSettings.do" title="其它设置">其它设置</a><b></b></li>
+                <li><a href="setInfo" title="个人资料">个人资料</a><b></b></li>
+                <li><a href="header" title="修改头像">修改头像</a><b></b></li>
+                <li><a href="address" title="收货地址">收货地址</a><b></b></li>
+                <li  class="curr"><a href="security" title="账户安全">账户安全</a><b></b></li>
 
             </ul>
         </div>
@@ -290,20 +197,21 @@
                 <a href="javascript:history.go(-1);" class="return-btn safe">返回</a>
                 <span class="gray3">身份验证</span>
             </div>
-            <div class="z-content">
+            <div class="z-content" id="div">
                 <div class="person-wrap">
                     <ul class="person-list">
                         <li>
                             <span class="l-side"></span>
-                            <span class="r-side">您当前绑定的手机号：<b class="blue">18840****02</b></span>
+                            <span class="r-side">您当前绑定的手机号：<b class="blue">{{isset($tel) ? $tel : $email }}</b></span>
 
                         </li>
                         <li class="m-orange-tips">
                             <span class="l-side">验证码：</span>
                                 <span class="r-side">
                                     <div class="inp-wrap">
-                                        <input id="txtCheckCode" type="text" maxlength="6" class="code-inner" value="请输入6位验证码" />
-                                        <a id="btnGetCode" href="javascript:;" class="get-code-btn">点击获取验证码</a>
+                                        <input type="hidden" id="tel" value="{{isset($tel_hide) ? $tel_hide : $email_hide }}"/>
+                                        <input id="code" type="text" maxlength="6" class="code-inner" value="" placeholder="请输入6位验证码" />
+                                        <a id="getCode" href="javascript:;" class="get-code-btn"><sapn id="msg">点击获取验证码</sapn></a>
                                     </div>
                                 </span>
                             <div id="div_tips"></div>
@@ -311,24 +219,39 @@
                         <li>
                             <span class="l-side"></span>
                                 <span class="r-side">
-                                    <a id="btnSubmit" href="javascript:;" class="set-save-btn gray-btn">确定</a>
+                                    <a id="btn" href="javascript:;" class="set-save-btn">确定</a>
                                 </span>
                         </li>
                     </ul>
                 </div>
             </div>
+                <script>
+                    $(function () {
+                        $("#div").delegate('#getCode','click', function () {
+                           //获取手机号
+                            var tel = $("#tel").val();
 
-            <div id="mobileBindUserAuth" class="g-Tips-text clrfix" style="display:none;">原手机号丢失或无法接收短信？请拨打客服热线4000-588-688进行人工申诉，重新绑定新手机号。</div>
+                            $.post('telephone',{tel:tel}, function (res) {
+                                    $('#msg').html('请输入验证码');
+                            });
+                        });
+                        //验证
+                        $("#div").delegate("#btn","click", function () {
+                            var code = $('#code').val();
+                            $.post('checkCode',{code:code}, function (res) {
+                                if(res.status==0){
+                                    $('#msg').html(res.msg);
+                                }else if(res.status==1){
+                                    $('#msg').html(res.mag);
+                                }else{
+                                    location.href='payPwd';
+                                }
+                            },'json');
+                        });
+                    });
+                </script>
+            <div id="mobileBindUserAuth" class="g-Tips-text clrfix" style="">原手机号丢失或无法接收短信？请拨打客服热线4000-588-688进行人工申诉，重新绑定新手机号。</div>
 
-
-            <div id="emailBindUserAuth" class="not-get-text" style="display:none;">
-                没有收到邮件？
-                <p>
-                    1.请检查您的垃圾箱或广告箱，邮件有可能被误认为垃圾或广告邮件；
-                    <br />
-                    2.若您的邮箱已过期或忘记密码无法登录，请拨打客服电话 4000-588-688 申诉更换验证邮箱。
-                </p>
-            </div>
         </div>
 
     </div>
