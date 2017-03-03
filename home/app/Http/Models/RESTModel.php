@@ -12,9 +12,9 @@ namespace App\Http\Models;
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
+use Illuminate\Database\Eloquent\Model;
 
-
-class REST {
+class RESTModel extends Model {
     private $AccountSid;
     private $AccountToken;
     private $AppId;

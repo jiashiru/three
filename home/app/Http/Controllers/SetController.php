@@ -10,10 +10,11 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Session;
 use Storage;
 use App\Http\Requests;
-use App\Http\Models\REST;
+use App\Http\Models\RESTModel;
 
 class SetController extends Controller
 {
@@ -263,7 +264,23 @@ class SetController extends Controller
     //账户安全页面
     public function security()
     {
-        return view('set/security');
+        //查询绑定信息
+        $data = DB::table('user')->select('tel','email')->where('u_id',$_SESSION['u_id'])->first();
+        if($data['tel']){
+            //为手机绑定
+            $tel = substr($data['tel'],0,4)."****".substr($data['tel'],9,2);
+
+            return view('set/security',['tel'=>$tel]);
+        }else{
+            //为邮箱绑定
+            $length = strlen($data['email']);
+            $count = strpos($data['email'],'@');
+
+            $email = substr($data['email'],1)."*".substr($data['email'],$count,$length);
+
+            return view('set/security',['email'=>$email]);
+        }
+
     }
 
     //修改密码页面
@@ -323,7 +340,7 @@ class SetController extends Controller
         $data = DB::table('user')->select('tel','email')->where('u_id',$_SESSION['u_id'])->first();
         if($data['tel']){
             //为手机绑定
-            $tel = substr($data['tel'],4)."****".substr($data['tel'],9,2);
+            $tel = substr($data['tel'],0,4)."****".substr($data['tel'],9,2);
 
             return view('set/telCode',['tel'=>$tel,'tel_hide'=>$data['tel']]);
         }else{
@@ -338,6 +355,172 @@ class SetController extends Controller
 
     }
 
+    //手机验证码
+    public function telephone(Request $request)
+    {
+
+        //生成验证码
+        $code=rand(1000,9999);
+        //把验证码存入cookie
+        $_SESSION['code']=$code;
+        //接值
+        $to=Input::get("tel");
+//        $to = 18840825602;
+        $datas=[$code,'1'];
+        $tempId='1';
+
+
+        //Demo调用
+        //**************************************举例说明***********************************************************************
+        //*假设您用测试Demo的APP ID，则需使用默认模板ID 1，发送手机号是13800000000，传入参数为6532和5，则调用方式为           *
+//        $result = $this->sendTemplateSMS("13800000000" ,array('6532','5'),"1");
+        //*则13800000000手机号收到的短信内容是：【云通讯】您使用的是云通讯短信模板，您的验证码是6532，请于5分钟内正确输入     *
+        //*********************************************************************************************************************
+
+        $this->sendTemplateSMS($to,$datas,$tempId);//手机号码，替换内容数组，模板ID
+//echo $code;
+
+    }
+
+    //手机验证码
+    public function sendTemplateSMS($to="",$datas="",$tempId="")
+    {
+//        include ('./CCPRestSmsSDK.php');
+        global $accountSid,$accountToken,$appId,$serverIP,$serverPort,$softVersion;
+        //主帐号,对应开官网发者主账号下的 ACCOUNT SID
+        $accountSid= '8aaf07085992544f0159958d3bb200e2';
+
+        //主帐号令牌,对应官网开发者主账号下的 AUTH TOKEN
+        $accountToken= '0781a20a8a1b4fd0a4054f8e4fafb040';
+
+        //应用Id，在官网应用列表中点击应用，对应应用详情中的APP ID
+        //在开发调试的时候，可以使用官网自动为您分配的测试Demo的APP ID
+        $appId='8aaf07085992544f0159958d3c1200e6';
+
+        //请求地址
+        //沙盒环境（用于应用开发调试）：sandboxapp.cloopen.com
+        //生产环境（用户应用上线使用）：app.cloopen.com
+        $serverIP='app.cloopen.com';
+
+
+        //请求端口，生产环境和沙盒环境一致
+        $serverPort='8883';
+
+        //REST版本号，在官网文档REST介绍中获得。
+        $softVersion='2013-12-26';
+        // 初始化REST SDK
+        // var_dump($serverIp);die;
+        $rest = new RESTModel($serverIP,$serverPort,$softVersion);
+        $rest->setAccount($accountSid,$accountToken);
+        $rest->setAppId($appId);
+
+        // 发送模板短信
+        echo "Sending TemplateSMS to $to <br/>";
+        $result = $rest->sendTemplateSMS($to,$datas,$tempId);
+        if($result == NULL ) {
+            echo "result error!";
+//            break;
+        }
+        if($result->statusCode!=0) {
+            echo "error code :" . $result->statusCode . "<br>";
+            echo "error msg :" . $result->statusMsg . "<br>";
+            //TODO 添加错误处理逻辑
+        }else{
+            echo "Sendind TemplateSMS success!<br/>";
+            // 获取返回信息
+            $smsmessage = $result->TemplateSMS;
+            echo "dateCreated:".$smsmessage->dateCreated."<br/>";
+            echo "smsMessageSid:".$smsmessage->smsMessageSid."<br/>";
+            //TODO 添加成功处理逻辑
+        }
+    }
+
+    //验证手机验证码是否正确
+    public function checkCode()
+    {
+        if(!isset($_SESSION['code'])){
+
+            return json_encode(['status'=>0,'msg'=>'验证码不能为空']);
+        }else{
+            $code = Input::get('code');
+            if($_SESSION['code']!=$code){
+
+                return json_encode(['status'=>1,'msg'=>'验证码不正确']);
+            }else{
+
+                return json_encode(['status'=>2,'msg'=>'验证成功']);
+            }
+        }
+    }
+
+    //设置支付密码页面
+    public function payPwd()
+    {
+        return view('set/payPwd');
+    }
+
+    //添加支付密码
+    public function codeAdd()
+    {
+        //接值
+        $txtPwd1 = Input::get('txtPwd1');
+        $txtPwd2 = Input::get('txtPwd2');
+        if($txtPwd1!=$txtPwd2){
+            return json_encode(['msg'=>'密码和确认密码不一致','status'=>4]);
+        }
+        $code = md5($txtPwd1);
+        $pwd = DB::table('pay_code')->where('u_id',$_SESSION['u_id'])->first();
+        if($pwd){
+            return json_encode(['msg'=>'已经设置支付密码','status'=>1]);
+        }
+        $res = DB::table('pay_code')->insert(['u_id'=>$_SESSION['u_id'],'pay_code'=>$code]);
+        if($res){
+            return json_encode(['msg'=>'设置成功','status'=>3]);
+        }else{
+            return json_encode(['msg'=>'设置失败','status'=>2]);
+        }
+    }
+
+    //发送邮箱页面
+    public function sendEmail()
+    {
+        return view('set/sendEmail');
+    }
+
+    //发送邮箱
+    public function sendEmailDo()
+    {
+
+        $code=rand(1000,9999);
+        $_SESSION['email_code'] = $code;
+        $flag = Mail::send('email',['code'=>$code],function($message)
+        {
+            //接值
+            $email = Input::get('email');
+            //验证空，验证正则
+            $to = $email;
+            $message ->to($to)->subject('邮箱绑定');
+        });
+
+        return $flag ? 1 : 0;
+    }
+
+    //验证邮箱验证码
+    public function CheckEmailCode()
+    {
+        //接值
+        $email = Input::get('email');
+        $email_code = Input::get('email_code');
+        if($email_code!=$_SESSION['email_code']){
+            return 0;
+        }else{
+            //添加到数据库user
+            $res = DB::table('user')->where('u_id',$_SESSION['u_id'])->update(['email'=>$email]);
+
+            return $res ? 1 :0;
+
+        }
+    }
 
 
 

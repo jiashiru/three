@@ -1,0 +1,1 @@
+Base.getScript("http://skin.1yyg.net/Member/JS/Security/SetPayPwdFun.js?date=151019");

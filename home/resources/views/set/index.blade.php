@@ -140,12 +140,10 @@
 
                     <li class="curr" id="li_accset"><a href="http://member.1yyg.com/MemberModify.do" title="账号设置">账号设置<b><s></s></b></a><em class="z-account-settings u-personal"></em>
                         <div class="m-sub-menu">
-                            <span><a href="/MemberModify.do">个人资料</a></span>
-                            <span><a href="header">修改头像</a></span>
-                            <span><a href="/Address.do">收货地址</a></span>
-                            <span><a href="/Security/index.do">账户安全</a></span>
-                            <span><a href="/PrivacySettings.do">隐私设置</a></span>
-                            <span><a href="/NoticeSettings.do">其它设置</a></span>
+                            <span><a href="/setInfo">个人资料</a></span>
+                            <span><a href="/header">修改头像</a></span>
+                            <span><a href="/address">收货地址</a></span>
+                            <span><a href="security">账户安全</a></span>
                             <b><s></s></b>
                         </div>
                     </li>
@@ -284,12 +282,10 @@
         <div class="sidebar_l clrfix fl">
             <ul>
 
-                <li class="curr z-first"><a href="/MemberModify.do" title="个人资料">个人资料</a><b></b></li>
+                <li  class="curr"><a href="setInfo" title="个人资料">个人资料</a><b></b></li>
                 <li><a href="header" title="修改头像">修改头像</a><b></b></li>
                 <li><a href="address" title="收货地址">收货地址</a><b></b></li>
-                <li><a href="/Security/index.do" title="账户安全">账户安全</a><b></b></li>
-                <li><a href="/PrivacySettings.do" title="隐私设置">隐私设置</a><b></b></li>
-                <li><a href="/NoticeSettings.do" title="其它设置">其它设置</a><b></b></li>
+                <li><a href="security" title="账户安全">账户安全</a><b></b></li>
 
             </ul>
         </div>

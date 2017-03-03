@@ -50,6 +50,14 @@ Route::group(['middleware' => 'session'], function () {
 
 
     Route::get("telCode","SetController@telCode");//手机验证码页面
+    Route::post("telephone","SetController@telephone");//获取手机验证码
+    Route::post("checkCode","SetController@checkCode");//验证手机验证码
+    Route::get("payPwd","SetController@payPwd");//设置支付密码页面
+    Route::post("codeAdd","SetController@codeAdd");//设置支付密码页面
+
+    Route::get("sendEmail","SetController@sendEmail");//发送邮箱页面
+    Route::post("sendEmailDo","SetController@sendEmailDo");//发送邮箱
+    Route::post("CheckEmailCode","SetController@CheckEmailCode");//验证邮箱验证码
 
 
     Route::any("setMyself","SetController@myself");//个人主页
