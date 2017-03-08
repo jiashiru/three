@@ -76,6 +76,22 @@
                 </ul>
             </div>
             <script>
+                $(function(){
+                    $.ajax({
+                        type: "POST",
+                        url: "indexTime",
+                        data: "",
+                        dataType:"json",
+                        success: function(msg){
+                            $("#h").html(msg.h);
+                            $("#i").html(msg.i);
+                            $("#s").html(msg.s);
+//                            alert(1);
+                        }
+                    });
+                });
+            </script>
+            <script>
                 setInterval(function() {
                     var h = $("#h").html();
                     var i = $("#i").html();
