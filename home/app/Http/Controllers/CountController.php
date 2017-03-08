@@ -11,11 +11,11 @@ use Illuminate\Http\Request;
 
 class CountController extends Controller
 {
+
 	//计算
-	public function get(Request $request)
+	public function get($goods_id,$times_id)
 	{
-		$goods_id = $request->input("goods_id");
-		$times_id = $request->input("times_id");
+
 		//获取计算所需的信息
 		$goods = $this->getShop($goods_id, $times_id);
 		$price = $goods['goods_price'];

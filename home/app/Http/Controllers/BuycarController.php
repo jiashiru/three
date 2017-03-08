@@ -89,6 +89,8 @@ class BuycarController extends Controller
             $card_id = $card_id .",". $v['cart_id'];
         }
         $card_id = substr($card_id,1);
+
+
         return view("buycar/account",[
             'data'=>$data,
             "card_id"=>$card_id,

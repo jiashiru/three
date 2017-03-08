@@ -130,7 +130,7 @@
             <div id="divBankBox" class="m-pay-manner" style="display: none;">
                 <div class="f-pay-select">
                     <span class="fl" id="spPayTitle">您可使用账户余额支付，也可选择以下方式完成支付</span>
-                    <span class="fr">使用网银支付<i id="iBankPay" class="orange">￥0.00</i></span>
+                    {{--<span class="fr">使用网银支付<i id="iBankPay" class="orange">￥0.00</i></span>--}}
                 </div>
 
                 <div class="f-pay-defray clrfix">

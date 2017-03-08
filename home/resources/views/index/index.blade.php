@@ -401,7 +401,7 @@
                 $("#UserBuyNewList").children().first().before(new_content);
                 $("#UserBuyNewList").children().first().show(500);
 
-            }, 5000*1000);
+            }, 1000);
         </script>
 
         <!--即将揭晓-->

@@ -531,16 +531,81 @@ class SetController extends Controller
     //个人主页
     public function myself()
     {
-        $user = "18840825602";
-        $user = DB::table('user')->where(['tel'=>$user])->orwhere(['email'=>$user])->first();
-        $id = $user['u_id'];
+//        $user = "18840825602";
+//        $user = DB::table('user')->where(['tel'=>$user])->orwhere(['email'=>$user])->first();
+//        $id = $user['u_id'];
+        $id = $_SESSION['u_id'];
+
         //用  用户ID 查询  user_information 表
         $user_info = DB::table("user_information")->where(['u_id'=>$id])->first();
 
+        $goods = $this->time_record($id);
+
         return view("set/myself",[
             "user_info"=>$user_info,
+            "goods"=>$goods,
 
         ]);
+
+    }
+
+    /**
+     * 传入用户ID
+     * @return array() //云购记录
+     */
+    public function time_record($u_id=6)
+    {
+        //查询该用户的记录
+        $goods_code = DB::table("goods_code")->where(['u_id'=>$u_id])->get();
+
+        //通过记录查询商品表  查询云期表
+        $goods_id_all = array();
+        $goods_times_all = array();
+        foreach($goods_code as $k=>$v){
+            $goods_id_all[] = $v['goods_id'];
+            $goods_times_all[] = $v['times_id'];
+        }
+        //根据条件查询 商品
+        $goods = DB::table("goods")->wherein('goods_id',$goods_id_all)->get();
+        //根据条件查询 云期
+        $goods_times = DB::table("goods_times")->wherein("times_id",$goods_times_all)->get();
+        //根据商品ID 查询商品品牌
+        $goods_brand_id = array();
+        foreach($goods as $k=>$v){
+            $goods_brand_id[] = $v['brand_id'];
+        }
+        $goods_brand = DB::table("goods_brand")->wherein("brand_id",$goods_brand_id)->get();
+        foreach($goods as $k=>$v){
+            foreach($goods_times as $key=>$val){
+                if($v['goods_id'] == $val['goods_id']){
+                    $goods[$k]['times'] = $val['times'];
+//                    $goods[$k]['buy_time'] = date("Y-m-d H:i:s",$val['buy_time']);
+                    $goods[$k]['number'] = $val['number'];
+                    $goods[$k]['start_time'] = date("Y-m-d H:i:s",$val['start_time']);
+                    $goods[$k]['end_time'] = date("Y-m-d H:i:s",$val['end_time']);
+                }
+            }
+            foreach($goods_brand as $key=>$val){
+                if($v['brand_id'] == $val['brand_id']){
+                    $goods[$k]['brand_name'] = $val['brand_name'];
+                }
+            }
+
+        }
+
+        foreach($goods_code as $k=>$v){
+            foreach($goods as $key=>$val){
+                if($v['goods_id'] == $val['goods_id']){
+                    $goods_code[$k]['goods'] = $val;
+                    $goods_code[$k]['buy_time'] = date("m月d日 H:i",$v['buy_time']);
+                }
+            }
+        }
+//print_r($goods_code);
+        return $goods_code;
+
+
+
 
     }
 
