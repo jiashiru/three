@@ -188,7 +188,64 @@
                                 <div class="good-list-wrap">
                                     <ul class="good-list">
 
+                                        <?php foreach($goods as $k=>$v){ ?>
 
+
+                                            <li>
+                                                <a class="g-pic" href="http://www.1yyg.com/product/10585720.html" target="_blank">
+                                                    <img width="100" height="100" src="http://img.1yyg.net/GoodsPic/pic-200-200/20150324160104108.jpg" alt="">
+                                                    <span class="g-bg g-end"></span>
+                                                    <span class="g-txt">
+                                                        <?php
+                                                        if($v['goods']['number'] == 0){
+                                                            echo '已揭晓';
+                                                        }else{
+                                                            echo '进行中<span class="dotting"></span>';
+                                                        }
+                                                        ?>
+                                                    </span>
+                                                </a>
+                                                <div class="g-info">
+                                                    <h2 class="g-title">
+                                                        <a href="http://www.1yyg.com/product/10585720.html" target="_blank" rel="nofollow">
+                                                            (第{{$v['goods']['times']}}云){{$v['goods']['brand_name']}} {{$v['goods']['goods_name']}}
+                                                        </a>
+                                                    </h2>
+                                                    <p class="g-price">价值：￥{{$v['goods']['goods_price']}}.00</p>
+                                                    <div class="g-older">
+                                                        <p>开始时间：{{$v['goods']['start_time']}}</p>
+                                                        <p>揭晓时间：
+                                                        <?php
+                                                                if($v['goods']['number'] == 0){
+                                                                    echo $v['goods']['end_time'];
+                                                                }else{
+                                                                    echo '进行中<span class="dotting"></span>';
+                                                                }
+                                                            ?>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="g-total">
+                                                    参与
+                                                    <span class="orange">1</span>
+                                                    人次
+                                                </div>
+                                                <a class="g-see" href="http://www.1yyg.com/lottery/10585720.html" target="_blank">查看详情</a>
+                                                <i class="single">
+                                                    <i class="single"></i>
+                                                </i>
+                                                <div class="g-time">
+                                                    <div class="aricle">
+                                                        <div class="cir"></div>
+                                                    </div>
+                                                    <div class="time-str">
+                                                        <div class="str">{{$v['buy_time']}}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+
+                                        <?php } ?>
                                         <li>
                                             <a class="g-pic" href="http://www.1yyg.com/product/10585720.html" target="_blank">
                                                 <img width="100" height="100" src="http://img.1yyg.net/GoodsPic/pic-200-200/20150324160104108.jpg" alt="">
@@ -229,22 +286,41 @@
                                         </li>
 
                                         <li>
-                                            <a class="g-pic" href="http://www.1yyg.com/product/10585720.html" target="_blank">
-                                                <img width="100" height="100" src="http://img.1yyg.net/GoodsPic/pic-200-200/20150324160104108.jpg" alt="">
-                                                <span class="g-bg g-end"></span>
-                                                <span class="g-txt">已揭晓</span>
+                                            <a class="g-pic" href="http://www.1yyg.com/product/10332343.html" target="_blank">
+                                                <img width="100" height="100" src="http://img.1yyg.net/GoodsPic/pic-200-200/20170122161417912.jpg" alt="">
+                                                <span class="g-bg"></span>
+<span class="g-txt">
+进行中
+<span class="dotting"></span>
+</span>
                                             </a>
                                             <div class="g-info">
                                                 <h2 class="g-title">
-                                                    <a href="http://www.1yyg.com/product/10585720.html" target="_blank" rel="nofollow">(第40466云)云南白药 牙膏 180g（留兰香型）</a>
+                                                    <a href="http://www.1yyg.com/product/10332343.html" rel="nofollow" target="_blank">(第26云)2016款 进口宝马（BMW）5系 528i 中东版 四门轿车</a>
                                                 </h2>
-                                                <p class="g-price">价值：￥39.00</p>
-                                                <div class="g-older">
-                                                    <p>
-                                                        获得者：
-                                                        <a target="_blank" href="http://u.1yyg.com/1012636424">艹啃着馒头支持云</a>
-                                                    </p>
-                                                    <p>揭晓时间：2017-02-22 08:59:36</p>
+                                                <p class="g-price">价值：￥539888.00</p>
+                                                <div class="g-progress">
+                                                    <dl class="m-progress">
+                                                        <dt title="已完成43.01%">
+                                                            <b style="width: 120.43275642355451px">
+                                                                <i class="cur"></i>
+                                                            </b>
+                                                        </dt>
+                                                        <dd>
+<span class="orange fl">
+<em>232215</em>
+已参与
+</span>
+<span class="gray6 fl">
+<em>539888</em>
+总需人次
+</span>
+<span class="blue fr">
+<em>307673</em>
+剩余
+</span>
+                                                        </dd>
+                                                    </dl>
                                                 </div>
                                             </div>
                                             <div class="g-total">
@@ -252,7 +328,7 @@
                                                 <span class="orange">1</span>
                                                 人次
                                             </div>
-                                            <a class="g-see" href="http://www.1yyg.com/lottery/10585720.html" target="_blank">查看详情</a>
+                                            <a class="g-buy" href="http://www.1yyg.com/product/10332343.html" target="_blank" rel="nofollow">继续云购</a>
                                             <i class="single">
                                                 <i class="single"></i>
                                             </i>
@@ -261,7 +337,7 @@
                                                     <div class="cir"></div>
                                                 </div>
                                                 <div class="time-str">
-                                                    <div class="str">02月22日 08:58</div>
+                                                    <div class="str">刚刚</div>
                                                 </div>
                                             </div>
                                             <div class="clear"></div>

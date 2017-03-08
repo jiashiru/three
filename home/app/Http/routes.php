@@ -53,6 +53,7 @@ Route::group(['middleware' => 'session'], function () {
 
 
     Route::any("setMyself","SetController@myself");//个人主页
+    Route::any("time_record","SetController@time_record");//个人主页ceshi  一会就删
 
 
 });
@@ -95,11 +96,14 @@ Route::any("buycarCart_num","BuycarController@cart_num");//在购物车 增加�
 Route::any("buycarAdd","BuycarController@add_buy");//添加购物车
 Route::any("buycarDel","BuycarController@buy_del");//删除
 Route::any("buycaraccount","BuycarController@account");//结算1
+Route::any("buycarOrder","PayController@order");//结算1
 
 //支付
 Route::any("PayIndex","PayController@index");//当点击支付  跳转到本页面
 
 
+//成功
+Route::any("success","SuccessController@index");//支付成功
 
 
 
