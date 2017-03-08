@@ -22,23 +22,44 @@
             </li>
         </ul>
         <ul id="ulTopRight" class="fr">
+
+            @if(isset($_SESSION['u_id']))
+            <li>
+                <div class="u-menu-hd u-menu-login">
+                    <a class="blue" title="{{$_SESSION['nickname']}}" href="http://member.1yyg.com/">
+                        <span class="fl">
+                            @if(empty($_SESSION['picture']))
+                            <img src="{{asset('style/images/00000000000000000.jpg')}}">
+                            @else
+                            <img src="{{asset('uploads/uploads_small/'.$_SESSION['picture'])}}">
+                            @endif
+                            <s class="transparent-png"></s>
+                        </span>
+                        {{$_SESSION['nickname']}}</a>
+                    <a title="退出" href="{{url('quit')}}">[退出]</a>
+                </div>
+            </li>
+            @else
+
             <li class="u-menu-hd"><div class="u-menu-hd"><a href="login">登录</a></div></li>
             <li class="u-menu-hd"><div class="u-menu-hd"><a href="register">注册</a></div></li>
-            <li id="liMember" class="u-arr-1yyg" style="display: none;">
+            @endif
+
+            <li id="liMember" class="u-arr-1yyg" style="">
                 <div class="u-menu-hd">
-                    <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
+                    <a href="myIndex" title="我的1元云购">我的1元云购</a>
                     <div class="f-top-arrow"><cite>◆</cite><b>◆</b></div>
                 </div>
                 <div class="u-select">
-                    <span><a href="http://member.1yyg.com/UserBuyList.do" title="云购记录">云购记录</a></span>
-                    <span><a href="http://member.1yyg.com/OrderList.do" title="获得的商品">获得的商品</a></span>
-                    <span><a href="http://member.1yyg.com/MemberModify.do" title="个人设置">个人设置</a></span>
+                    <span><a href="myGoods" title="云购记录">云购记录</a></span>
+                    <span><a href="myGoods" title="获得的商品">获得的商品</a></span>
+                    <span><a href="setIndex" title="个人设置">个人设置</a></span>
                 </div>
             </li>
             <li class="f-gap" style="display: none;"><s></s></li>
             <li id="liHome" style="display: none;">
                 <div class="u-menu-hd">
-                    <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
+                    <a href="myIndex" title="我的1元云购">我的1元云购</a>
                 </div>
             </li>
             <li class="f-gap" style="display: none;"><s></s></li>
@@ -72,7 +93,7 @@
             <li class="f-gap"><s></s></li>
             <li>
                 <div class="u-menu-hd">
-                    <a href="http://member.1yyg.com/UserRecharge.do" title="充值">充值</a>
+                    <a href="userRechange" title="充值">充值</a>
                 </div>
             </li>
             <li class="f-gap"><s></s></li>

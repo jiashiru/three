@@ -33,6 +33,11 @@ Route::group(['middleware' => ['web']], function () {
 
 //需要登录的，都走中间件
 Route::group(['middleware' => 'session'], function () {
+
+    //支付
+    Route::post("PayIndex","PayController@index");//当点击支付  跳转到本页面
+    Route::post("rechange","PayController@rechange");//充值
+
     //账号设置
     Route::get("setInfo","SetController@setInfo");//个人资料
     Route::post("infoDo","SetController@infoDo");//修改个人信息
@@ -50,16 +55,41 @@ Route::group(['middleware' => 'session'], function () {
 
 
     Route::get("telCode","SetController@telCode");//手机验证码页面
+    Route::post("telephone","SetController@telephone");//获取手机验证码
+    Route::post("checkCode","SetController@checkCode");//验证手机验证码
+    Route::get("payPwd","SetController@payPwd");//设置支付密码页面
+    Route::post("codeAdd","SetController@codeAdd");//设置支付密码页面
+
+    Route::get("sendEmail","SetController@sendEmail");//发送邮箱页面
+    Route::post("sendEmailDo","SetController@sendEmailDo");//发送邮箱
+    Route::post("CheckEmailCode","SetController@CheckEmailCode");//验证邮箱验证码
 
 
-    Route::any("setMyself","SetController@myself");//个人主页
+    Route::get("myIndex","MyyungouController@myIndex");//我的一元云购首页
+    Route::get("myGoods","MyyungouController@myGoods");//获得的商品
+    Route::get("myWallet","MyyungouController@myWallet");//我的钱包
+    Route::get("userRechange","MyyungouController@userRechange");//网银充值页面
+    Route::get("CardRechange","MyyungouController@CardRechange");//充值卡充值页面
+
+    Route::post("rechange","PayController@rechange");//网银充值
+
+
+
+    Route::get("setMyself","SetController@myself");//个人主页
     Route::any("time_record","SetController@time_record");//个人主页ceshi  一会就删
+
+
+
+
+
 
 
 });
 //通用
 Route::get("login",function(){ return view("login"); });//登陆页面
 Route::post("loginDo","LoginController@loginDo");  //登录
+
+Route::get("quit","LoginController@quit");  //退出
 
 Route::any("register",function(){ return view("register"); });//注册页面
 
@@ -83,8 +113,8 @@ Route::any("indexHot","IndexController@hot");//查询最热产品
 Route::any("codeGet","CountController@get");
 
 //我的一元云够
-Route::any("userIndex",function(){ return view("user/index"); });
-Route::any("userRecord",function(){ return view("user/record"); });//我的记录
+//Route::any("userIndex",function(){ return view("user/index"); });
+//Route::any("userRecord",function(){ return view("user/record"); });//我的记录
 
 
 
@@ -98,8 +128,7 @@ Route::any("buycarDel","BuycarController@buy_del");//删除
 Route::any("buycaraccount","BuycarController@account");//结算1
 Route::any("buycarOrder","PayController@order");//结算1
 
-//支付
-Route::any("PayIndex","PayController@index");//当点击支付  跳转到本页面
+
 
 
 //成功

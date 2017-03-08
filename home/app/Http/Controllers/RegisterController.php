@@ -50,6 +50,8 @@ class RegisterController extends Controller
         $new_pwd = md5(md5($pwd).'three');
         //生成一个随机且唯一的字符串，作为昵称
         $uname = 'USER.'.uniqid();
+        $_SESSION['nickname'] = $uname;
+        $_SESSION['picture'] = '';
 
 
         //判断是手机还是邮箱

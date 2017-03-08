@@ -2,20 +2,24 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
-        修改密码_1元云购
-    </title><link rel="stylesheet" type="text/css" href="style/css/set/header.css?v=170215" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>支付密码设置_1元云购</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('style/css/header.css?v=170215')}}" />
     <!--[if IE 6]>
     <script type="text/javascript" src="http://skin.1yyg.net/js/iepng.js"></script>
     <script type="text/javascript">
         EvPNG.fix('.search a.seaIcon i,.m-menu-all h3 em,.nav-cart-btn i.f-cart-icon,a.u-cart s,.u-mui-tab a.u-menus s,.u-mui-tab li.f-cart a.u-menus i,.u-mui-tab li.f-both-top a.u-menus,.u-mui-tab li.f-both-bottom a.u-menus,.i-ctrl a s,.g-list li cite,.f-list-sorts li.m-value s,.nav-main li.f-nav-thanks span,.u-float-list a i,.cartEmpty i,.transparent-png');
     </script>
-    <![endif]--><link href="style/css/set/base.css?date=20150716" rel="stylesheet" type="text/css" />
-    <link href="style/css/set/member_x.css?v=150728" rel="stylesheet" type="text/css" />
-    <script language="javascript" type="text/javascript" src="style/js/JQuery1.12.js"></script>
-    <script id="pageJS" language="javascript" type="text/javascript" data="style/js/set/UpdatePassWord.js"></script>
+    <![endif]-->
+    <link href="{{asset('style/css/set/base.css?date=20150716')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('style/css/set/member_x.css?v=150728')}}/" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="{{asset('style/js/JQuery1.12.js')}}"></script>
+    <script id="pageJS" language="javascript" type="text/javascript" data="{{asset('style/js/set/SetPayPwd.js')}}"></script>
 </head>
 <body>
+<input name="hidStr" type="hidden" id="hidStr" value="dtlyMtfmeBl*tqTDX5jdr*omQHyc3OUwN1kspbCJFcY%3d" />
+<input name="hidForward" type="hidden" id="hidForward" />
 <div class="wrapper">
     <!--顶部-->
     <!--顶部-->
@@ -95,110 +99,66 @@
         <div class="sidebar_main clrfix fr">
             <div class="g-purchase-title bor-bot">
                 <a href="javascript:history.go(-1);" class="return-btn safe">返回</a>
-                <span class="gray3">修改密码</span>
+                <span class="gray3">支付密码设置</span>
             </div>
             <div class="z-content">
-                <div class="person-wrap change-code">
-                    <form id="form" method="post" action="pwdDo">
-                    <ul class="person-list">
+                <div class="pwd-wrap" id="div">
+                    <ul class="pwd-list">
                         <li>
-                            <span class="l-side">原始密码：</span>
+                                <span class="l-side">
+                                    <label for="f-pwd">设置支付密码：</label></span>
                                 <span class="r-side">
-                                    <div class="inp-wrap">
-                                        <input id="OldPass" maxlength="20" name="oldPass" type="password" class="code-inner" />
-                                        <span class="get-code-btn" id="span_1"></span>
-                                    </div>
+                                    <input id="txtPwd1" type="password" maxlength="6" placeholder="请输入6位纯数字支付密码" class="insert"  />
                                 </span>
-                            <div id="div_tips1"></div>
                         </li>
                         <li>
-                            <span class="l-side">新密码：</span>
+                                <span class="l-side">
+                                    <label for="t-pwd">确认支付密码：</label></span>
                                 <span class="r-side">
-                                    <div class="inp-wrap">
-                                        <input id="NewPass" maxlength="20" name="newPass" type="password" class="code-inner" />
-                                        <span class="get-code-btn" id="span_2"></span>
-                                    </div>
-                                    <span id="pwdStrength" style="display: none;"></span>
-                                </span>
-                            <div id="div_tips2"></div>
-                        </li>
-                        <li>
-                            <span class="l-side">再次输入密码：</span>
-                                <span class="r-side">
-                                    <div class="inp-wrap">
-                                        <input id="newPassAgain" maxlength="20" name="newPassAgain" type="password" class="code-inner" />
-                                        <span class="get-code-btn" id="sapn_3"></span>
-                                    </div>
-                                </span>
-                            <div id="div_tips3"></div>
+                                    <input id="txtPwd2" type="password" maxlength="6" class="insert" /></span>
+                            <div id="div_tips"></div>
                         </li>
                         <li>
                             <span class="l-side"></span>
                                 <span class="r-side">
-                                    <input type="submit" value="保存" id="sub" class="set-save-btn"/>
-                                    {{--<a id="btnSubmitSave" href="javascript:;" class="set-save-btn">保存</a>--}}
+                                    <a id="btn" href="javascript:;" class="set-save-btn">确定</a>
                                 </span>
                         </li>
                     </ul>
-                    </form>
                 </div>
-                <script>
-                    $(function () {
-                        $("#form").delegate("#sub",'click', function () {
-                            //获取密码
-                            var oldpwd = $("#OldPass").val();
-                            var newpwd = $("#NewPass").val();
-                            var newPassAgain = $("#newPassAgain").val();
-                            var flag = 1;
-                            if(oldpwd==""){
-                                $("#span_1").html('请输入原始密码');
-
-                                flag = 0;
-                            }else if(newpwd==""){
-
-                                $("#span_2").html('请输入新密码');
-                                flag = 0;
-                            }else if(newPassAgain==""){
-
-                                $("#span_3").html('请输入确认密码');
-                                flag = 0;
-                            }else if(newpwd!=newPassAgain){
-
-                                $("#span_3").html('确认密码和密码不相同');
-                                flag = 0;
-                            }else{
-
-                                //查询原始密码
-                                $.post("checkPwd",{oldpwd:oldpwd}, function (res) {
-                                    if(res==0){
-                                        $("#span_1").html('原始密码不正确');
-                                        flag = 1;
-                                    }else{
-                                        flag = 0;
-                                        $("#span_1").html('');
-                                    }
-                                });
-                            }
-
-                            if(flag==1){
-                                return true;
-                            }else{
-                                return false;
-                            }
-
-                        });
-                    });
-                </script>
-
             </div>
-
         </div>
 
     </div>
-
+    <script>
+        $(function () {
+            $('#div').delegate('#btn','click', function () {
+                var txtPwd1 = $('#txtPwd1').val();
+                var txtPwd2 = $('#txtPwd2').val();
+                if(txtPwd1==''){
+                    alert('请输入支付密码');
+                }else if(txtPwd2==''){
+                    alert('请输入确认密码');
+                }else if(txtPwd1!=txtPwd2){
+                    alert('密码和确认密码不一致');
+                }else{
+                    var reg_pwd = /^\d{6}$/;
+                    if(!reg_pwd.test(txtPwd1)){
+                        alert('密码和确认密码不一致');
+                    }else{
+                        //后台添加
+                        $.post('codeAdd',{txtPwd1:txtPwd1,txtPwd2:txtPwd2}, function (res) {
+                            if(res){
+                                alert(res.msg);
+                            }
+                        },'json');
+                    }
+                }
+            });
+        })
+    </script>
     <!--底部-->
     @include('public/footer')
-
 </div>
 
 <div style="display: none;">
