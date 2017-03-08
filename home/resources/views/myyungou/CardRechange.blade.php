@@ -1,24 +1,20 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
-        修改头像_1元云购
-    </title><link rel="stylesheet" type="text/css" href="style/css/header.css?v=170215" />
+        充值卡充值_1元云购
+    </title><link rel="stylesheet" type="text/css" href="http://skin.1yyg.net/css/header.css?v=170215" />
     <!--[if IE 6]>
     <script type="text/javascript" src="http://skin.1yyg.net/js/iepng.js"></script>
     <script type="text/javascript">
         EvPNG.fix('.search a.seaIcon i,.m-menu-all h3 em,.nav-cart-btn i.f-cart-icon,a.u-cart s,.u-mui-tab a.u-menus s,.u-mui-tab li.f-cart a.u-menus i,.u-mui-tab li.f-both-top a.u-menus,.u-mui-tab li.f-both-bottom a.u-menus,.i-ctrl a s,.g-list li cite,.f-list-sorts li.m-value s,.nav-main li.f-nav-thanks span,.u-float-list a i,.cartEmpty i,.transparent-png');
     </script>
-    <![endif]-->
-    <link href="style/css/set/base.css?date=20150716" rel="stylesheet" type="text/css" />
-    <link href="style/css/set/member_x.css?v=150728" rel="stylesheet" type="text/css" />
-    <script language="javascript" type="text/javascript" src="style/js/JQuery1.12.js"></script>
-    <script id="pageJS" language="javascript" type="text/javascript" data="style/js/set/UserPhoto.js"></script>
+    <![endif]--><link href="http://skin.1yyg.net/Member/css/base.css?date=20150731" rel="stylesheet" type="text/css" /><link href="http://skin.1yyg.net/Member/css/accounts.css?date=20150731" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="http://skin.1yyg.net/JS/JQuery1.12.js"></script>
+    <script id="pageJS" language="javascript" type="text/javascript" data="http://skin.1yyg.net/Member/JS/CardRecharge.js"></script>
 </head>
-<body id="loadingPicBlock">
-<input type="hidden" id="imgFileUrl" value="http://file.1yyg.net" />
-<input name="hidUserPhotoName" type="hidden" id="hidUserPhotoName" value="00000000000000000.jpg" />
-<input name="hidUserGrade" type="hidden" id="hidUserGrade" value="0" />
-<input name="hidForward" type="hidden" id="hidForward" value="/MemberModify.do" />
+<body>
 <div class="wrapper">
     <!--顶部-->
     <!--顶部-->
@@ -31,14 +27,16 @@
         <div class="banner-middle clrfix">
             <div class="nav-new">
                 <ul class="nav-menu">
-                    <li><a href="http://member.1yyg.com/Index.do" title="我的1元云购">我的1元云购</a><em class="z-my-1yyg u-personal"></em></li>
+                    <li class="curr"><a href="http://member.1yyg.com/Index.do" title="我的1元云购">我的1元云购</a><em class="z-my-1yyg u-personal"></em></li>
 
-                    <li class="curr" id="li_accset"><a href="http://member.1yyg.com/MemberModify.do" title="账号设置">账号设置<b><s></s></b></a><em class="z-account-settings u-personal"></em>
+                    <li id="li_accset"><a href="http://member.1yyg.com/MemberModify.do" title="账号设置">账号设置<b><s></s></b></a><em class="z-account-settings u-personal"></em>
                         <div class="m-sub-menu">
-                            <span><a href="/setInfo">个人资料</a></span>
-                            <span><a href="/header">修改头像</a></span>
-                            <span><a href="/address">收货地址</a></span>
-                            <span><a href="security">账户安全</a></span>
+                            <span><a href="/MemberModify.do">个人资料</a></span>
+                            <span><a href="/UserPhoto.do">修改头像</a></span>
+                            <span><a href="/Address.do">收货地址</a></span>
+                            <span><a href="/Security/index.do">账户安全</a></span>
+                            <span><a href="/PrivacySettings.do">隐私设置</a></span>
+                            <span><a href="/NoticeSettings.do">其它设置</a></span>
                             <b><s></s></b>
                         </div>
                     </li>
@@ -176,10 +174,18 @@
         <div class="sidebar_l clrfix fl">
             <ul>
 
-                <li><a href="setInfo" title="个人资料">个人资料</a><b></b></li>
-                <li  class="curr"><a href="header" title="修改头像">修改头像</a><b></b></li>
-                <li><a href="address" title="收货地址">收货地址</a><b></b></li>
-                <li><a href="security" title="账户安全">账户安全</a><b></b></li>
+                <li><a href="/Index.do" title="首页">首页</a><b></b></li>
+                <li><a href="/UserBuyList.do" title="云购记录">云购记录</a><b></b></li>
+                <li><a href="/OrderList.do" title="获得的商品">获得的商品</a><b></b></li>
+                {{--<li><a href="/PostSingleList.do" title="晒单管理">晒单管理</a><b></b></li>--}}
+                {{--<li><a href="/CollectList.do" title="我的关注">我的关注</a><b></b></li>--}}
+
+
+                <li class="curr"><a href="/UserBalance.do" title="我的钱包">我的钱包</a><b></b></li>
+
+                {{--<li><a href="/MyFriends.do" title="我的好友">我的好友</a><b></b></li>--}}
+                {{--<li><a href="/JoinGroup.do" title="云购圈">云购圈</a><b></b></li>--}}
+                {{--<li><a href="/UserMessage.do" title="消息管理">消息管理</a><b></b></li>--}}
 
             </ul>
         </div>
@@ -187,64 +193,46 @@
         <div class="sidebar_main clrfix fr">
             <div class="g-obtain-title clrfix">
                 <ul>
-                    <li class="curr"><a href="/UserPhoto.do?forward=%2fMemberModify.do">上传头像</a></li>
-
+                    <li><a href="/UserRecharge.do">网银充值</a></li>
+                    <li class="curr"><a href="/CardRecharge.do">充值卡充值</a></li>
                 </ul>
+                <a href="/UserBalance.do" class="z-return blue u-personal">返回我的钱包</a>
             </div>
-            <div class="z-content">
-                <div class="con">
-                    <div class="pic-side">
-                        <div class="pic-style-wrap">
-                                <span class="pic-style01">
-                                    <img src="{{ isset($img['picture']) ? 'uploads/uploads_big/'.$img['picture'] : 'style/images/set/00000000000000000_002.jpg' }}" /></span>
-                            <p class="gray9">160X160</p>
-                        </div>
-                        <div class="pic-style-wrap">
-                                <span class="pic-style02">
-                                    <img src="{{ isset($img['picture']) ? 'uploads/uploads_mid/'.$img['picture'] : 'style/images/set/00000000000000000_002.jpg' }}" id="img80" width="80" height="80" border="0" /></span>
-                            <p class="gray9">80X80</p>
-                        </div>
-                        <div class="pic-style-wrap">
-                                <span class="pic-style03">
-                                    <img src="{{ isset($img['picture']) ? 'uploads/uploads_small/'.$img['picture'] : 'style/images/set/00000000000000000.jpg' }}" id="img30" width="30" height="30" border="0" /></span>
-                            <p class="gray9">30X30</p>
-                        </div>
-                    </div>
-                    <div class="check-img-side">
-                        <div class="inner">
-                            <form method="post" action="uploadHead" enctype="multipart/form-data">
-
-
-                                <input id="" name="upload" type="file" />
-                                <p class="op-pic-txt">选择上传图片</p>
-
-                                <input type="submit" value="保存头像" class="save-btn"/>
-
-                                    {{--<a id="btnResetUpFile" href="javascript:;" class="reset-btn" title="重新上传">重新上传</a>--}}
-                                    {{--<a id="btnSavePhoto" href="javascript:;" class="save-btn" title="保存头像">保存头像</a>--}}
-
-                            </form>
-
-
-                        </div>
-                        <div style="display: none;">
-                            <iframe name="upFrame" scrolling="no" src="about:blank"></iframe>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
+            <div class="g-rec-info">
+                请使用1元云购官方充值卡进行充值，<a target="_blank" href="https://shop117344387.taobao.com/" class="blue">立即购买充值卡&gt;&gt;</a>
             </div>
+            <div class="g-recharge-card clrfix">
+                <dl>
+                    <dd>
+                        <!--已输入-->
+                        <label>充值卡号：</label>
+                        <input type="text" id="txtCardNO" value="12位卡号" maxlength="14" />
+                        <p class="orange"></p>
+                    </dd>
+                    <dd>
+                        <label>充值密码：</label>
+                        <input type="text" id="txtCardPwd" value="8位密码" maxlength="8" />
+                        <p class="orange"><s class="u-personal"></s>密码输入错误5次，请于1小时后再试</p>
+                    </dd>
+                    <dd class="f-amount" id="liMoney" style="display:none;">
+                        <label>充值金额：</label>
+                        <b class="blue"></b>
+                    </dd>
+                </dl>
+                <a id="btnSubmit" href="javascript:;" class="z-gray-button">确认充值</a>
+            </div>
+
+
         </div>
+
     </div>
-
-
     <!--底部-->
     @include('public/footer')
 </div>
 <script language="javascript" type="text/javascript">
     var Base = { head: document.getElementsByTagName("head")[0] || document.documentElement, Myload: function (B, A) { this.done = false; B.onload = B.onreadystatechange = function () { if (!this.done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) { this.done = true; A(); B.onload = B.onreadystatechange = null; if (this.head && B.parentNode) { this.head.removeChild(B) } } } }, getScript: function (A, C) { var B = function () { }; if (C != undefined) { B = C } var D = document.createElement("script"); D.setAttribute("language", "javascript"); D.setAttribute("type", "text/javascript"); D.setAttribute("src", A); this.head.appendChild(D); this.Myload(D, B) }, getStyle: function (A, CB) { var B = function () { }; if (CB != undefined) { B = CB } var C = document.createElement("link"); C.setAttribute("type", "text/css"); C.setAttribute("rel", "stylesheet"); C.setAttribute("href", A); this.head.appendChild(C); this.Myload(C, B) } }
     function GetVerNum() { var D = new Date(); return D.getFullYear().toString().substring(2, 4) + '.' + (D.getMonth() + 1) + '.' + D.getDate() + '.' + D.getHours() + '.' + (D.getMinutes() < 10 ? '0' : D.getMinutes().toString().substring(0, 1)) }
-    Base.getScript('style/js/Bottom.js?v=' + GetVerNum());
+    Base.getScript('http://skin.1yyg.net/JS/Bottom.js?v=' + GetVerNum());
 </script>
 <div style="display: none;">
     <script type="text/javascript" language="JavaScript" src="http://s22.cnzz.com/stat.php?id=3362429&web_id=3362429"  async="async"></script>

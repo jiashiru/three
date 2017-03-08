@@ -16,6 +16,7 @@ use App\Http\Requests;
 
 class PayController extends Controller
 {
+    //支付
     public function index()
     {
         $cart_id = Input::get("cart_id");
@@ -31,9 +32,18 @@ class PayController extends Controller
 //            echo $price;
         return redirect('alipay/index.php?WIDout_trade_no=21222312&WIDsubject=1元购&WIDtotal_fee='.$price);
         }
+    }
 
+    //网银充值
+    public function rechange()
+    {   
+        $price = Input::get("money");
 
-
+        $price=sprintf("%.2f", $price);
+//            echo $price;
+        return redirect('alipay/index.php?WIDout_trade_no=212223121&WIDsubject=1元购&WIDtotal_fee='.$price);
 
     }
+
+
 }

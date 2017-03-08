@@ -87,8 +87,11 @@ class LoginController extends Controller
             if($data){
                 //存在，登录
                 $_SESSION['u_id'] = $data['u_id'];
-                $_SESSION['email'] = $data['email'];
-                  if ($ajax) 
+//                $_SESSION['email'] = $data['email'];
+                $nickname = $this->nickname($data['u_id']);
+                $_SESSION['nickname'] = $nickname['nickname'];
+                $_SESSION['picture'] = $nickname['picture'];
+                  if ($ajax)
                     {
                         return json_encode(1);
                     }
@@ -114,7 +117,10 @@ class LoginController extends Controller
             if($data){
                 //存在，登录
                 $_SESSION['u_id'] = $data['u_id'];
-                $_SESSION['tel'] = $data['tel'];
+//                $_SESSION['tel'] = $data['tel'];
+                $nickname = $this->nickname($data['u_id']);
+                $_SESSION['nickname'] = $nickname['nickname'];
+                $_SESSION['picture'] = $nickname['picture'];
                 // var_dump($_SESSION['u_id']);die;
                  if ($ajax) 
                     {
@@ -137,6 +143,22 @@ class LoginController extends Controller
                 
             }
         }
+    }
+
+    //查询用户昵称
+    public function nickname($u_id)
+    {
+        $nickname = DB::table('user_information')->select('nickname','picture')->where('u_id',$u_id)->first();
+
+        return $nickname;
+    }
+
+    //退出方法
+    public function quit()
+    {
+        //清除session
+        session_destroy();
+        return view('login');
     }
 
 }
