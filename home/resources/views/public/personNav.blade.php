@@ -17,6 +17,6 @@
                 <li><a target="_blank" href="{{url('setMyself')}}" title="个人主页">个人主页</a><em class="z-home-page u-personal"></em></li>
             </ul>
         </div>
-        <a href="http://www.1yyg.com" class="member-logo"></a>
+        <a href="/" class="member-logo"></a>
     </div>
 </div>

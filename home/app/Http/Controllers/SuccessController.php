@@ -14,12 +14,18 @@ use Session;
 use Storage;
 use App\Http\Requests;
 use App\Http\Models\REST;
+use App\Http\Controllers\CountController;
 
 class SuccessController extends Controller
 {
+    public function __construct()
+    {
+        if (!session_id()) session_start();
+    }
     public function index()
     {
-        $u_id = 6;
+//        $u_id = 6;
+        $u_id = $_SESSION['u_id'];
         $total_fee = Input::get('total_fee');//支付的价钱
         $out_trade_no = Input::get('out_trade_no');//交易订单号
         $order = DB::table("order")->where(['order_number'=>$out_trade_no])->first();
@@ -75,8 +81,11 @@ class SuccessController extends Controller
         $data['goods_id'] = $goods_id;
         $data['u_id'] = $u_id;
         $data['times_id'] = $times_id;
-        $data['code'] = 10000016;
+//        $data['code'] = 10000016;
+        $mycode = new CountController();
+        $data['code'] = $mycode->addMyCode($goods_id,$times_id);
         $data['buy_time'] = time();
+//        var_dump($data);die;
         $id = DB::table('goods_code')->insertGetId($data);
         return $id;
     }
