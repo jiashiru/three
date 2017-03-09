@@ -304,9 +304,11 @@ class IndexController extends Controller
     //获取当前服务器时间，用户主页下面
     public function server_time()
     {
-        $data['h'] = date("H",time());
-        $data['i'] = date("i",time());
-        $data['s'] = date("s",time());
+        $data['h'] = date("H", time());
+        $data['i'] = date("i", time());
+        $data['s'] = date("s", time());
+
+
         return json_encode($data);
     }
 
