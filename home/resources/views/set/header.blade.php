@@ -26,59 +26,9 @@
     <!--头部-->
 
     <!--导航-->
-    <div class="p-center-nav clrfix">
-        <div class="banner-left"></div>
-        <div class="banner-middle clrfix">
-            <div class="nav-new">
-                <ul class="nav-menu">
-                    <li><a href="http://member.1yyg.com/Index.do" title="我的1元云购">我的1元云购</a><em class="z-my-1yyg u-personal"></em></li>
-
-                    <li class="curr" id="li_accset"><a href="http://member.1yyg.com/MemberModify.do" title="账号设置">账号设置<b><s></s></b></a><em class="z-account-settings u-personal"></em>
-                        <div class="m-sub-menu">
-                            <span><a href="/setInfo">个人资料</a></span>
-                            <span><a href="/header">修改头像</a></span>
-                            <span><a href="/address">收货地址</a></span>
-                            <span><a href="security">账户安全</a></span>
-                            <b><s></s></b>
-                        </div>
-                    </li>
-                    <li><a target="_blank" href="http://u.1yyg.com/1016650713" title="个人主页">个人主页</a><em class="z-home-page u-personal"></em></li>
-                </ul>
-            </div>
-            <a href="http://www.1yyg.com" class="member-logo"></a>
-        </div>
-    </div>
+    @include("public/personNav")
     <!--右侧工具栏-->
-    <div id="divMemberRTool" class="g-narrow-con member-narrow" style="display:block">
-        <div class="m-narrow-list" style="height:232px;">
-            <ul>
-                <li class="f-customer-service" id="li_customer_service"><!--客服-->
-                    <div class="u-small-list">
-                        <a href="javascript:;" class="z-customer-off"><s></s><em class="orange">离<br>线<br>留<br>言</em></a><!-- z-customer-off 客服不在线时 -->
-                    </div>
-                </li>
-                <li class="f-member-cart"><!--购物车-->
-                    <div class="u-small-list">
-                        <a href="http://cart.1yyg.com/CartList.do" target="_blank">
-                            <em style="display:none;"></em>
-                            <s class="u-personal"></s>
-                            <cite style="display:none;">购<br>物<br>车</cite>
-                        </a>
-                    </div>
-                </li>
-                <li class="f-feedback"><!--意见反馈-->
-                    <div class="u-small-list">
-                        <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank"><i></i><cite>意见反馈</cite></a>
-                    </div>
-                </li>
-                <li class="f-back-to" style="display:none;"><!--Top-->
-                    <div class="u-small-list">
-                        <a href="javascript:;"><i></i><cite>置顶</cite></a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+    @include("public/right")
     <script>
         var _MemberUpdateCartNum = function () { };
         function GetJPData(domain, action, para, callfun) {

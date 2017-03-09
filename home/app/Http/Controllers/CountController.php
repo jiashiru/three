@@ -72,4 +72,44 @@ class CountController extends Controller
 	{
 		return DB::table("goods_code")->where(['goods_id'=>$goods_id, "code"=>$code, "times_id"=>$times_id])->update(['state'=>1]);
 	}
+
+    //返回云码
+    public function addMyCode($goods_id, $times_id)
+    {
+        $goods = $this->getShop($goods_id, $times_id);
+        $price = $goods['goods_price'];
+
+        $res = $this->checkNumRepeat($price, $goods_id, $times_id);
+
+        return $res;
+
+
+    }
+
+    //生成随机云码
+    public function getNum($price)
+    {
+        $num = rand(1, $price);
+
+        return 10000001+$num;
+    }
+
+    //检测重复性
+    public function checkNumRepeat($price, $goods_id, $times_id)
+    {
+        $num = $this->getNum($price);
+
+        $res = DB::table("goods_code")->where(['goods_id'=>$goods_id, 'times_id'=>$times_id, 'code'=>$num])->first();
+
+        if($res)
+        {
+
+            $this->checkNumRepeat($num, $goods_id, $times_id);
+        }
+        else
+        {
+            return $num;
+        }
+    }
+
 }	
