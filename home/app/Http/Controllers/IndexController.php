@@ -307,7 +307,8 @@ class IndexController extends Controller
         $data['h'] = date("H",time());
         $data['i'] = date("i",time());
         $data['s'] = date("s",time());
-        return $data;
+
+       return  json_encode($data);
     }
 
 
