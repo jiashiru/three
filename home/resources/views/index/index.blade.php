@@ -98,44 +98,27 @@
                     });
                 </script>
                 <script type="text/javascript"  src="style/js/jquery.flexisel.js"></script>
-
-
-
                 <!--广告位下方推荐-->
                 <div class="slide-comd">
+             <?php foreach ($remmend as $key => $v) {?>
 
-
+           
                     <div class="commodity">
                         <ul>
                             <li class="comm-info fl">
-                                <span><a href="http://www.1yyg.com/products/22592.html" target="_blank" title="苹果（Apple）iMac MK462CH/A 27英寸一体电脑">苹果（Apple）iMac MK462CH/A 27英寸一体电脑</a></span>
-                                <p class="gray">已参与<em class="orange">858</em>人次</p>
+                                <span><a href="indexShop?goods_id={{$v['goods_id']}}" target="_blank" title="{{$v['goods_name']}}{{$v['goods_desc']}}">{{$v['goods_name']}}{{$v['goods_desc']}}</a></span>
+                                <p class="gray">已参与<em class="orange">{{$v['num_price']}}</em>人次</p>
                             </li>
                             <li class="comm-pic fr">
-                                <a href="http://www.1yyg.com/products/22592.html" target="_blank" title="苹果（Apple）iMac MK462CH/A 27英寸一体电脑" rel="nofollow">
+                                <a href="indexShop?goods_id={{$v['goods_id']}}" target="_blank" title="{{$v['goods_name']}}{{$v['goods_desc']}}" rel="nofollow">
                                     <cite>
-                                        <img alt="苹果（Apple）iMac MK462CH/A 27英寸一体电脑" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160511140647469.jpg" border="0" width="100" height="100">
+                                        <img alt="{{$v['goods_name']}}{{$v['goods_desc']}}" src="{{$v['goods_picture']}}" border="0" width="100" height="100">
                                     </cite>
                                 </a>
                             </li>
                         </ul>
                     </div>
-
-                    <div class="commodity">
-                        <ul>
-                            <li class="comm-info fl">
-                                <span><a href="http://www.1yyg.com/products/23499.html" target="_blank" title="苹果（Apple）iPhone 6s 32G版 4G手机">苹果（Apple）iPhone 6s 32G版 4G手机</a></span>
-                                <p class="gray">已参与<em class="orange">15</em>人次</p>
-                            </li>
-                            <li class="comm-pic fr"><a href="http://www.1yyg.com/products/23499.html" target="_blank" title="苹果（Apple）iPhone 6s 32G版 4G手机" rel="nofollow">
-                                    <cite>
-                                        <img alt="苹果（Apple）iPhone 6s 32G版 4G手机" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160926172337982.jpg" border="0" width="100" height="100"></cite>
-
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
+                     <?    }?>   
                 </div>
             </div>
             <div class="home-event fr">
@@ -156,20 +139,14 @@
                 <div class="index_news clrfix">
                     <dl>
                         <dt><a href="http://group.1yyg.com/group-1.html" target="_blank" title="云购公告">云购公告</a></dt>
-
-
                         <dd class=""><b></b><a href="http://group.1yyg.com/topic-18176.html" target="_blank" title="辞旧迎新，鸡年假到！">辞旧迎新，鸡年假到！</a></dd>
-
                         <dd class=""><b></b><a href="http://group.1yyg.com/topic-16936.html" target="_blank" title="1元云购Galaxy Note7召回公告">1元云购Galaxy Note7召回公告</a></dd>
-
                         <dd class=""><b></b><a href="http://group.1yyg.com/topic-16696.html" target="_blank" title="1元云购致社会公开信">1元云购致社会公开信</a></dd>
-
                     </dl>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="g-wrap w1190">
         <!--最新揭晓-->
         <div class="g-title">
@@ -182,14 +159,11 @@
             </div>
         </div>
         <div class="g-list clrfix">
-
             <ul id="ul_Lottery">
-
                 <?php foreach($new_end as $k=>$v){ ?>
-
                 <li >
                     <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10159769.html" target="_blank"
+                        <dt><a href="indexShop?goods_id={{$v['goods_id']}}" target="_blank"
                                title="{{$v['keywords']}} {{$v['goods_name']}}" rel="nofollow">
                                 <img alt="(第qwe云){{$v['keywords']}} {{$v['goods_name']}}"
                                      src="{{$v['goods_picture']}}" />
@@ -199,7 +173,7 @@
                             <div class="f-gx-user">
                                 <span>恭喜</span>
                                 <span class="blue">
-                                    <a href="http://u.1yyg.com/1015197922" target="_blank" title="{{$v['nickname']}}" class="blue">
+                                    <a href="setMyself?u_id={{$v['u_id']}}" target="_blank" title="{{$v['nickname']}}" class="blue">
                                         {{$v['nickname']}}
                                     </a>
                                 </span>
@@ -207,7 +181,7 @@
                             </div>
                         </dd>
                         <dd class="u-name">
-                            <a href="http://www.1yyg.com/lottery/10159769.html" target="_blank"
+                            <a href="indexShop?goods_id={{$v['goods_id']}}" target="_blank"
                                 title="(第{{$v['times']}}云){{$v['keywords']}} {{$v['goods_name']}}">
                                 (第{{$v['times']}}云){{$v['keywords']}} {{$v['goods_name']}}
                             </a>
@@ -218,74 +192,6 @@
                 </li>
                 <?php } ?>
 
-                <li >
-                    <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10597250.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 128G版 4G手机" rel="nofollow">
-                                <img alt="苹果（Apple）iPhone 7 Plus 128G版 4G手机" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160908092215288.jpg" /></a></dt>
-                        <dd class="f-gx">
-                            <div class="f-gx-user">
-                                <span>恭喜</span>
-                                <span class="blue"><a href="http://u.1yyg.com/1016474878" target="_blank" title="座看云起水中中中" class="blue">座看云起水中中中</a></span>
-                                <span>获得</span>
-                            </div>
-                        </dd>
-                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10597250.html" target="_blank" title="(第131348云)苹果（Apple）iPhone 7 Plus 128G版 4G手机">(第131348云)苹果（Apple）iPhone 7 Plus 128G版 4G手机</a></dd>
-                        <dd class="gray">福建省南平市</dd>
-                    </dl>
-                    <cite></cite>
-                </li>
-
-                <li >
-                    <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10582257.html" target="_blank" title="金龙鱼 优质东北大米 5kg" rel="nofollow">
-                                <img alt="金龙鱼 优质东北大米 5kg" src="http://img.1yyg.net/GoodsPic/pic-200-200/20150708112557251.jpg" /></a></dt>
-                        <dd class="f-gx">
-                            <div class="f-gx-user">
-                                <span>恭喜</span>
-                                <span class="blue"><a href="http://u.1yyg.com/1008292755" target="_blank" title="为老婆赢宝马" class="blue">为老婆赢宝马</a></span>
-                                <span>获得</span>
-                            </div>
-                        </dd>
-                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10582257.html" target="_blank" title="(第268690云)金龙鱼 优质东北大米 5kg">(第268690云)金龙鱼 优质东北大米 5kg</a></dd>
-                        <dd class="gray">广东省汕头市</dd>
-                    </dl>
-                    <cite></cite>
-                </li>
-
-                <li >
-                    <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10232478.html" target="_blank" title="湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" rel="nofollow">
-                                <img alt="湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160518173845632.jpg" /></a></dt>
-                        <dd class="f-gx">
-                            <div class="f-gx-user">
-                                <span>恭喜</span>
-                                <span class="blue"><a href="http://u.1yyg.com/1009753741" target="_blank" title="希望在购" class="blue">希望在购</a></span>
-                                <span>获得</span>
-                            </div>
-                        </dd>
-                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10232478.html" target="_blank" title="(第19171云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口">(第19171云)湄南河（menam rlver）泰国豚谷拉隆海茉莉香米 3kg 泰国进口</a></dd>
-                        <dd class="gray">广东省广州市</dd>
-                    </dl>
-                    <cite></cite>
-                </li>
-
-                <li class="col5">
-                    <dl>
-                        <dt><a href="http://www.1yyg.com/lottery/10594574.html" target="_blank" title="苹果（Apple）iPhone 6s 32G版 4G手机" rel="nofollow">
-                                <img alt="苹果（Apple）iPhone 6s 32G版 4G手机" src="http://img.1yyg.net/GoodsPic/pic-200-200/20160926172337982.jpg" /></a></dt>
-                        <dd class="f-gx">
-                            <div class="f-gx-user">
-                                <span>恭喜</span>
-                                <span class="blue"><a href="http://u.1yyg.com/1012193428" target="_blank" title="这期不中再也不买Y" class="blue">这期不中再也不买Y</a></span>
-                                <span>获得</span>
-                            </div>
-                        </dd>
-                        <dd class="u-name"><a href="http://www.1yyg.com/lottery/10594574.html" target="_blank" title="(第196885云)苹果（Apple）iPhone 6s 32G版 4G手机">(第196885云)苹果（Apple）iPhone 6s 32G版 4G手机</a></dd>
-                        <dd class="gray">中国</dd>
-                    </dl>
-                    <cite></cite>
-                </li>
-
             </ul>
         </div>
 
@@ -293,7 +199,7 @@
         <div class="g-title">
             <h3 class="fl"><i></i>热门推荐</h3>
             <div class="m-other fr">
-                <a href="http://www.1yyg.com/list/m1.html?r=20" target="_blank" title="更多" class="u-more">更多</a>
+              <!--   <a href="http://www.1yyg.com/list/m1.html?r=20" target="_blank" title="更多" class="u-more">更多</a> -->
             </div>
         </div>
         <div class="g-hot clrfix">
@@ -351,35 +257,23 @@
                     <input name="hidBuyID" type="hidden" id="hidBuyID" value="923284212" />
                     <ul id="UserBuyNewList">
 
-                        <li>
-                            <span class="fl">
-                                <a href="http://u.1yyg.com/1014327156" target="_blank" rel="nofollow" title="将军来领取大奖了">
-                                    <img alt="" src="http://img.1yyg.net/UserFace/20170218211739482.jpg" />
-                                    <i class="transparent-png"></i>
-                                </a>
-                            </span>
-                            <p>
-                                <a href="http://u.1yyg.com/1014327156" target="_blank" title="将军来领取大奖了" class="blue">将军来领取大奖了</a><br />
-                                <a href="http://www.1yyg.com/product/10598403.html" target="_blank" title="平安银行 平安金福金条 Au9999 2g" class="u-ongoing">平安银行 平安金福金条 Au9999 2g</a>
-                            </p>
-                        </li>
 
                         <?php foreach($goods_code as $k=>$v){ ?>
 
                             <li>
                                 <span class="fl">
-                                    <a href="http://u.1yyg.com/1001693040" target="_blank" rel="nofollow" title="{{$v['nickname']}}">
+                                    <a href="setMyself?u_id={{$v['u_id']}}" target="_blank" rel="nofollow" title="{{$v['nickname']}}">
                                         <img alt="" src="{{$v['u_img']}}" />
                                         <i class="transparent-png"></i>
                                     </a>
                                 </span>
                                 <p>
-                                    <a href="http://u.1yyg.com/1001693040" target="_blank"
+                                    <a href="setMyself?u_id={{$v['u_id']}}" target="_blank"
                                        title="{{$v['nickname']}}" class="blue">
                                         {{$v['nickname']}}
                                     </a>
                                     <br />
-                                    <a href="http://www.1yyg.com/product/10333404.html" target="_blank"
+                                    <a href="indexShop?goods_id={{$v['goods_id']}}" target="_blank"
                                        title="{{$v['keywords']}} {{$v['goods_name']}}" class="u-ongoing">
                                         {{$v['keywords']}} {{$v['goods_name']}}
                                     </a>
@@ -389,7 +283,7 @@
 
                     </ul>
                 </div>
-                <div class="u-see100"><a href="http://www.1yyg.com/newestBuyRecords.html" target="_blank">查看最新100条记录</a></div>
+               <!--  <div class="u-see100"><a href="http://www.1yyg.com/newestBuyRecords.html" target="_blank">查看最新100条记录</a></div> -->
             </div>
         </div>
         <script>
@@ -401,20 +295,20 @@
                 $("#UserBuyNewList").children().first().before(new_content);
                 $("#UserBuyNewList").children().first().show(500);
 
-            }, 1000);
+            }, 2000);
         </script>
 
         <!--即将揭晓-->
         <div class="g-title m-sort">
             <h3 class="fl"><i></i>即将揭晓</h3>
             <div class="fr">
-                <a href="http://www.1yyg.com/list/i100.html" target="_blank" title="手机数码">手机数码</a>
-                <a href="http://www.1yyg.com/list/i106.html" target="_blank" title="电脑办公">电脑办公</a>
-                <a href="http://www.1yyg.com/list/i104.html" target="_blank" title="家用电器">家用电器</a>
-                <a href="http://www.1yyg.com/list/i2.html" target="_blank" title="化妆个护">化妆个护</a>
-                <a href="http://www.1yyg.com/list/i222.html" target="_blank" title="钟表首饰">钟表首饰</a>
-                <a href="http://www.1yyg.com/list/i312.html" target="_blank" title="其他商品">其他商品</a>
-                <a href="http://www.1yyg.com/list/m1.html" target="_blank" title="全部">全部</a>
+                <a href="indexClassify?type_id=1" target="_blank" title="手机数码">手机数码</a>
+                <a href="indexClassify?type_id=2" target="_blank" title="电脑办公">电脑办公</a>
+                <a href="indexClassify?type_id=3" target="_blank" title="家用电器">家用电器</a>
+                <a href="indexClassify?type_id=6" target="_blank" title="化妆个护">化妆个护</a>
+                <a href="indexClassify?type_id=4" target="_blank" title="钟表首饰">钟表首饰</a>
+                <a href="indexClassify?type_id=10" target="_blank" title="其他商品">其他商品</a>
+                <a href="indexClassify?type_id=" target="_blank" title="全部">全部</a>
             </div>
         </div>
         <div class="announced-soon clrfix" id="divSoonGoodsList">
@@ -465,7 +359,7 @@
         <div class="g-title">
             <h3 class="fl"><i></i>新品上架</h3>
             <div class="m-other fr">
-                <a href="http://www.1yyg.com/list/m1.html?r=50" target="_blank" title="更多" class="u-more">更多</a>
+             <!--    <a href="http://www.1yyg.com/list/m1.html?r=50" target="_blank" title="更多" class="u-more">更多</a> -->
             </div>
         </div>
         <div class="announced-soon clrfix announced-soon-new" id="divNewGoodsList">
@@ -580,7 +474,7 @@
                                 str+='<div class="g-hotL-con">';
                                 str+='<ul>';
                                 str+='<li class="g-hot-pic">';
-                                str+='<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23458.html">';
+                                str+='<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="indexShop?goods_id='+msg[i]['goods_id']+'">';
                                 str+='<img src='+msg[i]['goods_picture']+' alt='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' name="goodsImg">';
                                 str+='</a>';
                                 str+='</li>';
@@ -648,12 +542,14 @@
                                 str+='<div class="soon-list">';
                                 str+= '<ul>';
                                 str+='<li class="g-soon-pic">';
-                                str+= '<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23172.html">';
+                                str+= '<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="indexShop?goods_id='+msg[i]['goods_id']+'">';
                                 str+= '<img src='+msg[i]['goods_picture']+'  alt='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' name="goodsImg">';
                                 str+= '</a></li><li class="soon-list-name">';
+
                                 str+='<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="indexShop?goods_id='+msg[i]['goods_id']+'">'
                                         +'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;&nbsp;'+msg[i]['goods_name']+'</a></li>';
                                 str+='<li class="gray">价值：￥'+msg[i]['goods_price']+'.00</li>';
+
                                 str+= '<li class="g-progress"><dl class="m-progress">';
                                 str+= '<dd>';
                                 str+= '<span class="orange fl">';

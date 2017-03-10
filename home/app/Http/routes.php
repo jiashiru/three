@@ -99,6 +99,8 @@ Route::post("registerDo","RegisterController@registerDo");  //注册
 //主页
 
 Route::any("/","IndexController@index");//主页
+Route::any("indexRemmend","IndexController@remmend");//主页
+
 Route::any("indexClassify","IndexController@classify");//分类
 Route::any("indexShop","IndexController@shop");//商品详情
 Route::any("indexGoods_photo","IndexController@goods_photo");//商品详情
@@ -109,15 +111,12 @@ Route::any("indexHeader_sel","IndexController@header_sel");//header头里面的�
 Route::any("indexCarousel","IndexController@carousel");//轮播图
 Route::any("indexHot","IndexController@hot");//查询最热产品
 
-
 //中奖计算
 Route::any("codeGet","CountController@get");
 
 //我的一元云够
 //Route::any("userIndex",function(){ return view("user/index"); });
 //Route::any("userRecord",function(){ return view("user/record"); });//我的记录
-
-
 
 
 //buy
@@ -129,13 +128,8 @@ Route::any("buycarDel","BuycarController@buy_del");//删除
 Route::any("buycaraccount","BuycarController@account");//结算1
 Route::any("buycarOrder","PayController@order");//结算1
 
-
-
-
 //成功
 Route::any("success","SuccessController@index");//支付成功
-
-
 
 
 Route::any("successBuySuccess",function(){ return view("buycar/buy_success"); });
