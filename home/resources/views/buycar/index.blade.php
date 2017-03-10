@@ -24,11 +24,11 @@
     <div class="w1190 clrfix">
         <div class="g-special-head">
             <div class="fl logo-con">
-                <a href="http://www.1yyg.com/" class="f-logo"></a>
+                <a href="{{url('/')}}" class="f-logo"></a>
                 <span>购物车</span>
             </div>
             <div class="fr refresh-con">
-                <a href="http://www.1yyg.com/" title="继续云购" class="f-carryOn">继续云购</a>
+                <a href="{{url('/')}}" title="继续云购" class="f-carryOn">继续云购</a>
                 <s></s>
                 <a href="javascript:location.reload();"><b class="z-arrows"></b>刷新</a>
             </div>
@@ -48,8 +48,9 @@
             <div id="div_cartlist" class="m-cart-list gray9 clrfix">
                 <div class="g-list-title">
                     <span class="f-cart-comm">商品</span>
-                    <span class="f-cart-price">剩余人次</span>
-                    <span class="f-cart-plusLess">云购人次</span>
+                    <span></span>
+                    <!--<span class="f-cart-price">剩余人次</span>-->
+                    <span class="f-cart-plusLess" style="margin-left:200px;">云购人次</span>
                     <span class="f-cart-subtotal">小计</span>
                     <span class="f-cart-operate">操作</span>
                 </div>
@@ -69,24 +70,25 @@
                                     </a>
                                 </cite>
                                 <cite class="u-cart-pic">
-                                    <a href="http://www.1yyg.com/product/8629245.html" target="_blank">
+                                    <a href="{{url('/indexShop')}}?goods_id={{$v['goods_id']}}" target="_blank">
                                         <img src="{{$v['goods_picture']}}">
                                     </a>
                                 </cite>
                                 <cite class="u-cart-name">
                                     <span>
-                                    <a href="http://www.1yyg.com/product/8629245.html" target="_blank">
+                                    <a href="{{url('/indexShop')}}?goods_id={{$v['goods_id']}}" target="_blank">
                                         (第{{$v['times']}}云){{$v['goods_name']}}{{$v['goods_desc']}}
                                     </a>
                                     </span>
                                     价值：￥{{$v['goods_price']}}.00
                                 </cite>
                             </li>
-                            <li class="f-cart-price" class="over">{{$v['number']}}</li>
-                            <li class="f-cart-plusLess" style="margin-left: 50px; margin-right: -50px;"  limit="{{$v['limit_number']}}">
+                            <li></li>
+                            <!--<li class="f-cart-price" class="over">{{$v['number']}}</li>-->
+                            <li class="f-cart-plusLess" style="margin-left: 240px; margin-right: -50px;"  limit="{{$v['limit_number']}}">
                                 <input type="button" value="-" style="width: 30px;" class="jian" >
                                 <span>
-                                    <input type="text" mylimitsales="0" limitbuy="0" surplus="8739" id="num"
+                                    <input type="text" mylimitsales="0" limitbuy="0" surplus="8739" class="num"
                                            codeid="8629245" value="{{$v['code_number']}}" oldnum="1" maxlength="6" state="1"  name="num">
                                     <input type="button" value="+" style="width: 30px;" class="jia" >
                                 </span>
@@ -156,9 +158,9 @@
                     $(".jia").click(function(){
                         var the = $(this);
                         var num = $(this).prev().val()*1;
-                        var over = $(this).parent().parent().prev().html()*1;//剩余人数
+                        // var over = $(this).parent().parent().prev().html()*1;//剩余人数
                         var limit = $(this).parent().parent().attr('limit');
-                        if(num<over&&num<limit){
+                        // if(num<over&&num<limit){
                             var new_num = num*1+1;//购物车要更改的数量
                             var cart_id = the.parent().parent().parent().attr("cart_id");//购物车的ID
                              $.ajax({
@@ -179,7 +181,43 @@
                             {
                               price_jia();
                           }
-                        }
+                        // }
+                    });
+                    $(".num").blur(function(){
+                        var the = $(this);
+                            var new_num = $(this).val();//购物车要更改的数量
+                            var cart_id = the.parent().parent().parent().attr("cart_id");//购物车的ID
+                             $.ajax({
+                                type: "POST",
+                                url: "buycarCart_num",
+                                data: {cart_id:cart_id,code_number:new_num},
+                                success: function(msg)
+                                {
+                                    if(msg==1)
+                                    {
+                                       the.val(new_num);//人次
+                                        the.parent().parent().next().children().html(new_num);//小计
+                                        var status = the.parent().parent().parent().find(".che").prop("checked");
+                                        if(status)
+                                        {
+                                            var a = "";
+                                            var k =0;
+                                            var price = 0;
+                                            $("input:checked").each(function(i){
+                                                    a += ","+$(this).val();
+                                                    k = k*1 + 1;
+                                                    price = price*1 + $(this).parent().parent().parent().next().next().next().children().html()*1;
+                                            });
+                                            a = a.substr(1);
+                                            $("#buy").val(a);
+                                            $("#buy").attr("num",k);
+                                            $("#orange_num").html(k);//商品的数量
+                                            $("#price_all").html(price);//选择的商品的总价钱
+                                        }
+                                   }
+                                }
+                            });
+                           
                     });
                     function price_jia()
                     {
@@ -211,13 +249,13 @@
                                 <li>
                                     <input type='hidden' class='buycart_id' value="<?=$v['cart_id']?>">
                             <cite>
-                                <a href="http://www.1yyg.com/product/10333233.html" target="_blank">
+                                <a href="{{url('/')}}" target="_blank">
                                     <img src="<?= $v['goods_picture']?>">
                                 </a>
                             </cite>
                             <cite class="u-cart-name u-cart-padding">
                                 <span>
-                                <a class="gray9" href="http://www.1yyg.com/product/10333233.html" target="_blank">第（<?= $v['times'] ?>）云&nbsp;&nbsp;&nbsp;<?=$v['goods_name']?>&nbsp;&nbsp;&nbsp;<?= $v['goods_desc']?></a>
+                                <a class="gray9" href="{{url('/')}}" target="_blank">第（<?= $v['times'] ?>）云&nbsp;&nbsp;&nbsp;<?=$v['goods_name']?>&nbsp;&nbsp;&nbsp;<?= $v['goods_desc']?></a>
                                 </span>
                                 <em>已结束</em>
                             </cite>
@@ -306,15 +344,29 @@
 
                 //全选
                 $("#btnSelAll").on('click',function(){
-
                     if ($(":checkbox").prop("checked")==true) 
                     {
+                        
                         $(":checkbox").prop("checked",false);
                     }
                     else
                     {
                         $(":checkbox").prop("checked",true);
                     }
+                     var a = "";
+                    var k =0;
+                    var price = 0;
+                    $("input:checked").each(function(i){
+                        a += ","+$(this).val();
+                        k = k*1 + 1;
+                        price = price*1 + $(this).parent().parent().parent().next().next().next().children().html()*1;
+                    });
+                    a = a.substr(1)
+                    $("#buy").val(a);
+                    $("#buy").attr("num",k);
+                    $("#orange_num").html(k);//商品的数量
+                    $("#price_all").html(price);//选择的商品的总价钱
+                    
                 })
                
                 //删除

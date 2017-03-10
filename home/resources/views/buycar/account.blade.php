@@ -23,7 +23,7 @@
         <!--头部-->
         <div class="g-special-head">
             <div class="fl logo-con">
-                <a href="http://www.1yyg.com/" class="f-logo"></a>
+                <a href="{{url('/')}}" class="f-logo"></a>
                 <span>结算</span>
             </div>
             <div class="fr step-con">
@@ -53,14 +53,14 @@
                         <ul>
                             <li class="f-pay-comm">
                                 <cite class="u-pay-pic">
-                                    <a href="http://www.1yyg.com/product/8629228.html" target="_blank"
+                                    <a href="{{url('/indexShop')}}?goods_id={{$v['goods_id']}}" target="_blank"
                                        title="{{$v['goods_name']}}&nbsp;&nbsp;{{$v['goods_desc']}}">
                                         <img alt="" src="http://skin.1yyg.net/images/loding.gif"
                                              src2="{{$v['goods_picture']}}" />
                                     </a>
                                 </cite>
                                 <cite class="u-pay-name  ">
-                                    <a href="http://www.1yyg.com/product/8629228.html" target="_blank"
+                                    <a href="{{url('/indexShop')}}?goods_id={{$v['goods_id']}}" target="_blank"
                                        title="{{$v['goods_name']}}&nbsp;&nbsp;{{$v['goods_desc']}}">(
                                         第{{$v['times']}}云) &nbsp;&nbsp;{{$v['goods_name']}}&nbsp;&nbsp;{{$v['goods_desc']}}
                                     </a>
