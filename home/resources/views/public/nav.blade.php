@@ -14,7 +14,7 @@
                                     <p class='lvl1'>
                                         <span class='lvl1'>
                                             <i>/</i>
-                                            <a href='http://www.1yyg.com/list/n100.html' target='_blank' class='lvl1 none'>
+                                            <a href='indexClassify?type_id={{$v['type_id']}}' target='_blank' class='lvl1 none'>
                                                 <?php echo $v['type_name'] ?><b class='icons-sort'></b>
                                             </a>
                                         </span>
@@ -23,7 +23,7 @@
                                         <?php foreach($v['category'] as $key=>$val){?>
                                                 
                                             <span class='lvl2'>
-                                                <a href="" cate_id="<?php echo $val['cate_id'] ?>" target='_blank' class='lvl2 none'>
+                                                <a href="indexClassify?type_id={{$v['type_id']}}" cate_id="<?php echo $val['cate_id'] ?>" target='_blank' class='lvl2 none'>
                                                     <?php echo $val['cate_name'] ?><b class='icons-sort'></b>
                                                 </a>
                                             </span>
