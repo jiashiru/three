@@ -510,7 +510,7 @@
                 </div>
             </div>
         </div>
-
+        <input type="hidden" value="{{$u_id}}" id="u_id" />
         <script>
 
             $(function() {
@@ -586,7 +586,7 @@
                                 str+='</li>';
                                 str+='<li class="g-hot-name">';
                                 str+='<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="indexShop?goods_id='+msg[i]['goods_id']+'">'
-                                        +'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+'</a></li>';
+                                        +'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;&nbsp;'+msg[i]['goods_name']+'</a></li>';
                                 str+='<li class="gray">价值：￥'+msg[i]['goods_price']+'.00</li>';
                                 str+='<li class="g-progress">';
                                 str+='<dl class="m-progress">';
@@ -607,7 +607,10 @@
                                 str+='</dl>';
                                 str+='</li>';
                                 str+='<li>';
-                                str+='<a id="btnHotYgOnePay0" class="u-imm" title="立即1元云购" href="javascript:;">立即1元云购</a>';
+                                str+='<a id="btnYgOneBuy" class="u-imm" title="立即1元云购" href="javascript:;">立即1元云购</a>';
+                                str+='<a class="u-cart" href="javascript:;" title="加入到购物车" times_id="'+msg[i]['times']+'" goods_id="'+msg[i]['goods_id']+'" codeid="10822028">';
+                                str+='<img src="style/images/buy.png" alt="" style="width: 50px;height: 30px;" />';
+                                str+='</a>';
                                 str+='</li>';
                                 str+='</ul>';
                                 str+='</div>';
@@ -648,9 +651,9 @@
                                 str+= '<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23172.html">';
                                 str+= '<img src='+msg[i]['goods_picture']+'  alt='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' name="goodsImg">';
                                 str+= '</a></li><li class="soon-list-name">';
-                                str+= '<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="products/23172.html">';
-                                str+= ''+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+'';
-                                str+= '价值：￥'+msg[i]['goods_price']+'.00</li>';
+                                str+='<a title='+'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;('+msg[i]['brand_desc']+')&nbsp;'+msg[i]['goods_name']+' target="_blank" href="indexShop?goods_id='+msg[i]['goods_id']+'">'
+                                        +'(第'+msg[i]['times']+'云)&nbsp;'+msg[i]['brand_name']+'&nbsp;&nbsp;'+msg[i]['goods_name']+'</a></li>';
+                                str+='<li class="gray">价值：￥'+msg[i]['goods_price']+'.00</li>';
                                 str+= '<li class="g-progress"><dl class="m-progress">';
                                 str+= '<dd>';
                                 str+= '<span class="orange fl">';
@@ -660,7 +663,10 @@
                                 str+= '总需人次</span>';
                                 str+= '<span class="blue fr">';
                                 str+= '<em>'+msg[i]['number']+'</em>剩余</span></dd></dl></li>';
-                                str+= '<li><a id="btnLimitYgOnePay0" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>';
+                                str+= '<li><a id="btnYgOneBuy" class="u-now" title="立即1元云购" href="javascript:;">立即1元云购</a>';
+                                str+='<a class="u-cart" href="javascript:;" title="加入到购物车" times_id="'+msg[i]['times']+'" goods_id="'+msg[i]['goods_id']+'" codeid="10822028">';
+                                str+='<img src="style/images/buy.png" alt="" style="width: 50px;height: 30px;" />';
+                                str+='</a>';
                                 str+='</li>';
                                 str+='</ul>';
                                 str+= '</div>';
@@ -673,6 +679,84 @@
                     }
                 });
             }
+        </script>
+        <script>
+            //加入购物车
+            $("#loadingPicBlock").delegate(".u-cart","click",function(){
+//            $(".u-cart").click(function(){
+                var u_id = $("#u_id").val();
+                if(u_id != 0){
+                    var times_id = $(this).attr("times_id");
+                    var goods_id = $(this).attr("goods_id");
+
+                    $.ajax({
+                        type: "POST",
+                        url: "buycarAdd",
+                        data: {times_id:times_id,goods_id:goods_id,u_id:u_id,code_number:1},
+                        success: function(msg){
+                            if(msg){
+//                                alert( "添加购物车成功 ");
+                                var res = confirm("添加购物车成功,是否前去购物车");
+                                if(res){
+                                    window.location="buycarIndex";
+                                }
+                            }
+                        }
+                    });
+                }else{
+                    alert("请先登陆！")
+                }
+
+            });
+
+            //直接到结算页面
+//            $(".u-now").click(function(){
+            $("#loadingPicBlock").delegate(".u-imm","click",function(){
+                var u_id = $("#u_id").val();
+                if(u_id != 0) {
+                    var times_id = $(this).next().attr("times_id");
+                    var goods_id = $(this).next().attr("goods_id");
+                    $.ajax({
+                        type: "POST",
+                        url: "buycarAdd",
+                        data: {times_id:times_id,goods_id:goods_id,u_id:u_id,code_number:1},
+                        success: function(msg){
+//                            alert(msg)
+                            if(msg){
+                                window.location="buycaraccount?id_all="+msg;
+                            }
+                        }
+                    });
+                }else{
+                    alert("请先登陆！")
+                }
+            });
+            $("#loadingPicBlock").delegate(".u-now","click",function(){
+                var u_id = $("#u_id").val();
+                if(u_id != 0) {
+                    var times_id = $(this).next().attr("times_id");
+                    var goods_id = $(this).next().attr("goods_id");
+                    $.ajax({
+                        type: "POST",
+                        url: "buycarAdd",
+                        data: {times_id:times_id,goods_id:goods_id,u_id:u_id,code_number:1},
+                        success: function(msg){
+//                            alert(msg)
+                            if(msg){
+                                window.location="buycaraccount?id_all="+msg;
+                            }
+                        }
+                    });
+                }else{
+                    alert("请先登陆！")
+                }
+            });
+            $("#btnGoPay").click(function(){
+                var id = $("#buy").val();
+                if(id != ""){
+                    $("#buycar").submit();
+                }
+            });
         </script>
     </div>
 

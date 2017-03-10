@@ -37,9 +37,7 @@
 <input name="hidLimitBuy" type="hidden" id="hidLimitBuy" value="0" />
 <input name="hidSnImg" type="hidden" id="hidSnImg" value="4D661CAB8CC1EA57926C700FF19CFE81" />
 <!--当前位置-->
-<div class="Current_nav">
-    当前位置：<a href="/">首页</a> <span>&gt;</span> <a href="/list/m1.html">所有商品</a> <span>&gt;</span> <a href="/list/i106.html">电脑办公</a> <span>&gt;</span> <a href="/list/i112.html">电脑整机</a> <span>&gt;</span> <a href="/list/i160.html">台式机</a> <span>&gt;</span> 商品详情
-</div>
+
 <div class="ng-wrap">
     <div id="ng_pt_line" class="ng-pt-line"></div>
     <div id="divMain" class="ng-main-wrapper">

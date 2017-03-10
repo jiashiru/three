@@ -9,13 +9,18 @@
             <li class="f-gap" style="display:none;"><s></s></li>
             <li id="liCollect">
                 <div class="u-menu-hd">
-                    <a id="btnTFavorite" href="javascript:;" title="收藏">收藏</a>
+                    <a id="collect" href="javascript:;" title="收藏本网页">收藏本网页</a>
                 </div>
+                <script>
+                    $("#collect").click(function(){
+                        alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl + D进行添加！");
+                    });
+                </script>
             </li>
             <li class="f-gap" style="display: none;"><s></s></li>
             <li class="f-gap" style="display: none;"><s></s></li>
             <li id="liCCTV" style="display: none;">
-                <a href="http://www.1yyg.com/url.html?t=8" target="_blank" class="cctv-icon" title="央视网">
+                <a href="http://search.cctv.com/search.php?qtext=1%E5%85%83%E4%BA%91%E8%B4%AD&type=web" target="_blank" class="cctv-icon" title="央视网">
                     <img src="style/images/cctv-icon.jpg" alt="央视网" width="80" height="35" class="cctv-icon-img">
                     <span class="cctv-icon-txt">广告合作伙伴</span>
                 </a>
@@ -97,21 +102,22 @@
                 </div>
             </li>
             <li class="f-gap"><s></s></li>
-            <li>
-                <div class="u-menu-hd">
-                    <a href="http://help.1yyg.com/" title="帮助">帮助</a>
-                </div>
-            </li>
-            <li class="f-gap"><s></s></li>
-            <li>
-                <div class="u-menu-hd">
-                    <a href="http://help.1yyg.com/htm-contactus.html" title="投诉">投诉</a>
-                </div>
-            </li>
+            {{--<li>--}}
+                {{--<div class="u-menu-hd">--}}
+                    {{--<a href="http://help.1yyg.com/" title="帮助">帮助</a>--}}
+                {{--</div>--}}
+            {{--</li>--}}
+            {{--<li class="f-gap"><s></s></li>--}}
+            {{--<li>--}}
+                {{--<div class="u-menu-hd">--}}
+                    {{--<a href="http://help.1yyg.com/htm-contactus.html" title="投诉">投诉</a>--}}
+                {{--</div>--}}
+            {{--</li>--}}
             <li class="f-gap"><s></s></li>
             <li class="f-zxkf">
                 <div class="u-menu-hd">
-                    <a id="btnTopQQ" href="javascript:;" title="在线客服" class="u-service-off u-service"><i></i>在线客服</a>
+                    <a id="" href="javascript:;" title="在线客服" class="u-service-off u-service"><i></i>在线客服</a>
+                    {{--<a id="btnTopQQ" href="javascript:;" title="在线客服" class="u-service-off u-service"><i></i>在线客服</a>--}}
                 </div>
             </li>
         </ul>

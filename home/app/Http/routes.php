@@ -103,6 +103,7 @@ Route::any("indexClassify","IndexController@classify");//分类
 Route::any("indexShop","IndexController@shop");//商品详情
 Route::any("indexGoods_photo","IndexController@goods_photo");//商品详情
 Route::any("indexTime","IndexController@server_time");//获取当前服务器时间，用户主页下面
+Route::any("indexHeader_sel","IndexController@header_sel");//header头里面的查询
 
 
 Route::any("indexCarousel","IndexController@carousel");//轮播图
