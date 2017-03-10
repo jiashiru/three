@@ -534,13 +534,11 @@ class SetController extends Controller
 //        $user = "18840825602";
 //        $user = DB::table('user')->where(['tel'=>$user])->orwhere(['email'=>$user])->first();
 //        $id = $user['u_id'];
-        $id = $_SESSION['u_id'];
+        $id = Input::get('u_id');
 
         //用  用户ID 查询  user_information 表
         $user_info = DB::table("user_information")->where(['u_id'=>$id])->first();
-
         $goods = $this->time_record($id);
-
         return view("set/myself",[
             "user_info"=>$user_info,
             "goods"=>$goods,
@@ -553,7 +551,7 @@ class SetController extends Controller
      * 传入用户ID
      * @return array() //云购记录
      */
-    public function time_record($u_id=6)
+    public function time_record($u_id)
     {
         //查询该用户的记录
         $goods_code = DB::table("goods_code")->where(['u_id'=>$u_id])->get();

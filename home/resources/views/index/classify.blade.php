@@ -121,7 +121,7 @@
                         <li class="<?php if($data['type_id'] == 'all') echo 'current'; ?>"><a class="type" href="indexClassify?type_id=0">全部分类</a></li>
                         <?php foreach($goods_type as $k=>$v){ ?>
                             <li class="<?php if($data['type_id'] == $v['type_id']) echo 'current'; ?>">
-        <a class="type" href="indexClassify?order={{$data['order']}}&&type_id={{$v['type_id']}}">{{$v['type_name']}}</a>
+                                <a class="type" href="indexClassify?order={{$data['order']}}&&type_id={{$v['type_id']}}">{{$v['type_name']}}</a>
                             </li>
                         <?php } ?>
 

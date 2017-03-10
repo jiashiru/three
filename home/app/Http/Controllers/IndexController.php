@@ -27,18 +27,34 @@ class IndexController extends Controller
         $time = $this->server_time();
         //获取最新 揭晓
         $new_end = $this->newest();
-
         //正在云购
         $goods_code = $this->code();
-
-
+        //广告下的推荐
+        $remmend = $this->remmend();
+   
         return view("index/index",[
             'goods_type'=>$goods_type,//分类表 与 类型表
             'time'=>$time,//分类表 与 类型表
             'new_end'=>$new_end,//获取最新 揭晓
             'goods_code'=>$goods_code,//获取最新 揭晓
-
+            'remmend'=>$remmend
         ]);
+    }
+    //广告下方的推荐（最好）
+    public function remmend()
+    {
+       $remmend = DB::table('goods')->where(['is_best'=>1])->limit(2)->get();
+       foreach ($remmend as $key => $v) 
+       {
+           $goods_id[] = $v['goods_id'];
+       }
+
+       $goods_times = DB::table('goods_times')->where(['state'=>1])->whereIn('goods_id',$goods_id)->get();
+       foreach ($remmend as $key => $v) 
+       {
+           $remmend[$key]['num_price'] = $v['goods_price']-$goods_times[$key]['number'];
+       }
+       return $remmend;
     }
     //获取正在云购的信息
     public function code()
