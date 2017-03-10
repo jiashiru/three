@@ -1,11 +1,13 @@
 <div class="g-header">
     <div class="w1190">
-        <div id="topLogoAd" class="logo_1yyg fl">
-            <a href="http://localhost:90/13/yyyg/three/home/public/" class="logo transparent-png"></a>
+        <div id="" class="logo_1yyg fl">
+            <a href="/" class="" style="padding-left: 50px; margin-top: 20px;display: block;">
+                <img src="style/images/logo.png" alt="logo">
+            </a>
         </div>
         <div class="search_cart_wrap fr">
             <div class="number">
-                <a href="http://www.1yyg.com/HistoryBuyRecords.html" target="_blank">
+                <a href="/" target="_blank">
                     <ul id="ulHTotalBuy">
                         <li class="nobor gray6">累计参与</li>
                         <li class="num"><cite><em>0</em></cite><i></i></li>
@@ -27,18 +29,36 @@
             </div>
             <div class="search">
                 <div class="form">
-                    <input id="txtHSearch" type="text" value="输入“汽车”试试"/>
+                    <input id="txtHSearch" type="text" value="" placeholder="输入‘汽车’试试"  />
                      <span>
-                         <a href="http://www.1yyg.com/search/?q=%E6%B1%BD%E8%BD%A6" target="_blank" title="汽车">汽车</a>
-                         <a href="http://www.1yyg.com/search/?q=%E8%8B%B9%E6%9E%9C" target="_blank" title="苹果">苹果</a>
-                         <a href="http://www.1yyg.com/search/?q=%E5%B0%8F%E7%B1%B3" target="_blank" title="小米">小米</a>
+                         <a href="indexClassify?type_id=1" target="_blank" title="手机">手机</a>
+                         <a href="indexClassify?type_id=2" target="_blank" title="电脑">电脑</a>
+                         <a href="indexClassify?type_id=4" target="_blank" title="首饰">首饰</a>
                      </span>
                 </div>
-                <a id="btnHSearch" href="javascript:;" class="seaIcon"><i></i></a>
+                <a id="sele" href="javascript:;" class="seaIcon"><i></i></a>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $("#sele").click(function(){
+        var content = $("#txtHSearch").val();
+        if(content == "输入“汽车”试试"){
+            alert("请输入要查询的字");
+        }else{
+            $.ajax({
+                type: "POST",
+                url: "indexHeader_sel",
+                data: {content:content},
+                success: function(msg){
+                    window.location='indexClassify/?type_id='+msg;
+                }
+            });
+        }
+    });
+</script>
 
 
 

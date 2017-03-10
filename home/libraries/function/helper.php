@@ -61,3 +61,11 @@ function pay_url($order_sn,$total_price)
  
   return $pay_url;
 }
+
+//查询导航
+function sel_nav()
+{
+    $nav = DB::table("nav")->get();
+
+    return $nav;
+}

@@ -190,7 +190,7 @@
             <a href="http://help.1yyg.com/htm-jobs.html" target="_blank" title="加入云购">加入云购</a><s></s>
             <a href="http://help.1yyg.com/htm-contactus.html" target="_blank" title="联系我们">联系我们</a>
         </div>
-        <div class="g-copyright">Copyright &copy; 2011 - 2017, 版权所有 1yyg.com 粤ICP备09213115号-1</div>
+        <div class="g-copyright">Copyright &copy; 2011 - 2027, 版权所有所有人</div>
         <div class="g-authentication">
             <a href="http://www.1yyg.com/url.html?t=7" target="_blank" class="fi_ectrustchina"></a>
             <a href="http://www.1yyg.com/url.html?t=1" target="_blank" class="fi_315online"></a>
@@ -214,7 +214,9 @@
                 <ul>
                     <li class="f-shopping-cart">
                         <div class="u-float-list">
+
                             <a href="buycarIndex" target="_blank">
+
                                 <s class="z-clump-icon"></s>
                                 <?php
                                

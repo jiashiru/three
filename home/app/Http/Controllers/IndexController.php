@@ -21,6 +21,12 @@ class IndexController extends Controller
     //主页
     public function index()
     {
+        if(empty($_SESSION['u_id'])){
+            $u_id = 0;
+        }else{
+            $u_id = $_SESSION['u_id'];
+        }
+
         //查询商品的 分类表 与 类型表 并且处理数组
         $goods_type = $this->type_and_category();
         //获取当前服务器时间，用户主页下面
@@ -37,7 +43,12 @@ class IndexController extends Controller
             'time'=>$time,//分类表 与 类型表
             'new_end'=>$new_end,//获取最新 揭晓
             'goods_code'=>$goods_code,//获取最新 揭晓
+
+            'u_id'=>$u_id,//用户ID
+
+
             'remmend'=>$remmend
+
         ]);
     }
     //广告下方的推荐（最好）
@@ -302,13 +313,17 @@ class IndexController extends Controller
         //查询本商品的信息
         $goods = DB::table("goods")->where(['goods_id'=>$goods_id])->first();
         $content = DB::table('goods_content')->where(['goods_id'=>$goods_id])->first();
+        $goods_type = $this->type_and_category();//全部商品分类
+        $nav = sel_nav();
         return view("index/shop",[
-                        'goods'=>$goods,
-                        'content'=>$content['goods_content'],
-                        'times'=>$times_all,
-                        'times_ing'=>$times_ing,
-                        'session_u'=>$u_id
-                    ]);
+            'nav'=>$nav,
+            'goods_type'=>$goods_type,
+            'goods'=>$goods,
+            'content'=>$content['goods_content'],
+            'times'=>$times_all,
+            'times_ing'=>$times_ing,
+            'session_u'=>$u_id
+        ]);
     }
     //查询单个商品的 商品图片
     public function goods_photo()
@@ -329,21 +344,27 @@ class IndexController extends Controller
     }
 
 
+
     //分类
     public $array;
     public function classify()
     {
+
         if(empty($_SESSION['u_id'])){
             $u_id = 0;
         }else{
             $u_id = $_SESSION['u_id'];
         }
 
+        //查询导航
+        $nav = sel_nav();
+
         $data['order'] = empty(Input::get("order")) ? "default" : Input::get("order");
         $data['type_id'] = empty(Input::get("type_id")) ? "all" : Input::get("type_id");
 
         //查询分类
         $goods_type = DB::table("goods_type")->get();
+        $goods_type = $this->type_and_category();
 
         //查询品牌
         $goods_brand = DB::table("goods_brand")->get();
@@ -360,6 +381,7 @@ class IndexController extends Controller
 
 
         return view("index/classify",[
+            'nav'=>$nav,//查询导航
             'goods_type'=>$goods_type,//查询出所有分类
             'data'=>$data,//根据条件排序
             'goods'=>$goods,//查询的商品
@@ -419,6 +441,18 @@ class IndexController extends Controller
 
 
         return $goods;
+    }
+
+    //header头里面的查询
+    public function header_sel()
+    {
+        $data['type_name'] = Input::get('content');
+        $arr = DB::table('goods_type')->where($data)->first();
+        if($arr){
+            return $arr['type_id'];
+        }else{
+            return "all";
+        }
     }
 
 
