@@ -43,7 +43,7 @@
         </div>
         <div class="nav-main fl">
             <ul>
-                <li class="f-nav-home"><a href="http://www.1yyg.com/">首页</a></li>
+                <li class="f-nav-home"><a href="">首页</a></li>
                 <li class="f-nav-lottery"><a href="http://www.1yyg.com/lottery/m1.html">最新揭晓</a></li>
                 <li class="f-nav-limit"><span class="nav-new transparent-png"></span><a href="http://www.1yyg.com/limitBuy/m1.html">限购专区</a></li>
                 <li class="f-nav-share"><a href="http://post.1yyg.com/">晒单分享</a></li>
@@ -53,7 +53,7 @@
         </div>
         <div id="divHCart" class="nav-cart fr">
             <div class="nav-cart-btn">
-                <a href="http://cart.1yyg.com/CartList.do" target="_blank"><i class="f-cart-icon"></i>购物车<span id="spHCart"></span></a>
+                <a href="buycarIndex" target="_blank"><i class="f-cart-icon"></i>购物车<span id="spHCart"></span></a>
             </div>
             <div class="nav-cart-con">
                 <div class="m-loading-2014"><em></em></div>

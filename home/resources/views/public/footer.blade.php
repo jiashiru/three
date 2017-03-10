@@ -214,9 +214,24 @@
                 <ul>
                     <li class="f-shopping-cart">
                         <div class="u-float-list">
-                            <a href="http://cart.1yyg.com/CartList.do" target="_blank">
+                            <a href="buycarIndex" target="_blank">
                                 <s class="z-clump-icon"></s>
-                                <em>0</em>
+                                <?php
+                               
+                                if (isset($_SESSION['u_id'])) 
+                                {
+                                    $cart = DB::table('cart')->where(['u_id'=>$_SESSION['u_id']])->get();
+                                    $count = count($cart);
+                                     
+                                      echo  "<span>(".$count.")</span>";
+                                     
+                                }
+                                else
+                                {
+                                     echo  "<span>(0)</span>";
+                                }
+                                
+                                ?>
                                 <span>购物车</span>
                             </a>
                             <b class="curr-arrow"></b>

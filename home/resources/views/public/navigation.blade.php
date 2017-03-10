@@ -20,7 +20,7 @@
         </div>
         <div id="divHCart" class="nav-cart fr">
             <div class="nav-cart-btn">
-                <a href="http://cart.1yyg.com/CartList.do" target="_blank"><i class="f-cart-icon"></i>购物车<span id="spHCart"></span></a>
+                <a href="buycarIndex" target="_blank"><i class="f-cart-icon"></i>购物车<span id="spHCart"></span></a>
             </div>
             <div class="nav-cart-con">
                 <div class="m-loading-2014"><em></em></div>

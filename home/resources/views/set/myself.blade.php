@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
-        贾大大_个人主页_1元云购
+       {{$user_info['nickname']}}_个人主页_1元云购
     </title><meta name="description" content="1元云购是一种全新的购物方式，是时尚、潮流的风向标，能满足个性、年轻消费者的购物需求，由深圳市一元云购网络科技有限公司注入巨资打造的新型购物网。" /><meta name="keywords" content="1元云购,1元购iphone,1元购电脑,1元购笔记本,1元购物,云购,云购网" /><link rel="stylesheet" type="text/css" href="http://skin.1yyg.net/css/header.css?v=170215" />
     <!--[if IE 6]>
     <script type="text/javascript" src="http://skin.1yyg.net/js/iepng.js"></script>
@@ -149,108 +147,8 @@
                                                 </div>
                                                 <div class="clear"></div>
                                             </li>
-
                                         <?php } ?>
-                                        <li>
-                                            <a class="g-pic" href="http://www.1yyg.com/product/10585720.html" target="_blank">
-                                                <img width="100" height="100" src="http://img.1yyg.net/GoodsPic/pic-200-200/20150324160104108.jpg" alt="">
-                                                <span class="g-bg g-end"></span>
-                                                <span class="g-txt">已揭晓</span>
-                                            </a>
-                                            <div class="g-info">
-                                                <h2 class="g-title">
-                                                    <a href="http://www.1yyg.com/product/10585720.html" target="_blank" rel="nofollow">(第40466云)云南白药 牙膏 180g（留兰香型）</a>
-                                                </h2>
-                                                <p class="g-price">价值：￥39.00</p>
-                                                <div class="g-older">
-                                                    <p>
-                                                        获得者：
-                                                        <a target="_blank" href="http://u.1yyg.com/1012636424">艹啃着馒头支持云</a>
-                                                    </p>
-                                                    <p>揭晓时间：2017-02-22 08:59:36</p>
-                                                </div>
-                                            </div>
-                                            <div class="g-total">
-                                                参与
-                                                <span class="orange">1</span>
-                                                人次
-                                            </div>
-                                            <a class="g-see" href="http://www.1yyg.com/lottery/10585720.html" target="_blank">查看详情</a>
-                                            <i class="single">
-                                                <i class="single"></i>
-                                            </i>
-                                            <div class="g-time">
-                                                <div class="aricle">
-                                                    <div class="cir"></div>
-                                                </div>
-                                                <div class="time-str">
-                                                    <div class="str">02月22日 08:58</div>
-                                                </div>
-                                            </div>
-                                            <div class="clear"></div>
-                                        </li>
-
-                                        <li>
-                                            <a class="g-pic" href="http://www.1yyg.com/product/10332343.html" target="_blank">
-                                                <img width="100" height="100" src="http://img.1yyg.net/GoodsPic/pic-200-200/20170122161417912.jpg" alt="">
-                                                <span class="g-bg"></span>
-<span class="g-txt">
-进行中
-<span class="dotting"></span>
-</span>
-                                            </a>
-                                            <div class="g-info">
-                                                <h2 class="g-title">
-                                                    <a href="http://www.1yyg.com/product/10332343.html" rel="nofollow" target="_blank">(第26云)2016款 进口宝马（BMW）5系 528i 中东版 四门轿车</a>
-                                                </h2>
-                                                <p class="g-price">价值：￥539888.00</p>
-                                                <div class="g-progress">
-                                                    <dl class="m-progress">
-                                                        <dt title="已完成43.01%">
-                                                            <b style="width: 120.43275642355451px">
-                                                                <i class="cur"></i>
-                                                            </b>
-                                                        </dt>
-                                                        <dd>
-<span class="orange fl">
-<em>232215</em>
-已参与
-</span>
-<span class="gray6 fl">
-<em>539888</em>
-总需人次
-</span>
-<span class="blue fr">
-<em>307673</em>
-剩余
-</span>
-                                                        </dd>
-                                                    </dl>
-                                                </div>
-                                            </div>
-                                            <div class="g-total">
-                                                参与
-                                                <span class="orange">1</span>
-                                                人次
-                                            </div>
-                                            <a class="g-buy" href="http://www.1yyg.com/product/10332343.html" target="_blank" rel="nofollow">继续云购</a>
-                                            <i class="single">
-                                                <i class="single"></i>
-                                            </i>
-                                            <div class="g-time">
-                                                <div class="aricle">
-                                                    <div class="cir"></div>
-                                                </div>
-                                                <div class="time-str">
-                                                    <div class="str">刚刚</div>
-                                                </div>
-                                            </div>
-                                            <div class="clear"></div>
-                                        </li>
-
-
                                     </ul>
-
                                 </div>
                             </div>
                         </div>
@@ -279,9 +177,6 @@
                     $("#"+name).siblings().hide();
                 });
             </script>
-
-
-
             <div class="right-sides">
                 <div class="con">
                     <p class="title">近期访客</p>
