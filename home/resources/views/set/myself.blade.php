@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
-        贾大大_个人主页_1元云购
+        {{$user_info['nickname']}}_个人主页_1元云购
     </title><meta name="description" content="1元云购是一种全新的购物方式，是时尚、潮流的风向标，能满足个性、年轻消费者的购物需求，由深圳市一元云购网络科技有限公司注入巨资打造的新型购物网。" /><meta name="keywords" content="1元云购,1元购iphone,1元购电脑,1元购笔记本,1元购物,云购,云购网" /><link rel="stylesheet" type="text/css" href="http://skin.1yyg.net/css/header.css?v=170215" />
     <!--[if IE 6]>
     <script type="text/javascript" src="http://skin.1yyg.net/js/iepng.js"></script>
@@ -97,7 +97,7 @@
 
 
                                             <li>
-                                                <a class="g-pic" href="http://www.1yyg.com/product/10585720.html" target="_blank">
+                                                <a class="g-pic" href="{{url('indexShop')}}?goods_id={{$v['goods_id']}}" target="_blank">
                                                     <img width="100" height="100" src="http://img.1yyg.net/GoodsPic/pic-200-200/20150324160104108.jpg" alt="">
                                                     <span class="g-bg g-end"></span>
                                                     <span class="g-txt">
@@ -112,7 +112,7 @@
                                                 </a>
                                                 <div class="g-info">
                                                     <h2 class="g-title">
-                                                        <a href="http://www.1yyg.com/product/10585720.html" target="_blank" rel="nofollow">
+                                                        <a href="{{url('indexShop')}}?goods_id={{$v['goods_id']}}" target="_blank" rel="nofollow">
                                                             (第{{$v['goods']['times']}}云){{$v['goods']['brand_name']}} {{$v['goods']['goods_name']}}
                                                         </a>
                                                     </h2>
@@ -135,7 +135,7 @@
                                                     <span class="orange">1</span>
                                                     人次
                                                 </div>
-                                                <a class="g-see" href="http://www.1yyg.com/lottery/10585720.html" target="_blank">查看详情</a>
+                                                <a class="g-see" href="{{url('indexShop')}}?goods_id={{$v['goods_id']}}" target="_blank">查看详情</a>
                                                 <i class="single">
                                                     <i class="single"></i>
                                                 </i>

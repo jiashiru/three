@@ -336,8 +336,10 @@ class SetController extends Controller
     //验证码页面
     public function telCode()
     {
+
         //查询为手机绑定还是邮箱绑定
         $data = DB::table('user')->select('tel','email')->where('u_id',$_SESSION['u_id'])->first();
+
         if($data['tel']){
             //为手机绑定
             $tel = substr($data['tel'],0,4)."****".substr($data['tel'],9,2);
@@ -349,6 +351,7 @@ class SetController extends Controller
             $count = strpos($data['email'],'@');
 
             $email = substr($data['email'],1)."*".substr($data['email'],$count,$length);
+
 
             return view('set/telCode',['email'=>$email,'email_hide'=>$data['email']]);
         }
@@ -531,16 +534,22 @@ class SetController extends Controller
     //个人主页
     public function myself()
     {
+
 //        $user = "18840825602";
 //        $user = DB::table('user')->where(['tel'=>$user])->orwhere(['email'=>$user])->first();
 //        $id = $user['u_id'];
-        $id = $_SESSION['u_id'];
+//        $id = $_SESSION['u_id'];
+        if(isset($_GET['u_id'])){
+            $u_id = Input::get('u_id');
+        }else{
+            $u_id = $_SESSION['u_id'];
+        }
 
         //用  用户ID 查询  user_information 表
-        $user_info = DB::table("user_information")->where(['u_id'=>$id])->first();
+        $user_info = DB::table("user_information")->where(['u_id'=>$u_id])->first();
 
-        $goods = $this->time_record($id);
-
+        $goods = $this->time_record();
+//print_r($goods);die;
         return view("set/myself",[
             "user_info"=>$user_info,
             "goods"=>$goods,
@@ -553,11 +562,14 @@ class SetController extends Controller
      * 传入用户ID
      * @return array() //云购记录
      */
-    public function time_record($u_id=6)
+    public function time_record()
     {
+        $u_id = $_SESSION['u_id'];
+        $u_id = 6;
         //查询该用户的记录
-        $goods_code = DB::table("goods_code")->where(['u_id'=>$u_id])->get();
-
+//        $goods_code = DB::table("goods_code")->where(['u_id'=>$u_id])->get();
+        $goods_code = DB::table('goods_code')->select('*',DB::raw('COUNT(goods_id) as num'))->where(['u_id'=>$u_id])->groupBy('goods_id')->get();
+//print_r($goods_code);die;
         //通过记录查询商品表  查询云期表
         $goods_id_all = array();
         $goods_times_all = array();
@@ -601,7 +613,16 @@ class SetController extends Controller
                 }
             }
         }
-//print_r($goods_code);
+
+        //查询获奖者
+        foreach ($goods_code as $k=>$v) {
+            $get = DB::table('goods_code')->where(['goods_id'=>$v['goods_id'],'state'=>1])->first();
+            $get_user = DB::table('user_information')->where('u_id',$get['u_id'])->first();
+            $goods_code[$k]['get_user'] = $get_user['nickname'];
+        }
+
+
+//print_r($goods_code);die;
         return $goods_code;
 
 
