@@ -51,6 +51,7 @@ class IndexController extends Controller
 
         ]);
     }
+
     //广告下方的推荐（最好）
     public function remmend()
     {
@@ -67,6 +68,7 @@ class IndexController extends Controller
        }
        return $remmend;
     }
+
     //获取正在云购的信息
     public function code()
     {
@@ -100,6 +102,8 @@ class IndexController extends Controller
 
         return $goods_code;
     }
+
+
     //获取最新 揭晓
     public function newest()
     {
@@ -145,6 +149,8 @@ class IndexController extends Controller
 
         return $goods_code;
     }
+
+
     public function goods_mess($goods_id_all)
     {
         $goods = DB::table("goods")->wherein('goods_id',$goods_id_all)->get();
@@ -325,6 +331,7 @@ class IndexController extends Controller
             'session_u'=>$u_id
         ]);
     }
+
     //查询单个商品的 商品图片
     public function goods_photo()
     {
@@ -332,6 +339,7 @@ class IndexController extends Controller
         $goods_gallery = DB::table("goods_gallery")->where(['goods_id'=>$goods_id,'img_type'=>0])->get();
         echo json_encode($goods_gallery);
     }
+
     //获取当前服务器时间，用户主页下面
     public function server_time()
     {

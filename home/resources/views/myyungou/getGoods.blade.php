@@ -37,8 +37,8 @@
             <ul>
 
                 <li><a href="myIndex" title="首页">首页</a><b></b></li>
-                <li class="curr"><a href="myGoods" title="云购记录">云购记录</a><b></b></li>
-                <li><a href="{{url('getGoods')}}" title="获得的商品">获得的商品</a><b></b></li>
+                <li><a href="myGoods" title="云购记录">云购记录</a><b></b></li>
+                <li  class="curr"><a href="{{url('getGoods')}}" title="获得的商品">获得的商品</a><b></b></li>
                 {{--<li><a href="/PostSingleList.do" title="晒单管理">晒单管理</a><b></b></li>--}}
                 {{--<li><a href="/CollectList.do" title="我的关注">我的关注</a><b></b></li>--}}
 
@@ -54,7 +54,7 @@
 
         <div class="sidebar_main clrfix fr">
             <div class="g-purchase-title">
-                <span class="gray3">云购记录</span>
+                <span class="gray3">获得的商品</span>
             </div>
             <div class="g-screen-state clrfix">
                 <ul id="ul_state" class="a-screen fl">
@@ -79,7 +79,7 @@
                     </dt>
                     @if(!empty($goods))
                         @foreach($goods as $k=>$v)
-                    <dd class="has-announced">
+                            <dd class="has-announced">
                         <span class="u-commodity-pic">
                         <a href="{{url('indexShop')}}?goods_id={{$v['goods_id']}}" target="_blank">
                             <img src="http://img.1yyg.net/goodspic/pic-70-70/20170122161417912.jpg">
@@ -92,22 +92,22 @@
                             </h3>
                             <em>价值：￥{{sprintf('%.2f',$v['goods']['goods_price'])}}</em>
                             @if(!empty($v['get_user']))
-                            获得者：
-                            <a class="z-winner-gray" target="_blank" href="{{url('setMyself')}}?u_id={{$v['u_id']}}">{{$v['get_user']}}</a>
+                                获得者：
+                                <a class="z-winner-gray" target="_blank" href="{{url('setMyself')}}?u_id={{$v['u_id']}}">{{$v['get_user']}}</a>
                             @endif
                         </span>
                         <span class="u-select-con">
                             <a class="gray9" href="javascript:;">
                                 @if(empty($v['get_user']))
                                     未开奖
-                                    @else
+                                @else
                                     已揭晓
                                 @endif
                             </a>
                             <br>
                             {{--<a href="http://www.1yyg.com/product/10332346.html" target="_blank">--}}
-                                {{--第<em class="orange">29</em>云进行中--}}
-                                {{--<i class="dotting"></i>--}}
+                            {{--第<em class="orange">29</em>云进行中--}}
+                            {{--<i class="dotting"></i>--}}
                             {{--</a>--}}
                             <br>
 
@@ -120,9 +120,9 @@
 
                         </span>
 
-                    </dd>
+                            </dd>
                             <div id="{{$v['goods_id']}}" style="display: none">
-                               <span>本期云购码：</span><span id="span_{{$v['goods_id']}}"></span>
+                                <span>本期云购码：</span><span id="span_{{$v['goods_id']}}"></span>
                             </div>
                         @endforeach
                     @endif
@@ -130,21 +130,21 @@
 
             </div>
 
-<script>
-    $(function () {
-       $('#div_UserBuyList').delegate('#code','click', function () {
-           var goods_id = $(this).attr('goods_id');
-           var str = "";
-           $.get('detail',{goods_id:goods_id}, function (msg) {
-               $(msg).each(function (i,v) {
-                   str+= v.code+" ";
-               });
-               $('#span_'+goods_id).html(str);
-               $('#'+goods_id).attr('style','');
-           },'json');
-       });
-    });
-</script>
+            <script>
+                $(function () {
+                    $('#div_UserBuyList').delegate('#code','click', function () {
+                        var goods_id = $(this).attr('goods_id');
+                        var str = "";
+                        $.get('detail',{goods_id:goods_id}, function (msg) {
+                            $(msg).each(function (i,v) {
+                                str+= v.code+" ";
+                            });
+                            $('#span_'+goods_id).html(str);
+                            $('#'+goods_id).attr('style','');
+                        },'json');
+                    });
+                });
+            </script>
         </div>
     </div>
     <!--底部-->

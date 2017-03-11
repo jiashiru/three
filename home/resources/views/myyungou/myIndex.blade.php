@@ -44,7 +44,7 @@
 
                 <li class="curr z-first"><a href="myIndex" title="首页">首页</a><b></b></li>
                 <li><a href="myGoods" title="云购记录">云购记录</a><b></b></li>
-                <li><a href="myGoods" title="获得的商品">获得的商品</a><b></b></li>
+                <li><a href="{{url('getGoods')}}" title="获得的商品">获得的商品</a><b></b></li>
                 {{--<li><a href="/PostSingleList.do" title="晒单管理">晒单管理</a><b></b></li>--}}
                 {{--<li><a href="/CollectList.do" title="我的关注">我的关注</a><b></b></li>--}}
 
@@ -98,9 +98,9 @@
 
                                 <li class="z-binding">
                                     @if(empty($data1['tel']))
-                                    <a href="/security/index.do" class="u-personal"><b class="u-personal"></b>未绑定</a>
+                                        <a href="{{url('telCode')}}" class="u-personal"><b class="u-personal"></b>未绑定</a>
                                     @else
-                                     <a href="/security/index.do" class="u-personal current"><b class="u-personal"></b>已绑定</a>
+                                     <a href="{{url('telCode')}}" class="u-personal current"><b class="u-personal"></b>已绑定</a>
                                     @endif
                                 </li>
                             </ul>
@@ -109,7 +109,7 @@
                                 <span class="fl gray9">可用余额 : <b class="orange">￥0.00</b>
                                 </span>
                             <p class="fl">
-                                <a href="/UserRecharge.do" title="充值" class="z-recharge-btn">充值</a>
+                                <a href="{{url('userRechange')}}" title="充值" class="z-recharge-btn">充值</a>
                                 <a href="javascript:;" id="a_transaccount" title="转账" class="z-transfer-accounts">转账</a>
                             </p>
                         </div>
@@ -145,45 +145,7 @@
             <!--获得的商品列表-->
 
             <!--云购记录列表-->
-            <div id="g_buys_records" class="g-buys-records g-common-control  clrfix">
-                <div class="m-getGood-title clrfix">
-                    <a href="http://member.1yyg.com/UserBuyList.do" class="gray9">全部<em class="f-tran">&gt;</em></a>
-                    <b class="gray3">云购记录</b>
-                </div>
-                <div class="m-comm-scroll">
 
-                    <div id="div_UserBuyList" class="commodity-list clrfix">
-
-                        <div class="productsCon" idx="1">
-                            <div class="proList">
-                                <ul>
-                                    <li class="list-pic">
-                                        <a href="http://www.1yyg.com/product/10332343.html" target="_blank">
-                                            <img src="http://img.1yyg.net/goodspic/pic-200-200/20170122161417912.jpg">
-                                            <span class="g-bg"></span>
-                                            <span class="g-txt">已揭晓</span>
-                                        </a>
-                                    </li>
-                                    <li class="list-name">
-                                        <a href="http://www.1yyg.com/product/10332343.html" target="_blank">(第26云)2016款 进口宝马（BMW）5系 528i 中东版 四门轿车</a>
-                                    </li>
-                                    <li class="list-ing" style="">
-                                        <a href="http://www.1yyg.com/product/10332346.html" target="_blank">
-                                            第
-                                            <em class="orange">29</em>
-                                            云进行中…
-                                        </a>
-                                    </li>
-                                    <li class="list-join" codestate="3" codeid="10332346">
-                                        <a href="javascript:;">加入购物车</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
             <!--关注列表-->
             <div class="g-my-attention g-common-control clrfix" style="display: none;">
                 <div class="m-getGood-title clrfix">

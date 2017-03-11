@@ -143,7 +143,7 @@
 
                 <li><a href="myIndex" title="首页">首页</a><b></b></li>
                 <li><a href="myGoods" title="云购记录">云购记录</a><b></b></li>
-                <li><a href="myGoods" title="获得的商品">获得的商品</a><b></b></li>
+                <li><a href="{{url('getGoods')}}" title="获得的商品">获得的商品</a><b></b></li>
                 {{--<li><a href="/PostSingleList.do" title="晒单管理">晒单管理</a><b></b></li>--}}
                 {{--<li><a href="/CollectList.do" title="我的关注">我的关注</a><b></b></li>--}}
 
@@ -182,7 +182,7 @@
                                 75
                             </p>
                             <div class="g-options">
-                                <span class="gray9">100福分=1元<a href="http://help.1yyg.com/htm-userExperience.html" target="_blank" title="如何获得福分?" class="question u-personal"></a></span>
+                                <span class="gray9">100福分=1元<a href="javascript:;"  title="如何获得福分?" class="question u-personal"></a></span>
                             </div>
                         </li>
                         <li>
