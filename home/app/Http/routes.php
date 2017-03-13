@@ -103,6 +103,9 @@ Route::post("registerDo","RegisterController@registerDo");  //注册
 
 Route::any("/","IndexController@index");//主页
 Route::any("indexRemmend","IndexController@remmend");//主页
+Route::any("indexLimit","IndexController@limit");//限时抢购
+Route::any("indexNews","IndexController@news_shop");//限时抢购
+Route::any("indexUser","IndexController@user_shop");//云购圈
 
 Route::any("indexClassify","IndexController@classify");//分类
 Route::get("indexShop","IndexController@shop");//商品详情

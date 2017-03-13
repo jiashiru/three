@@ -44,7 +44,7 @@
         <div class="nav-main fl">
             <ul>
                 <?php foreach($nav as $k=>$v) { ?>
-                <li class="f-nav-home"><a href="/">{{$v['nav_name']}}</a></li>
+                <li class="f-nav-home"><a href="{{$v['nav_url']}}">{{$v['nav_name']}}</a></li>
                 <?php } ?>
             </ul>
         </div>

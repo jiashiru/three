@@ -44,9 +44,9 @@
         <div class="nav-main fl">
             <ul>
                 <li class="f-nav-home"><a href="">首页</a></li>
-                <li class="f-nav-lottery"><a href="http://www.1yyg.com/lottery/m1.html">最新揭晓</a></li>
-                <li class="f-nav-limit"><span class="nav-new transparent-png"></span><a href="http://www.1yyg.com/limitBuy/m1.html">限购专区</a></li>
-                <li class="f-nav-share"><a href="http://post.1yyg.com/">晒单分享</a></li>
+                <li class="f-nav-lottery"><a href="indexNews">最新揭晓</a></li>
+                <li class="f-nav-limit"><span class="nav-new transparent-png"></span><a href="indexLimit">限购专区</a></li>
+         
                 <li class="f-nav-group"><a href="http://group.1yyg.com/">云购圈</a></li>
                 <li class="f-nav-guide"><a href="http://help.1yyg.com/info/newbie/index.html">新手指南</a></li>
             </ul>
