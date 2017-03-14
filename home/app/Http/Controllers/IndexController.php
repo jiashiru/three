@@ -149,7 +149,7 @@ class IndexController extends Controller
 
         return $goods_code;
     }
-
+    //查询商品信息
 
     public function goods_mess($goods_id_all)
     {

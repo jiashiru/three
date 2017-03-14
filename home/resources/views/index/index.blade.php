@@ -49,7 +49,7 @@
                                     <img src="style/images/step_04.gif?v=141113" /></li>
                                 <li class="f-step5"><a href="javascript:;" title="下一步"></a>
                                     <img src="style/images/step_05.gif?v=141113" /></li>
-                                <li class="f-step6"><a href="http://help.1yyg.com/info/newbie/index.html" target="_blank" title="继续了解详情"></a>
+                                <li class="f-step6"><a href="/" target="_blank" title="继续了解详情"></a>
                                     <img src="style/images/step_06.gif?v=141113" /></li>
                             </ul>
                             <a id="guide_close" href="javascript:;" class="m-guide-close" title="关闭"></a>
@@ -128,20 +128,20 @@
                 </div>
                 <div class="honesty">
                     <ul>
-                        <li><a href="http://info.1yyg.com/sincerity/index.html" target="_blank" title="诚信网站"><i class="i1"></i>诚信网站</a></li>
-                        <li><a href="http://info.1yyg.com/sincerity/index.html#rz2" target="_blank" rel="nofollow" title="可信网站"><i class="i2"></i>可信网站</a></li>
-                        <li><a href="http://info.1yyg.com/sincerity/index.html#rz3" target="_blank" rel="nofollow" title="电商诚信"><i class="i3"></i>电商诚信</a></li>
-                        <li><a href="http://info.1yyg.com/sincerity/index.html#rz5" target="_blank" rel="nofollow" title="监督管理局"><i class="i5"></i>监督管理局</a></li>
-                        <li><a href="http://info.1yyg.com/sincerity/index.html#rz4" target="_blank" rel="nofollow" title="服务保证"><i class="i4"></i>服务保证</a></li>
-                        <li><a href="http://info.1yyg.com/sincerity/index.html" target="_blank" rel="nofollow" title="更多"><i class="i6"></i>更多</a></li>
+                        <li><a href="sincerity/index.html" target="_blank" title="诚信网站"><i class="i1"></i>诚信网站</a></li>
+                        <li><a href="sincerity/index.html#rz2" target="_blank" rel="nofollow" title="可信网站"><i class="i2"></i>可信网站</a></li>
+                        <li><a href="sincerity/index.html#rz3" target="_blank" rel="nofollow" title="电商诚信"><i class="i3"></i>电商诚信</a></li>
+                        <li><a href="sincerity/index.html#rz5" target="_blank" rel="nofollow" title="监督管理局"><i class="i5"></i>监督管理局</a></li>
+                        <li><a href="sincerity/index.html#rz4" target="_blank" rel="nofollow" title="服务保证"><i class="i4"></i>服务保证</a></li>
+                        <li><a href="sincerity/index.html" target="_blank" rel="nofollow" title="更多"><i class="i6"></i>更多</a></li>
                     </ul>
                 </div>
                 <div class="index_news clrfix">
                     <dl>
-                        <dt><a href="http://group.1yyg.com/group-1.html" target="_blank" title="云购公告">云购公告</a></dt>
-                        <dd class=""><b></b><a href="http://group.1yyg.com/topic-18176.html" target="_blank" title="辞旧迎新，鸡年假到！">辞旧迎新，鸡年假到！</a></dd>
-                        <dd class=""><b></b><a href="http://group.1yyg.com/topic-16936.html" target="_blank" title="1元云购Galaxy Note7召回公告">1元云购Galaxy Note7召回公告</a></dd>
-                        <dd class=""><b></b><a href="http://group.1yyg.com/topic-16696.html" target="_blank" title="1元云购致社会公开信">1元云购致社会公开信</a></dd>
+                        <dt><a href="group-1.html" target="_blank" title="云购公告">云购公告</a></dt>
+                        <dd class=""><b></b><a href="topic-18176.html" target="_blank" title="辞旧迎新，鸡年假到！">辞旧迎新，鸡年假到！</a></dd>
+                        <dd class=""><b></b><a href="topic-16936.html" target="_blank" title="1元云购Galaxy Note7召回公告">1元云购Galaxy Note7召回公告</a></dd>
+                        <dd class=""><b></b><a href="topic-16696.html" target="_blank" title="1元云购致社会公开信">1元云购致社会公开信</a></dd>
                     </dl>
                 </div>
             </div>
@@ -152,7 +152,7 @@
         <div class="g-title">
             <h3 class="fl"><i></i>最新揭晓</h3>
             <div class="m-other fl">
-                <a href="http://www.1yyg.com/map.html" target="_blank" title="看看附近都有谁获得了商品？"><em></em>看看附近都有谁获得了商品？</a>
+                <a href="map.html" target="_blank" title="看看附近都有谁获得了商品？"><em></em>看看附近都有谁获得了商品？</a>
             </div>
             <div class="fr z-total">
                 <a href="/lottery/m1.html" target="_blank">共揭晓商品&nbsp;<em id="em_lotcount" class="orange">9137279</em>&nbsp;个&nbsp;<i class="f-tran">>></i></a>

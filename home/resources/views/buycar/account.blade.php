@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>支付_1元云购</title>
+    <title>支付_1元乐购</title>
     <meta name="Description" content="" />
     <link rel="stylesheet" type="text/css" href="http://skin.1yyg.net/css/header.css?v=170215" />
     <!--[if IE 6]>
@@ -23,8 +23,8 @@
         <!--头部-->
         <div class="g-special-head">
             <div class="fl logo-con">
-                <a href="{{url('/')}}" class="f-logo"></a>
-                <span>结算</span>
+                <a href="{{url('/')}}" class="" style="padding-left: 50px; margin-top: 20px;"><img src="style/images/logo.png" alt="logo"></a>
+
             </div>
             <div class="fr step-con">
                 <em class="color-white">提交支付</em>
@@ -48,7 +48,7 @@
 
 
                     <?php foreach($data as $k=>$v){ ?>
-            
+
                     <dd>
                         <ul>
                             <li class="f-pay-comm">

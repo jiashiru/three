@@ -91,7 +91,7 @@ class AlipaySubmit {
      * @param $method 提交方式。两个值可选：post、get
      * @param $button_name 确认按钮显示文字
      * @return 提交表单HTML文本
-     */
+*/
 	function buildRequestForm($para_temp, $method, $button_name) {
 		//待请求参数数组
 		$para = $this->buildRequestPara($para_temp);
