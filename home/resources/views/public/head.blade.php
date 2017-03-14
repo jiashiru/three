@@ -57,8 +57,8 @@
                 </div>
                 <div class="u-select">
                     <span><a href="myGoods" title="云购记录">云购记录</a></span>
-                    <span><a href="myGoods" title="获得的商品">获得的商品</a></span>
-                    <span><a href="setIndex" title="个人设置">个人设置</a></span>
+                    <span><a href="getGoods" title="获得的商品">获得的商品</a></span>
+                    <span><a href="setInfo" title="个人设置">个人设置</a></span>
                 </div>
             </li>
             <li class="f-gap" style="display: none;"><s></s></li>

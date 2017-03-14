@@ -51,6 +51,7 @@ class IndexController extends Controller
 
         ]);
     }
+
     //广告下方的推荐（最好）
     public function remmend()
     {
@@ -67,6 +68,7 @@ class IndexController extends Controller
        }
        return $remmend;
     }
+
     //获取正在云购的信息
     public function code()
     {
@@ -100,6 +102,8 @@ class IndexController extends Controller
 
         return $goods_code;
     }
+
+
     //获取最新 揭晓
     public function newest()
     {
@@ -146,6 +150,7 @@ class IndexController extends Controller
         return $goods_code;
     }
     //查询商品信息
+
     public function goods_mess($goods_id_all)
     {
         $goods = DB::table("goods")->wherein('goods_id',$goods_id_all)->get();
@@ -326,6 +331,7 @@ class IndexController extends Controller
             'session_u'=>$u_id
         ]);
     }
+
     //查询单个商品的 商品图片
     public function goods_photo()
     {
@@ -333,6 +339,7 @@ class IndexController extends Controller
         $goods_gallery = DB::table("goods_gallery")->where(['goods_id'=>$goods_id,'img_type'=>0])->get();
         echo json_encode($goods_gallery);
     }
+
     //获取当前服务器时间，用户主页下面
     public function server_time()
     {
@@ -455,7 +462,71 @@ class IndexController extends Controller
             return "all";
         }
     }
+   // 限购
+   public function limit()
+   {
+        if(empty($_SESSION['u_id'])){
+            $u_id = 0;
+        }else{
+            $u_id = $_SESSION['u_id'];
+        }
+        $data1['order'] = empty(Input::get("order")) ? "default" : Input::get("order");
+        $data1['type_id'] = empty(Input::get("type_id")) ? "all" : Input::get("type_id");
 
+        $data = DB::table('goods')->where(['is_limit'=>1])->get();
+        foreach ($data as $k => $v) 
+        {
+            $goods_id[] = $v['goods_id'];
+        }
+        $times = DB::table('goods_times')->where(['state'=>1])->whereIn('goods_id',$goods_id)->get();
+        foreach ($times as $k => $v) 
+        {
+            $times[$k]['goods_id'] = $data[$k]['goods_id'];
+            $times[$k]['goods_picture'] = $data[$k]['goods_picture'];
+            $times[$k]['limit_num'] = $data[$k]['limit_number'];
+            $times[$k]['goods_name'] = $data[$k]['goods_name'];
+            $times[$k]['goods_desc'] = $data[$k]['goods_desc'];
+            $times[$k]['goods_price'] = $data[$k]['goods_price'];
+            $times[$k]['participation'] = $data[$k]['goods_price']-$v['number'];
+            
+        }
+         //查询导航
+        $nav = sel_nav();
+          //查询分类
+        // $goods_type = DB::table("goods_type")->get();
+        $goods_type = $this->type_and_category();
+        return view("index/limit_shop",[
+                'goods'=>$times,//查询导航
+                'u_id'=>$u_id,//用户ID
+                'goods_type'=>$goods_type,//查询出所有分类
+                'nav'=>$nav,//查询导航
+                'data'=>$data1,//根据条件排序
+        ]);
+   }
+   public function news_shop()
+   {
+      if(empty($_SESSION['u_id'])){
+            $u_id = 0;
+        }else{
+            $u_id = $_SESSION['u_id'];
+        }
+       $data = $this->newest();
+         //查询导航
+        $nav = sel_nav();
+          //查询分类
+        // $goods_type = DB::table("goods_type")->get();
+        $goods_type = $this->type_and_category();
+
+        $data1['order'] = empty(Input::get("order")) ? "default" : Input::get("order");
+        $data1['type_id'] = empty(Input::get("type_id")) ? "all" : Input::get("type_id");
+       return view("index/news_shop",[
+              'new_end'=>$data,
+               'u_id'=>$u_id,//用户ID
+                'goods_type'=>$goods_type,//查询出所有分类
+                'nav'=>$nav,//查询导航
+                'data'=>$data1,//根据条件排序
+        ]);
+   }
 
 
 }

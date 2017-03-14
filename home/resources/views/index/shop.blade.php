@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="htmlHead"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
@@ -275,107 +274,13 @@
                     <div id="div_goodsrecord" class="list-wrap">
                         <div class="my-list">
                             <ul id="UserBuyNewList" class="list">
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1016445258" title="不中就删YG掉" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170217183509670.jpg" width="22" height="22"></i>不中就删YG掉</a>
-                                                        <span class="buy-num">
-															1
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1009842942" title="今天不中从此卸载不玩" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20161114141451781.jpg" width="22" height="22"></i>今天不中从此卸载不玩</a>
-                                                        <span class="buy-num">
-															2
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1016516623" title="很久没中了随便漏点我" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170217191121557.jpg" width="22" height="22"></i>很久没中了随便漏点我</a>
-                                                        <span class="buy-num">
-															3
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1008541775" title="春节没车开" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20151222025209994.jpg" width="22" height="22"></i>春节没车开</a>
-                                                        <span class="buy-num">
-															5
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1013260667" title="在不中就生气了我汉奸" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20160524175045811.jpg" width="22" height="22"></i>在不中就生气了我汉奸</a>
-                                                        <span class="buy-num">
-															1
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1010151038" title="是不是该给个安慰奖了" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20161115153934319.jpg" width="22" height="22"></i>是不是该给个安慰奖了</a>
-                                                        <span class="buy-num">
-															1
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1009054983" title="中奖中奖啦中奖中奖啦" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/00000000000000000.jpg" width="22" height="22"></i>中奖中奖啦中奖中奖啦</a>
-                                                        <span class="buy-num">
-															22
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1016220404" title="来中-50-100-150-200" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170217225732948.jpg" width="22" height="22"></i>来中-50-100-150-200</a>
-                                                        <span class="buy-num">
-															100
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1010836581" title="命里无时莫强求0117" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170223111005932.jpg" width="22" height="22"></i>命里无时莫强求0117</a>
-                                                        <span class="buy-num">
-															7
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1016360481" title="给辆汽车好过年" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170102173955880.jpg" width="22" height="22"></i>给辆汽车好过年</a>
-                                                        <span class="buy-num">
-															1
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1010312580" title="给爸爸换台高大尚手机" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170220001349560.jpg" width="22" height="22"></i>给爸爸换台高大尚手机</a>
-                                                        <span class="buy-num">
-															3
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1010174899" title="2017永发" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20161025223726147.jpg" width="22" height="22"></i>2017永发</a>
-                                                        <span class="buy-num">
-															5
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1012399533" title="云狗全球好中车速度来" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20160922020059255.jpg" width="22" height="22"></i>云狗全球好中车速度来</a>
-                                                        <span class="buy-num">
-															5
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1012069512" title="云兄再不中奖哭倒长城" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20160924204220901.jpg" width="22" height="22"></i>云兄再不中奖哭倒长城</a>
-                                                        <span class="buy-num">
-															1
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1008685006" title="爱在公元前点灯" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170223105915438.jpg" width="22" height="22"></i>爱在公元前点灯</a>
-                                                        <span class="buy-num">
-															1
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1012760033" title="猜不透你是人是鬼" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170220142132438.jpg" width="22" height="22"></i>猜不透你是人是鬼</a>
-                                                        <span class="buy-num">
-															4
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1011246115" title="恭喜您成为获" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/00000000000000000.jpg" width="22" height="22"></i>恭喜您成为获</a>
-                                                        <span class="buy-num">
-															2
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1016516623" title="很久没中了随便漏点我" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170217191121557.jpg" width="22" height="22"></i>很久没中了随便漏点我</a>
-                                                        <span class="buy-num">
-															6
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1013516549" title="我要汽车--" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20160403104519507.jpg" width="22" height="22"></i>我要汽车--</a>
-                                                        <span class="buy-num">
-															1
-																</span>人次</li>
-
-                                <li><a rel="nofollow" href="http://u.1yyg.com/1012070168" title="再不中车鱼死网破" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170223015516496.jpg" width="22" height="22"></i>再不中车鱼死网破</a>
-                                                        <span class="buy-num">
-															16
-																</span>人次</li>
-
+                                
+                                   <li>
+                                        <a rel="nofollow" href="http://u.1yyg.com/1016445258" title="不中就删YG掉" target="_blank" class="buy-name"><i class="head-s-pic"><img src="http://img.1yyg.net/UserFace/30/20170217183509670.jpg" width="22" height="22">
+                                        </i>不中就删YG掉</a>
+                                        <span class="buy-num">1</span>
+                                        人次
+                                    </li>
                             </ul>
                         </div>
                         <a href="javascript:;" style="display: none;" class="select-all">查看全部</a>

@@ -66,11 +66,14 @@ Route::group(['middleware' => 'session'], function () {
 
 
     Route::get("myIndex","MyyungouController@myIndex");//我的一元云购首页
-    Route::get("myGoods","MyyungouController@myGoods");//获得的商品
+    Route::get("myGoods","MyyungouController@myGoods");//云购记录
+    Route::get("detail","MyyungouController@detail");//云购记录详情
+    Route::get("getGoods","MyyungouController@getGoods");//获得的商品
+
+
     Route::get("myWallet","MyyungouController@myWallet");//我的钱包
     Route::get("userRechange","MyyungouController@userRechange");//网银充值页面
     Route::get("CardRechange","MyyungouController@CardRechange");//充值卡充值页面
-
     Route::post("rechange","PayController@rechange");//网银充值
 
 
@@ -100,9 +103,12 @@ Route::post("registerDo","RegisterController@registerDo");  //注册
 
 Route::any("/","IndexController@index");//主页
 Route::any("indexRemmend","IndexController@remmend");//主页
+Route::any("indexLimit","IndexController@limit");//限时抢购
+Route::any("indexNews","IndexController@news_shop");//限时抢购
+Route::any("indexUser","IndexController@user_shop");//云购圈
 
 Route::any("indexClassify","IndexController@classify");//分类
-Route::any("indexShop","IndexController@shop");//商品详情
+Route::get("indexShop","IndexController@shop");//商品详情
 Route::any("indexGoods_photo","IndexController@goods_photo");//商品详情
 Route::any("indexTime","IndexController@server_time");//获取当前服务器时间，用户主页下面
 Route::any("indexHeader_sel","IndexController@header_sel");//header头里面的查询
