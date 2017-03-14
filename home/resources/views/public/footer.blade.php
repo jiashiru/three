@@ -3,45 +3,44 @@
         <div class="g-guide clrfix">
             <dl>
                 <dt>新手指南</dt>
-                <dd><a target="_blank" href="http://help.1yyg.com/" title="了解1元云购">了解1元云购</a></dd>
-                <dd><a target="_blank" href="http://help.1yyg.com/htm-questiondetail.html" title="常见问题">常见问题</a></dd>
-                <dd><a target="_blank" href="http://help.1yyg.com/htm-userExperience.html" title="福分等级介绍">福分等级介绍</a></dd>
+                <dd><a target="_blank" href="" title="了解1元云购">了解1元云购</a></dd>
+                <dd><a target="_blank" href="htm-questiondetail.html" title="常见问题">常见问题</a></dd>
+                <dd><a target="_blank" href="htm-userExperience.html" title="福分等级介绍">福分等级介绍</a></dd>
             </dl>
             <dl>
                 <dt>云购保障</dt>
-                <dd><a target="_blank" href="http://help.1yyg.com/htm-genuinetwo.html" title="1元云购保障体系">1元云购保障体系</a></dd>
-                <dd><a target="_blank" href="http://help.1yyg.com/htm-securepayment.html" title="安全支付">安全支付</a></dd>
-                <dd><a target="_blank" href="http://help.1yyg.com/htm-suggestion.html" title="投诉建议">投诉建议</a></dd>
+                <dd><a target="_blank" href="htm-genuinetwo.html" title="1元云购保障体系">1元云购保障体系</a></dd>
+                <dd><a target="_blank" href="htm-securepayment.html" title="安全支付">安全支付</a></dd>
+                <dd><a target="_blank" href="htm-suggestion.html" title="投诉建议">投诉建议</a></dd>
             </dl>
             <dl>
                 <dt>商品配送</dt>
-                <dd><a target="_blank" href="http://help.1yyg.com/htm-deliveryfees.html" title="配送费用">配送费用</a></dd>
-                <dd><a target="_blank" href="http://help.1yyg.com/htm-prodcheck.html" title="商品验货与签收">商品验货与签收</a></dd>
-                <dd><a target="_blank" href="http://help.1yyg.com/htm-shiptwo.html" title="长时间未收到商品">长时间未收到商品</a></dd>
+                <dd><a target="_blank" href="htm-deliveryfees.html" title="配送费用">配送费用</a></dd>
+                <dd><a target="_blank" href="htm-prodcheck.html" title="商品验货与签收">商品验货与签收</a></dd>
+                <dd><a target="_blank" href="htm-shiptwo.html" title="长时间未收到商品">长时间未收到商品</a></dd>
             </dl>
             <dl>
                 <dt>关于1元云购</dt>
-                <dd><a target="_blank" href="http://help.1yyg.com/htm-about.html" title="1元云购介绍">1元云购介绍</a></dd>
-                <dd><a target="_blank" href="http://info.1yyg.com/fund/" title="云购公益">云购公益</a></dd>
-                <dd><a target="_blank" href="http://help.1yyg.com/htm-contactus.html" title="联系我们">联系我们</a></dd>
+                <dd><a target="_blank" href="htm-about.html" title="1元云购介绍">1元云购介绍</a></dd>
+                <dd><a target="_blank" href="fund/" title="云购公益">云购公益</a></dd>
+                <dd><a target="_blank" href="htm-contactus.html" title="联系我们">联系我们</a></dd>
             </dl>
             <dl>
                 <dt>携手1元云购</dt>
-                <dd><a target="_blank" href="http://help.1yyg.com/info/htm-business.html" title="商务合作">商务合作</a></dd>
+                <dd><a target="_blank" href="info/htm-business.html" title="商务合作">商务合作</a></dd>
                 <dd><a target="_blank" href="http://member.1yyg.com/ReferAuth.do" title="邀请">邀请</a></dd>
-                <dd><a target="_blank" href="http://help.1yyg.com/info/htm-qqgroup.html" title="官方QQ群交流">官方QQ群交流</a></dd>
+                <dd><a target="_blank" href="info/htm-qqgroup.html" title="官方QQ群交流">官方QQ群交流</a></dd>
             </dl>
         </div>
 
         <div class="g-service">
             <div class="m-ser u-ser1">
                 <ul>
-                    <li><s class="u-icons"></s></li>
-                    <li>
+                    <li style="padding-left: 35px;">
                         <dl>
                             <dt>下载手机客户端</dt>
                             <dd><b class="u-icons"></b></dd>
-                            <dd><a target="_blank" href="http://info.1yyg.com/app/mobile.html" title="立即下载">立即下载</a></dd>
+                            <dd><a target="_blank" href="app/mobile.html" title="立即下载">立即下载</a></dd>
                         </dl>
                     </li>
                 </ul>
@@ -52,16 +51,15 @@
                             <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105" /></a></li>
                     <li>
                         <dl>
-                            <dt><a target="_blank" href="http://info.1yyg.com/app/microchannel.html"><i class="u-icons"></i>关注官方微信</a></dt>
-                            <dd><a target="_blank" href="http://info.1yyg.com/app/microchannel.html"><b class="u-icons"></b></a></dd>
+                            <dt><a target="_blank" href="app/microchannel.html"><i class="u-icons"></i>关注官方微信</a></dt>
+                            <dd><a target="_blank" href="app/microchannel.html"><b class="u-icons"></b></a></dd>
                         </dl>
                     </li>
                 </ul>
             </div>
             <div class="m-ser u-ser3">
                 <ul>
-                    <li><s class="u-icons"></s></li>
-                    <li>
+                    <li style="padding-left: 35px;">
                         <dl>
                             <dt>服务器时间</dt>
                             <dd id="">
@@ -129,19 +127,17 @@
 
             <div class="m-ser u-ser4">
                 <ul>
-                    <li><s class="u-icons"></s></li>
-                    <li>
+                    <li style="padding-left: 35px;">
                         <dl>
                             <dt>云购公益基金</dt>
-                            <dd><a target="_blank" href="http://info.1yyg.com/fund/" id="spFundTotal">￥0000000.00</a></dd>
+                            <dd><a target="_blank" href="fund/" id="spFundTotal">￥0000000.00</a></dd>
                         </dl>
                     </li>
                 </ul>
             </div>
             <div class="m-ser u-ser5">
                 <ul>
-                    <li><s class="u-icons"></s></li>
-                    <li>
+                    <li style="padding-left: 35px;">
                         <dl>
                             <dt>服务热线</dt>
                             <dd class="orange u-tel">4000-588-688</dd>
@@ -155,21 +151,21 @@
         <div class="g-special clrfix">
             <ul>
                 <li>
-                    <a href="http://help.1yyg.com/htm-genuinetwo.html" target="_blank" title="100%公平公正">
+                    <a href="htm-genuinetwo.html" target="_blank" title="100%公平公正">
                         <em class="u-spc-icon1"></em>
                         <span>100%公平公正</span>
                         参与过程公开透明，用户可随时查看
                     </a>
                 </li>
                 <li>
-                    <a href="http://help.1yyg.com/htm-genuine.html" target="_blank" title="100%正品保证">
+                    <a href="htm-genuine.html" target="_blank" title="100%正品保证">
                         <em class="u-spc-icon2"></em>
                         <span>100%正品保证</span>
                         精心挑选优质商家，100%品牌正品
                     </a>
                 </li>
                 <li>
-                    <a href="http://help.1yyg.com/htm-deliveryfees.html" target="_blank" title="全国免运费">
+                    <a href="htm-deliveryfees.html" target="_blank" title="全国免运费">
                         <em class="u-spc-icon3"></em>
                         <span>全国免运费</span>
                         全国包邮（港澳台及特殊商品除外）
@@ -182,23 +178,23 @@
 <div class="g-copyrightCon clrfix">
     <div class="w1190">
         <div class="g-links">
-            <a href="http://www.1yyg.com/" target="_blank" title="首页">首页</a><s></s>
-            <a href="http://help.1yyg.com/htm-about.html" target="_blank" title="关于云购">关于云购</a><s></s>
-            <a href="http://help.1yyg.com/htm-privacy.html" target="_blank" title="隐私声明">隐私声明</a><s></s>
-            <a href="http://help.1yyg.com/info/htm-business.html" target="_blank" title="合作专区">合作专区</a><s></s>
-            <a href="http://www.1yyg.com/link.html" target="_blank" title="友情链接">友情链接</a><s></s>
-            <a href="http://help.1yyg.com/htm-jobs.html" target="_blank" title="加入云购">加入云购</a><s></s>
-            <a href="http://help.1yyg.com/htm-contactus.html" target="_blank" title="联系我们">联系我们</a>
+            <a href="/" target="_blank" title="首页">首页</a><s></s>
+            <a href="htm-about.html" target="_blank" title="关于云购">关于云购</a><s></s>
+            <a href="htm-privacy.html" target="_blank" title="隐私声明">隐私声明</a><s></s>
+            <a href="info/htm-business.html" target="_blank" title="合作专区">合作专区</a><s></s>
+            <a href="link.html" target="_blank" title="友情链接">友情链接</a><s></s>
+            <a href="htm-jobs.html" target="_blank" title="加入云购">加入云购</a><s></s>
+            <a href="htm-contactus.html" target="_blank" title="联系我们">联系我们</a>
         </div>
         <div class="g-copyright">Copyright &copy; 2011 - 2027, 版权所有所有人</div>
         <div class="g-authentication">
-            <a href="http://www.1yyg.com/url.html?t=7" target="_blank" class="fi_ectrustchina"></a>
-            <a href="http://www.1yyg.com/url.html?t=1" target="_blank" class="fi_315online"></a>
-            <a href="http://www.1yyg.com/url.html?t=2" target="_blank" class="fi_qh"></a>
-            <a href="http://www.1yyg.com/url.html?t=3" target="_blank" class="fi_cnnic"></a>
-            <a href="http://www.1yyg.com/url.html?t=6" target="_blank" class="fi_anxibao" style="display:none;"></a>
-            <a href="http://www.1yyg.com/url.html?t=4" target="_blank" class="fi_pingan"></a>
-            <a href="http://www.1yyg.com/url.html?t=8" target="_blank" class="fi_yangshi"></a>
+            <a href="url.html?t=7" target="_blank" class="fi_ectrustchina"></a>
+            <a href="url.html?t=1" target="_blank" class="fi_315online"></a>
+            <a href="url.html?t=2" target="_blank" class="fi_qh"></a>
+            <a href="url.html?t=3" target="_blank" class="fi_cnnic"></a>
+            <a href="url.html?t=6" target="_blank" class="fi_anxibao" style="display:none;"></a>
+            <a href="url.html?t=4" target="_blank" class="fi_pingan"></a>
+            <a href="url.html?t=8" target="_blank" class="fi_yangshi"></a>
         </div>
     </div>
 </div>
@@ -255,26 +251,26 @@
                     </li>
                     <li class="f-client">
                         <div class="u-float-list">
-                            <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
+                            <a href="app/mobile.html" target="_blank">
                                 <i class="z-clump-icon"></i>
                             </a>
                             <b class="curr-arrow"></b>
                         </div>
                         <div class="u-activate">
-                            <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
+                            <a href="app/mobile.html" target="_blank">
                                 <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105">
                             </a>
                         </div>
                     </li>
                     <li class="f-weixin">
                         <div class="u-float-list">
-                            <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
+                            <a href="app/microchannel.html" target="_blank">
                                 <i class="z-clump-icon"></i>
                             </a>
                             <b class="curr-arrow"></b>
                         </div>
                         <div class="u-activate">
-                            <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
+                            <a href="app/microchannel.html" target="_blank">
                                 <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
                                 关注官方微信
                             </a>
@@ -290,7 +286,7 @@
                     </li>
                     <li class="f-feedback">
                         <div class="u-float-list">
-                            <a  href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
+                            <a  href="htm-suggestion.html" target="_blank">
                                 <i class="z-clump-icon"></i><cite>意见反馈</cite>
                             </a>
                             <b class="curr-arrow"></b>
@@ -404,14 +400,14 @@
             </li>
             <li class="f-client">
                 <div class="u-small-list">
-                    <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
+                    <a  href="app/mobile.html" target="_blank">
                         <i></i><cite>手机APP</cite>
                     </a>
                     <b class="curr-arrow"><s></s></b>
                 </div>
                 <div class="activateCon">
                     <div class="u-activate">
-                        <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
+                        <a href="app/mobile.html" target="_blank">
                             <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
                             下载客户端
                         </a>
@@ -420,14 +416,14 @@
             </li>
             <li class="f-weixin">
                 <div class="u-small-list">
-                    <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
+                    <a href="app/microchannel.html" target="_blank">
                         <i></i><cite>官方微信</cite>
                     </a>
                     <b class="curr-arrow"><s></s></b>
                 </div>
                 <div class="activateCon">
                     <div class="u-activate">
-                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
+                        <a href="app/microchannel.html" target="_blank">
                             <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
                             关注官方微信
                         </a>
@@ -443,7 +439,7 @@
             </li>
             <li class="f-feedback">
                 <div class="u-small-list">
-                    <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
+                    <a href="htm-suggestion.html" target="_blank">
                         <i></i><cite>意见反馈</cite>
                     </a>
                 </div>

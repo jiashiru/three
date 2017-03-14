@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 *支付宝链接
 *
 *@param 
-*@author pjp
+*@author
 */
 /**生成支付链接*/
 function pay_url($order_sn,$total_price)
@@ -30,9 +30,9 @@ function pay_url($order_sn,$total_price)
       "notify_url"  => "http://www.xiaoerhome.com/mall/notify", // 服务器异步通知页面路径
       "return_url"  => "http://www.xiaoerhome.com/mall/notify", // 页面跳转同步通知页面路径
       "out_trade_no"  => $order_sn, // 商户网站订单系统中唯一订单号
-      "subject" => 'pjpmailorder', // 订单名称
+      "subject" => '1ylg', // 订单名称
       "total_fee" => $total_price, // 付款金额
-      "body"  => "pjpmail", // 订单描述 可选
+      "body"  => "mail", // 订单描述 可选
       "_input_charset"  => 'utf-8', // 字符编码格式
   );
   // 去除值为空的参数
