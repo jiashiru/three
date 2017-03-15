@@ -70,11 +70,16 @@ Route::group(['middleware' => 'session'], function () {
     Route::get("detail","MyyungouController@detail");//云购记录详情
     Route::get("getGoods","MyyungouController@getGoods");//获得的商品
 
+    Route::get("invite","MyyungouController@invite");//邀请好友页面
+
 
     Route::get("myWallet","MyyungouController@myWallet");//我的钱包
     Route::get("userRechange","MyyungouController@userRechange");//网银充值页面
     Route::get("CardRechange","MyyungouController@CardRechange");//充值卡充值页面
     Route::post("rechange","PayController@rechange");//网银充值
+
+
+
 
 
 

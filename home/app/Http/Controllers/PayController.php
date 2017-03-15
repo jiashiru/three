@@ -38,12 +38,12 @@ class PayController extends Controller
     public function rechange()
     {   
         $price = Input::get("money");
-
+        $payName = Input::get("payName");
 //        echo "<a href='$url'>1231</a>";
-
-
-
-
+        $order_number = date('Ymd').substr(implode(NULL, array_map('ord', str_split(substr(uniqid(), 7, 13), 1))), 0, 8);
+        if($payName=='alipay'){
+            return redirect(pay_url($order_number,0.01));//测试价钱0。01
+        }
     }
 
     //生成订单号

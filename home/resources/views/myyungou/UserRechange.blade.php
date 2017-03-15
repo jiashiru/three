@@ -12,7 +12,7 @@
     </script>
     <![endif]-->
     <link href="{{asset('style/css/set/base.css?date=20150731')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('style/css/set/accounts.css?date=20150731')}}" rel="stylesheet" type="text/css" />
+    <link href="http://skin.1yyg.net/Member/css/accounts.css?date=20150731" rel="stylesheet" type="text/css" />
     <script language="javascript" type="text/javascript" src="{{asset('style/js/JQuery1.12.js')}}"></script>
     <script id="pageJS" language="javascript" type="text/javascript" data="{{asset('style/js/set/UserRecharge.js')}}"></script>
 </head>
@@ -139,10 +139,10 @@
         <div class="sidebar_main clrfix fr">
             <div class="g-obtain-title clrfix">
                 <ul>
-                    <li class="curr"><a href="/UserRecharge.do">网银充值</a></li>
-                    <li><a href="/CardRecharge.do">充值卡充值</a></li>
+                    <li class="curr"><a href="{{url('userRechange')}}">网银充值</a></li>
+                    <li><a href="javascript:;">充值卡充值</a></li>
                 </ul>
-                <a href="/UserBalance.do" class="z-return blue u-personal">返回我的钱包</a>
+                <a href="{{url('myWallet')}}" class="z-return blue u-personal">返回我的钱包</a>
             </div>
 
             <div class="g-please-select clrfix">
