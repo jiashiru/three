@@ -89,6 +89,7 @@ Route::any('typeDelete',['uses' => 'TypeController@delete']);
 
 //商品添加
 Route::any('goodsAdd',['uses' => 'GoodsController@add']);
+
 Route::any('goodsShow',['uses' => 'GoodsController@show']);
 Route::any('goodsEdit',['uses' => 'GoodsController@edit']);
 
@@ -107,5 +108,8 @@ Route::group(['middleware' => ['web']], function () {
 Route::any('carouselCarousel',['uses' => 'CarouselController@carousel']);
 Route::get('carouselDelete',['uses' => 'CarouselController@delete']);
 
+
+Route::get('goodsPhotos', 'GoodsController@photos');
+Route::post('goodsUploads', 'GoodsController@uploads');
 
 
