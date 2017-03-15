@@ -16,7 +16,7 @@
 interface Swift_Signers_HeaderSigner extends Swift_Signer, Swift_InputByteStream
 {
     /**
-     * Exclude an header from the signed headers.
+     * Exclude an uploads from the signed headers.
      *
      * @param string $header_name
      *
@@ -48,7 +48,7 @@ interface Swift_Signers_HeaderSigner extends Swift_Signer, Swift_InputByteStream
     public function setHeaders(Swift_Mime_HeaderSet $headers);
 
     /**
-     * Add the header(s) to the headerSet.
+     * Add the uploads(s) to the headerSet.
      *
      * @param Swift_Mime_HeaderSet $headers
      *
@@ -57,7 +57,7 @@ interface Swift_Signers_HeaderSigner extends Swift_Signer, Swift_InputByteStream
     public function addSignature(Swift_Mime_HeaderSet $headers);
 
     /**
-     * Return the list of header a signer might tamper.
+     * Return the list of uploads a signer might tamper.
      *
      * @return array
      */

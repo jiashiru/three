@@ -536,7 +536,7 @@ class Response
      *
      * Fresh responses may be served from cache without any interaction with the
      * origin. A response is considered fresh when it includes a Cache-Control/max-age
-     * indicator or Expires header and the calculated age is less than the freshness lifetime.
+     * indicator or Expires uploads and the calculated age is less than the freshness lifetime.
      *
      * @return bool true if the response is fresh, false otherwise
      */
@@ -602,11 +602,11 @@ class Response
     }
 
     /**
-     * Returns the Date header as a DateTime instance.
+     * Returns the Date uploads as a DateTime instance.
      *
      * @return \DateTime A \DateTime instance
      *
-     * @throws \RuntimeException When the header is not parseable
+     * @throws \RuntimeException When the uploads is not parseable
      */
     public function getDate()
     {
@@ -618,7 +618,7 @@ class Response
     }
 
     /**
-     * Sets the Date header.
+     * Sets the Date uploads.
      *
      * @param \DateTime $date A \DateTime instance
      *
@@ -647,7 +647,7 @@ class Response
     }
 
     /**
-     * Marks the response stale by setting the Age header to be equal to the maximum age of the response.
+     * Marks the response stale by setting the Age uploads to be equal to the maximum age of the response.
      *
      * @return Response
      */
@@ -661,9 +661,9 @@ class Response
     }
 
     /**
-     * Returns the value of the Expires header as a DateTime instance.
+     * Returns the value of the Expires uploads as a DateTime instance.
      *
-     * @return \DateTime|null A DateTime instance or null if the header does not exist
+     * @return \DateTime|null A DateTime instance or null if the uploads does not exist
      */
     public function getExpires()
     {
@@ -676,11 +676,11 @@ class Response
     }
 
     /**
-     * Sets the Expires HTTP header with a DateTime instance.
+     * Sets the Expires HTTP uploads with a DateTime instance.
      *
-     * Passing null as value will remove the header.
+     * Passing null as value will remove the uploads.
      *
-     * @param \DateTime|null $date A \DateTime instance or null to remove the header
+     * @param \DateTime|null $date A \DateTime instance or null to remove the uploads
      *
      * @return Response
      */
@@ -699,10 +699,10 @@ class Response
 
     /**
      * Returns the number of seconds after the time specified in the response's Date
-     * header when the response should no longer be considered fresh.
+     * uploads when the response should no longer be considered fresh.
      *
      * First, it checks for a s-maxage directive, then a max-age directive, and then it falls
-     * back on an expires header. It returns null when no maximum age can be established.
+     * back on an expires uploads. It returns null when no maximum age can be established.
      *
      * @return int|null Number of seconds
      */
@@ -804,11 +804,11 @@ class Response
     }
 
     /**
-     * Returns the Last-Modified HTTP header as a DateTime instance.
+     * Returns the Last-Modified HTTP uploads as a DateTime instance.
      *
-     * @return \DateTime|null A DateTime instance or null if the header does not exist
+     * @return \DateTime|null A DateTime instance or null if the uploads does not exist
      *
-     * @throws \RuntimeException When the HTTP header is not parseable
+     * @throws \RuntimeException When the HTTP uploads is not parseable
      */
     public function getLastModified()
     {
@@ -816,11 +816,11 @@ class Response
     }
 
     /**
-     * Sets the Last-Modified HTTP header with a DateTime instance.
+     * Sets the Last-Modified HTTP uploads with a DateTime instance.
      *
-     * Passing null as value will remove the header.
+     * Passing null as value will remove the uploads.
      *
-     * @param \DateTime|null $date A \DateTime instance or null to remove the header
+     * @param \DateTime|null $date A \DateTime instance or null to remove the uploads
      *
      * @return Response
      */
@@ -838,9 +838,9 @@ class Response
     }
 
     /**
-     * Returns the literal value of the ETag HTTP header.
+     * Returns the literal value of the ETag HTTP uploads.
      *
-     * @return string|null The ETag HTTP header or null if it does not exist
+     * @return string|null The ETag HTTP uploads or null if it does not exist
      */
     public function getEtag()
     {
@@ -850,7 +850,7 @@ class Response
     /**
      * Sets the ETag value.
      *
-     * @param string|null $etag The ETag unique identifier or null to remove the header
+     * @param string|null $etag The ETag unique identifier or null to remove the uploads
      * @param bool        $weak Whether you want a weak ETag or not
      *
      * @return Response
@@ -946,9 +946,9 @@ class Response
     }
 
     /**
-     * Returns true if the response includes a Vary header.
+     * Returns true if the response includes a Vary uploads.
      *
-     * @return bool true if the response includes a Vary header, false otherwise
+     * @return bool true if the response includes a Vary uploads, false otherwise
      */
     public function hasVary()
     {
@@ -956,7 +956,7 @@ class Response
     }
 
     /**
-     * Returns an array of header names given in the Vary header.
+     * Returns an array of uploads names given in the Vary uploads.
      *
      * @return array An array of Vary names
      */
@@ -975,7 +975,7 @@ class Response
     }
 
     /**
-     * Sets the Vary header.
+     * Sets the Vary uploads.
      *
      * @param string|array $headers
      * @param bool         $replace Whether to replace the actual value or not (true by default)

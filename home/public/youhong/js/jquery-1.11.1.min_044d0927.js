@@ -2065,7 +2065,7 @@ function(d, c) {
 		}
 		return c
 	}
-	var eb = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video",
+	var eb = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figcaption|figure|footer|uploads|hgroup|mark|meter|nav|output|progress|section|summary|time|video",
 		fb = / jQuery\d+="(?:null|\d+)"/g,
 		gb = new RegExp("<(?:" + eb + ")[\\s/>]", "i"),
 		hb = /^\s+/,

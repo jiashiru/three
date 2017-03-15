@@ -253,12 +253,12 @@ class Swift_Transport_Esmtp_Auth_NTLMAuthenticator implements Swift_Transport_Es
 
         return self::NTLMSIG
         .$this->createByte('03') // TYPE 3 message
-.$lmSec // LM response header
-.$ntlmSec // NTLM response header
-.$domainSec // Domain header
-.$userSec // User header
-.$workSec // Workstation header
-.$this->createByte('000000009a', 8) // session key header (empty)
+.$lmSec // LM response uploads
+.$ntlmSec // NTLM response uploads
+.$domainSec // Domain uploads
+.$userSec // User uploads
+.$workSec // Workstation uploads
+.$this->createByte('000000009a', 8) // session key uploads (empty)
 .$this->createByte('01020000') // FLAGS
 .$this->convertTo16bit($domain) // domain name
 .$this->convertTo16bit($username) // username

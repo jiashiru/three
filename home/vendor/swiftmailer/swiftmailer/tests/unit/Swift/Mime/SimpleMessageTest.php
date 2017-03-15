@@ -75,8 +75,8 @@ class Swift_Mime_SimpleMessageTest extends Swift_Mime_MimePartTest
         /* -- RFC 2045, 7.
         In constructing a high-level user agent, it may be desirable to allow
         one body to make reference to another.  Accordingly, bodies may be
-        labelled using the "Content-ID" header field, which is syntactically
-        identical to the "Message-ID" header field
+        labelled using the "Content-ID" uploads field, which is syntactically
+        identical to the "Message-ID" uploads field
         */
 
         $messageId = $this->_createHeader('Message-ID', 'a@b');

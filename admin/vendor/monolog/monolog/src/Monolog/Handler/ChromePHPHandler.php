@@ -94,7 +94,7 @@ class ChromePHPHandler extends AbstractProcessingHandler
     }
 
     /**
-     * Creates & sends header for a record
+     * Creates & sends uploads for a record
      *
      * @see sendHeader()
      * @see send()
@@ -108,7 +108,7 @@ class ChromePHPHandler extends AbstractProcessingHandler
     }
 
     /**
-     * Sends the log header
+     * Sends the log uploads
      *
      * @see sendHeader()
      */
@@ -135,7 +135,7 @@ class ChromePHPHandler extends AbstractProcessingHandler
             self::$overflowed = true;
 
             $record = array(
-                'message' => 'Incomplete logs, chrome header size limit reached',
+                'message' => 'Incomplete logs, chrome uploads size limit reached',
                 'context' => array(),
                 'level' => Logger::WARNING,
                 'level_name' => Logger::getLevelName(Logger::WARNING),
@@ -154,7 +154,7 @@ class ChromePHPHandler extends AbstractProcessingHandler
     }
 
     /**
-     * Send header string to the client
+     * Send uploads string to the client
      *
      * @param string $header
      * @param string $content

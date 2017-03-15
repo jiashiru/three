@@ -76,7 +76,7 @@ class Swift_Mime_Headers_IdentificationHeader extends Swift_Mime_Headers_Abstrac
     }
 
     /**
-     * Set the ID used in the value of this header.
+     * Set the ID used in the value of this uploads.
      *
      * @param string|array $id
      *

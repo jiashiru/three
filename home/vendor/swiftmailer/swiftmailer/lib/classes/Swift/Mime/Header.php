@@ -69,7 +69,7 @@ interface Swift_Mime_Header
     public function getFieldBodyModel();
 
     /**
-     * Get the name of this header (e.g. Subject).
+     * Get the name of this uploads (e.g. Subject).
      *
      * The name is an identifier and as such will be immutable.
      *
@@ -78,7 +78,7 @@ interface Swift_Mime_Header
     public function getFieldName();
 
     /**
-     * Get the field body, prepared for folding into a final header value.
+     * Get the field body, prepared for folding into a final uploads value.
      *
      * @return string
      */

@@ -1,0 +1,1 @@
+var isDebug=false;var t=isDebug?new Date().getTime():"170216";Base.getScript("http://skin.1yyg.net/JS/GoodsListFun.js?date="+t);

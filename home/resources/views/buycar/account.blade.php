@@ -1,10 +1,8 @@
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>支付_1元云购</title>
+    <title>支付_1元乐购</title>
     <meta name="Description" content="" />
     <link rel="stylesheet" type="text/css" href="http://skin.1yyg.net/css/header.css?v=170215" />
     <!--[if IE 6]>
@@ -20,108 +18,13 @@
 <body id="loadingPicBlock">
 <div class="wrapper">
     <!--顶部-->
-    <div class="g-toolbar clrfix">
-        <div class="w1190">
-            <ul class="fl">
-                <li id="liIndex" class="f-home" style="display:none;">
-                    <div class="u-menu-hd">
-                        <a href="http://www.1yyg.com/" title="1元云购首页" class="orange">1元云购首页</a>
-                    </div>
-                </li>
-                <li class="f-gap" style="display:none;"><s></s></li>
-                <li id="liCollect">
-                    <div class="u-menu-hd">
-                        <a id="btnTFavorite" href="javascript:;" title="收藏">收藏</a>
-                    </div>
-                </li>
-                <li class="f-gap" style="display: none;"><s></s></li>
-                <li class="f-gap" style="display: none;"><s></s></li>
-                <li id="liCCTV" style="display: none;">
-                    <a href="http://www.1yyg.com/url.html?t=8" target="_blank" class="cctv-icon" title="央视网">
-                        <img src="http://skin.1yyg.net/images/cctv-icon.jpg" alt="央视网" width="80" height="35" class="cctv-icon-img">
-                        <span class="cctv-icon-txt">广告合作伙伴</span>
-                    </a>
-                </li>
-            </ul>
-            <ul id="ulTopRight" class="fr">
-                <li id="liMember" class="u-arr-1yyg" style="display: none;">
-                    <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
-                        <div class="f-top-arrow"><cite>◆</cite><b>◆</b></div>
-                    </div>
-                    <div class="u-select">
-                        <span><a href="http://member.1yyg.com/UserBuyList.do" title="云购记录">云购记录</a></span>
-                        <span><a href="http://member.1yyg.com/OrderList.do" title="获得的商品">获得的商品</a></span>
-                        <span><a href="http://member.1yyg.com/MemberModify.do" title="个人设置">个人设置</a></span>
-                    </div>
-                </li>
-                <li class="f-gap" style="display: none;"><s></s></li>
-                <li id="liHome" style="display: none;">
-                    <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/" title="我的1元云购">我的1元云购</a>
-                    </div>
-                </li>
-                <li class="f-gap" style="display: none;"><s></s></li>
-                <li id="liTopUMsg" class="u-arr-news" style="display: none;">
-                    <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/userMessage.do" title="消息">消息</a>
-                        <h3 style="display: none;"></h3>
-                        <div class="f-top-arrow"><cite>◆</cite><b>◆</b></div>
-                    </div>
-                    <div class="u-select">
-                        <span><a href="http://member.1yyg.com/UserMessage.do" title="系统消息">系统消息</a></span>
-                        <span><a href="http://member.1yyg.com/FriendsApply.do" title="好友请求">好友请求</a></span>
-                        <span><a href="http://member.1yyg.com/ReplyCommentsMsg.do" title="好友请求">评论回复</a></span>
-                        <span><a href="http://member.1yyg.com/UserPrivMsg.do" title="私信" class="f-msg">私信</a></span>
-                    </div>
-                </li>
-                <li class="f-gap" style="display: none;"><s></s></li>
-                <li id="liMobile" class="u-arr">
-                    <div class="u-menu-hd">
-                        <a target="_blank" href="http://info.1yyg.com/app/mobile.html" title="手机云购">手机云购</a>
-                        <i></i>
-                    </div>
-                    <div class="u-select">
-                        <p>下载1元云购App</p>
-                        <a target="_blank" href="http://info.1yyg.com/app/mobile.html">
-                            <img src="http://skin.1yyg.net/images/app-qrcode.jpg" alt="点击1元云购App">
-                        </a>
-                        <i class="white-sub"><i></i></i>
-                    </div>
-                </li>
-                <li class="f-gap"><s></s></li>
-                <li>
-                    <div class="u-menu-hd">
-                        <a href="http://member.1yyg.com/UserRecharge.do" title="充值">充值</a>
-                    </div>
-                </li>
-                <li class="f-gap"><s></s></li>
-                <li>
-                    <div class="u-menu-hd">
-                        <a href="http://help.1yyg.com/" title="帮助">帮助</a>
-                    </div>
-                </li>
-                <li class="f-gap"><s></s></li>
-                <li>
-                    <div class="u-menu-hd">
-                        <a href="http://help.1yyg.com/htm-contactus.html" title="投诉">投诉</a>
-                    </div>
-                </li>
-                <li class="f-gap"><s></s></li>
-                <li class="f-zxkf">
-                    <div class="u-menu-hd">
-                        <a id="btnTopQQ" href="javascript:;" title="在线客服" class="u-service-off u-service"><i></i>在线客服</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+    @include('../public/head')
     <div class="w1190 clrfix">
         <!--头部-->
         <div class="g-special-head">
             <div class="fl logo-con">
-                <a href="http://www.1yyg.com/" class="f-logo"></a>
-                <span>结算</span>
+                <a href="{{url('/')}}" class="" style="padding-left: 50px; margin-top: 20px;"><img src="style/images/logo.png" alt="logo"></a>
+
             </div>
             <div class="fr step-con">
                 <em class="color-white">提交支付</em>
@@ -143,85 +46,55 @@
                         <span class="f-pay-subtotal">小计(元)</span>
                     </dt>
 
-                    <?php foreach($$goods_cart as $k=>$v){ ?>
+
+                    <?php foreach($data as $k=>$v){ ?>
 
                     <dd>
                         <ul>
                             <li class="f-pay-comm">
                                 <cite class="u-pay-pic">
-                                    <a href="http://www.1yyg.com/product/8629228.html" target="_blank"
-                                       title="苹果（Apple）iMac MK462CH/A 27英寸一体电脑">
+                                    <a href="{{url('/indexShop')}}?goods_id={{$v['goods_id']}}" target="_blank"
+                                       title="{{$v['goods_name']}}&nbsp;&nbsp;{{$v['goods_desc']}}">
                                         <img alt="" src="http://skin.1yyg.net/images/loding.gif"
-                                             src2="http://img.1yyg.net/GoodsPic/pic-70-70/20160511140647469.jpg" />
+                                             src2="{{$v['goods_picture']}}" />
                                     </a>
                                 </cite>
                                 <cite class="u-pay-name  ">
-                                    <a href="http://www.1yyg.com/product/8629228.html" target="_blank"
-                                       title="苹果（Apple）iMac MK462CH/A 27英寸一体电脑">(
-                                        第1663云) 苹果（Apple）iMac MK462CH/A 27英寸一体电脑
+                                    <a href="{{url('/indexShop')}}?goods_id={{$v['goods_id']}}" target="_blank"
+                                       title="{{$v['goods_name']}}&nbsp;&nbsp;{{$v['goods_desc']}}">(
+                                        第{{$v['times']}}云) &nbsp;&nbsp;{{$v['goods_name']}}&nbsp;&nbsp;{{$v['goods_desc']}}
                                     </a>
                                 </cite>
                             </li>
-                            <li class="f-pay-price">7670</li>
-                            <li class="f-pay-plusLess">1人次</li>
-                            <li class="f-pay-subtotal orange">1.00</li>
+                            <li class="f-pay-price">{{$v['number']}}</li>
+                            <li class="f-pay-plusLess">{{$v['code_number']}}人次</li>
+                            <li class="f-pay-subtotal orange pay_all">{{$v['code_number']}}</li>
                         </ul>
                     </dd>
-
-
                     <?php } ?>
-                    <dd>
-                        <ul>
-                            <li class="f-pay-comm">
-                                <cite class="u-pay-pic">
-                                    <a href="http://www.1yyg.com/product/10333230.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）">
-                                        <img alt="" src="http://skin.1yyg.net/images/loding.gif" src2="http://img.1yyg.net/GoodsPic/pic-70-70/20170122144823912.jpg" />
-                                    </a>
-                                </cite>
-                                <cite class="u-pay-name  ">
-
-                                    <a href="http://www.1yyg.com/product/10333230.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）">(第123云) 苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）</a></cite>
-                            </li>
-                            <li class="f-pay-price">7318</li>
-                            <li class="f-pay-plusLess">2人次</li>
-                            <li class="f-pay-subtotal orange">2.00</li>
-                        </ul>
-                    </dd>
-                    <dd>
-                        <ul>
-                            <li class="f-pay-comm">
-                                <cite class="u-pay-pic">
-                                    <a href="http://www.1yyg.com/product/10333230.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）">
-                                        <img alt="" src="http://skin.1yyg.net/images/loding.gif" src2="http://img.1yyg.net/GoodsPic/pic-70-70/20170122144823912.jpg" />
-                                    </a>
-                                </cite>
-                                <cite class="u-pay-name  ">
-
-                                    <a href="http://www.1yyg.com/product/10333230.html" target="_blank" title="苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）">(第123云) 苹果（Apple）iPhone 7 Plus 32G版 4G手机 套装版（含Apple Watch MJ352CH/A）</a></cite>
-                            </li>
-                            <li class="f-pay-price">7318</li>
-                            <li class="f-pay-plusLess">2人次</li>
-                            <li class="f-pay-subtotal orange">2.00</li>
-                        </ul>
-                    </dd>
-
-
-
-
-
                 </dl>
             </div>
 
+            <script>
+                $(function(){
+                    var all = $(".pay_all")
+                    var a = 0;
+                    all.each(function(i){
+                        a = a*1+ all.eq(i).html()*1;
+                    })
+                    $("#pay").html(a);
+                });
+            </script>
+
+
             <input name="hidTotalCount" type="hidden" id="hidTotalCount" value="0" />
             <!--展开按钮-->
-
-
             <!--福分与余额-->
             <div id="divPayWayBox" class="m-pay-Total clrfix">
                 <dl>
                     <dt>
                         <span class="fl"><a href="CartList.do" title="返回修改">返回修改</a></span>
-                        <span class="fr">支付总额：<i class="orange">￥3.00</i></span>
+                        <span class="fr">支付总额：<i class="orange" >￥<span id="pay">0</span>.00</i></span>
                     </dt>
 
                     <dd style="display: none">
@@ -257,7 +130,7 @@
             <div id="divBankBox" class="m-pay-manner" style="display: none;">
                 <div class="f-pay-select">
                     <span class="fl" id="spPayTitle">您可使用账户余额支付，也可选择以下方式完成支付</span>
-                    <span class="fr">使用网银支付<i id="iBankPay" class="orange">￥0.00</i></span>
+                    {{--<span class="fr">使用网银支付<i id="iBankPay" class="orange">￥0.00</i></span>--}}
                 </div>
 
                 <div class="f-pay-defray clrfix">
@@ -448,14 +321,21 @@
 
             </div>
 
-            <input type="hidden" id="hidPayBroker" value="0.00"/><input type="hidden" id="hidBalance" value="0.00"/><input type="hidden" id="hidCountMoney" value="3.00"/><input type="hidden" id="hidPoints" value="20.00"/><input type="hidden" id="hidAvailablePoints" value="0"/><input type="hidden" id="hidUsePaypwd" value="0"/><input type="hidden" id="hidSmallMoney" value="0"/>
+            <input type="hidden" id="hidPayBroker" value="0.00"/>
+            <input type="hidden" id="hidBalance" value="0.00"/>
+            <input type="hidden" id="hidCountMoney" value="3.00"/>
+            <input type="hidden" id="hidPoints" value="20.00"/>
+            <input type="hidden" id="hidAvailablePoints" value="0"/>
+            <input type="hidden" id="hidUsePaypwd" value="0"/>
+            <input type="hidden" id="hidSmallMoney" value="0"/>
 
             <!--使用网银支付提交表单-->
-            <form id="toPayForm" name="toPayForm" action="GoPay.do" method="post" target="_blank">
+            <form id="toPayForm" name="toPayForm" action="PayIndex" method="post" target="_blank">
                 <input type="hidden" id="hidPayName" name="payName" value="" />
                 <input type="hidden" id="hidPayBank" name="payBank" value="0" />
                 <input type="hidden" id="hidUseBalance" name="useBalance" value="" />
                 <input name="hidIsBuyNext" type="hidden" id="hidIsBuyNext" value="1" />
+                <input name="cart_id" type="hidden" id="" value="{{$card_id}}" />
                 <!-- 不使用福分时，值为0；使用福分时，值为使用福分值 2012.4.28-->
                 <input type="hidden" id="hidIntegral" name="integral" value="0" />
                 <input type="hidden" id="hidGoPayBroker" name="paybroker" value="0" />
@@ -484,266 +364,7 @@
 
     <!--footer 开始-->
     <!--版权-->
-    <div class="g-copyrightCon clrfix">
-        <div class="w1190">
-            <div class="g-links">
-                <a href="http://www.1yyg.com/" target="_blank" title="首页">首页</a><s></s>
-                <a href="http://help.1yyg.com/htm-about.html" target="_blank" title="关于云购">关于云购</a><s></s>
-                <a href="http://help.1yyg.com/htm-privacy.html" target="_blank" title="隐私声明">隐私声明</a><s></s>
-                <a href="http://help.1yyg.com/info/htm-business.html" target="_blank" title="合作专区">合作专区</a><s></s>
-                <a href="http://www.1yyg.com/link.html" target="_blank" title="友情链接">友情链接</a><s></s>
-                <a href="http://help.1yyg.com/htm-jobs.html" target="_blank" title="加入云购">加入云购</a><s></s>
-                <a href="http://help.1yyg.com/htm-contactus.html" target="_blank" title="联系我们">联系我们</a>
-            </div>
-            <div class="g-copyright">Copyright &copy; 2011 - 2017, 版权所有 1yyg.com 粤ICP备09213115号-1</div>
-            <div class="g-authentication">
-                <a href="http://www.1yyg.com/url.html?t=7" target="_blank" class="fi_ectrustchina"></a>
-                <a href="http://www.1yyg.com/url.html?t=1" target="_blank" class="fi_315online"></a>
-                <a href="http://www.1yyg.com/url.html?t=2" target="_blank" class="fi_qh"></a>
-                <a href="http://www.1yyg.com/url.html?t=3" target="_blank" class="fi_cnnic"></a>
-                <a href="http://www.1yyg.com/url.html?t=6" target="_blank" class="fi_anxibao" style="display:none;"></a>
-                <a href="http://www.1yyg.com/url.html?t=4" target="_blank" class="fi_pingan"></a>
-                <a href="http://www.1yyg.com/url.html?t=8" target="_blank" class="fi_yangshi"></a>
-            </div>
-        </div>
-    </div>
-    <!--通栏购物车-->
-    <div id="rightTool" class="g-outer">
-        <div class="g-status-standard">
-            <div class="m-banner-list">
-                <div class="u-sentence">
-                    <span></span>
-                    <cite><a href="javascript:;"><!--<img src="../images/banner.jpg">--></a></cite>
-                </div>
-                <div class="u-shortcut u-gwc-ygjl">
-                    <ul>
-                        <li class="f-shopping-cart">
-                            <div class="u-float-list">
-                                <a href="http://cart.1yyg.com/CartList.do" target="_blank">
-                                    <s class="z-clump-icon"></s>
-                                    <em>0</em>
-                                    <span>购物车</span>
-                                </a>
-                                <b class="curr-arrow"></b>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="u-shortcut u-icon-con">
-                    <ul>
-                        <li class="f-pur-records">
-                            <div class="u-float-list">
-                                <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                                    <i class="z-clump-icon"></i>
-                                    <cite>云购记录</cite>
-                                </a>
-                                <b class="curr-arrow"></b>
-                            </div>
-                        </li>
-                        <li class="f-client">
-                            <div class="u-float-list">
-                                <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                    <i class="z-clump-icon"></i>
-                                </a>
-                                <b class="curr-arrow"></b>
-                            </div>
-                            <div class="u-activate">
-                                <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                    <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105">
-                                </a>
-                            </div>
-                        </li>
-                        <li class="f-weixin">
-                            <div class="u-float-list">
-                                <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                    <i class="z-clump-icon"></i>
-                                </a>
-                                <b class="curr-arrow"></b>
-                            </div>
-                            <div class="u-activate">
-                                <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                    <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                    关注官方微信
-                                </a>
-                            </div>
-                        </li>
-                        <li class="f-customer-service">
-                            <div class="u-float-list">
-                                <a id="btnRigQQ" href="javascript:;" class="z-customer-on">
-                                    <i class="z-clump-icon"></i><cite>在线客服</cite>
-                                </a>
-                                <b class="curr-arrow"></b>
-                            </div>
-                        </li>
-                        <li class="f-feedback">
-                            <div class="u-float-list">
-                                <a  href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                                    <i class="z-clump-icon"></i><cite>意见反馈</cite>
-                                </a>
-                                <b class="curr-arrow"></b>
-                            </div>
-                        </li>
-                        <li class="f-back-to">
-                            <div class="u-float-list">
-                                <a href="javascript:;" style="display: none;" id="gototop" ><i class="z-clump-icon"></i><cite>返回顶部</cite></a>
-                                <b class="curr-arrow"></b>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!--购物车面板-->
-            <div id="divRTCartMain" class="m-unfold-cart clrfix">
-                <!--头部-->
-                <div class="f-unfold-title" id="cartMainObjTitleDiv">
-                    <span class="fl"><a href="javascript:;"><em class="z-comms"></em>全选</a></span>
-                    <cite class="fr">
-                        <a href="http://cart.1yyg.com/CartList.do" target="_blank" title="全屏查看">全屏查看</a>
-                    </cite>
-                </div>
-                <!--列表-->
-                <div id="cart_container" class="f-unfold-con clrfix">
-                    <div id="cart_box" class="scrollcontent">
-                        <div id="cart_shower" class="unfold-list"></div>
-                    </div>
-                </div>
-                <!--加载-->
-                <div class="loading-2015 clrfix" id="divCartMainLoadingDiv" style="display: none;">
-                    <em></em>
-                </div>
-                <!--购物车为空-->
-                <div class="cartEmpty clrfix">
-                    <i></i>您的购物车为空 !
-                </div>
-                <!--支付-->
-                <div class="f-unfold-pay clrfix"></div>
-            </div>
-
-            <!--登录-->
-            <div id="divRTLogin" class="cartLogin-wrapper clrfix" style="display: none; height:230px;" >
-                <div class="cartLogin-title" style="display: block;">
-                    <a href="https://passport.1yyg.com/register.html" target="_blank" class="orange fr">免费注册<em class="f-tran">>></em></a>登录
-                </div>
-                <div class="cartLogin-con clrfix" style="display: block;">
-                    <ul>
-                        <li>
-                            <p class="z-zhangh">
-                                <label class="z-clump-icon"></label>
-                                <input type="text" value="" placeholder="手机号/邮箱" id="username"/>
-                            </p>
-                        </li>
-                        <li>
-                            <p class="z-mim">
-                                <label class="z-clump-icon"></label>
-                                <input type="password" value="" placeholder="密码" id="password"/>
-                            </p>
-                        </li>
-                        <li id="vcCodeContainerLi" style="display: none;">
-                            <div class="vc-wrapper">
-                                <div class="vc-btn-container" id="dragBtnContainer">
-                                    <div class="vc-slide-text"><span>请按住滑块，拖动到最右边</span></div>
-                                    <div class="vc-slideBtnLeft" id="dragBtnLeft">
-                                        <span class="canvas-Title" style="display: none;">请点击图中的"<strong id="selectedChar"></strong>"字</span>
-                                        <span class="canvas-Title" style="display: none;">验证通过！</span>
-                                        <a href="javascript:;" class="passport-icon refresh" id="refreshVcCode" style="display: none;"></a>
-                                    </div>
-                                    <div class="vc-slideBtn" id="dragBtn"><i class="passport-icon ready-status"></i></div>
-                                </div>
-                                <div class="canvas-wrapper" style="display: none;">
-                                    <div class="canvas-container" id="canvasContainer" style="">
-                                        <img id="vcCanvas" class="vc-canvas" src="" alt="验证码">
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="f-error-message orange" id="miniLoginErrorMsgLi"></li>
-                        <li class="cart-login-btn"><input type="button"  name="vCode" value="登录" id="miniLoginBtn" /></li>
-                        <li class="f-wjpwd">
-                            <a class="gray9 fl" href="https://passport.1yyg.com/findpassword.html" target="_blank">忘记密码？</a>
-                                     <span class="fr">快捷登录：
-                                         <a href="javascript:;" id="btnQQLogin" class="z-clump-icon qq-login"></a>
-                                         <a href="javascript:;" id="btnWXLogin" class="z-clump-icon wx-login"></a>
-                                     </span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="wxLogin-con clrfix" style="display: none;">
-                    <h2>微信登录</h2>
-                    <p id="wxLoginImgContainer"></p>
-                    <a href="javascript:;"></a>
-                </div>
-                <a class="delete-close"></a>
-            </div>
-        </div>
-    </div>
-    <!--无购物车页面版-->
-    <div id="divRTool"  class="g-narrow-con" style="display:none;">
-        <div class="m-narrow-list">
-            <ul>
-                <li class="f-pur-records">
-                    <div class="u-small-list">
-                        <a href="http://member.1yyg.com/UserBuyList.do" target="_blank">
-                            <i></i><cite>云购记录</cite>
-                        </a>
-                    </div>
-                </li>
-                <li class="f-client">
-                    <div class="u-small-list">
-                        <a  href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                            <i></i><cite>手机APP</cite>
-                        </a>
-                        <b class="curr-arrow"><s></s></b>
-                    </div>
-                    <div class="activateCon">
-                        <div class="u-activate">
-                            <a href="http://info.1yyg.com/app/mobile.html" target="_blank">
-                                <img src="http://skin.1yyg.net/images/andriod.jpg?v=20141105"/>
-                                下载客户端
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="f-weixin">
-                    <div class="u-small-list">
-                        <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                            <i></i><cite>官方微信</cite>
-                        </a>
-                        <b class="curr-arrow"><s></s></b>
-                    </div>
-                    <div class="activateCon">
-                        <div class="u-activate">
-                            <a href="http://info.1yyg.com/app/microchannel.html" target="_blank">
-                                <img src="http://skin.1yyg.net/images/1yyg-wx.png?v=20141105"/>
-                                关注官方微信
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="f-customer-service">
-                    <div class="u-small-list">
-                        <a href="javascript:;" class="z-customer-on"  id="btnRigQQ2">
-                            <i></i><cite>在线客服</cite>
-                        </a><!-- z-customer-off 客服不在线时 -->
-                    </div>
-                </li>
-                <li class="f-feedback">
-                    <div class="u-small-list">
-                        <a href="http://help.1yyg.com/htm-suggestion.html" target="_blank">
-                            <i></i><cite>意见反馈</cite>
-                        </a>
-                    </div>
-                </li>
-                <li class="f-back-to" title="返回顶部">
-                    <div class="u-small-list">
-                        <a href="javascript:;"><i></i><cite>返回顶部</cite></a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+@include('public/footer')
 </div>
 <script language="javascript" type="text/javascript">
     var Base = { head: document.getElementsByTagName("head")[0] || document.documentElement, Myload: function (B, A) { this.done = false; B.onload = B.onreadystatechange = function () { if (!this.done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) { this.done = true; A(); B.onload = B.onreadystatechange = null; if (this.head && B.parentNode) { this.head.removeChild(B) } } } }, getScript: function (A, C) { var B = function () { }; if (C != undefined) { B = C } var D = document.createElement("script"); D.setAttribute("language", "javascript"); D.setAttribute("type", "text/javascript"); D.setAttribute("src", A); this.head.appendChild(D); this.Myload(D, B) }, getStyle: function (A, CB) { var B = function () { }; if (CB != undefined) { B = CB } var C = document.createElement("link"); C.setAttribute("type", "text/css"); C.setAttribute("rel", "stylesheet"); C.setAttribute("href", A); this.head.appendChild(C); this.Myload(C, B) } }
@@ -767,7 +388,10 @@
         <ul>
             <li class="payment_ts_con">如您的浏览器不支持，请复制以下链接到IE浏览器打开，完成付款后跟据您的情况进行以下操作！</li>
             <li class="payment_ts_links">http://cart.1yyg.com/payment.do</li>
-            <li class="payment_ts_but"><a id="btnBuyOk" href="javascript:gotoClick();" class="pay_tipsbut">完成支付</a><a id="btnReSelect" href="javascript:gotoClick();" class="blue">支付遇到问题？返回重新选择</a></li>
+            <li class="payment_ts_but">
+                <a id="btnBuyOk" href="javascript:gotoClick();" class="pay_tipsbut">完成支付</a>
+                <a id="btnReSelect" href="javascript:gotoClick();" class="blue">支付遇到问题？返回重新选择</a>
+            </li>
         </ul>
     </div>
 </div>

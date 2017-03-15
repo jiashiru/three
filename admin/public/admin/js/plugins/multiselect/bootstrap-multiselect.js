@@ -729,7 +729,7 @@
         createOptgroup: function(group) {
             var groupName = $(group).prop('label');
 
-            // Add a header for the group.
+            // Add a uploads for the group.
             var $li = $(this.options.templates.liGroup);
 
             if (this.options.enableHTML) {

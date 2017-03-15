@@ -12,9 +12,9 @@
 namespace Symfony\Component\HttpFoundation;
 
 /**
- * Represents an Accept-* header.
+ * Represents an Accept-* uploads.
  *
- * An accept header is compound with a list of items,
+ * An accept uploads is compound with a list of items,
  * sorted by descending quality.
  *
  * @author Jean-François Simon <contact@jfsimon.fr>
@@ -63,7 +63,7 @@ class AcceptHeader
     }
 
     /**
-     * Returns header value's string representation.
+     * Returns uploads value's string representation.
      *
      * @return string
      */
@@ -73,7 +73,7 @@ class AcceptHeader
     }
 
     /**
-     * Tests if header has given value.
+     * Tests if uploads has given value.
      *
      * @param string $value
      *
