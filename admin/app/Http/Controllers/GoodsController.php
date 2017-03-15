@@ -10,6 +10,8 @@ use App\Model\Admin;
 use App\Model\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Support\Facades\DB;
+
 
 
 class GoodsController extends CommonController
@@ -263,6 +265,71 @@ class GoodsController extends CommonController
         $id = $request->id;
         $type = Category::where("parent_id",$id)->get()->toArray();
         return json_encode($type);
+    }
+
+    public function photos(Request $request)
+    {
+        $id = $request->id;
+        $good =  Goods::where("goods_id",$id)->first()->toArray();
+        return view("goods.photos",["goods"=>$good]);
+    }
+
+    public function uploads(Request $request)
+    {
+        $name = $_FILES['upload_file']['name'];
+        //不存在当前上传文件则上传
+        if(!file_exists($_FILES['upload_file']['name'])) move_uploaded_file($_FILES['upload_file']['tmp_name'],"./upload/".iconv('utf-8','gb2312',$_FILES['upload_file']['name']));
+        //输出图片文件<img>标签'
+        $path = "./upload/".iconv('utf-8','gb2312',$_FILES['upload_file']['name']);
+
+        $id = $request->input("g_id");
+
+        DB::table("goods_gallery")->insert(
+            ['goods_id' =>  $id, 'img_path_tiny' =>$path]
+        );
+
+        $this->sanbai($name,"large",300);
+        $this->sanbai($name,"middle",200);
+        $this->sanbai($name,"small",100);
+
+        return "<textarea><img src='$path'/></textarea>";
+        //End_php
+    }
+
+    public function sanbai($file,$path,$max=300)
+    {
+        $filename = "./upload/". $file;
+        //因为PHP只能对资源进行操作，所以要对需要进行缩放的图片进行拷贝，创建为新的资源
+        $src = imagecreatefromjpeg($filename);
+
+        //取得源图片的宽度和高度
+        $size_src = getimagesize($filename);
+        $w = $size_src['0'];
+        $h = $size_src['1'];
+
+        //指定缩放出来的最大的宽度（也有可能是高度）
+
+
+        //根据最大值为300，算出另一个边的长度，得到缩放后的图片宽度和高度
+        if($w > $h) {
+            $w = $max;
+            $h = $h*($max/$size_src['0']);
+        } else {
+            $h = $max;
+            $w = $w*($max/$size_src['1']);
+        }
+        //声明一个$w宽，$h高的真彩图片资源
+        $image=imagecreatetruecolor($w, $h);
+
+        //关键函数，参数（目标资源，源，目标资源的开始坐标x,y,源资源的开始坐标x,y,目标资源的宽高w,h,源资源的宽高w,h）
+        imagecopyresampled($image, $src, 0, 0, 0, 0, $w, $h, $size_src['0'], $size_src['1']);
+
+        //告诉浏览器以图片形式解析
+        // header('content-type:image/png');
+        // imagepng($image);
+        imagepng($image,"./upload/".$path."/". $file);
+        //销毁资源
+        imagedestroy($image);
     }
 
 
