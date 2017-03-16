@@ -15,8 +15,8 @@
     </script>
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="style/css/index.css?date=170119" />
-    <script type="text/javascript" src="style/JS/JQuery1.12.js"></script>
-    <script type="text/javascript" id="pageJS" data="style/JS/Index.js"></script>
+    <script type="text/javascript" src="style/js/JQuery1.12.js"></script>
+    <script type="text/javascript" id="pageJS" data="style/js/Index.js"></script>
 </head>
 <body id="loadingPicBlock" class="home" rf="1">
 <!--div class="newyear clrfix"></div-->
@@ -100,13 +100,16 @@
                 <script type="text/javascript"  src="style/js/jquery.flexisel.js"></script>
                 <!--广告位下方推荐-->
                 <div class="slide-comd">
-             <?php foreach ($remmend as $key => $v) {?>
 
-           
+                    @foreach($remmend as $key=>$v)
+
                     <div class="commodity">
                         <ul>
                             <li class="comm-info fl">
-                                <span><a href="indexShop?goods_id={{$v['goods_id']}}" target="_blank" title="{{$v['goods_name']}}{{$v['goods_desc']}}">{{$v['goods_name']}}{{$v['goods_desc']}}</a></span>
+                                <span><a href="indexShop?goods_id={{$v['goods_id']}}" target="_blank" title="{{$v['goods_name']}}{{$v['goods_desc']}}">
+                                        {{$v['goods_name']}}{{$v['goods_desc']}}
+                                    </a>
+                                </span>
                                 <p class="gray">已参与<em class="orange">{{$v['num_price']}}</em>人次</p>
                             </li>
                             <li class="comm-pic fr">
@@ -118,7 +121,7 @@
                             </li>
                         </ul>
                     </div>
-                     <?    }?>   
+                    @endforeach
                 </div>
             </div>
             <div class="home-event fr">
@@ -147,6 +150,10 @@
             </div>
         </div>
     </div>
+
+
+
+
     <div class="g-wrap w1190">
         <!--最新揭晓-->
         <div class="g-title">
@@ -459,16 +466,16 @@
             {
                 $.ajax({
                     type: "POST",
-     
+
                     url: "indexHot",
                     data: {field:field},
                     success: function(data)
                     {
                        var  msg = JSON.parse(data);
                        var str = '';
-                        if (field == 'is_hot') 
+                        if (field == 'is_hot')
                         {
-                            for (var i = 0; i < msg.length; i++) 
+                            for (var i = 0; i < msg.length; i++)
                             {
                                 str+='<div class="g-hotL-list" goodsid="23458">';
                                 str+='<div class="g-hotL-con">';
@@ -513,9 +520,9 @@
                             };
                             $('#divHotGoodsList').html(str);
                         };
-                        if (field == 'is_new') 
+                        if (field == 'is_new')
                         {
-                             for (var i = 0; i < msg.length; i++) 
+                             for (var i = 0; i < msg.length; i++)
                              {
                                 str+='<div idx="1" class="soon-list-con">';
                                 str+='<div class="soon-list">';
@@ -533,10 +540,10 @@
                              };
                              $('#divNewGoodsList').html(str);
                         };
-                        if (field == 'state') 
+                        if (field == 'state')
                         {
-                    
-                            for (var i = 0; i < msg.length; i++) 
+
+                            for (var i = 0; i < msg.length; i++)
                             {
                                 str+='<div idx="1" goodsid="23172" class="soon-list-con">';
                                 str+='<div class="soon-list">';
@@ -571,7 +578,7 @@
                             };
                             $('#divSoonGoodsList').html(str)
                         };
-            
+
                     }
                 });
             }
@@ -658,19 +665,19 @@
 
     <!--底部-->
     <!--底部-->
-    @include('public/footer')
+    @include('public.footer')
 </div>
 <script language="javascript" type="text/javascript">
     var Base = { head: document.getElementsByTagName("head")[0] || document.documentElement, Myload: function (B, A) { this.done = false; B.onload = B.onreadystatechange = function () { if (!this.done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) { this.done = true; A(); B.onload = B.onreadystatechange = null; if (this.head && B.parentNode) { this.head.removeChild(B) } } } }, getScript: function (A, C) { var B = function () { }; if (C != undefined) { B = C } var D = document.createElement("script"); D.setAttribute("language", "javascript"); D.setAttribute("type", "text/javascript"); D.setAttribute("src", A); this.head.appendChild(D); this.Myload(D, B) }, getStyle: function (A, CB) { var B = function () { }; if (CB != undefined) { B = CB } var C = document.createElement("link"); C.setAttribute("type", "text/css"); C.setAttribute("rel", "stylesheet"); C.setAttribute("href", A); this.head.appendChild(C); this.Myload(C, B) } }
     function GetVerNum() { var D = new Date(); return D.getFullYear().toString().substring(2, 4) + '.' + (D.getMonth() + 1) + '.' + D.getDate() + '.' + D.getHours() + '.' + (D.getMinutes() < 10 ? '0' : D.getMinutes().toString().substring(0, 1)) }
-    Base.getScript('style/JS/Bottom.js?v=' + GetVerNum());
+    Base.getScript('style/js/Bottom.js?v=' + GetVerNum());
 </script>
 <div style="display: none;">
     <script type="text/javascript" language="JavaScript" src="http://s22.cnzz.com/stat.php?id=3362429&web_id=3362429"  async="async"></script>
 </div>
 
 <link type="text/css" rel="stylesheet" href="https://skin.1yyg.net/CSS/pageDialog.css?v=161208" />
-<script language="javascript" type="text/javascript" src="https://skin.1yyg.net/JS/pageDialog.js?v=161208"></script>
+<script language="javascript" type="text/javascript" src="https://skin.1yyg.net/js/pageDialog.js?v=161208"></script>
 <div class="pageDialogBG" id="pageDialogBG"></div>
 <div class="pageDialogBorder" id="pageDialogBorder"></div>
 <div class="pageDialog" id="pageDialog">

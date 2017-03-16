@@ -21,6 +21,7 @@ class IndexController extends Controller
     //主页
     public function index()
     {
+
         if(empty($_SESSION['u_id'])){
             $u_id = 0;
         }else{
@@ -45,9 +46,7 @@ class IndexController extends Controller
             'goods_code'=>$goods_code,//获取最新 揭晓
 
             'u_id'=>$u_id,//用户ID
-
-
-            'remmend'=>$remmend
+            'remmend'=>$remmend,
 
         ]);
     }

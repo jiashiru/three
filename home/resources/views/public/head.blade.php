@@ -31,7 +31,7 @@
             @if(isset($_SESSION['u_id']))
             <li>
                 <div class="u-menu-hd u-menu-login">
-                    <a class="blue" title="{{$_SESSION['nickname']}}" href="http://member.1yyg.com/">
+                    <a class="blue" title="{{$_SESSION['nickname']}}" href="setInfo">
                         <span class="fl">
                             @if(empty($_SESSION['picture']))
                             <img src="{{asset('style/images/00000000000000000.jpg')}}">
