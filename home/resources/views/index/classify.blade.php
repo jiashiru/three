@@ -13,7 +13,7 @@
         EvPNG.fix('.search a.seaIcon i,.m-menu-all h3 em,.nav-cart-btn i.f-cart-icon,a.u-cart s,.u-mui-tab a.u-menus s,.u-mui-tab li.f-cart a.u-menus i,.u-mui-tab li.f-both-top a.u-menus,.u-mui-tab li.f-both-bottom a.u-menus,.i-ctrl a s,.g-list li cite,.f-list-sorts li.m-value s,.nav-main li.f-nav-thanks span,.u-float-list a i,.cartEmpty i,.transparent-png');
     </script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="style/CSS/GoodsList.css?date=150717" />
+    <link rel="stylesheet" type="text/css" href="style/css/GoodsList.css?date=150717" />
     <script language="javascript" type="text/javascript" src="style/js/JQuery1.12.js"></script>
     <script id="pageJS" language="javascript" type="text/javascript" data="style/js/GoodsList.js"></script>
 </head>
@@ -289,7 +289,7 @@
 <div style="display: none;">
     <script type="text/javascript" language="JavaScript" src="http://s22.cnzz.com/stat.php?id=3362429&web_id=3362429"  async="async"></script>
 </div>
-<link type="text/css" rel="stylesheet" href="https://skin.1yyg.net/CSS/pageDialog.css?v=161208" />
+<link type="text/css" rel="stylesheet" href="https://skin.1yyg.net/css/pageDialog.css?v=161208" />
 <script language="javascript" type="text/javascript" src="https://skin.1yyg.net/js/pageDialog.js?v=161208"></script>
 <div class="pageDialogBG" id="pageDialogBG"></div>
 <div class="pageDialogBorder" id="pageDialogBorder"></div>
