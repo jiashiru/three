@@ -143,4 +143,10 @@ class MyyungouController extends Controller
     {
         return view('myyungou/CardRechange');
     }
+
+    //邀请好友页面
+    public function invite()
+    {
+        return view('myyungou/invite');
+    }
 }
